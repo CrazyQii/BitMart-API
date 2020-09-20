@@ -8,7 +8,9 @@ from urllib import request
 from urllib import parse
 from urllib import error
 from faker import Faker
+from flask import jsonify
 import json
+import time
 
 f = Faker(locale='zh_CN')
 
@@ -22,11 +24,16 @@ class PostGet:
         """
         :param url: 请求路径
         :param method: 请求方法(get / post)
-        :param data: 请求数据
+        :param data: POST请求数据
         :param headers: 请求头
         """
         if headers is None:
-            headers = {'Content-Type': 'application/json'}
+            headers = {
+                'Content-Type': 'application/json',
+                'X-BM-KEY': '0db8cf2de9b3c13c98f947a0229e284dde89e082',
+                'X-BM-SIGN': '6c6c98544461bbe71db2bca4c6d7fd0021e0ba9efc215f9c6ad41852df9d9df9',
+                'X-BM-TIMESTAMP': str(time.time())
+            }
         self.response = self.send_main(url, method, data, headers)
 
     def send_main(self, url, method, data, headers):
@@ -40,13 +47,12 @@ class PostGet:
 
     def send_post(self, url, data, headers):
         """
-        发送POST请求, 返回对应code和message
+        向 Bitmart 发送POST请求, 返回对应code和message
         """
-        data = parse.urlencode(data)
-        data = data.encode('ascii')
-        req = request.Request(url, data, headers)
+        req = request.Request(url=url, data=data, headers=headers)
         try:
             with request.urlopen(req) as response:
+                print(response)
                 print(response.read())
                 return json.loads(response.read())
         except error.HTTPError as e:
@@ -54,13 +60,12 @@ class PostGet:
 
     def send_get(self, url, data, headers):
         """
-        发送GET请求，返回对应code和message
+        向 Bitmart 发送GET请求，返回对应code和message
         """
         # request 对象
-        if data is not None:
-            data = parse.urlencode(data)
-            data = data.encode('ascii')
-        req = request.Request(url, data, headers)
+        if data is not None:  # 存在请求参数，封装请求url
+            url = url + '?' + parse.urlencode(data)
+        req = request.Request(url=url, headers=headers)
         # URLError
         try:
             with request.urlopen(req) as response:
@@ -94,14 +99,15 @@ class Result:
                 'data': data,
                 'trace': f.sha1()
             }
-            return json.dumps(resp)
+            return jsonify(resp)  # 响应头为 application/json
         else:
             resp = {
                 'code': code,
                 'message': message,
                 'trace': f.sha1()
             }
-            return json.dumps(resp)
+            return jsonify(resp)
+
 
 # if __name__ == '__main__':
 #     # 模拟请求

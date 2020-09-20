@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*
 """
-Bitmart.symbols
+Bitmart.symbol
 ~~~~~~~~~~~~~~~~~~~
 获取平台所有的交易对列表
 """

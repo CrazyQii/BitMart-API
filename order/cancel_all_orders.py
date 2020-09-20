@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*
 """
-asset.submit_order
+asset.cancel_all_orders
 ~~~~~~~~~~~~~~~~~~
-委托下单
+取消指定交易对指定方向的所有未完成的订单
 """
 
 from Bitmart.util import PostGet
 from Bitmart.util import Result
 
 
-class SubmitOrder:
+class CancelAllOrders:
     """ 委托下单 """
     def __init__(self, url, method, req_data=None, headers=None):
         """

@@ -5,27 +5,25 @@ asset.wallet
 获取用户所有币种钱包余额
 """
 
-from urllib import request
-import json
+from Bitmart.util import PostGet
+from Bitmart.util import Result
 
 
 class Wallet:
     """ 钱包对象 """
-    # def __init__(self, id, available, name, frozen):
-    #     self.id = id
-    #     self.available = available
-    #     self.name = name
-    #     self.frozen = frozen
+    def __init__(self, url, method, req_data=None, headers=None):
+        """
+        :param url: 请求路径
+        :param method: 请求方法
+        :param req_data: 请求数据
+        :param headers: 请求头
+        """
+        self.response = self.resp_data(url=url, data=req_data, method=method, headers=headers)
 
-    def get_wallet(self):
-        """ 获取钱包余额数据 """
-        data = request.urlopen('https://api-cloud.bitmart.info/spot/v1/currencies')
-        for line in data:
-            json_line = json.loads(line)
+    def resp_data(self, url, data, method, headers):
+        response = PostGet(url=url, data=data, method=method, headers=headers).response
+        code = response.get('code')
+        message = response.get('message')
+        data = response.get('data')
+        return Result(code, message, data).result
 
-            print()
-            return line
-
-
-x = Wallet()
-x.get_wallet()

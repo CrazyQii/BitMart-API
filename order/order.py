@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*
 """
-asset.submit_order
+asset.order
 ~~~~~~~~~~~~~~~~~~
-委托下单
+取消一个未完成的订单
 """
 
 from Bitmart.util import PostGet
 from Bitmart.util import Result
 
 
-class SubmitOrder:
+class Order:
     """ 委托下单 """
     def __init__(self, url, method, req_data=None, headers=None):
         """

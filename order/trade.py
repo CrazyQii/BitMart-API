@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*
 """
-asset.submit_order
+asset.trade
 ~~~~~~~~~~~~~~~~~~
-委托下单
+获取用户成交历史
 """
 
 from Bitmart.util import PostGet
 from Bitmart.util import Result
 
 
-class SubmitOrder:
+class Trade:
     """ 委托下单 """
     def __init__(self, url, method, req_data=None, headers=None):
         """

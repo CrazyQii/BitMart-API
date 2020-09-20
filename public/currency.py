@@ -6,11 +6,13 @@ public.currency
 """
 
 from Bitmart import util
+from flask import Flask
+
+server = Flask(__name__)  # 定义server
 
 
 class Currency:
 
-    # 'https://api-cloud.bitmart.info/spot/v1/currencies'
     def __init__(self, url, method, req_data=None, headers=None):
         """
         :param url: 请求路径
