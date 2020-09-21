@@ -9,6 +9,7 @@ from urllib import parse
 from urllib import error
 from faker import Faker
 from flask import jsonify
+from Bitmart.bitmart.api_spot import APISpot
 import json
 import time
 
@@ -19,6 +20,9 @@ class PostGet:
     """
     POST_GET工具包，对get和post方法进行封装
     """
+    __api_key = '0db8cf2de9b3c13c98f947a0229e284dde89e082'
+    __secret_key = '6c6c98544461bbe71db2bca4c6d7fd0021e0ba9efc215f9c6ad41852df9d9df9'
+    __memo = str(time.time())
 
     def __init__(self, url, method, data=None, headers=None):
         """
@@ -30,9 +34,9 @@ class PostGet:
         if headers is None:
             headers = {
                 'Content-Type': 'application/json',
-                'X-BM-KEY': '0db8cf2de9b3c13c98f947a0229e284dde89e082',
-                'X-BM-SIGN': '6c6c98544461bbe71db2bca4c6d7fd0021e0ba9efc215f9c6ad41852df9d9df9',
-                'X-BM-TIMESTAMP': str(time.time())
+                'X-BM-KEY': self.__api_key,
+                'X-BM-SIGN': '',
+                'X-BM-TIMESTAMP': self.__memo
             }
         self.response = self.send_main(url, method, data, headers)
 
