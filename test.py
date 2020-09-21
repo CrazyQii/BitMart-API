@@ -28,6 +28,7 @@ from Bitmart.order import cancel_all_orders
 from Bitmart.order import order
 from Bitmart.order import order_detail
 from Bitmart.order import trade as order_trade
+from Bitmart import api, const as c
 from flask import Flask
 from flask import request
 
@@ -39,54 +40,12 @@ BaseURL = 'https://api-cloud.bitmart.info/spot/v1'  # 请求路由
 
 @server.route('/v1/currencies', methods=['get'])
 def currencies():
-    """
-    定义获取平台所有的加密货币列表接口函数
-    :return:
-        {
-          "code": 1000,
-          "trace":"886fb6ae-456b-4654-b4e0-d681ac05cea1",
-          "message": "OK",
-          "data": {
-            "currencies": [
-              {
-                "id": "BTC",
-                "name": "Bitcoin",
-                "withdraw_enabled": true,
-                "deposit_enabled": true
-              },
-              {
-                "id": "ETH",
-                "name": "Ethereum",
-                "withdraw_enabled": true,
-                "deposit_enabled": true
-              }
-            ]
-          }
-        }
-    """
-    response = currency.Currency(BaseURL + '/currencies', 'get').response
+    response = api.get_currencies()
     return response
 
 
 @server.route('/v1/symbols', methods=['get'])
 def symbols():
-    """
-    获取平台所有的交易对列表
-    :return:
-        {
-          "code": 1000,
-          "trace":"886fb6ae-456b-4654-b4e0-d681ac05cea1",
-          "message": "OK",
-          "data": {
-            "symbols": [
-               "BMX_ETH",
-               "XLM_ETH",
-               "MOBI_ETH",
-               ...
-            ]
-          }
-        }
-    """
     response = symbol.Symbol(BaseURL+'/symbols', 'get').response
     return response
 
@@ -444,49 +403,50 @@ def orders():
     return response
 
 
-@server.route('/v1/trades', methods=['get'])
-def trades():
-    """
-    获取用户订单列表
-    :param: https://api-cloud.bitmart.com/spot/v1/trades?symbol=BTC_USDT&limit=10&offset=1
-    :return:
-        {
-            "message":"OK",
-            "code":1000,
-            "trace":"a06a5c53-8e6f-42d6-8082-2ff4718d221c",
-            "data":{
-                "current_page":1,
-                "trades":[
-                    {
-                        "detail_id":256348632,
-                        "order_id":2147484350,
-                        "symbol":"BTC_USDT",
-                        "create_time":1590462303000,
-                        "side":"buy",
-                        "fees":"0.00001350",
-                        "fee_coin_name":"BTC",
-                        "notional":"88.00000000",
-                        "price_avg":"8800.00",
-                        "size":"0.01000",
-                        "exec_type":"M"
-                    },
-                    ...
-                ]
-            }
-        }
-    """
-    param = request.args
-    # 请求头
-    headers = {
-        'Content-type': str(request.headers.get('Content-type')),
-        'X-BM-KEY': str(request.headers.get('X-BM-KEY')),
-        'X-BM-SIGN': str(request.headers.get('X-BM-SIGN')),
-        'X-BM-TIMESTAMP': str(request.headers.get('X-BM-TIMESTAMP'))
-    }
-    response = order_trade.Trade(BaseURL+'/trades', 'get', req_data=param, headers=headers).response
-    return response
+# @server.route('/v1/trades', methods=['get'])
+# def trades():
+#     """
+#     获取用户订单列表
+#     :param: https://api-cloud.bitmart.com/spot/v1/trades?symbol=BTC_USDT&limit=10&offset=1
+#     :return:
+#         {
+#             "message":"OK",
+#             "code":1000,
+#             "trace":"a06a5c53-8e6f-42d6-8082-2ff4718d221c",
+#             "data":{
+#                 "current_page":1,
+#                 "trades":[
+#                     {
+#                         "detail_id":256348632,
+#                         "order_id":2147484350,
+#                         "symbol":"BTC_USDT",
+#                         "create_time":1590462303000,
+#                         "side":"buy",
+#                         "fees":"0.00001350",
+#                         "fee_coin_name":"BTC",
+#                         "notional":"88.00000000",
+#                         "price_avg":"8800.00",
+#                         "size":"0.01000",
+#                         "exec_type":"M"
+#                     },
+#                     ...
+#                 ]
+#             }
+#         }
+#     """
+#     param = request.args
+#     # 请求头
+#     headers = {
+#         'Content-type': str(request.headers.get('Content-type')),
+#         'X-BM-KEY': str(request.headers.get('X-BM-KEY')),
+#         'X-BM-SIGN': str(request.headers.get('X-BM-SIGN')),
+#         'X-BM-TIMESTAMP': str(request.headers.get('X-BM-TIMESTAMP'))
+#     }
+#     response = order_trade.Trade(BaseURL+'/trades', 'get', req_data=param, headers=headers).response
+#     return response
 
 
 # 程序入口
 if __name__ == '__main__':
+    api = api.API(c.USER_ACCESS_KEY, c.USER_SECRET_KEY, c.USER_MEMO)
     server.run(port=7777, debug=True, host='0.0.0.0')  # 执行server

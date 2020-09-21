@@ -10,6 +10,8 @@ from urllib import error
 from faker import Faker
 from flask import jsonify
 from Bitmart.bitmart.api_spot import APISpot
+from . import const as c
+import requests
 import json
 import time
 
@@ -113,17 +115,23 @@ class Result:
             return jsonify(resp)
 
 
-# if __name__ == '__main__':
-#     # 模拟请求
-#     run = Util('https://api-cloud.bitmart.info/spot/v1/currencies', 'get')
-#     print(run.response)
-#
-#     datas = {
-#         "symbol":"BTC_USDT",
-#         "side":"buy",
-#         "type":"limit",
-#         "size":"10",
-#         "price":"7000"
-#     }
-#     run = Util('https://api-cloud.bitmart.info/spot/v1/submit_order', 'post', data=datas)
-#     print(run.response)
+def parse_params_to_str(param):
+    """ get请求参数转为字符串 """
+    url = '?' + '&'.join([str(key) + '=' + str(value) for key, value in param])
+    return url
+
+
+def get_header(api_key, sign_key, timestamp):
+    """ 获取请求头 """
+    headers = {
+        c.CONTENT_TYPE: c.APPLICATION_JSON,
+        c.USER_AGENT: c.VERSION
+    }
+
+    if api_key:
+        headers[c.API_KEY] = api_key
+    if sign_key:
+        headers[c.SIGN_KEY] = sign_key
+    if timestamp:
+        headers[c.TIMESTAMP] = timestamp
+    return headers
