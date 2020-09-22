@@ -4,7 +4,7 @@ client.py
 封装请求，返回数据
 """
 from . import const as c, util
-from .bitmart.cloud_utils import sign, get_timestamp, pre_substring
+from bitmart.cloud_utils import sign, get_timestamp, pre_substring
 import requests
 import json
 
@@ -55,7 +55,7 @@ class Client:
 
         # HTTPException
 
-    def request_with_param(self, method, request_url, param, auth=None):
+    def request_with_param(self, method, request_url, param=None, auth=None):
         """ 有参数请求 """
         return self._request(method, request_url, param, auth)
 
