@@ -51,9 +51,9 @@ class Client:
             response = requests.get(url=url, headers=headers)
         else:
             response = requests.post(url=url, data=body, headers=headers)
-        return response.json()
 
         # HTTPException
+        return response.json()
 
     def request_with_param(self, method, request_url, param=None, auth=None):
         """ 有参数请求 """
