@@ -105,6 +105,7 @@ class API:
         }
         return self.clients.request_with_param(GET, API_OPEN_ORDER_URL, param, AUTH_TYPE_TRADE, weight=1)
 
+    # ==========
     # 存在问题
     # GET https://api.binance.com/api/v3/allOrders
     def get_all_order(self, symbol: str, order_id=None, start_time=None, end_time=None, limit=None, recv_window=5000):
@@ -115,6 +116,7 @@ class API:
         }
         return self.clients.request_with_param(GET, API_OPEN_ORDER_URL, param, AUTH_TYPE_TRADE, weight=5)
 
+    # ==========
     # 存在问题
     # GET https://api.binance.com/api/v3/myTrades
     def get_my_trades(self, start_time=None, end_time=None, from_id=None, limit=None, recv_window=5000):

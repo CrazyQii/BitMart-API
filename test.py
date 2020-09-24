@@ -35,6 +35,7 @@ if __name__ == '__main__':
     # {'code': -2013, 'msg': 'Order does not exist.'}
 
     # 账户信息
-    # rep = binance.get_account()
+    rep = binance.get_account()
+
     print(rep.json())
 
