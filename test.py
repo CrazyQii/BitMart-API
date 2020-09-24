@@ -5,24 +5,36 @@ Bitmart.main
 主文件：接收前端请求，初始化server，定义接口函数，程序入口
 
 """
-
-import sys, os
-
-# 解决命令行import错误问题
-curPath = os.path.abspath(os.path.dirname(__file__))
-rootPath = os.path.split(curPath)[0]
-sys.path.append(rootPath)
-
-from binance_api import api, const as c
-from flask import Flask
-from flask import request
-
-
-# server = Flask(__name__)  # 定义server
+from binance_api.api_const import *
+from binance_api import api
 
 
 # 程序入口
 if __name__ == '__main__':
-    # server.run(port=7777, debug=True, host='0.0.0.0')  # 执行server
-    binance = api.API(c.USER_API_KEY, c.USER_SECRET_KEY)
-    print(binance.post_limit_order_test('BTCUSDT', c.Side.BUY.value, c.TimeInForce.GTC.value, 10, 10))
+    binance = api.API(USER_API_KEY, USER_SECRET_KEY)
+
+    # 测试
+    # ping 服务
+    # print(binance.get_ping())
+    # print(binance.get_exchange_info().json())
+
+    print('-'*25)
+
+    # test /api/v3/order/test
+
+    # Trade type:limit
+    # rep = binance.post_order(symbol="BTCUSDT", side=BUY, type=LIMIT, time_in_force=GTC, quantity=0.1, price=10000)
+    # {'code': -2010, 'msg': 'Account has insufficient balance for requested action.'}
+
+    # Trade type:market
+    # rep = binance.post_order(symbol="BTCUSDT", side=BUY, type=MARKET, quantity=0.1)
+    # {'code': -2010, 'msg': 'Account has insufficient balance for requested action.'}
+
+    # Get order
+    # rep = binance.get_order(symbol="BTCUSDT", order_id=2131, orig_client_order_id=None)
+    # {'code': -2013, 'msg': 'Order does not exist.'}
+
+    # 账户信息
+    # rep = binance.get_account()
+    print(rep.json())
+

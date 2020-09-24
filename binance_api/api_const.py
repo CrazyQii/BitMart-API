@@ -1,5 +1,5 @@
 """
-const.py
+api_const.py
 -----------------
 常量
 """
@@ -36,44 +36,40 @@ AUTH_TYPE_USER_DATA = 'keyed_signed'
 AUTH_TYPE_USER_STREAM = 'keyed'
 AUTH_TYPE_MARKET_DATA = 'keyed'
 
+# side
+BUY = 'BUY'
+SELL = 'SELL'
+
+# newOrderRespType
+ACK = 'ACK'
+RESULT = 'RESULT'
+FULL = 'FULL'
+
+# timeInForce
+GTC = 'GTC'
+IOC = 'IOC'
+FOK = 'FOK'
+
+# test url
+API_PING_URL = '/api/v3/ping'
+API_EXCHANGE_INFO_URL = '/api/v3/exchangeInfo'
+
 # request_url
 API_ORDER_TEST_URL = '/api/v3/order/test'  # 测试下单
 API_ORDER_URL = '/api/v3/order'  # 下单
+API_OPEN_ORDER_URL = 'api/v3/openOrders'  # 撤销单一交易对的所有挂单
+API_ALL_ORDER_URL = '/api/v3/allOrders'  # 获取所有帐户订单
+API_ACCOUNT_URL = '/api/v3/account'  # 用户信息
+API_MY_TRADES_URL = '/api/v3/myTrades'  # 账目成交历史
 
-
-@unique
-class OrderTypes(Enum):
-    """ 订单类型 """
-    LIMIT = 'LIMIT'
-    MARKET = 'MARKET'
-    STOP_LOSS = 'STOP_LOSS'
-    STOP_LOSS_LIMIT = 'STOP_LOSS_LIMIT'
-    TAKE_PROFIT = 'TAKE_PROFIT'
-    TAKE_PROFIT_LIMIT = 'TAKE_PROFIT_LIMIT'
-    LIMIT_MAKER = 'LIMIT_MAKER'
-
-
-@unique
-class NewOrderRespType(Enum):
-    """ 订单返回类型 """
-    ACK = 'ACK'
-    RESULT = 'RESULT'
-    FULL = 'FULL'
-
-
-@unique
-class Side(Enum):
-    """ 订单方向 """
-    BUY = 'BUY'
-    SELL = 'SELL'
-
-
-@unique
-class TimeInForce(Enum):
-    """ 有效方式 """
-    GTC = 'GTC'
-    IOC = 'IOC'
-    FOK = 'FOK'
+# order type
+LIMIT = 'LIMIT'
+MARKET = 'MARKET'
+STOP_LOSS = 'STOP_LOSS'
+STOP_LOSS_LIMIT = 'STOP_LOSS_LIMIT'
+TAKE_PROFIT = 'TAKE_PROFIT'
+TAKE_PROFIT_LIMIT = 'TAKE_PROFIT_LIMIT'
+LIMIT_MAKER = 'LIMIT_MAKER'
 
 
 @unique
