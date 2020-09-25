@@ -1,10 +1,8 @@
 """
 api_parse_params.py
 ----------------------
-解析请求参数
+解析请求参数，根据不同 type 构造不同参数
 """
-
-from binance_api import api_util
 
 
 # POST https://api.binance.com/api/v3/order/test

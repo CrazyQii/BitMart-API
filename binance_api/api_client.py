@@ -19,7 +19,7 @@ class Client:
         # entire url
         url = c.BASE_URL + req_url
 
-        # user authentication and set body
+        # user authentication header and set body
         if auth_type == c.AUTH_NONE:  # None
             headers = api_util.get_header(interval_num=1,
                                           interval_letter=c.IntervalLetter.MINUTE.value,

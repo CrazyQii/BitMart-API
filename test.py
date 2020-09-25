@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*
 """
-Bitmart.main
+test.py
 ~~~~~~~~~~~~~~~
-主文件：接收前端请求，初始化server，定义接口函数，程序入口
+测试接口
 
 """
 from binance_api.api_const import *
@@ -33,6 +33,9 @@ if __name__ == '__main__':
     # Get order
     # rep = binance.get_order(symbol="BTCUSDT", order_id=2131, orig_client_order_id=None)
     # {'code': -2013, 'msg': 'Order does not exist.'}
+
+    # Get all order
+    # rep = binance.get_all_order(symbol="BTCUSDT")
 
     # 账户信息
     rep = binance.get_account()

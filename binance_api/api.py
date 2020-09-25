@@ -82,7 +82,7 @@ class API:
         return self.clients.request_with_param(DELETE, API_OPEN_ORDER_URL, param, AUTH_TYPE_TRADE, weight=1)
 
     # GET https://api.binance.com/api/v3/order
-    def get_order(self, symbol: str, order_id, orig_client_order_id,  recv_window=5000):
+    def get_order(self, symbol: str, order_id, orig_client_order_id, recv_window=5000):
         if order_id is not None:
             param = {
                 'symbol': symbol,
@@ -105,24 +105,33 @@ class API:
         }
         return self.clients.request_with_param(GET, API_OPEN_ORDER_URL, param, AUTH_TYPE_TRADE, weight=1)
 
-    # ==========
-    # 存在问题
     # GET https://api.binance.com/api/v3/allOrders
     def get_all_order(self, symbol: str, order_id=None, start_time=None, end_time=None, limit=None, recv_window=5000):
-        param = {
-            'symbol': symbol,
+        param = dict()
+        param['symbol'] = symbol
+        param['recvWindow'] = recv_window
+        if order_id is not None:
+            param['orderId'] = order_id
+        if start_time is not None:
+            param['startTime'] = start_time
+        if end_time is not None:
+            param['endTime'] = end_time
+        if limit is not None:
+            param['limit'] = limit
+        return self.clients.request_with_param(GET, API_ALL_ORDER_URL, param, AUTH_TYPE_TRADE, weight=5)
 
-            'recvWindow': recv_window
-        }
-        return self.clients.request_with_param(GET, API_OPEN_ORDER_URL, param, AUTH_TYPE_TRADE, weight=5)
-
-    # ==========
-    # 存在问题
     # GET https://api.binance.com/api/v3/myTrades
     def get_my_trades(self, start_time=None, end_time=None, from_id=None, limit=None, recv_window=5000):
-        param = {
-            'recvWindow': recv_window
-        }
+        param = dict()
+        param['recvWindow'] = recv_window
+        if start_time is not None:
+            param['startTime'] = start_time
+        if end_time is not None:
+            param['endTime'] = end_time
+        if from_id is not None:
+            param['fromId'] = from_id
+        if limit is not None:
+            param['limit'] = limit
         return self.clients.request_with_param(GET, API_MY_TRADES_URL, param, AUTH_TYPE_USER_DATA, weight=5)
 
     # GET https://api.binance.com/api/v3/account
@@ -130,4 +139,4 @@ class API:
         param = {
             'recvWindow': recv_window
         }
-        return self.clients.request_with_param(GET, API_ACCOUNT_URL, param, AUTH_TYPE_USER_DATA, weight=1)
+        return self.clients.request_with_param(GET, API_ACCOUNT_URL, param, AUTH_TYPE_USER_DATA, weight=5)
