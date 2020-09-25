@@ -4,7 +4,7 @@ api_client.py
 封装请求，返回数据
 """
 from . import const as c, util
-from bitmart.cloud_utils import sign, get_timestamp, pre_substring
+from bitmart_api.util import sign, get_timestamp, pre_substring
 import requests
 import json
 

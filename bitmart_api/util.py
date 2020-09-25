@@ -5,6 +5,8 @@ Bitmart.util
 """
 
 from . import const as c
+import datetime
+import hmac
 
 
 def parse_params_to_str(param):
@@ -30,3 +32,17 @@ def get_header(api_key, sign_key, timestamp):
     if timestamp:
         headers[c.TIMESTAMP] = timestamp
     return headers
+
+
+def sign(message, secret_key):
+    mac = hmac.new(bytes(secret_key, encoding='utf8'), bytes(message, encoding='utf-8'), digestmod='sha256')
+    return mac.hexdigest()
+
+
+# timestamp + "#" + memo + "#" + queryString
+def pre_substring(timestamp, memo, body):
+    return f'{str(timestamp)}#{memo}#{body}'
+
+
+def get_timestamp():
+    return str(datetime.datetime.now().timestamp() * 1000).split('.')[0]
