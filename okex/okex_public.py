@@ -1,4 +1,3 @@
-import re
 import requests
 import datetime
 import traceback
@@ -75,24 +74,24 @@ class OkexPublic(object):
     def get_ticker(self, symbol):
         url = self.urlbase + "api/spot/v3/instruments/%s/ticker" % ('-'.join(symbol.split("_")))
         is_ok, okex_content = self.request("GET", url)
-        content = {
-            "bid_1_amount": None,
-            "symbol_id": symbol,
-            "url": url,
-            "fluctuation": None,
-            "base_volume": okex_content["base_volume_24h"],
-            "ask_1_amount": None,
-            "volume": okex_content["quote_volume_24h"],
-            "current_price": okex_content["last"],
-            "bid_1": okex_content["bid"],
-            "lowest_price": okex_content["low_24h"],
-            "ask_1": okex_content["ask"],
-            "highest_price": okex_content["high_24h"]
-        }
 
         if not is_ok:
-            self.output("get_ticker", content)
+            self.output("get_ticker", okex_content)
         else:
+            content = {
+                "bid_1_amount": None,
+                "symbol_id": symbol,
+                "url": url,
+                "fluctuation": None,
+                "base_volume": okex_content["base_volume_24h"],
+                "ask_1_amount": None,
+                "volume": okex_content["quote_volume_24h"],
+                "current_price": okex_content["last"],
+                "bid_1": okex_content["bid"],
+                "lowest_price": okex_content["low_24h"],
+                "ask_1": okex_content["ask"],
+                "highest_price": okex_content["high_24h"]
+            }
             return content
 
     def get_trades(self, symbol):
@@ -165,9 +164,9 @@ class OkexPublic(object):
 
 if __name__ == "__main__":
     okex = OkexPublic("https://www.okex.com/")
-    print (okex.get_exchange_status())
+    # print (okex.get_exchange_status())
     # print(okex.get_orderbook("BTC_USDT"))
     # print(okex.get_price("LTC_BTC"))
-    # print(okex.get_ticker("LTC_BTC"))
+    print(okex.get_ticker("LTC_BTC"))
     # print(okex.get_trades("LTC_BTC"))
     # print(okex.get_kline("LTC_BTC"))

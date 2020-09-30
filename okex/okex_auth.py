@@ -5,9 +5,9 @@ import datetime
 import base64
 import hmac
 import json
-from exchange_auth import ExchangeAuth
+from okex import okex_public
 
-class OkexAuth(ExchangeAuth):
+class OkexAuth(okex_public):
     def __init__(self, urlbase, api_key, api_secret, passphrase):
         self.urlbase = urlbase
         self.api_key = api_key
