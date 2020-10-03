@@ -1,10 +1,11 @@
 """
 公共接口
 """
+
 import requests
 
 
-class HooPublic:
+class QuoinePublic:
     def __init__(self, baseurl):
         self.baseurl = baseurl
 
@@ -17,6 +18,7 @@ class HooPublic:
                 resp = requests.post(url, data=params, headers=headers)
             else:
                 return False, 'check method, it is not exist'
+
             if resp.status_code == 200:
                 return True, resp.json()
             else:
@@ -36,35 +38,9 @@ class HooPublic:
                 'error_info': e
             }
             return False, error
-
+        
     def output(self, function_name, content):
         return {
             'function_name': function_name,
             'content': content
         }
-
-    # https://api.hoolgd.com/open/v1/tickers/market
-    def get_tickers_market(self):
-        url = self.baseurl + '/open/v1/tickers/market'
-        is_ok, content = self.request('GET', url)
-        if is_ok:
-            data = content['data']
-            tickers = {
-                'amount': [float(i['amount']) for i in data if i['amount']],
-                'amt_num': [[int(i['amt_num']) for i in data if i['amt_num']]],
-                'change': [float(i['change']) for i in data if i['change']],
-                'high': [float(i['high']) for i in data if i['high']],
-                'low': [float(i['low']) for i in data if i['low']],
-                'price': [float(i['price']) for i in data if i['price']],
-                'qty_num': [[int(i['qty_num']) for i in data if i['qty_num']]],
-                'symbol': [i['symbol'] for i in data if i['symbol']],
-                'volume': [float(i['volume']) for i in data if i['volume']]
-            }
-            return tickers
-        else:
-            return self.output('get_tickers_market', content)
-
-
-if __name__ == '__main__':
-    hoo = HooPublic('https://api.hoolgd.com')
-    print(hoo.get_tickers_market())

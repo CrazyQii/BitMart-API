@@ -172,7 +172,7 @@ class OkexAuth(okex_public):
 if __name__ == "__main__":
     okex = OkexAuth("https://www.okex.com", "", "", "bitmart")
     # print(okex.sign_message("123"))
-    # print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
+    print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # id1 = okex.place_order("XRP_BTC", 15, 0.0001, "sell")
     # id2 = okex.place_order("XRP_BTC", 10, 0.0002, "sell")
     # print(id1)
