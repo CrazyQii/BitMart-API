@@ -11,8 +11,10 @@ class HooPublic:
     def request(self, method, url, params=None, headers=None):
         try:
             if method == 'GET':
-                resp = requests.get(url, params=params, headers=headers) if params is not None \
-                    else resp = requests.get(url, headers=headers)
+                if params is not None:
+                    resp = requests.get(url, params=params, headers=headers)
+                else:
+                    resp = requests.get(url, headers=headers)
             elif method == 'POST':
                 resp = requests.post(url, data=params, headers=headers)
             else:
