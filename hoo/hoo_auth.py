@@ -1,5 +1,6 @@
 """
 鉴权接口
+2020-9-30 hlq
 """
 
 from faker import Faker
@@ -17,7 +18,7 @@ class HooAuth(HooPublic):
         self.api_key = api_key
         self.client_key = secret_key
 
-    def sign(self):
+    def sign_message(self):
         try:
             # signature string
             nonce = f.md5()
@@ -39,9 +40,8 @@ class HooAuth(HooPublic):
 
     def place_order(self, symbol: str, price: str, quantity: str, side: int):
         try:
-            print('> 请求下单')
             url = self.baseurl + '/open/v1/orders/place'
-            params = self.sign()
+            params = self.sign_message()
             params.update({
                 'symbol': symbol,
                 'price': price,
@@ -58,9 +58,8 @@ class HooAuth(HooPublic):
 
     def cancel_order(self, symbol: str, order_id: str, trade_no: str):
         try:
-            print('> 撤销订单')
             url = self.baseurl + '/open/v1/orders/cancel'
-            params = self.sign()
+            params = self.sign_message()
             params.update({
                 'symbol': symbol,
                 'order_id': order_id,
@@ -76,9 +75,8 @@ class HooAuth(HooPublic):
 
     def cancel_batch_order(self, symbol: str):
         try:
-            print('> 取消所有订单')
             url = self.baseurl + '/open/v1/orders/batcancel'
-            params = self.sign()
+            params = self.sign_message()
             params.update({'symbol': symbol})
             is_ok, content = self.request('POST', url, params)
             if is_ok:
@@ -92,7 +90,7 @@ class HooAuth(HooPublic):
         try:
             print('> 委托列表')
             url = self.baseurl + '/open/v1/orders/last'
-            params = self.sign()
+            params = self.sign_message()
             params.update({'symbol': symbol})
             is_ok, content = self.request('GET', url, params)
             if is_ok:
@@ -105,9 +103,8 @@ class HooAuth(HooPublic):
     def orders(self, symbol: str, pagenum: int = None, pagesize: int = None, side: int = None, start: int = None,
                end: int = None):
         try:
-            print('> 订单列表')
             url = self.baseurl + '/open/v1/orders'
-            params = self.sign()
+            params = self.sign_message()
             params.update({'symbol': symbol})
             params.update({'pagenum': pagenum}) if pagenum else ''
             params.update({'pagesize': pagesize}) if pagesize else ''
@@ -125,9 +122,8 @@ class HooAuth(HooPublic):
 
     def orders_detail(self, symbol: str, order_id: str):
         try:
-            print('> 成交明细')
             url = self.baseurl + '/open/v1/orders'
-            params = self.sign()
+            params = self.sign_message()
             params.update({'symbol': symbol, 'order_id': order_id})
 
             is_ok, content = self.request('GET', url, params)
@@ -137,6 +133,7 @@ class HooAuth(HooPublic):
                 return self.output('orders_detail', content)
         except Exception as e:
             print(e)
+
 
 if __name__ == '__main__':
     hoo = HooAuth('https://api.hoolgd.com', 'iJsVEJDESyTXdm8hRBuf79fANdwNB5',

@@ -1,12 +1,12 @@
+# -*- coding: utf-8 -*-
 """
 授权接口
+2020-10-4 hlq
 """
 
 from quoine.quoine_public import QuoinePublic
-import hmac
+import jwt
 import time
-import json
-import hashlib
 
 
 class QuoineAuth(QuoinePublic):
@@ -15,47 +15,105 @@ class QuoineAuth(QuoinePublic):
         self.token_id = token_id
         self.user_secret = user_secret
 
-    def signature(self, path):
+    def sign_message(self, path):
         """ Authentication """
-        payload = {
-            'path': path,
-            'nonce': round(time.time() * 1000),
-            'token_id': self.token_id
-        }
-        sign = hmac.new(bytes(self.user_secret, encoding='utf-8'), bytes(json.dumps(payload), encoding='utf-8'),
-                        digestmod=hashlib.sha256)
-        return sign.hexdigest()
+        try:
+            payload = {
+                'path': path,
+                'nonce': round(time.time() * 1000),
+                'token_id': self.token_id
+            }
+            sign = jwt.encode(payload, self.user_secret, algorithm='HS256')
+            return sign
+        except Exception as e:
+            print('-----Exception-----')
+            return e
 
     def headers(self, signature):
         """ 请求头 """
-        headers = {
-            'X-quoine-API-Version', '2',
-            'X-quoine-Auth', signature,
-            'Content-Type', 'application/json'
-        }
-        return headers
+        try:
+            headers = {
+                'X-Quoine-API-Version': '2',
+                'X-Quoine-Auth': signature,
+                'Content-Type': 'application/json'
+            }
+            return headers
+        except Exception as e:
+            print('-----Exception-----')
+            return e
 
-    def place_order(self, order_type: str, product_id: int, side: str, quantity: str, price: str, **kwargs):
-        url = self.baseurl + ' /orders/'
-        sign = self.signature(url)
-        headers = self.headers(sign)
-        params = {
-            'order_type': order_type,
-            'product_id': product_id,
-            'side': side,
-            'quantity': quantity,
-            'price': price
-        }
-        [params.update({key, value}) for key, value in kwargs.items()]
+    def place_order(self, order_type: str, product_id: int, side: str, quantity: float, price: float, **kwargs):
+        try:
+            url = self.baseurl + '/orders/'
+            sign_message = self.sign_message(url)
+            headers = self.headers(sign_message)
+            params = {
+                'order': {
+                    'order_type': order_type,
+                    'product_id': product_id,
+                    'side': side,
+                    'quantity': quantity,
+                    'price': price
+                }
+            }
+            if kwargs:
+                params.update(kwargs)
 
-        is_ok, content = self.request('POST', url, params=params, headers=headers)
-        if is_ok:
-            return content
-        else:
-            return self.output('place_order', content)
+            is_ok, content = self.request('POST', url, params=params, headers=headers)
+            if is_ok:
+                return content
+            else:
+                return self.output('place_order', content)
+        except Exception as e:
+            print('-----Exception place_order -----')
+            return e
+
+    def get_order(self, id: int):
+        try:
+            url = self.baseurl + f'/orders/{id}'
+            sign_message = self.sign_message(url)
+            headers = self.headers(sign_message)
+            is_ok, content = self.request('GET', url, headers=headers)
+            if is_ok:
+                return content
+            else:
+                return self.output('get_order', content)
+        except Exception as e:
+            print('-----Exception get_order-----')
+            return e
+
+    def cancel_order(self, id):
+        try:
+            url = self.baseurl + f'/orders/{id}/cancel'
+            sign_message = self.sign_message(url)
+            headers = self.headers(sign_message)
+            is_ok, content = self.request('PUT', url, headers=headers)
+            if is_ok:
+                return content
+            else:
+                return self.output('cancel_order', content)
+        except Exception as e:
+            print('-----Exception cancel_order-----')
+            return e
+
+    def get_fiat_account(self):
+        try:
+            url = self.baseurl + '/fiat_accounts'
+            sign_message = self.sign_message(url)
+            headers = self.headers(sign_message)
+            is_ok, content = self.request('GET', url, headers=headers)
+            if is_ok:
+                return content
+            else:
+                return self.output('get_fiat_account', content)
+        except Exception as e:
+            print('-----Exception get_fiat_account-----')
+            return e
 
 
 if __name__ == '__main__':
-
-    # 没有 API takens
-    quoine = QuoineAuth('https://api.liquid.com', '','')
+    quoine = QuoineAuth('https://api.liquid.com', '1671514','KD0qrYi5Gsrrai7vAgoA/8597SviZDYTxgx9+NlGd4ikmaboGRBhy5DbJAaQRXcGJaMNaT38lCf6BhsMrSju2Q==')
+    print(quoine.place_order('limit',1,'sell',0.01,500.0))  # You do not have permission，但是我开通了order读写权限
+    # print(quoine.get_order(1))
+    # print(quoine.cancel_order(1))
+    # print(quoine.get_fiat_account())
