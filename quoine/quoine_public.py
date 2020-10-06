@@ -57,13 +57,18 @@ class QuoinePublic:
                 url = self.baseurl + '/products'
                 is_ok, content = self.request('GET', url)
                 if is_ok:
-                    products = {
-                        'id': [i['id'] for i in content if i['id']],
-                        'product_type': [i['product_type'] for i in content if i['product_type']],
-                        'code': [i['code'] for i in content if i['code']],
-                        'market_ask': [i['market_ask'] for i in content if i['market_ask']],
-                        'market_bid': [i['market_bid'] for i in content if i['market_bid']],
-                    }
+                    products = []
+                    for product in content:
+                        products.append({
+                            'id': product['id'],
+                            'product_type': product['product_type'],
+                            'code': product['code'],
+                            'market_ask': product['market_ask'],
+                            'market_bid': product['market_bid'],
+                            'currency': product['currency'],
+                            'volume_24h': product['volume_24h'],
+                            'average_price': product['average_price']
+                        })
                     return products
                 else:
                     return self.output('get_products', content)
@@ -82,16 +87,20 @@ class QuoinePublic:
             url = self.baseurl + f'/products?perpetual={perpetual}'
             is_ok, content = self.request('GET', url)
             if is_ok:
-                products = {
-                    'id': [i['id'] for i in content if i['id']],
-                    'product_type': [i['product_type'] for i in content if i['product_type']],
-                    'code': [i['code'] for i in content if i['code']],
-                    'market_ask': [i['market_ask'] for i in content if i['market_ask']],
-                    'market_bid': [i['market_bid'] for i in content if i['market_bid']],
-                }
-                return products
+                return content
             else:
                 return self.output('get_perpetual_products', content)
+        except Exception as e:
+            return e
+
+    def get_order_book (self, id: int):
+        try:
+            url = self.baseurl + f'/products/{id}/price_levels'
+            is_ok, content = self.request('GET', url)
+            if is_ok:
+                return content
+            else:
+                return self.output('get_order_book', content)
         except Exception as e:
             return e
 
@@ -109,10 +118,23 @@ class QuoinePublic:
         except Exception as e:
             return e
 
+    def get_interest_rate(self):
+        try:
+            url = self.baseurl + '/ir_ladders/USD'
+            is_ok, content = self.request('GET', url)
+            if is_ok:
+                return content
+            else:
+                return self.output('get_executions', content)
+        except Exception as e:
+            return e
+
 
 if __name__ == '__main__':
     quoine = QuoinePublic('https://api.liquid.com')
     # print(quoine.get_products())
     # print(quoine.get_products(5))
     # print(quoine.get_perpetual_products(1))
-    # print(quoine.get_executions(2))
+    # print(quoine.get_order_book(5))
+    # print(quoine.get_executions(5))
+    # print(quoine.get_interest_rate())

@@ -165,8 +165,8 @@ class OkexPublic(object):
 if __name__ == "__main__":
     okex = OkexPublic("https://www.okex.com/")
     # print (okex.get_exchange_status())
-    print(okex.get_orderbook("BTC_USDT"))
+    # print(okex.get_orderbook("BTC_USDT"))
     # print(okex.get_price("LTC_BTC"))
     # print(okex.get_ticker("LTC_BTC"))
     # print(okex.get_trades("LTC_BTC"))
-    # print(okex.get_kline("LTC_BTC"))
+    print(okex.get_kline("LTC_BTC"))

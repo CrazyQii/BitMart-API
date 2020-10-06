@@ -5,11 +5,11 @@ import datetime
 import base64
 import hmac
 import json
-from okex import okex_public
+from okex.okex_public import OkexPublic
 
-class OkexAuth(okex_public):
+class OkexAuth(OkexPublic):
     def __init__(self, urlbase, api_key, api_secret, passphrase):
-        self.urlbase = urlbase
+        super().__init__(urlbase)
         self.api_key = api_key
         self.api_secret = api_secret
         self.passphrase = passphrase
@@ -42,7 +42,7 @@ class OkexAuth(okex_public):
                 "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase, 
                 "Content-Type": "application/json"
                 }
-            
+
             is_ok, content = self.request("POST", url, data = json.dumps(params), headers = headers)
             if is_ok:
                 return content["order_id"]
@@ -170,7 +170,7 @@ class OkexAuth(okex_public):
 
 
 if __name__ == "__main__":
-    okex = OkexAuth("https://www.okex.com", "", "", "bitmart")
+    okex = OkexAuth("https://www.okex.com/", "dda0063c-70fc-42b1-8390-281e77b532a5", "A06AFB73716F15DC1805D183BCE07BED", "okexpassphrase")
     # print(okex.sign_message("123"))
     print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # id1 = okex.place_order("XRP_BTC", 15, 0.0001, "sell")
@@ -178,6 +178,6 @@ if __name__ == "__main__":
     # print(id1)
     # print(okex.order_detail("XRP_BTC", id1))
     # print(okex.in_order_list("XRP_BTC"))
-    # print(okex.cancel_order("XRP_BTC", id1))
+    print(okex.cancel_order("XRP_BTC", id1))
     # print(okex.cancel_order("XRP_BTC", id2))
     # print(okex.wallet_balance())

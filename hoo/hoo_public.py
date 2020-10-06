@@ -51,21 +51,50 @@ class HooPublic:
             url = self.baseurl + '/open/v1/tickers/market'
             is_ok, content = self.request('GET', url)
             if is_ok:
-                data = content['data']
-                tickers = {
-                    'amount': [float(i['amount']) for i in data if i['amount']],
-                    'amt_num': [[int(i['amt_num']) for i in data if i['amt_num']]],
-                    'change': [float(i['change']) for i in data if i['change']],
-                    'high': [float(i['high']) for i in data if i['high']],
-                    'low': [float(i['low']) for i in data if i['low']],
-                    'price': [float(i['price']) for i in data if i['price']],
-                    'qty_num': [[int(i['qty_num']) for i in data if i['qty_num']]],
-                    'symbol': [i['symbol'] for i in data if i['symbol']],
-                    'volume': [float(i['volume']) for i in data if i['volume']]
-                }
-                return tickers
+                return content['data']
             else:
                 return self.output('get_tickers_market', content)
+        except Exception as e:
+            return e
+
+    def get_depth(self, symbol: str):
+        try:
+            url = self.baseurl + f'/open/v1/depth/market?symbol={symbol}'
+            is_ok, content = self.request('GET', url)
+            if is_ok:
+                result = {
+                    'bids': [],
+                    'asks': []
+                }
+                for item in content['data']['bids']:
+                    result['bids'].append([float(item['price']), float(item['quantity'])])
+                for item in content['data']['asks']:
+                    result['asks'].append([float(item['price']), float(item['quantity'])])
+                return result
+            else:
+                return self.output('get_depth', content)
+        except Exception as e:
+            return e
+
+    def get_trades(self, symbol: str):
+        try:
+            url = self.baseurl + f'/open/v1/trade/market?symbol={symbol}'
+            is_ok, content = self.request('GET', url)
+            if is_ok:
+                return content['data']
+            else:
+                return self.output('get_trades', content)
+        except Exception as e:
+            return e
+
+    def get_kline(self, symbol: str, type: str):
+        try:
+            url = self.baseurl + f'/open/v1/kline/market?symbol={symbol}&type={type}'
+            is_ok, content = self.request('GET', url)
+            if is_ok:
+                return content['data']
+            else:
+                return self.output('get_trades', content)
         except Exception as e:
             return e
 
@@ -73,3 +102,6 @@ class HooPublic:
 if __name__ == '__main__':
     hoo = HooPublic('https://api.hoolgd.com')
     # print(hoo.get_tickers_market())
+    # print(hoo.get_depth('BTC-USDT'))
+    # print(hoo.get_trades('BTC-USDT'))
+    print(hoo.get_kline('BTC-USDT', '1Min'))

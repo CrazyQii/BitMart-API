@@ -38,7 +38,7 @@ class HooAuth(HooPublic):
         except Exception as e:
             print(e)
 
-    def place_order(self, symbol: str, price: str, quantity: str, side: int):
+    def place_order(self, symbol: str, price: float, quantity: float, side: int):
         try:
             url = self.baseurl + '/open/v1/orders/place'
             params = self.sign_message()
@@ -50,7 +50,10 @@ class HooAuth(HooPublic):
             })
             is_ok, content = self.request('POST', url, params=params)
             if is_ok:
-                return content
+                if content['code'] == 0:
+                    return content['data']
+                else:
+                    return content['msg']
             else:
                 return self.output('post_place_order', content)
         except Exception as e:
@@ -80,7 +83,7 @@ class HooAuth(HooPublic):
             params.update({'symbol': symbol})
             is_ok, content = self.request('POST', url, params)
             if is_ok:
-                return content['data']
+                return content
             else:
                 return self.output('cancel_batch_order', content)
         except Exception as e:
@@ -128,7 +131,7 @@ class HooAuth(HooPublic):
 
             is_ok, content = self.request('GET', url, params)
             if is_ok:
-                return content
+                return content['data']
             else:
                 return self.output('orders_detail', content)
         except Exception as e:
@@ -136,11 +139,10 @@ class HooAuth(HooPublic):
 
 
 if __name__ == '__main__':
-    hoo = HooAuth('https://api.hoolgd.com', 'iJsVEJDESyTXdm8hRBuf79fANdwNB5',
-                  'J7EqDCc6FaKA8n5nCy8WJ1uoM4HSZeg2k43mepX5TNjz1qLHUs')
-    # print(hoo.place_order('UMA-USDT', '1.0016', '2', -1))
+    hoo = HooAuth('https://api.hoolgd.com', '', '')
+    # print(hoo.place_order('EOS-USDT', 1.0016, 11, 1))
     # print(hoo.cancel_order('UMA-USDT', '1', '2'))
-    # print(hoo.cancel_batch_order('UMA-USDT'))
+    # print(hoo.cancel_batch_order('EOS-USDT'))
     # print(hoo.last_order('BTC-USDT'))
     # print(hoo.orders('BTC-USDT'))
     # print(hoo.orders_detail('BTC-USDT', 'df'))
