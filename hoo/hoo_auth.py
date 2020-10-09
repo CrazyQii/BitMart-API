@@ -13,10 +13,10 @@ f = Faker(locale='zh-CN')
 
 
 class HooAuth(HooPublic):
-    def __init__(self, baseurl, api_key, secret_key):
-        super().__init__(baseurl)
+    def __init__(self, urlbase, api_key, api_secret):
+        super().__init__(urlbase)
         self.api_key = api_key
-        self.client_key = secret_key
+        self.client_key = api_secret
 
     def sign_message(self):
         try:
@@ -27,7 +27,6 @@ class HooAuth(HooPublic):
             # signature method
             digest = hmac.new(bytes(self.client_key, encoding='utf-8'), bytes(sign_str, encoding='utf-8'),
                               digestmod=hashlib.sha256).hexdigest()
-
             sign = {
                 'nonce': nonce,
                 'ts': ts,
@@ -40,109 +39,100 @@ class HooAuth(HooPublic):
 
     def place_order(self, symbol: str, price: float, quantity: float, side: int):
         try:
-            url = self.baseurl + '/open/v1/orders/place'
+            url = self.urlbase + '/open/v1/orders/place'
             params = self.sign_message()
             params.update({
-                'symbol': symbol,
+                'symbol': self.symbol_convert(symbol),
                 'price': price,
                 'quantity': quantity,
                 'side': side
             })
-            is_ok, content = self.request('POST', url, params=params)
+            is_ok, content = self.request('POST', url, data=params)
             if is_ok:
-                if content['code'] == 0:
-                    return content['data']
-                else:
-                    return content['msg']
+                return content
             else:
-                return self.output('post_place_order', content)
+                self.output('place_order', content)
         except Exception as e:
             print(e)
 
     def cancel_order(self, symbol: str, order_id: str, trade_no: str):
         try:
-            url = self.baseurl + '/open/v1/orders/cancel'
+            url = self.urlbase + '/open/v1/orders/cancel'
             params = self.sign_message()
             params.update({
-                'symbol': symbol,
+                'symbol': self.symbol_convert(symbol),
                 'order_id': order_id,
                 'trade_no': trade_no
             })
-            is_ok, content = self.request('POST', url, params=params)
+            is_ok, content = self.request('POST', url, data=params)
             if is_ok:
                 return content
             else:
-                return self.output('cancel_order', content)
+                self.output('cancel_order', content)
         except Exception as e:
             print(e)
 
     def cancel_batch_order(self, symbol: str):
         try:
-            url = self.baseurl + '/open/v1/orders/batcancel'
+            url = self.urlbase + '/open/v1/orders/batcancel'
             params = self.sign_message()
-            params.update({'symbol': symbol})
-            is_ok, content = self.request('POST', url, params)
+            params.update({'symbol': self.symbol_convert(symbol)})
+            is_ok, content = self.request('POST', url, data=params)
             if is_ok:
                 return content
             else:
-                return self.output('cancel_batch_order', content)
+                self.output('cancel_batch_order', content)
         except Exception as e:
             print(e)
 
     def last_order(self, symbol: str):
         try:
-            print('> 委托列表')
-            url = self.baseurl + '/open/v1/orders/last'
+            url = self.urlbase + '/open/v1/orders/last'
             params = self.sign_message()
-            params.update({'symbol': symbol})
-            is_ok, content = self.request('GET', url, params)
+            params.update({'symbol': self.symbol_convert(symbol)})
+            is_ok, content = self.request('GET', url, params=params)
             if is_ok:
-                return content['data']
+                return content
             else:
-                return self.output('order_last', content)
+                self.output('last_order', content)
         except Exception as e:
             print(e)
 
-    def orders(self, symbol: str, pagenum: int = None, pagesize: int = None, side: int = None, start: int = None,
+    def open_orders(self, symbol: str, pagenum: int = None, pagesize: int = None, side: int = None, start: int = None,
                end: int = None):
         try:
-            url = self.baseurl + '/open/v1/orders'
+            url = self.urlbase + '/open/v1/orders'
             params = self.sign_message()
-            params.update({'symbol': symbol})
-            params.update({'pagenum': pagenum}) if pagenum else ''
-            params.update({'pagesize': pagesize}) if pagesize else ''
-            params.update({'side': side}) if side else ''
-            params.update({'start': start}) if start else ''
-            params.update({'end': end}) if end else ''
+            params.update({'symbol': self.symbol_convert(symbol)})
 
-            is_ok, content = self.request('GET', url, params)
+            is_ok, content = self.request('GET', url, params=params)
             if is_ok:
                 return content['data']
             else:
-                return self.output('orders', content)
+                return self.output('open_orders', content)
         except Exception as e:
             print(e)
 
     def orders_detail(self, symbol: str, order_id: str):
         try:
-            url = self.baseurl + '/open/v1/orders'
+            url = self.urlbase + '/open/v1/orders'
             params = self.sign_message()
-            params.update({'symbol': symbol, 'order_id': order_id})
+            params.update({'symbol': self.symbol_convert(symbol), 'order_id': order_id})
 
-            is_ok, content = self.request('GET', url, params)
+            is_ok, content = self.request('GET', url, params=params)
             if is_ok:
-                return content['data']
+                return content
             else:
-                return self.output('orders_detail', content)
+                self.output('orders_detail', content)
         except Exception as e:
             print(e)
 
 
 if __name__ == '__main__':
-    hoo = HooAuth('https://api.hoolgd.com', '', '')
-    # print(hoo.place_order('EOS-USDT', 1.0016, 11, 1))
-    # print(hoo.cancel_order('UMA-USDT', '1', '2'))
-    # print(hoo.cancel_batch_order('EOS-USDT'))
-    # print(hoo.last_order('BTC-USDT'))
-    # print(hoo.orders('BTC-USDT'))
-    # print(hoo.orders_detail('BTC-USDT', 'df'))
+    hoo = HooAuth('https://api.hoolgd.com', "iJsVEJDESyTXdm8hRBuf79fANdwNB5", "J7EqDCc6FaKA8n5nCy8WJ1uoM4HSZeg2k43mepX5TNjz1qLHUs")
+    print(hoo.place_order('EOS_USDT', 1.0016, 11, 1))
+    # print(hoo.cancel_order('UMA_USDT', '1', '2'))
+    # print(hoo.cancel_batch_order('EOS_USDT'))
+    # print(hoo.last_order('BTC_USDT'))
+    # print(hoo.open_orders('BTC_USDT'))
+    # print(hoo.orders_detail('BTC_USDT', '1'))

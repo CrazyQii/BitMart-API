@@ -23,7 +23,7 @@ class OkexAuth(OkexPublic):
             d = mac.digest()
             return base64.b64encode(d)
         except Exception as e:
-            print (e)
+            print(e)
 
     def place_order(self, symbol, amount, price, side):
         try:
@@ -178,6 +178,6 @@ if __name__ == "__main__":
     # print(id1)
     # print(okex.order_detail("XRP_BTC", id1))
     # print(okex.in_order_list("XRP_BTC"))
-    print(okex.cancel_order("XRP_BTC", id1))
+    # print(okex.cancel_order("XRP_BTC", id1))
     # print(okex.cancel_order("XRP_BTC", id2))
     # print(okex.wallet_balance())

@@ -3,63 +3,62 @@
 2020-9-28 hlq
 """
 import requests
+import traceback
 
 
 class HooPublic:
-    def __init__(self, baseurl):
-        self.baseurl = baseurl
+    def __init__(self, urlbase):
+        self.urlbase = urlbase
 
-    def request(self, method, url, params=None, headers=None):
+    def symbol_convert(self, symbol: str):
+        return '-'.join(symbol.split('_'))
+
+    def request(self, method, url, params=None, data=None, headers=None):
         try:
-            if method == 'GET':
-                if params is not None:
-                    resp = requests.get(url, params=params, headers=headers)
-                else:
-                    resp = requests.get(url, headers=headers)
-            elif method == 'POST':
-                resp = requests.post(url, data=params, headers=headers)
-            else:
-                return False, 'check method, it is not exist'
+            resp = requests.request(method, url, params=params, data=data, headers=headers)
+
             if resp.status_code == 200:
                 return True, resp.json()
             else:
                 error = {
-                    'status_code': resp.status_code,
+                    'code': resp.status_code,
                     'method': method,
                     'url': url,
-                    'params': params,
-                    'resp': resp.text
+                    'data': data,
+                    'msg': resp.text
                 }
                 return False, error
         except requests.exceptions.RequestException as e:
-            print('----- Requests Exception -----')
             error = {
                 'method': method,
                 'url': url,
-                'error_info': e
+                'data': data,
+                'traceback': traceback.format_exc(),
+                'error': e
             }
             return False, error
 
     def output(self, function_name, content):
-        return {
+        info = {
             'function_name': function_name,
             'content': content
         }
+        print(info)
 
     def get_tickers_market(self):
         try:
-            url = self.baseurl + '/open/v1/tickers/market'
+            url = self.urlbase + '/open/v1/tickers/market'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content['data']
             else:
-                return self.output('get_tickers_market', content)
+                self.output('get_tickers_market', content)
         except Exception as e:
-            return e
+            print(e)
 
     def get_depth(self, symbol: str):
         try:
-            url = self.baseurl + f'/open/v1/depth/market?symbol={symbol}'
+            url = self.urlbase + f'/open/v1/depth/market?symbol={self.symbol_convert(symbol)}'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 result = {
@@ -72,36 +71,36 @@ class HooPublic:
                     result['asks'].append([float(item['price']), float(item['quantity'])])
                 return result
             else:
-                return self.output('get_depth', content)
+                self.output('get_depth', content)
         except Exception as e:
-            return e
+            print(e)
 
     def get_trades(self, symbol: str):
         try:
-            url = self.baseurl + f'/open/v1/trade/market?symbol={symbol}'
+            url = self.urlbase + f'/open/v1/trade/market?symbol={self.symbol_convert(symbol)}'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content['data']
             else:
-                return self.output('get_trades', content)
+                self.output('get_trades', content)
         except Exception as e:
-            return e
+            print(e)
 
     def get_kline(self, symbol: str, type: str):
         try:
-            url = self.baseurl + f'/open/v1/kline/market?symbol={symbol}&type={type}'
+            url = self.urlbase + f'/open/v1/kline/market?symbol={self.symbol_convert(symbol)}&type={type}'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content['data']
             else:
-                return self.output('get_trades', content)
+                self.output('get_trades', content)
         except Exception as e:
-            return e
+            print(e)
 
 
 if __name__ == '__main__':
     hoo = HooPublic('https://api.hoolgd.com')
     # print(hoo.get_tickers_market())
-    # print(hoo.get_depth('BTC-USDT'))
-    # print(hoo.get_trades('BTC-USDT'))
-    print(hoo.get_kline('BTC-USDT', '1Min'))
+    # print(hoo.get_depth('BTC_USDT'))
+    # print(hoo.get_trades('BTC_USDT'))
+    # print(hoo.get_kline('BTC_USDT', '1Min'))

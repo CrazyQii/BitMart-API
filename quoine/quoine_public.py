@@ -4,57 +4,52 @@
 """
 
 import requests
-import json
+import traceback
 
 
 class QuoinePublic:
-    def __init__(self, baseurl):
-        self.baseurl = baseurl
+    def __init__(self, urlbase):
+        self.urlbase = urlbase
 
-    def request(self, method, url, params=None, headers=None):
+    def symbol_convert(self, symbol: str):
+        return '-'.join(symbol.split('_'))
+
+    def request(self, method, url, params=None, data=None, headers=None):
         try:
-            if method == 'GET':
-                if params is not None:
-                    resp = requests.get(url, params=params, headers=headers)
-                else:
-                    resp = requests.get(url, headers=headers)
-            elif method == 'POST':
-                resp = requests.post(url, data=json.dumps(params), headers=headers)
-            elif method == 'PUT':
-                resp = requests.put(url, headers=headers)
-            else:
-                return False, 'please check method, it does not exist'
+            resp = requests.request(method, url, params=params, data=data, headers=headers)
 
             if resp.status_code == 200:
                 return True, resp.json()
             else:
                 error = {
-                    'status_code': resp.status_code,
+                    'code': resp.status_code,
                     'method': method,
                     'url': url,
-                    'params': params,
-                    'resp': resp.text
+                    'data': data,
+                    'msg': resp.text
                 }
                 return False, error
         except requests.exceptions.RequestException as e:
-            print('----- Requests Exception -----')
             error = {
                 'method': method,
                 'url': url,
-                'error_info': e
+                'data': data,
+                'traceback': traceback.format_exc(),
+                'error': e
             }
             return False, error
 
     def output(self, function_name, content):
-        return {
+        info = {
             'function_name': function_name,
             'content': content
         }
+        print(info)
 
-    def get_products(self, id: int=None):
+    def get_products(self, id: int = None):
         try:
             if id is None:
-                url = self.baseurl + '/products'
+                url = self.urlbase + '/products'
                 is_ok, content = self.request('GET', url)
                 if is_ok:
                     products = []
@@ -71,63 +66,63 @@ class QuoinePublic:
                         })
                     return products
                 else:
-                    return self.output('get_products', content)
+                    self.output('get_products', content)
             else:
-                url = self.baseurl + f'/products/{id}'
+                url = self.urlbase + f'/products/{id}'
                 is_ok, content = self.request('GET', url)
                 if is_ok:
                     return content
                 else:
-                    return self.output('get_products', content)
+                    self.output('get_products', content)
         except Exception as e:
-            return e
+            print(e)
 
     def get_perpetual_products(self, perpetual: int):
         try:
-            url = self.baseurl + f'/products?perpetual={perpetual}'
+            url = self.urlbase + f'/products?perpetual={perpetual}'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content
             else:
-                return self.output('get_perpetual_products', content)
+                self.output('get_perpetual_products', content)
         except Exception as e:
-            return e
+            print(e)
 
-    def get_order_book (self, id: int):
+    def get_orderbook(self, id: int):
         try:
-            url = self.baseurl + f'/products/{id}/price_levels'
+            url = self.urlbase + f'/products/{id}/price_levels'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content
             else:
-                return self.output('get_order_book', content)
+                self.output('get_orderbook', content)
         except Exception as e:
-            return e
+            print(e)
 
     def get_executions(self, product_id: int, limit: int = None, page: int = None):
         try:
             if limit is None and page is None:
-                url = self.baseurl + f'/executions?product_id={product_id}'
+                url = self.urlbase + f'/executions?product_id={product_id}'
             else:
-                url = self.baseurl + f'/executions?product_id={product_id}&limit={limit}&page={page}'
+                url = self.urlbase + f'/executions?product_id={product_id}&limit={limit}&page={page}'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content
             else:
-                return self.output('get_executions', content)
+                self.output('get_executions', content)
         except Exception as e:
-            return e
+            print(e)
 
     def get_interest_rate(self):
         try:
-            url = self.baseurl + '/ir_ladders/USD'
+            url = self.urlbase + '/ir_ladders/USD'
             is_ok, content = self.request('GET', url)
             if is_ok:
                 return content
             else:
                 return self.output('get_executions', content)
         except Exception as e:
-            return e
+            print(e)
 
 
 if __name__ == '__main__':
@@ -135,6 +130,6 @@ if __name__ == '__main__':
     # print(quoine.get_products())
     # print(quoine.get_products(5))
     # print(quoine.get_perpetual_products(1))
-    # print(quoine.get_order_book(5))
+    # print(quoine.get_orderbook(5))
     # print(quoine.get_executions(5))
     # print(quoine.get_interest_rate())
