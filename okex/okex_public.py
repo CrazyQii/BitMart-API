@@ -153,6 +153,7 @@ class OkexPublic(object):
             response_trade = requests.get(url_trade)
             if response_trade.status_code != 200:
                 return False
+
             current_timestamp = int(time.time())
             last_trade_timestamp = int(time.mktime(time.strptime(response_trade.json()["timestamp"], "%Y-%m-%dT%H:%M:%S.%fZ")))
             if (current_timestamp - last_trade_timestamp) > 5 * 60:
@@ -164,9 +165,9 @@ class OkexPublic(object):
 
 if __name__ == "__main__":
     okex = OkexPublic("https://www.okex.com/")
-    # print (okex.get_exchange_status())
+    # print(okex.get_exchange_status())
     # print(okex.get_orderbook("BTC_USDT"))
-    print(okex.get_price("LTC_BTC"))
+    # print(okex.get_price("LTC_BTC"))
     # print(okex.get_ticker("LTC_BTC"))
-    # print(okex.get_trades("LTC_BTC"))
+    print(okex.get_trades("LTC_BTC"))
     # print(okex.get_kline("LTC_BTC"))

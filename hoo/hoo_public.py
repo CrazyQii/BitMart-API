@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 """
-公共接口
+hoo公共接口
 2020-9-28 hlq
 """
 import requests
@@ -10,10 +11,11 @@ class HooPublic:
     def __init__(self, urlbase):
         self.urlbase = urlbase
 
-    def symbol_convert(self, symbol: str):
+    def _symbol_convert(self, symbol: str):
+        """ convert symbol to appropriate format """
         return '-'.join(symbol.split('_'))
 
-    def request(self, method, url, params=None, data=None, headers=None):
+    def _request(self, method, url, params=None, data=None, headers=None):
         try:
             resp = requests.request(method, url, params=params, data=data, headers=headers)
 
@@ -38,69 +40,124 @@ class HooPublic:
             }
             return False, error
 
-    def output(self, function_name, content):
+    def _output(self, function_name, content):
+        """ output error info """
         info = {
             'function_name': function_name,
             'content': content
         }
         print(info)
 
-    def get_tickers_market(self):
+    def get_price(self, symbol: str):
         try:
             url = self.urlbase + '/open/v1/tickers/market'
-            is_ok, content = self.request('GET', url)
+            is_ok, content = self._request('GET', url)
             if is_ok:
-                return content['data']
+                for ticker in content['data']:
+                    if ticker['symbol'] == self._symbol_convert(symbol):
+                        return ticker['price']
+                return False
             else:
-                self.output('get_tickers_market', content)
+                self._output('get_price', content)
         except Exception as e:
             print(e)
+            return None
 
-    def get_depth(self, symbol: str):
+    def get_orderbook(self, symbol: str):
         try:
-            url = self.urlbase + f'/open/v1/depth/market?symbol={self.symbol_convert(symbol)}'
-            is_ok, content = self.request('GET', url)
+            url = self.urlbase + f'/open/v1/depth/market?symbol={self._symbol_convert(symbol)}'
+            is_ok, content = self._request('GET', url)
             if is_ok:
-                result = {
+                orderbook = {
                     'bids': [],
                     'asks': []
                 }
                 for item in content['data']['bids']:
-                    result['bids'].append([float(item['price']), float(item['quantity'])])
+                    orderbook['bids'].append([float(item['price']), float(item['quantity'])])
                 for item in content['data']['asks']:
-                    result['asks'].append([float(item['price']), float(item['quantity'])])
-                return result
+                    orderbook['asks'].append([float(item['price']), float(item['quantity'])])
+                return orderbook
             else:
-                self.output('get_depth', content)
+                self._output('get_depth', content)
+        except Exception as e:
+            print(e)
+
+    def get_ticker(self, symbol: str):
+        try:
+            url = self.urlbase + '/open/v1/tickers/market'
+            is_ok, content = self._request('GET', url)
+            if is_ok:
+                for ticker in content['data']:
+                    if ticker['symbol'] == self._symbol_convert(symbol):
+                        result = {
+                            "bid_1_amount": None,
+                            "symbol_id": symbol,
+                            "url": url,
+                            "fluctuation": ticker['change'],
+                            "base_volume": None,
+                            "ask_1_amount": None,
+                            "volume": ticker["volume"],
+                            "current_price": ticker["price"],
+                            "bid_1": None,
+                            "lowest_price": ticker["low"],
+                            "ask_1": None,
+                            "highest_price": ticker["high"]
+                        }
+                        return result
+                return None
+            else:
+                self._output('get_ticker', content)
         except Exception as e:
             print(e)
 
     def get_trades(self, symbol: str):
         try:
-            url = self.urlbase + f'/open/v1/trade/market?symbol={self.symbol_convert(symbol)}'
-            is_ok, content = self.request('GET', url)
+            url = self.urlbase + f'/open/v1/trade/market?symbol={self._symbol_convert(symbol)}'
+            is_ok, content = self._request('GET', url)
             if is_ok:
-                return content['data']
+                trades = []
+                for trade in content['data']:
+                    trades.append({
+                        'count': trade['volume'],
+                        'amount': trade['amount'],
+                        'type': 'buy' if trade['side'] == 1 else 'sell',
+                        'price': trade['price'],
+                        'order_time': trade['time']
+                    })
+                return trades
             else:
-                self.output('get_trades', content)
+                self._output('get_trades', content)
         except Exception as e:
             print(e)
 
-    def get_kline(self, symbol: str, type: str):
+    def get_kline(self, symbol: str, time_period=60):
         try:
-            url = self.urlbase + f'/open/v1/kline/market?symbol={self.symbol_convert(symbol)}&type={type}'
-            is_ok, content = self.request('GET', url)
+            url = self.urlbase + f'/open/v1/kline/market?symbol={self._symbol_convert(symbol)}&type={int(time_period/60)}Min'
+
+            is_ok, content = self._request('GET', url)
             if is_ok:
+                lines = []
+                for line in content['data']:
+                    lines.append({
+                        'timestamp': line['time'],
+                        'volume': line['volume'],
+                        'open_price': line['open'],
+                        'current_price': line['close'],
+                        'lowest_price': line['low'],
+                        'highest_price': line['high']
+                    })
+
                 return content['data']
             else:
-                self.output('get_trades', content)
+                self._output('get_trades', content)
         except Exception as e:
             print(e)
 
 
 if __name__ == '__main__':
     hoo = HooPublic('https://api.hoolgd.com')
-    # print(hoo.get_tickers_market())
-    # print(hoo.get_depth('BTC_USDT'))
+    # print(hoo.get_price('BTC_USDT'))
+    # print(hoo.get_orderbook('BTC_USDT'))
+    # print(hoo.get_ticker('BTC_USDT'))
     # print(hoo.get_trades('BTC_USDT'))
-    # print(hoo.get_kline('BTC_USDT', '1Min'))
+    # print(hoo.get_kline('BTC_USDT'))

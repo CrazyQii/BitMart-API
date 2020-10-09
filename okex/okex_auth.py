@@ -101,7 +101,7 @@ class OkexAuth(OkexPublic):
                         "symbol": symbol, 
                         "fees": None, 
                         "original_amount": content["size"],  
-                        "entrust_id": entrust_id, 
+                        "entrust_id": entrust_id,
                         "side": content["side"]
                         }
             else:
@@ -126,17 +126,17 @@ class OkexAuth(OkexPublic):
                 results = []
                 for order in content:
                     results.append({
-                                    "status": order["state"], 
-                                    "remaining_amount": float(order["size"]) - float(order["filled_size"]), 
-                                    "timestamp": order["created_at"], 
-                                    "price": order["price"], 
-                                    "executed_amount": order["filled_size"], 
-                                    "symbol": symbol, 
-                                    "fees": None, 
-                                    "original_amount": order["size"],  
-                                    "entrust_id": order["order_id"], 
-                                    "side": order["side"]
-                                    })
+                        "status": order["state"],
+                        "remaining_amount": float(order["size"]) - float(order["filled_size"]),
+                        "timestamp": order["created_at"],
+                        "price": order["price"],
+                        "executed_amount": order["filled_size"],
+                        "symbol": symbol,
+                        "fees": None,
+                        "original_amount": order["size"],
+                        "entrust_id": order["order_id"],
+                        "side": order["side"]
+                        })
                 return results
                  
             else:
@@ -172,12 +172,12 @@ class OkexAuth(OkexPublic):
 if __name__ == "__main__":
     okex = OkexAuth("https://www.okex.com/", "dda0063c-70fc-42b1-8390-281e77b532a5", "A06AFB73716F15DC1805D183BCE07BED", "okexpassphrase")
     # print(okex.sign_message("123"))
-    print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
+    # print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # id1 = okex.place_order("XRP_BTC", 15, 0.0001, "sell")
     # id2 = okex.place_order("XRP_BTC", 10, 0.0002, "sell")
     # print(id1)
     # print(okex.order_detail("XRP_BTC", id1))
-    # print(okex.in_order_list("XRP_BTC"))
+    # print(okex.open_orders("XRP_BTC"))
     # print(okex.cancel_order("XRP_BTC", id1))
     # print(okex.cancel_order("XRP_BTC", id2))
-    # print(okex.wallet_balance())
+    print(okex.wallet_balance())
