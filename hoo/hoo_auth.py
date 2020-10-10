@@ -14,10 +14,11 @@ f = Faker(locale='zh-CN')
 
 
 class HooAuth(HooPublic):
-    def __init__(self, urlbase, api_key, api_secret):
+    def __init__(self, urlbase, api_key, api_secret, passphrase=None):
         super().__init__(urlbase)
         self.api_key = api_key
-        self.client_key = api_secret
+        self.api_secret = api_secret
+        self.passphrase = passphrase
 
     def _sign_message(self):
         """ authtication """
@@ -27,7 +28,7 @@ class HooAuth(HooPublic):
             ts = int(time.time())
             sign_str = f'client_id={self.api_key}&nonce={nonce}&ts={ts}'
             # signature method
-            digest = hmac.new(bytes(self.client_key, encoding='utf-8'), bytes(sign_str, encoding='utf-8'),
+            digest = hmac.new(bytes(self.api_secret, encoding='utf-8'), bytes(sign_str, encoding='utf-8'),
                               digestmod=hashlib.sha256).hexdigest()
             sign = {
                 'nonce': nonce,

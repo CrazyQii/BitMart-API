@@ -11,10 +11,11 @@ import json
 
 
 class QuoineAuth(QuoinePublic):
-    def __init__(self, urlbase, api_key, api_secret):
+    def __init__(self, urlbase, api_key, api_secret, passphrase=None):
         super().__init__(urlbase)
         self.token_id = api_key
         self.user_secret = api_secret
+        self.passphrase = passphrase
 
     def _sign_message(self, path):
         """ Authentication """

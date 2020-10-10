@@ -7,6 +7,7 @@ import hmac
 import json
 from okex.okex_public import OkexPublic
 
+
 class OkexAuth(OkexPublic):
     def __init__(self, urlbase, api_key, api_secret, passphrase):
         super().__init__(urlbase)
