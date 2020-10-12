@@ -156,7 +156,7 @@ class HooPublic:
 
 if __name__ == '__main__':
     hoo = HooPublic('https://api.hoolgd.com')
-    # print(hoo.get_price('BTC_USDT'))
+    print(hoo.get_price('BTC_USDT'))
     # print(hoo.get_orderbook('BTC_USDT'))
     # print(hoo.get_ticker('BTC_USDT'))
     # print(hoo.get_trades('BTC_USDT'))
