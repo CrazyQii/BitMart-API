@@ -71,7 +71,7 @@ class QuoinePublic:
             url = self.urlbase + f'/products/{self._product_id(symbol)}'
             is_ok, content = self._request('GET', url)
             if is_ok:
-                return content['last_price_24h']
+                return float(content['last_price_24h'])
             else:
                 self._output('get_products', content)
                 return None

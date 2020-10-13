@@ -187,7 +187,7 @@ class QuoineAuth(QuoinePublic):
 
 
 if __name__ == '__main__':
-    quoine = QuoineAuth('https://api.liquid.com', '1672539', "brSxqeetDWhm9GpUFLV9CsoED2d17J91GHy7UEzK+MJpP20WnkHTtA3Q1bvcOsooCo85KkYJmZW8jaLd8NXIuA==")
+    quoine = QuoineAuth('https://api.liquid.com', '', "")
     # print(quoine.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # order_id = quoine.place_order("XRP_BTC", 30, 0.0002, "sell")
     # print(quoine.cancel_order('XRP_BTC', 1))

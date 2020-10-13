@@ -160,7 +160,7 @@ class HooAuth(HooPublic):
 
 
 if __name__ == '__main__':
-    hoo = HooAuth('https://api.hoolgd.com', 'iJsVEJDESyTXdm8hRBuf79fANdwNB5', 'J7EqDCc6FaKA8n5nCy8WJ1uoM4HSZeg2k43mepX5TNjz1qLHUs')
+    hoo = HooAuth('https://api.hoolgd.com', '', '')
     # print(hoo.place_order('EOS_USDT', 1.0016, 11, 'sell'))
     # print(hoo.order_detail('BTC_USDT', '1'))
     # print(hoo.open_orders('BTC_USDT'))

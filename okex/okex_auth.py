@@ -171,7 +171,7 @@ class OkexAuth(OkexPublic):
 
 
 if __name__ == "__main__":
-    okex = OkexAuth("https://www.okex.com/", "dda0063c-70fc-42b1-8390-281e77b532a5", "A06AFB73716F15DC1805D183BCE07BED", "okexpassphrase")
+    okex = OkexAuth("https://www.okex.com/", "", "", "")
     # print(okex.sign_message("123"))
     # print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # id1 = okex.place_order("XRP_BTC", 15, 0.0001, "sell")

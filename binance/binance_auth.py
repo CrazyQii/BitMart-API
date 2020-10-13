@@ -159,7 +159,7 @@ class BinanceAuth(BinancePublic):
 
 
 if __name__ == '__main__':
-    binance = BinanceAuth('https://api.binance.com', 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh', 'GS6Us3YWMw7sQQMEm5uC90CrgFcvtSOlGyz3PzWA5KXsUamYG4Y4ieqW6oziKZ72')
+    binance = BinanceAuth('https://api.binance.com', '', '')
     # print(binance.place_order('BTC_USDT', 1, 0.1, 'buy'))
     # print(binance.order_detail('BTC_USDT', '1'))
     # print(binance.open_orders('BTC_USDT'))

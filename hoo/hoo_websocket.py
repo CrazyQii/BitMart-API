@@ -208,8 +208,7 @@ class HooWss(object):
 
 if __name__ == "__main__":
 
-    hoo = HooWss('wss://api.hoolgd.com/ws', "iJsVEJDESyTXdm8hRBuf79fANdwNB5",
-                                  "J7EqDCc6FaKA8n5nCy8WJ1uoM4HSZeg2k43mepX5TNjz1qLHUs")
+    hoo = HooWss('wss://api.hoolgd.com/ws', "", "")
     # hoo.sub_hb()
 
     hoo.sub_kline('BTC_USDT')

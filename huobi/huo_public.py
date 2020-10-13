@@ -53,7 +53,8 @@ class HuoPublic(object):
             url = self.urlbase + f'/market/detail/merged?symbol={self._symbol_convert(symbol)}'
             is_ok, content = self._request('GET', url)
             if is_ok:
-                return content['close']
+                content = content['tick']
+                return float(content['close'])
             else:
                 self._output('get_price', content)
         except Exception as e:
@@ -62,9 +63,10 @@ class HuoPublic(object):
 
     def get_orderbook(self, symbol: str, step=0):
         try:
-            url = self.urlbase + f'/market/depth?symbol={self._symbol_convert(symbol)}&step=step{step}'
+            url = self.urlbase + f'/market/depth?symbol={self._symbol_convert(symbol)}&type=step{step}'
             is_ok, content = self._request('GET', url)
             if is_ok:
+                content = content['tick']
                 orderbook = {
                     'bids': content['bids'],
                     'asks': content['asks']
@@ -80,6 +82,7 @@ class HuoPublic(object):
             url = self.urlbase + f'/market/detail/merged?symbol={self._symbol_convert(symbol)}'
             is_ok, content = self._request('GET', url)
             if is_ok:
+                content = content['tick']
                 result = {
                     'symbol_id': symbol,
                     'url': url,
@@ -105,14 +108,15 @@ class HuoPublic(object):
             url = self.urlbase + f'/market/history/trade?symbol={self._symbol_convert(symbol)}'
             is_ok, content = self._request('GET', url)
             if is_ok:
+                content = content['data']
                 trades = []
-                for trade in content['data']:
+                for trade in content:
                     trades.append({
-                        'count': trade['amount'],
-                        'amount': float(trade["amount"]) * float(trade["price"]),
-                        'type': trade['direction'],
-                        'price': trade['price'],
-                        'order_time': trade['ts']
+                        'count': trade['data'][0]['amount'],
+                        'amount': float(trade['data'][0]['amount']) * float(trade['data'][0]['price']),
+                        'type': trade['data'][0]['direction'],
+                        'price': trade['data'][0]['price'],
+                        'order_time': trade['data'][0]['ts']
                     })
                 return trades
             else:
@@ -122,10 +126,11 @@ class HuoPublic(object):
 
     def get_kline(self, symbol: str, time_period=60):
         try:
-            url = self.urlbase + f'/market/history/kline?symbol={self._symbol_convert(symbol)}&period={int(time_period/60)}Min'
+            url = self.urlbase + f'/market/history/kline?symbol={self._symbol_convert(symbol)}&period={int(time_period/60)}min'
 
             is_ok, content = self._request('GET', url)
             if is_ok:
+                content = content['data']
                 lines = []
                 for line in content:
                     lines.append({
@@ -146,9 +151,9 @@ class HuoPublic(object):
 
 if __name__ == '__main__':
     huo = HuoPublic('https://api.huobi.pro')
-    print(huo.get_price('BTC_USDT'))
-    print(huo.get_kline('BTC_USDT'))
-    print(huo.get_orderbook('BTC_USDT'))
-    print(huo.get_ticker('BTC_USDT'))
-    print(huo.get_trades('BTC_USDT'))
+    # print(huo.get_price('BTC_USDT'))
+    # print(huo.get_kline('BTC_USDT'))
+    # print(huo.get_orderbook('BTC_USDT'))
+    # print(huo.get_ticker('BTC_USDT'))
+    # print(huo.get_trades('BTC_USDT'))
 

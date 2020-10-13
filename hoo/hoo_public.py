@@ -55,7 +55,7 @@ class HooPublic:
             if is_ok:
                 for ticker in content['data']:
                     if ticker['symbol'] == self._symbol_convert(symbol):
-                        return ticker['price']
+                        return float(ticker['price'])
                 return False
             else:
                 self._output('get_price', content)

@@ -165,9 +165,9 @@ class BitmartAuth(BitmartPublic):
 
 
 if __name__ == '__main__':
-    bit = BitmartAuth('https://api-cloud.bitmart.info', '5de397b9cef8bebc31f65e124c3a4a162d6d1f99', 'f4b7c83dc9c6790d6ea344ba3beafdfd70fe9481dccc7e70f0dd7d84b76e1ed2', 'mock')
+    bit = BitmartAuth('https://api-cloud.bitmart.info', '', '', '')
     # print(bit.place_order('EOS_USDT', 1.0016, 11, 'buy'))
     # print(bit.order_detail('BTC_USDT', '1'))
     # print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('UMA_USDT', '1'))
-    # print(bit.wallet_balance())
+    print(bit.wallet_balance())
