@@ -72,10 +72,10 @@ class HooWss(object):
         except Exception as e:
             print(e)
 
-    def _connect(self):
+    def _connect(self, fun: str):
         """ connect websocket """
         try:
-            print(f'start to connect {self.urlbase}')
+            print(f'start to connect {self.urlbase} - {fun}')
             ws = websocket.create_connection(self.urlbase)
 
             # login API
@@ -89,9 +89,23 @@ class HooWss(object):
         except Exception as e:
             print(e)
 
+    def sub_hb(self):
+        def _hb():
+            ws = self._connect('sub_hb')
+            try:
+                while True:
+                    data = {'op': 'sub', 'topic': 'hb'}
+                    ws.send(json.dumps(data))
+                    time.sleep(15)
+
+            except websocket.WebSocketException as e:
+                print(e)
+                ws.close()
+        return MyThread(target=_hb).start()
+
     def sub_kline(self, symbol: str, time_period=60):
         def _kline():
-            ws = self._connect()
+            ws = self._connect('sub_kline')
             try:
                 if time_period % 60 != 0:
                     raise Exception('time period must be integer multiple of 60')
@@ -120,16 +134,20 @@ class HooWss(object):
                     self.data.append(result)
             except websocket.WebSocketConnectionClosedException as e:
                 print(e)
+            except websocket.WebSocketException as e:
+                print(e)
             finally:
                 # close the connection
                 ws.close()
 
+        # send heart
+        self.sub_hb()
         # return a new thread and start it
         return MyThread(target=_kline).start()
 
-    def sub_trade(self, symbol: str):
+    def sub_price(self, symbol: str):
         def _trade():
-            ws = self._connect()
+            ws = self._connect('sub_price')
             try:
                 data = {'op': 'sub', 'topic': f'trade:{self._symbol_convert(symbol)}'}
 
@@ -141,17 +159,19 @@ class HooWss(object):
 
                 while True:
                     trade = json.loads(ws.recv())
-                    self.data.append(trade['price'])
+                    self.data.append(float(trade['price']))
             except websocket.WebSocketConnectionClosedException as e:
                 print(e)
             finally:
                 ws.close()
 
+        # send heart
+        self.sub_hb()
         return MyThread(target=_trade).start()
 
     def sub_orderbook(self, symbol: str):
         def _orderbook():
-            ws = self._connect()
+            ws = self._connect('sub_orderbook')
             try:
                 data = {'op': 'sub', 'topic': f'depth:0:{self._symbol_convert(symbol)}'}
 
@@ -177,6 +197,8 @@ class HooWss(object):
             finally:
                 ws.close()
 
+        # send heart
+        self.sub_hb()
         return MyThread(target=_orderbook).start()
 
     def result(self):
@@ -188,10 +210,11 @@ if __name__ == "__main__":
 
     hoo = HooWss('wss://api.hoolgd.com/ws', "iJsVEJDESyTXdm8hRBuf79fANdwNB5",
                                   "J7EqDCc6FaKA8n5nCy8WJ1uoM4HSZeg2k43mepX5TNjz1qLHUs")
-    # hoo.sub_kline('BTC_USDT')
-    hoo.sub_trade('BTC_USDT')
-    # hoo.sub_orderbook('BTC_USDT')
+    # hoo.sub_hb()
 
+    hoo.sub_kline('BTC_USDT')
+    # hoo.sub_price('BTC_USDT')
+    # hoo.sub_orderbook('BTC_USDT')
 
     while True:
         time.sleep(10)

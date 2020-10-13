@@ -1,6 +1,6 @@
 """
 hoo鉴权接口
-2020-9-30 hlq
+2020/9/30 hlq
 """
 
 from faker import Faker

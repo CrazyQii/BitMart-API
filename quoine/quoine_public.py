@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 公共接口
-2020-10-4 hlq
+2020/10/4 hlq
 """
 
 import requests

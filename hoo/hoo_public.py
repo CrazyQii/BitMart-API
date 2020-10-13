@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 hoo公共接口
-2020-9-28 hlq
+2020/9/28 hlq
 """
 import requests
 import traceback
@@ -78,7 +78,7 @@ class HooPublic:
                     orderbook['asks'].append([float(item['price']), float(item['quantity'])])
                 return orderbook
             else:
-                self._output('get_depth', content)
+                self._output('get_orderbook', content)
         except Exception as e:
             print(e)
 
@@ -90,18 +90,18 @@ class HooPublic:
                 for ticker in content['data']:
                     if ticker['symbol'] == self._symbol_convert(symbol):
                         result = {
-                            "bid_1_amount": None,
-                            "symbol_id": symbol,
-                            "url": url,
-                            "fluctuation": ticker['change'],
-                            "base_volume": None,
-                            "ask_1_amount": None,
-                            "volume": ticker["volume"],
-                            "current_price": ticker["price"],
-                            "bid_1": None,
-                            "lowest_price": ticker["low"],
-                            "ask_1": None,
-                            "highest_price": ticker["high"]
+                            'bid_1_amount': None,
+                            'symbol_id': symbol,
+                            'url': url,
+                            'fluctuation': ticker['change'],
+                            'base_volume': None,
+                            'ask_1_amount': None,
+                            'volume': ticker['volume'],
+                            'current_price': ticker['price'],
+                            'bid_1': None,
+                            'lowest_price': ticker['low'],
+                            'ask_1': None,
+                            'highest_price': ticker['high']
                         }
                         return result
                 return None
@@ -147,7 +147,7 @@ class HooPublic:
                         'highest_price': line['high']
                     })
 
-                return content['data']
+                return lines
             else:
                 self._output('get_trades', content)
         except Exception as e:

@@ -1,6 +1,6 @@
 """
 bitmart鉴权接口
-2020-10-10 hlq
+2020/10/10 hlq
 """
 
 from bitmart.bitmart_public import BitmartPublic

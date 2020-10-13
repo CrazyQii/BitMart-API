@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 bitmart公共接口
-2020-10-9 hlq
+2020/10/9 hlq
 """
 import requests
 import traceback

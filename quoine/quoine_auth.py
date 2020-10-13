@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 授权接口
-2020-10-4 hlq
+2020/10/4 hlq
 """
 
 from quoine.quoine_public import QuoinePublic
