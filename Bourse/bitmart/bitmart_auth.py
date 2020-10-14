@@ -4,7 +4,7 @@ bitmart spot authentication API
 2020/10/10 hlq
 """
 
-from bitmart.bitmart_public import BitmartPublic
+from Bourse.bitmart.bitmart_public import BitmartPublic
 import hmac
 import hashlib
 import time

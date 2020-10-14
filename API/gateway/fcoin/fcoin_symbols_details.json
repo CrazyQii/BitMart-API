@@ -1,0 +1,4530 @@
+[
+    {
+        "quote_currency": "usdt", 
+        "name": "dapusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dap", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "qqbcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "qqbc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vboometh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vboom", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "vibusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vib", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dpneth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dpn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "saltusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "salt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ccceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ccc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "crpteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "crpt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vibeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vib", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "iiceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iic", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "hxtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "hxt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "salteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "salt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dpnusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dpn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "crptusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "crpt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fueleth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fuel", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "fabusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "fab", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "yeeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "yee", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ugceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ugc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "omgusdt", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "omg", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "omgeth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "omg", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "imteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "imt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "qkceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "qkc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "gtoeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gto", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "pmdeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pmd", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "3dbeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "3db", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bixeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bix", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "rdnusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rdn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "atsusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ats", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "imtusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "imt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rdneth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rdn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "btcusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "btc", 
+        "price_decimal": 1
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "osteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ost", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dageth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dag", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ostusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ost", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "newoseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "newos", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "fcandyusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fcandy", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "icneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "icn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "korea82usdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "korea82", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "fmexusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "fmex", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dhteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dht", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cbreth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cbr", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "becusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bec", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "wabiusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "wabi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "repusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rep", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "seeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "see", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "edousdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "edo", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "wabieth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "wabi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "repeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rep", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "boxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "box", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ihteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iht", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "edoeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "edo", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rteeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rte", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ettusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ett", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mitxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mitx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "comceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "comc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "molusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mol", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "comcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "comc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "moleth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mol", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dashusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "dash", 
+        "price_decimal": 1
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "oleeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ole", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vlceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vlc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "thpceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "thpc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "dashbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "dash", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "pax", 
+        "name": "btcpax", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "btc", 
+        "price_decimal": 1
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "thpcbtc", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "thpc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dasheth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "dash", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "oscusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "osc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ctxceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ctxc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cosmeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cosm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "oleusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ole", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "tsteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tst", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "egt1eth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "egt1", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "lxteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lxt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ft1808usdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft1808", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "tstusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tst", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "btmeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "btm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "inveusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "inve", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "thpcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "thpc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "adxusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "adx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "iccusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "icc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "engeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "eng", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "tusdusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "tusd", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "inveeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "inve", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ethusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eth", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "icceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "icc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "adxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "adx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdc", 
+        "name": "btcusdc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "btc", 
+        "price_decimal": 1
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "engusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "eng", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "poceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "poc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ormeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "orme", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "wgbcusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "wgbc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "bsvbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "bsv", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "uitcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "uitc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "drinkusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "drink", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "fundusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "fund", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "drinketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "drink", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "smteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "smt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dscoinusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dscoin", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "sdaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sda", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dscoineth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dscoin", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "esteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "est", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "icxusdt", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "icx", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "icxeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "icx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "kzusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "kz", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ejoyeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ejoy", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "lendusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lend", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "sgcceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sgcc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "datxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "datx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "lendeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lend", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "tmtgusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tmtg", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ngcusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ngc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cmteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cmt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ngceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ngc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "kzeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "kz", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ibcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ibc", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bsvusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "bsv", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "inteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "int", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "gseeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gse", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "zecbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "zec", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "eduusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "edu", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "cmtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cmt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "edueth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "edu", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "shtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "sht", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "zecusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "zec", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "nanjeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "nanj", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "reneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ren", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "zeceth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "zec", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "leteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "let", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "ethbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eth", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "nanjusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "nanj", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mxmeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mxm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "mzcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mzc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ffundusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ffund", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bfdteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bfdt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "npxseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "npxs", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "oaxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "oax", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "shteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "sht", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "renusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ren", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "oaxusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "oax", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ekusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ek", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "aeusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ae", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "hgpusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "hgp", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "cnatusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cnat", 
+        "price_decimal": 7
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ionceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ionc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ppteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ppt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dwseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dws", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bbosusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bbos", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "gnxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gnx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "latxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "latx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "msecusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "msec", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bizeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "biz", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bizusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "biz", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "ltcbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ltc", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "hotceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "hotc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "jcteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "jct", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "wicceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "wicc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "vipusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "vip", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ltceth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ltc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "guseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gus", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "icstusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "icst", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "vibeusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vibe", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bcptusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bcpt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vibeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vibe", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bcpteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bcpt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ft1810_iusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft1810_i", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "icsteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "icst", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "aeeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ae", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "jctusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "jct", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "hoteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "hot", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "shrusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "shr", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "modeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mod", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "cccxusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cccx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cccxeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cccx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "oscheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "osch", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "btlusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "btl", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "bchbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "bch", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "abteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "abt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "loometh", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "loom", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "loomusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "loom", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fotaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fota", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "musketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "musk", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "goalusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "goal", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dlteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dlt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "aioneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "aion", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "modusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mod", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "myttusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mytt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dltusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dlt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "pax", 
+        "name": "ethpax", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eth", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "nceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "nc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bkbteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bkbt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "btmusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "btm", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "gusdusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "gusd", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ykceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ykc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "handeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "hand", 
+        "price_decimal": 9
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "drcteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "drct", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "handusdt", 
+        "tradable": false, 
+        "amount_decimal": 0, 
+        "base_currency": "hand", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "wtceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "wtc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bfteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bft", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bchusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "bch", 
+        "price_decimal": 1
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "bchft", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "bch", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "usdc", 
+        "name": "ethusdc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eth", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mayaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "maya", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "uenceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "uenc", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "aaaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "aaa", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vcteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vct", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "777usdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "777", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "smscusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "smsc", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "uencusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "uenc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "eosbtc", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "eos", 
+        "price_decimal": 7
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "puneth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "pun", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "eoseth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "eos", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "777eth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "777", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "adaeth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ada", 
+        "price_decimal": 7
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "adabtc", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ada", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "prousdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pro", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "keyeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "key", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "boceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "boc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "proeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pro", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "monausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mona", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "suteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "sut", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "keyusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "key", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mitheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mith", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "pax", 
+        "name": "ltcpax", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ltc", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cooeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "coo", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rlceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "rlc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "rcnusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "rcn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "chcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "chc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "zrxusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "zrx", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "snteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "snt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "aidoceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "aidoc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "sntusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "snt", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "coousdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "coo", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "armeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "arm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "tcteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tct", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dapseth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "daps", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dapsusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "daps", 
+        "price_decimal": 7
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mdaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mda", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "eosft", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "eos", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "usdc", 
+        "name": "ltcusdc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ltc", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "eosusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eos", 
+        "price_decimal": 3
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "rlcusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "rlc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rcneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "rcn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "tixeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tix", 
+        "price_decimal": 9
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "moteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mot", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ncasheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ncash", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "jmtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "jmt", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "tixusdt", 
+        "tradable": false, 
+        "amount_decimal": 0, 
+        "base_currency": "tix", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cityeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "city", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "xpseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "xps", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "drink1eth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "drink1", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "xpsusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "xps", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "zrxeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "zrx", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "qosusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "qos", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dt", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "meshusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mesh", 
+        "price_decimal": 7
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "poketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pok", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ltcusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ltc", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "ltcft", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "ltc", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rrceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "rrc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mesheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mesh", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "facceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "facc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "thetausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "theta", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bttusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "btt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mdseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mds", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "kcasheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "kcash", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "qoseth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "qos", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "pttusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ptt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "1stusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "1st", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "gvteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gvt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "tnbeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "tnb", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "1steth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "1st", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "gvtusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gvt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "tnbusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "tnb", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ptteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ptt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "thetaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "theta", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "iosteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "iost", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "tkteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tkt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "insusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ins", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "pax", 
+        "name": "eospax", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eos", 
+        "price_decimal": 3
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "saneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "san", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "wlusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "wl", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "prausdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pra", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "baiceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "baic", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "manaeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mana", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "orseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ors", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "manausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mana", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bnbusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bnb", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdc", 
+        "name": "eosusdc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "eos", 
+        "price_decimal": 3
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "praeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pra", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "appceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "appc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "grameth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gram", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "inseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ins", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "sanusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "san", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cnmceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cnmc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "sctkusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sctk", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "butusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "but", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "sctketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sctk", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "soceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "soc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bbgcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bbgc", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "noaheth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "noah", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "buteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "but", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "noahusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "noah", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ltheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lth", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dtaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dta", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "lthusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lth", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "kaneth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "kan", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "xineth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "xin", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "rrbusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rrb", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "peceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "pec", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "seceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "sec", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "xrpusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "xrp", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ateth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "at", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "xrpft", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "xrp", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "subeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sub", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rcteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "rct", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bvcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bvc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "subusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sub", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "daceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "hhhusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "hhh", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cwveth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cwv", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "enjusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "enj", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "yunusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "yun", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dogeeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "doge", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "enjeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "enj", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dogeusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "doge", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "hpbeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "hpb", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "freseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fres", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "hhheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "hhh", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cpseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cps", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "brdusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "brd", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "xlmbtc", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "xlm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "esmeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "esm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "astusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ast", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "rnteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "rnt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "brdeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "brd", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "uacusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "uac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "xlmeth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "xlm", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "seteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "set", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "xlmusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "xlm", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "esmusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "esm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "xrpbtc", 
+        "tradable": true, 
+        "amount_decimal": 0, 
+        "base_currency": "xrp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "xrpeth", 
+        "tradable": true, 
+        "amount_decimal": 0, 
+        "base_currency": "xrp", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "genesusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "genes", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "adausdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "ada", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mvpeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mvp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "cfccusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cfcc", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "iotxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iotx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "asteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ast", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "paieth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "pai", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "se1usdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "se1", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "iscusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "isc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "lmmeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lmm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "caieth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cai", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "poeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "poe", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "srneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "srn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "iotaft", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iota", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "se1eth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "se1", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "zsceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "zsc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "srnusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "srn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "adcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "adc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "xbaseusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "xbase", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dnausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dna", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "tusd", 
+        "name": "btctusd", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "btc", 
+        "price_decimal": 1
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "olteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "olt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "qspusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "qsp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "utoeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "uto", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft", 
+        "price_decimal": 7
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "ftbtc", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "untiusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "unti", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ftusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ft", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ruffeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ruff", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "arneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "arn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "xmxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "xmx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "iotaeth", 
+        "tradable": true, 
+        "amount_decimal": 0, 
+        "base_currency": "iota", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "wtausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "wta", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "arnusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "arn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "iotabtc", 
+        "tradable": true, 
+        "amount_decimal": 0, 
+        "base_currency": "iota", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "iotausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "iota", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "usdcusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "usdc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "qspeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "qsp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "arpeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "arp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "geneeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "gene", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "wsecusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "wsec", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "btmceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "btmc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "chatusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "chat", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "linketh", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "link", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "aiteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ait", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "wseceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "wsec", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ft1809usdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft1809", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "linkusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "link", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "aitusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ait", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "funeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fun", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "btmcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "btmc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "tateth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tat", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vaaceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vaac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "mtusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "mt", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "chateth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "chat", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "showeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "show", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "snglsusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sngls", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "jacusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "jac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bancaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "banca", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "poaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "poa", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "lrcusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "lrc", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "powreth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "powr", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dagtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dagt", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "mtlusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mtl", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ptneth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ptn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "snglseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sngls", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "jaceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "jac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "powrusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "powr", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "fnkosusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fnkos", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mtleth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mtl", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dagteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dagt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "iteacusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iteac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ngoteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ngot", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "iteaceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iteac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "lrceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lrc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "miniusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mini", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "paxusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "pax", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fnkoseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fnkos", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "msceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "msc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "scleth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "scl", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "zipusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "zip", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "denteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dent", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "zipeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "zip", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bvbeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bvb", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dentusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dent", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "odinusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "odin", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "trxeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "trx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "egteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "egt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "trxbtc", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "trx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "requsdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "req", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "fiusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "fi", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "trxusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "trx", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bhpceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bhpc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ifisheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ifish", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "brmusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "brm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fieth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "fi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "trxft", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "trx", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "brmeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "brm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "reqeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "req", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "seusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "se", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "luneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lun", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "agieth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "agi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "seeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "se", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "lunusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lun", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "geseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ges", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "polyeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "poly", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "lskusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "lsk", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bgtusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bgt", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ioveth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "iov", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "pax", 
+        "name": "ftpax", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ft", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "youeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "you", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "wteeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "wte", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ldfusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ldf", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "payeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pay", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "polyusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "poly", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bbcusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bbc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "koraeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "kora", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bbceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bbc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "inketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ink", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dbeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dbe", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "jcbusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "jcb", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "utketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "utk", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "cdtusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cdt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "utkusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "utk", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ebccusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ebcc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cdteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cdt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "gtceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gtc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mcoeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mco", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ifoodeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ifood", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "ft1808", 
+        "name": "ftft1808", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "dcarbtc", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dcar", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "impcnusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "impcn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "impcnbtc", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "impcn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dcarusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "dcar", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "meetoneeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "meetone", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "taceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "hpcusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "hpc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "impcneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "impcn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "ft1810_i", 
+        "name": "ftft1810_i", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ft", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "hpceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "hpc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ocneth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ocn", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bcgeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bcg", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "lbaeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "lba", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mdteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "mdt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "unceth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "unc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "xemusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "xem", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "haleusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "hale", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "rusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "r", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "faireth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fair", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "reth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "r", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "beautyeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "beauty", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "zilusdt", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "zil", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bqxeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bqx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "zileth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "zil", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bqxusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "bqx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dacceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dacc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "batusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bat", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "blzeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "blz", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "knceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "knc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mofeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mof", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "wineth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "win", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "toseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "tos", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dadieth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dadi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "eoausdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "eoa", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bateth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bat", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "nttusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ntt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dadiusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dadi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vnteth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "vnt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "pnteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pnt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ichxusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ichx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "veteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vet", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "vetusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vet", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "veeeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vee", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "mthusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mth", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "veeusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vee", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "mtheth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "mth", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "elfeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "elf", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "jllusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "jll", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "etpeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "etp", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "etpbtc", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "etp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "jlleth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "jll", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "etpusdt", 
+        "tradable": false, 
+        "amount_decimal": 4, 
+        "base_currency": "etp", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "dcceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "dcc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fffeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fff", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "elfusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "elf", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "gtusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "gt", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "vppeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vpp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "risketh", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "risk", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "ontusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "ont", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "oeusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "oe", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dttusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dtt", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "saceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "vppusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "vpp", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "fisheth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "fish", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "sacusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sac", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cofieth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cofi", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "cvceth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "cvc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "stormusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "storm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "eeseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "ees", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ssseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "sss", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "stormeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "storm", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "daiusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "dai", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "psteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "pst", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "etcusdt", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "etc", 
+        "price_decimal": 3
+    }, 
+    {
+        "quote_currency": "ft", 
+        "name": "etcft", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "etc", 
+        "price_decimal": 2
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "zueeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "zue", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "etceth", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "etc", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "bcg1usdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bcg1", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "ftieth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "fti", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "abbcusdt", 
+        "tradable": true, 
+        "amount_decimal": 3, 
+        "base_currency": "abbc", 
+        "price_decimal": 5
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "egoteth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "egot", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "bcg1eth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "bcg1", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "etcbtc", 
+        "tradable": true, 
+        "amount_decimal": 4, 
+        "base_currency": "etc", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "egotusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "egot", 
+        "price_decimal": 6
+    }, 
+    {
+        "quote_currency": "btc", 
+        "name": "abbcbtc", 
+        "tradable": true, 
+        "amount_decimal": 3, 
+        "base_currency": "abbc", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "citeth", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cit", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "eaieth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "eai", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "gfywusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "gfyw", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "citusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "cit", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "dobeusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "dobe", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "zueusdt", 
+        "tradable": true, 
+        "amount_decimal": 2, 
+        "base_currency": "zue", 
+        "price_decimal": 4
+    }, 
+    {
+        "quote_currency": "usdt", 
+        "name": "evxusdt", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "evx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "evxeth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "evx", 
+        "price_decimal": 8
+    }, 
+    {
+        "quote_currency": "eth", 
+        "name": "oaseth", 
+        "tradable": false, 
+        "amount_decimal": 2, 
+        "base_currency": "oas", 
+        "price_decimal": 8
+    }
+]

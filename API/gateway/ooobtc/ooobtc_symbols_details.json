@@ -1,0 +1,10 @@
+{
+    "LPK_ETH": {
+        "quote_increment": 1e-8, 
+        "price_max_precision": 8
+    },
+    "LPK_BTC": {
+        "quote_increment": 1e-10,
+        "price_max_precision": 10
+    }
+}

@@ -1,0 +1,237 @@
+Standard
+整理交易所：bitmart;binance;okex;huobi;wootrade;gateio;mxc;kucoin;bibox;hitbtc;digifinex;latoken;lbank;xt;yobit;zg;vinex;hotbit;coinbase;coinbene
+WS:binance;okex;huobi;wootrade;gateio;mxc;kucoin;
+以bitmart为标准，函数，参数，返回，保持一致
+1、gateway
+
+open order:[
+    {
+        "order_id": 15485451554,
+        "symbol": "BTC_USDT",
+        "amount": 0.1524,
+        "price": 9756.1,
+        "side": "buy",
+        "price_avg": 0,
+        "filled_amount: 0,
+        "creare_time":1528451487111
+    }
+]
+
+detail order:{
+    "func_name": "detail_order",
+    "order_id": 15485451554,
+    "message": "OK",  # "error info"
+    "data":{
+            "order_id": 15485451554,
+            "symbol": "BTC_USDT",
+            "side": "buy",
+            "price": 9756.1,
+            "amount": 0.1524,
+            "price_avg": 0,
+            "filled_amount: 0,
+            "status": "6",
+            "creare_time":1528451487111
+        }
+}
+
+cancel order:{
+    "func_name": 'cancel_order',
+    "order_id": 15485451554,
+    "message": "OK",  # "error info"
+    "data": {}
+}
+
+cancel all:{
+    "func_name": 'cancel_order',
+    "message": "OK",  # "error info"
+    "data": {}
+}
+
+kline:{
+    "timestamp": 1590969600,
+    "open": "1.24",
+    "high": "1.24",
+    "low": "1.2",
+    "close": "1.2",
+    "volume": "4.9",
+    "last_price": "1.2"
+}
+
+2、setting
+
+{
+    "bitmart":{                  #交易所
+        "BTC_USDT":{             #交易对
+            "orderbook": {},     #orderbook_setting
+            "cancel": {},        #cancel_setting
+            "volume": {}         #volume_setting
+        }
+    }
+}
+
+orderbook_setting: 
+{
+    "intervals": 0.5,            #挂单的下单速度，间隔时间
+    "buy":{
+            "switch": true,      #是否挂卖单
+            "orders_count": 50,  #总未成交的订单数量不能少于，包含有相同价格的订单
+            "depth": 20,         #挂单的单边深度，例如BTC_USDT，BTC的总数量
+            "lower": 0.005,      #单笔挂单量的最小值，实际有可能小于它
+            "upper": 1,          #单笔挂单量的最大值，实际有可能大于它
+            "spread": 1,         #bid1 距离最新价的距离
+            "step": 0.1,         #每一档之间的差值
+            "huge": 1,           #巨大单，真实下单量一般稍微大于huge
+            "position": ""       #""：不做仓位控制，如果是数字（USDT数量），账户余额低于仓位设置，停止挂买单
+            },
+    "sell":{
+            "switch": true,      #是否挂卖单
+            "orders_count": 50,  #总未成交的订单数量不能少于，包含有相同价格的订单
+            "depth": 20,         #挂单的单边深度，例如BTC_USDT，BTC的总数量
+            "lower": 0.005,      #单笔挂单量的最小值，实际有可能小于它
+            "upper": 1,          #单笔挂单量的最大值，实际有可能大于它
+            "spread": 1,         #ask1 距离最新价的距离
+            "step": 0.1,         #每一档之间的差值
+            "huge": 1,           #巨大单，真实下单量一般稍微大于huge
+            "position": ""       #""：不做仓位控制；如果是数字（BTC数量），账户余额低于仓位设置，停止挂卖单
+            }
+}
+
+cancel_setting: 
+{
+    "switch": true,               #是否进行撤单
+    "intervals": 0.5,             #撤单的撤单速度，间隔时间
+    "spread": 8e-06,              #盘口距离最新价的距离
+    "depth": 20,                  #挂单的单边深度，例如BTC_USDT，BTC的总数量
+    "orders_count": 50,           #挂单低于这个数量，暂停撤单
+    "is_all_cancel": False,       #是否全部撤单
+    "min_expire_time": 1800,      #订单最小有效时间
+    "max_expire_time": 3600       #订单最大有效时间
+}
+
+volume_setting:
+{
+    "switch": true,               #是否进行刷量
+    "intervals": 0.5,             #成交速度
+    "spread": 1.0,                #盘口距离最新价距离
+    "lower": 0.0005,              #成交数量的最小值
+    "upper": 0.001,               #成交数量的最大值
+    "is_oc": true                 #是否开启专属接口
+}
+
+active_setting:
+{
+    "switch": True,              #是否闪单
+    "intervals": 0.5,            #闪单的下单速度，间隔时间
+    "order_count": 5,            #进行闪单的个数
+    "lower": 0.01,               #单笔闪单量的最小值，实际有可能小于它
+    "upper": 0.1,                #单笔闪单量的最大值，实际有可能大于它
+    "spread": 2,                 #bid1 距离最新价的距离
+}
+
+3、orders[symbol]
+
+to_place_orders:
+{
+    buys:[
+            {
+            "symbol": "BTC_USDT",
+            "amount": 0.004,
+            "price": 9760.5,
+            "side": "buy"
+            }
+        ],
+    "sells":[
+            {
+            "symbol": "BTC_USDT",
+            "amount": 0.004,
+            "price": 9760.5,
+            "side": "sell"
+            }
+        ]
+}
+            
+to_cancel_orders:
+{
+    "buys":[
+            {
+            'order_id': 2147601375, 
+            'symbol': 'BTC_USDT', 
+            'side': 'buy', 
+            'price': '9050.00', 
+            'amount': '0.10978', 
+            'filled_amount': '0.00000',
+            'price_avg': '0',
+            'type': 'expired',   # 'expired'; 'outside'; 'inside'; 'big'
+            'create_time': 1591258561000
+            }
+        ],
+    "sells":[
+            {
+            'order_id': 2147601375, 
+            'symbol': 'BTC_USDT', 
+            'side': 'sell', 
+            'price': '9050.00', 
+            'amount': '0.10978', 
+            'filled_amount': '0.00000',
+            'price_avg': '0',
+            'type': 'expired',   # 'expired'; 'outside'; 'inside'; 'big'
+            'create_time': 1591258561000
+            }
+        ]
+}
+
+unfilled_orders:
+{
+    "buys":[
+            {
+            'order_id': 2147601375, 
+            'symbol': 'BTC_USDT', 
+            'side': 'buy', 
+            'price': '9050.00', 
+            'amount': '0.10978', 
+            'filled_amount': '0.00000',
+            'price_avg': '0',
+            'create_time': 1591258561000
+            }
+        ],
+    "sells":[
+            {
+            'order_id': 2147601375, 
+            'symbol': 'BTC_USDT', 
+            'side': 'sell', 
+            'price': '9050.00', 
+            'amount': '0.10978', 
+            'filled_amount': '0.00000',
+            'price_avg': '0',
+            'create_time': 1591258561000
+            }
+        ]
+}
+
+filled_orders:
+{
+    "buys":[
+            {}
+        ],
+    "sells":[
+            {}
+        ]
+}
+
+special_orders:
+{
+    "buys":[
+            { }
+        ],
+    "sells":[
+            {}
+        ]
+}
+
+4、账户添加API key
+
+    "memo": " ",  #交易所没有memo或者API password的，需要自己设定一个
+    "api_key": " ",
+    "api_secret": " "
+
+    每个账户可以添加多个交易所，每个交易所可以添加多个API key

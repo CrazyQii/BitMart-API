@@ -1,0 +1,207 @@
+{
+    "ADA_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.0001
+    },
+    "ALGO_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "ATOM_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.01
+    },
+    "BCH_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.0001
+    },
+    "BFCBFC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "BOSS_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "BTC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 1e-06
+    },
+    "BTE_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.001
+    },
+    "CBE_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "CSPC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "DASH_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.0001
+    },
+    "DMA_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.1
+    },
+    "DOGE_USDT": {
+        "price_max_precision": 6,
+        "quote_increment": 1e-06,
+        "amount_precision": 0.01
+    },
+    "DWN_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.1
+    },
+    "EOS_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.0001
+    },
+    "ETC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.0001
+    },
+    "ETH_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.0001
+    },
+    "EUP_USDT": {
+        "price_max_precision": 6,
+        "quote_increment": 1e-06,
+        "amount_precision": 0.01
+    },
+    "FOT_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.01
+    },
+    "HDT_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.1
+    },
+    "HDW_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "HGC_USDT": {
+        "price_max_precision": 3,
+        "quote_increment": 0.001,
+        "amount_precision": 0.001
+    },
+    "IFM_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "ITT_USDT": {
+        "price_max_precision": 3,
+        "quote_increment": 0.001,
+        "amount_precision": 0.01
+    },
+    "LTC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.0001
+    },
+    "LXC_USDT": {
+        "price_max_precision": 3,
+        "quote_increment": 0.001,
+        "amount_precision": 0.001
+    },
+    "MC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "MOAC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "NAT_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.01
+    },
+    "ONT_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "PMEER_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.1
+    },
+    "SCC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "SUPT_USDT": {
+        "price_max_precision": 5,
+        "quote_increment": 1e-05,
+        "amount_precision": 0.001
+    },
+    "TCP1_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "TRX_USDT": {
+        "price_max_precision": 6,
+        "quote_increment": 1e-06,
+        "amount_precision": 0.01
+    },
+    "UENC_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.01
+    },
+    "XRP_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.01
+    },
+    "YDS_USDT": {
+        "price_max_precision": 5,
+        "quote_increment": 1e-05,
+        "amount_precision": 0.01
+    },
+    "ZEC_USDT": {
+        "price_max_precision": 4,
+        "quote_increment": 0.0001,
+        "amount_precision": 0.0001
+    },
+    "ZG_USDT": {
+        "price_max_precision": 2,
+        "quote_increment": 0.01,
+        "amount_precision": 0.1
+    },
+    "ZNC_USDT": {
+        "price_max_precision": 6,
+        "quote_increment": 1e-06,
+        "amount_precision": 0.01
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "APL_ETH": {
+        "quote_increment": 1e-8, 
+        "price_max_precision": 8,
+        "amount_precision": 3
+    },
+    "APL_BTC": {
+        "quote_increment": 1e-8,
+        "price_max_precision": 8,
+        "amount_precision": 3
+    },
+    "GNY_BTC": {
+        "quote_increment": 1e-8,
+        "price_max_precision": 8,
+        "amount_precision": 0
+    },
+    "ETH_BTC": {
+        "quote_increment": 1e-6,
+        "price_max_precision": 6,
+        "amount_precision": 3
+    },
+    "PIX_BTC": {
+        "quote_increment": 1e-8,
+        "price_max_precision": 8,
+        "amount_precision": 2
+    },
+    "UGC_BTC": {
+        "quote_increment": 1e-7,
+        "price_max_precision": 7,
+        "amount_precision": 1
+    },
+    "TSL_BTC": {
+        "quote_increment": 1e-8,
+        "price_max_precision": 8,
+        "amount_precision": 2
+    },
+    "UGP_BTC": {
+        "quote_increment": 1e-7,
+        "price_max_precision": 7,
+        "amount_precision": 1
+    }
+}

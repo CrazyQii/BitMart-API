@@ -1,0 +1,7 @@
+{
+    "HEX_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6, 
+        "base_min_size": 0
+    }
+}

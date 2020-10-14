@@ -1,0 +1,12 @@
+{
+    "HEX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8, 
+        "base_min_size": 0.0001
+    },
+    "HEX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8, 
+        "base_min_size": 0.0001
+    }
+}

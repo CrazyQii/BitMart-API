@@ -1,0 +1,4 @@
+venv
+.idea
+bitmart/__pycache__
+*.pyc

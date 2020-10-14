@@ -1,0 +1,10 @@
+{"SPOT_BCHABC_USDT": {"created_time":"1571908141","updated_time":"1571908141","symbol":"SPOT_BCHABC_USDT","quote_min":10,"quote_max":2000,"quote_tick":0.01,"base_min":0.01,"base_max":10,"base_tick":0.00001,"min_notional":10,"price_range":0},
+"SPOT_BNB_USDT": {"created_time":"1575624954","updated_time":"1575624954","symbol":"SPOT_BNB_USDT","quote_min":1,"quote_max":100,"quote_tick":0.0001,"base_min":0.01,"base_max":100,"base_tick":0.01,"min_notional":10,"price_range":0},
+"SPOT_BSV_USDT": {"created_time":"1575624954","updated_time":"1575624954","symbol":"SPOT_BSV_USDT","quote_min":1,"quote_max":1000,"quote_tick":0.0001,"base_min":0.01,"base_max":10,"base_tick":0.0001,"min_notional":10,"price_range":0},
+"SPOT_BTC_USDT": {"created_time":"1571824137","updated_time":"1571824137","symbol":"SPOT_BTC_USDT","quote_min":10,"quote_max":100000,"quote_tick":0.01,"base_min":0.001,"base_max":5,"base_tick":1e-8,"min_notional":10,"price_range":0},
+"SPOT_DASH_USDT": {"created_time":"1575624954","updated_time":"1575624954","symbol":"SPOT_DASH_USDT","quote_min":10,"quote_max":5000,"quote_tick":0.01,"base_min":0.001,"base_max":100,"base_tick":0.00001,"min_notional":10,"price_range":0},
+"SPOT_ETH_USDT": {"created_time":"1574926883","updated_time":"1574926883","symbol":"SPOT_ETH_USDT","quote_min":10,"quote_max":1000,"quote_tick":0.01,"base_min":0.001,"base_max":10,"base_tick":0.000001,"min_notional":10,"price_range":0},
+"SPOT_HT_USDT": {"created_time":"1575884154","updated_time":"1575884154","symbol":"SPOT_HT_USDT","quote_min":0.1,"quote_max":100,"quote_tick":0.0001,"base_min":0.1,"base_max":100,"base_tick":0.01,"min_notional":10,"price_range":0},
+"SPOT_LTC_USDT": {"created_time":"1574926883","updated_time":"1574926883","symbol":"SPOT_LTC_USDT","quote_min":1,"quote_max":1000,"quote_tick":0.01,"base_min":0.001,"base_max":100,"base_tick":0.000001,"min_notional":10,"price_range":0},
+"SPOT_OKB_USDT": {"created_time":"1575624954","updated_time":"1575624954","symbol":"SPOT_OKB_USDT","quote_min":0,"quote_max":100,"quote_tick":0.0001,"base_min":1,"base_max":100,"base_tick":0.0001,"min_notional":0,"price_range":0}
+}

@@ -8,7 +8,7 @@ import traceback
 import time
 
 
-class BitmartPublic:
+class BitmartPublic(object):
     def __init__(self, urlbase):
         self.urlbase = urlbase
 
@@ -44,6 +44,17 @@ class BitmartPublic:
             'content': content
         }
         print(info)
+
+    def get_price_precision(self, symbol: str):
+        """
+        accuracy (decimal places), used to query k-line and depth
+        最大价格精度(小数位) 用来查询 k 线和深度
+        """
+        try:
+            url = self.urlbase + f'/spot/v1/symbols/details?symbol={symbol}'
+            is_ok, content = self._request('GET', url)
+            if is_ok:
+                return content
 
     def get_price(self, symbol: str):
         """ Get the latest trade price of specified ticker """

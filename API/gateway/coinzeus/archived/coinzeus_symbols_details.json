@@ -1,0 +1,6 @@
+{
+    "WPC_BTC": {
+        "quote_increment": 1e-8, 
+        "price_max_precision": 8
+    }
+}

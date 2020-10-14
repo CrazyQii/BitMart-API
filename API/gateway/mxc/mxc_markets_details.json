@@ -1,0 +1,1570 @@
+{
+    "GRIN_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ONT_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ANKR_USDT": {
+        "priceScale": 6,
+        "quantityScale": 4,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PAX_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SERO_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IECT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "GXC_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IRIS_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TRX_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DOGE_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ARPA_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BTU_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "COVA_ETH": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AXE_USDT": {
+        "priceScale": 3,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "GRIN_ETH": {
+        "priceScale": 5,
+        "quantityScale": 4,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FDS_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SNT_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MTV_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "INKC_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "HOT_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AE_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "RBTC_BTC": {
+        "priceScale": 6,
+        "quantityScale": 4,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "RUFF_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LBTC_BTC": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BQT_ETH": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IRIS_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MEETONE_EOS": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 1.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "OMG_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VET_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "UCNS_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BCH_USDT": {
+        "priceScale": 3,
+        "quantityScale": 5,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "YKC_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TERA_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IOEX_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PVT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SHELL_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TON_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZIL_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "LINK_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VSYS_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BHD_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZVC_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XMX_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ALGO_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FET_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IQ_EOS": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 1.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "RIF_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TRTL_ETH": {
+        "priceScale": 10,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ONG_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "CZT_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FOR_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MFT_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VNT_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DAPPT_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "HT_ETH": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NKN_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XMX_BTC": {
+        "priceScale": 10,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "HT_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SWAG_ETH": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AXA_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ONT_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ELF_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "VOL_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "CELR_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "RIF_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BTT_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TERA_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "EOS_USDT": {
+        "priceScale": 4,
+        "quantityScale": 3,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.0005,
+        "sellFeeRate": 0.0005
+    },
+    "AMIO_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MX_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ETP_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DOT_USDT": {
+        "priceScale": 3,
+        "quantityScale": 4,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FOR_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LDS_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZIP_USDT": {
+        "priceScale": 6,
+        "quantityScale": 0,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "CVNT_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "GC_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BZH_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TGIC_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ATOM_BTC": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BHD_USDT": {
+        "priceScale": 4,
+        "quantityScale": 3,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZOS_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "RIF_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DILI_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XRP_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MBL_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SNT_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PCX_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LAD_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XPX_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ATOM_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FTM_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NEO_USDT": {
+        "priceScale": 4,
+        "quantityScale": 3,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "FET_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DCH_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BTFM_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XLM_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "PLG_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NEW_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BNB_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "OMG_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "OCEAN_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZEL_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LBTC_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZIL_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "CSP_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "UGAS_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BSV_BTC": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "YST_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "EKT_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DASH_USDT": {
+        "priceScale": 2,
+        "quantityScale": 6,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "LAMB_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IRIS_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MX_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "QKC_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SKR_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TIC_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AOA_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NOVA_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PTT_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BQCC_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LUD_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TRX_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DDD_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BBOS_USDT": {
+        "priceScale": 3,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TGIC_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NNB_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TCT_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VSYS_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FST_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZRX_ETH": {
+        "priceScale": 8,
+        "quantityScale": 1,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ONG_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ANKR_BTC": {
+        "priceScale": 10,
+        "quantityScale": 4,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "GLO_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LSC_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BUC_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BITC_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FTM_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NEX_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MMTV_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DOS_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BSV_USDT": {
+        "priceScale": 2,
+        "quantityScale": 5,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ALIX_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LBA_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ATOM_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "CELR_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ETC_USDT": {
+        "priceScale": 4,
+        "quantityScale": 3,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ADA_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PROPS_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "UGAS_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TUSD_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "COVA_BTC": {
+        "priceScale": 11,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BNB_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AERGO_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "RUFF_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BOOM_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IOTX_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AE_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VDS_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DOS_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XTZ_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "CARM_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "MANA_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NEW_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ELF_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "NNB_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BPRO_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BHTX_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "OATH_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "KNC_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "HDS_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IOEX_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VDS_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VIDY_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "OMG_BTC": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "KIP_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TIC_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "XZC_USDT": {
+        "priceScale": 4,
+        "quantityScale": 3,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ETC_BTC": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "BTC_USDT": {
+        "priceScale": 2,
+        "quantityScale": 6,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.0005,
+        "sellFeeRate": 0.0005
+    },
+    "AERGO_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LTC_USDT": {
+        "priceScale": 2,
+        "quantityScale": 4,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.0005,
+        "sellFeeRate": 0.0005
+    },
+    "LAR_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "QTUM_USDT": {
+        "priceScale": 3,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ZEL_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TNB_ETH": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ONT_BTC": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ELF_BTC": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "RVN_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "AO_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IOST_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "UGAS_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "NCASH_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BTO_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SEAL_BTC": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "HSN_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TNC_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LOOM_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ETH_USDT": {
+        "priceScale": 2,
+        "quantityScale": 5,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IMG_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BTT_BTC": {
+        "priceScale": 11,
+        "quantityScale": 2,
+        "minAmount": 0.0005,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BPOP_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FET_MX": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 50.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "SEAL_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LINK_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BTT_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "TYT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DAPPT_USDT": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "HPB_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PROPS_ETH": {
+        "priceScale": 7,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "DCR_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BOIN_USDT": {
+        "priceScale": 4,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VBT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "GTC_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "FDS_USDT": {
+        "priceScale": 5,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "PS_MX": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 50.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "IOST_ETH": {
+        "priceScale": 9,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "ANKR_ETH": {
+        "priceScale": 8,
+        "quantityScale": 4,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "VNT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "LBTC_ETH": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "BHT_USDT": {
+        "priceScale": 6,
+        "quantityScale": 2,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    },
+    "ZEC_USDT": {
+        "priceScale": 2,
+        "quantityScale": 6,
+        "minAmount": 5.0,
+        "buyFeeRate": 0.001,
+        "sellFeeRate": 0.001
+    },
+    "IMG_ETH": {
+        "priceScale": 8,
+        "quantityScale": 2,
+        "minAmount": 0.01,
+        "buyFeeRate": 0.002,
+        "sellFeeRate": 0.002
+    }
+}

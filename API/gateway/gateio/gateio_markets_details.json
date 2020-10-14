@@ -1,0 +1,4007 @@
+[
+    {
+        "id": "IHT_ETH",
+        "base": "IHT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "XVG_BTC",
+        "base": "XVG",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "QBT_QTUM",
+        "base": "QBT",
+        "quote": "QTUM",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.01",
+        "precision": 5
+    },
+    {
+        "id": "XMC_BTC",
+        "base": "XMC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "HC_USDT",
+        "base": "HC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "PAX_USDT",
+        "base": "PAX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "QTUM_ETH",
+        "base": "QTUM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": "0.01",
+        "min_quote_amount": "0.001",
+        "precision": 5
+    },
+    {
+        "id": "EDR_ETH",
+        "base": "EDR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "FUN_USDT",
+        "base": "FUN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "DASH_BTC",
+        "base": "DASH",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 5
+    },
+    {
+        "id": "KGC_USDT",
+        "base": "KGC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "ZPT_BTC",
+        "base": "ZPT",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "DOCK_ETH",
+        "base": "DOCK",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "QSP_USDT",
+        "base": "QSP",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TUSD_CNYX",
+        "base": "TUSD",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 3
+    },
+    {
+        "id": "DGD_USDT",
+        "base": "DGD",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ELEC_ETH",
+        "base": "ELEC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DBC_ETH",
+        "base": "DBC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "TRX_USDT",
+        "base": "TRX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "LTC_BTC",
+        "base": "LTC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": "0.003",
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "DOGE_USDT",
+        "base": "DOGE",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "HAV_ETH",
+        "base": "HAV",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BLZ_ETH",
+        "base": "BLZ",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "SKM_ETH",
+        "base": "SKM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "QLC_ETH",
+        "base": "QLC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "GAS_BTC",
+        "base": "GAS",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "USDT_CNYX",
+        "base": "USDT",
+        "quote": "CNYX",
+        "fee": "0.02",
+        "min_base_amount": "1",
+        "min_quote_amount": null,
+        "precision": 3
+    },
+    {
+        "id": "ARPA_USDT",
+        "base": "ARPA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "CVC_ETH",
+        "base": "CVC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "SWTH_USDT",
+        "base": "SWTH",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "JNT_ETH",
+        "base": "JNT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "AE_ETH",
+        "base": "AE",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "RUFF_BTC",
+        "base": "RUFF",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "MAN_USDT",
+        "base": "MAN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MIX_USDT",
+        "base": "MIX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "EOS_BTC",
+        "base": "EOS",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "BTS_BTC",
+        "base": "BTS",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "VET_USDT",
+        "base": "VET",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BCH_USDT",
+        "base": "BCH",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "MDA_ETH",
+        "base": "MDA",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "STX_ETH",
+        "base": "STX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "MED_USDT",
+        "base": "MED",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "MAN_ETH",
+        "base": "MAN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ABT_USDT",
+        "base": "ABT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "QBT_USDT",
+        "base": "QBT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "GTC_BTC",
+        "base": "GTC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "GSE_ETH",
+        "base": "GSE",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DOGE_BTC",
+        "base": "DOGE",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 9
+    },
+    {
+        "id": "SMT_USDT",
+        "base": "SMT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ONG_USDT",
+        "base": "ONG",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ABT_ETH",
+        "base": "ABT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "XVG_USDT",
+        "base": "XVG",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "ZRX_BTC",
+        "base": "ZRX",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "GMAT_USDT",
+        "base": "GMAT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BTS_USDT",
+        "base": "BTS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "STORJ_BTC",
+        "base": "STORJ",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "DOCK_USDT",
+        "base": "DOCK",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "NAS_ETH",
+        "base": "NAS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "RDN_USDT",
+        "base": "RDN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "NKN_USDT",
+        "base": "NKN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "OAX_ETH",
+        "base": "OAX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "LBA_ETH",
+        "base": "LBA",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ONT_ETH",
+        "base": "ONT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "OPEN_USDT",
+        "base": "OPEN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "EOS_USDT",
+        "base": "EOS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "PST_ETH",
+        "base": "PST",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BKC_USDT",
+        "base": "BKC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "NANO_BTC",
+        "base": "NANO",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "DAI_USDT",
+        "base": "DAI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TSL_USDT",
+        "base": "TSL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "MED_QTUM",
+        "base": "MED",
+        "quote": "QTUM",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.01",
+        "precision": 8
+    },
+    {
+        "id": "BCX_BTC",
+        "base": "BCX",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "QLC_BTC",
+        "base": "QLC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "CVC_USDT",
+        "base": "CVC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ETH_CNYX",
+        "base": "ETH",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": "0.001",
+        "min_quote_amount": null,
+        "precision": 2
+    },
+    {
+        "id": "MOBI_USDT",
+        "base": "MOBI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "REM_USDT",
+        "base": "REM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "EOSDAC_USDT",
+        "base": "EOSDAC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MBL_ETH",
+        "base": "MBL",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ATOM_BTC",
+        "base": "ATOM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "XRP_BTC",
+        "base": "XRP",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "HIT_ETH",
+        "base": "HIT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "OCN_BTC",
+        "base": "OCN",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "EOS_ETH",
+        "base": "EOS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "XRP_USDT",
+        "base": "XRP",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MBL_USDT",
+        "base": "MBL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "INSTAR_ETH",
+        "base": "INSTAR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "LEMO_ETH",
+        "base": "LEMO",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MKR_ETH",
+        "base": "MKR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 4
+    },
+    {
+        "id": "ICX_ETH",
+        "base": "ICX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "RFR_USDT",
+        "base": "RFR",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "XTZ_BTC",
+        "base": "XTZ",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "MOBI_BTC",
+        "base": "MOBI",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "DX_USDT",
+        "base": "DX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 8
+    },
+    {
+        "id": "FTM_ETH",
+        "base": "FTM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ADA_BTC",
+        "base": "ADA",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "BEAM_BTC",
+        "base": "BEAM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "IQ_ETH",
+        "base": "IQ",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MEETONE_ETH",
+        "base": "MEETONE",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "QTUM_BTC",
+        "base": "QTUM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": "0.01",
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "TSL_QTUM",
+        "base": "TSL",
+        "quote": "QTUM",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.01",
+        "precision": 5
+    },
+    {
+        "id": "POWR_USDT",
+        "base": "POWR",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "WINGS_ETH",
+        "base": "WINGS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BNB_USDT",
+        "base": "BNB",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "SALT_ETH",
+        "base": "SALT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "OMG_ETH",
+        "base": "OMG",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "QASH_ETH",
+        "base": "QASH",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BXC_USDT",
+        "base": "BXC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 7
+    },
+    {
+        "id": "ZIL_ETH",
+        "base": "ZIL",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "NKN_ETH",
+        "base": "NKN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BCHSV_USDT",
+        "base": "BCHSV",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "GEM_USDT",
+        "base": "GEM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "LRN_ETH",
+        "base": "LRN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "XTZ_ETH",
+        "base": "XTZ",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "NANO_USDT",
+        "base": "NANO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ATMI_ETH",
+        "base": "ATMI",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DASH_USDT",
+        "base": "DASH",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "LAMB_ETH",
+        "base": "LAMB",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "REQ_USDT",
+        "base": "REQ",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "FUEL_USDT",
+        "base": "FUEL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "SNET_USDT",
+        "base": "SNET",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "DATA_USDT",
+        "base": "DATA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "LRN_USDT",
+        "base": "LRN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "QKC_ETH",
+        "base": "QKC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "SNT_ETH",
+        "base": "SNT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "DRGN_USDT",
+        "base": "DRGN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "FTI_USDT",
+        "base": "FTI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "TFD_ETH",
+        "base": "TFD",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ZSC_USDT",
+        "base": "ZSC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "TRX_ETH",
+        "base": "TRX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "RDN_ETH",
+        "base": "RDN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "DDD_USDT",
+        "base": "DDD",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "XLM_ETH",
+        "base": "XLM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "QASH_BTC",
+        "base": "QASH",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "INK_BTC",
+        "base": "INK",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "TCT_USDT",
+        "base": "TCT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BTM_BTC",
+        "base": "BTM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "BCN_BTC",
+        "base": "BCN",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 9
+    },
+    {
+        "id": "ZRX_ETH",
+        "base": "ZRX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "NBOT_USDT",
+        "base": "NBOT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "DPY_ETH",
+        "base": "DPY",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BU_BTC",
+        "base": "BU",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "BAT_ETH",
+        "base": "BAT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "LLT_SNET",
+        "base": "LLT",
+        "quote": "SNET",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 8
+    },
+    {
+        "id": "XEM_BTC",
+        "base": "XEM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "XMR_USDT",
+        "base": "XMR",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "FTM_USDT",
+        "base": "FTM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "HIT_USDT",
+        "base": "HIT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 8
+    },
+    {
+        "id": "LEO_USDT",
+        "base": "LEO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BTC_CNYX",
+        "base": "BTC",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": "0.0001",
+        "min_quote_amount": null,
+        "precision": 2
+    },
+    {
+        "id": "BTG_USDT",
+        "base": "BTG",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "CS_USDT",
+        "base": "CS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "GOD_BTC",
+        "base": "GOD",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 5
+    },
+    {
+        "id": "LSK_BTC",
+        "base": "LSK",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "WAVES_USDT",
+        "base": "WAVES",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "ZEC_BTC",
+        "base": "ZEC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 4
+    },
+    {
+        "id": "BTT_TRX",
+        "base": "BTT",
+        "quote": "TRX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 4
+    },
+    {
+        "id": "HUR_ETH",
+        "base": "HUR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BCH_CNYX",
+        "base": "BCH",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 4
+    },
+    {
+        "id": "ETC_USDT",
+        "base": "ETC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "BCX_USDT",
+        "base": "BCX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "MDA_USDT",
+        "base": "MDA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "OCN_ETH",
+        "base": "OCN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "FUEL_ETH",
+        "base": "FUEL",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "SOP_USDT",
+        "base": "SOP",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "ETC_ETH",
+        "base": "ETC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "LYM_BTC",
+        "base": "LYM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "JNT_BTC",
+        "base": "JNT",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "GNX_ETH",
+        "base": "GNX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "AE_BTC",
+        "base": "AE",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "TNC_BTC",
+        "base": "TNC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "DADI_USDT",
+        "base": "DADI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BXC_ETH",
+        "base": "BXC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BEAM_ETH",
+        "base": "BEAM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "XTZ_USDT",
+        "base": "XTZ",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MANA_ETH",
+        "base": "MANA",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "CDT_USDT",
+        "base": "CDT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ZSC_ETH",
+        "base": "ZSC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MDT_USDT",
+        "base": "MDT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "BCD_BTC",
+        "base": "BCD",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "MANA_USDT",
+        "base": "MANA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "LRC_ETH",
+        "base": "LRC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "KNC_USDT",
+        "base": "KNC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "GAS_USDT",
+        "base": "GAS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "MCO_USDT",
+        "base": "MCO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "OMG_BTC",
+        "base": "OMG",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "MTN_USDT",
+        "base": "MTN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TNT_ETH",
+        "base": "TNT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "ETC_BTC",
+        "base": "ETC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "MCO_ETH",
+        "base": "MCO",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "QKC_USDT",
+        "base": "QKC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "STORJ_USDT",
+        "base": "STORJ",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ATP_USDT",
+        "base": "ATP",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "XEM_USDT",
+        "base": "XEM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "QTUM_USDT",
+        "base": "QTUM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": "0.01",
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "LSK_USDT",
+        "base": "LSK",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "LYM_ETH",
+        "base": "LYM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "IOTX_USDT",
+        "base": "IOTX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "GTC_ETH",
+        "base": "GTC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "USDC_CNYX",
+        "base": "USDC",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 3
+    },
+    {
+        "id": "PST_USDT",
+        "base": "PST",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MDT_ETH",
+        "base": "MDT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "TNC_ETH",
+        "base": "TNC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "OAX_BTC",
+        "base": "OAX",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "SENC_ETH",
+        "base": "SENC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ONE_USDT",
+        "base": "ONE",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "ETH_USDT",
+        "base": "ETH",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": "0.001",
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "STORJ_ETH",
+        "base": "STORJ",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "SERO_ETH",
+        "base": "SERO",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "STX_USDT",
+        "base": "STX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MTN_ETH",
+        "base": "MTN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BU_USDT",
+        "base": "BU",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "GARD_USDT",
+        "base": "GARD",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 7
+    },
+    {
+        "id": "MET_USDT",
+        "base": "MET",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "PAX_CNYX",
+        "base": "PAX",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 3
+    },
+    {
+        "id": "XMR_BTC",
+        "base": "XMR",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "GXS_USDT",
+        "base": "GXS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "QBT_ETH",
+        "base": "QBT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "DCR_USDT",
+        "base": "DCR",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "HAV_USDT",
+        "base": "HAV",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "LEMO_USDT",
+        "base": "LEMO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BCHSV_BTC",
+        "base": "BCHSV",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "MKR_USDT",
+        "base": "MKR",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "TIPS_CNYX",
+        "base": "TIPS",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 8
+    },
+    {
+        "id": "BCHSV_CNYX",
+        "base": "BCHSV",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 2
+    },
+    {
+        "id": "BAT_BTC",
+        "base": "BAT",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "LEDU_BTC",
+        "base": "LEDU",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "XLM_BTC",
+        "base": "XLM",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "COFI_ETH",
+        "base": "COFI",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "GRIN_USDT",
+        "base": "GRIN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "MXC_USDT",
+        "base": "MXC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "ONT_USDT",
+        "base": "ONT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "FIL_USDT",
+        "base": "FIL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "FTI_ETH",
+        "base": "FTI",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "SERO_USDT",
+        "base": "SERO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "LUN_USDT",
+        "base": "LUN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MITH_ETH",
+        "base": "MITH",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DREP_ETH",
+        "base": "DREP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "PAY_BTC",
+        "base": "PAY",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "ZRX_USDT",
+        "base": "ZRX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "SMT_ETH",
+        "base": "SMT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "MIX_ETH",
+        "base": "MIX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "REQ_ETH",
+        "base": "REQ",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "IHT_USDT",
+        "base": "IHT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "SOP_ETH",
+        "base": "SOP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "GT_BTC",
+        "base": "GT",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "MXC_BTC",
+        "base": "MXC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "THETA_USDT",
+        "base": "THETA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "DDD_BTC",
+        "base": "DDD",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "GRIN_ETH",
+        "base": "GRIN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 5
+    },
+    {
+        "id": "GNT_USDT",
+        "base": "GNT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "SNT_USDT",
+        "base": "SNT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "DREP_USDT",
+        "base": "DREP",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "DATA_ETH",
+        "base": "DATA",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "CS_ETH",
+        "base": "CS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "INK_USDT",
+        "base": "INK",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BIFI_USDT",
+        "base": "BIFI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "OMG_USDT",
+        "base": "OMG",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "DX_ETH",
+        "base": "DX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "OST_USDT",
+        "base": "OST",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BFT_USDT",
+        "base": "BFT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "RATING_ETH",
+        "base": "RATING",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BCN_USDT",
+        "base": "BCN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "SOUL_USDT",
+        "base": "SOUL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "LRC_BTC",
+        "base": "LRC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "LEDU_ETH",
+        "base": "LEDU",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BNTY_USDT",
+        "base": "BNTY",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "MDS_ETH",
+        "base": "MDS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "LINK_ETH",
+        "base": "LINK",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "ZIL_USDT",
+        "base": "ZIL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "HC_BTC",
+        "base": "HC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "QLC_USDT",
+        "base": "QLC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "GOD_USDT",
+        "base": "GOD",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "CDT_ETH",
+        "base": "CDT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "POWR_ETH",
+        "base": "POWR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "VET_ETH",
+        "base": "VET",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "ALGO_USDT",
+        "base": "ALGO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "BLZ_USDT",
+        "base": "BLZ",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "DGD_ETH",
+        "base": "DGD",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "DPY_USDT",
+        "base": "DPY",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "GEM_ETH",
+        "base": "GEM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "INK_QTUM",
+        "base": "INK",
+        "quote": "QTUM",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.01",
+        "precision": 5
+    },
+    {
+        "id": "GSE_USDT",
+        "base": "GSE",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BTM_ETH",
+        "base": "BTM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "HT_USDT",
+        "base": "HT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ELF_ETH",
+        "base": "ELF",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "CELR_ETH",
+        "base": "CELR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BTT_ETH",
+        "base": "BTT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 9
+    },
+    {
+        "id": "NEO_BTC",
+        "base": "NEO",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "BAT_USDT",
+        "base": "BAT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "SKM_USDT",
+        "base": "SKM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "NBAI_ETH",
+        "base": "NBAI",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "GARD_ETH",
+        "base": "GARD",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "USDC_USDT",
+        "base": "USDC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "HC_ETH",
+        "base": "HC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "INK_ETH",
+        "base": "INK",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MED_ETH",
+        "base": "MED",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BNTY_ETH",
+        "base": "BNTY",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MDS_USDT",
+        "base": "MDS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "SALT_USDT",
+        "base": "SALT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "MDT_BTC",
+        "base": "MDT",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "OPEN_ETH",
+        "base": "OPEN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "PLY_ETH",
+        "base": "PLY",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "REP_ETH",
+        "base": "REP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BEAM_USDT",
+        "base": "BEAM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "PAY_ETH",
+        "base": "PAY",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "ARN_ETH",
+        "base": "ARN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "RCN_USDT",
+        "base": "RCN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "CNNS_USDT",
+        "base": "CNNS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "SNET_ETH",
+        "base": "SNET",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BTF_USDT",
+        "base": "BTF",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "ZPT_USDT",
+        "base": "ZPT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "DILI_USDT",
+        "base": "DILI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "LAMB_USDT",
+        "base": "LAMB",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "SNT_BTC",
+        "base": "SNT",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "UPP_ETH",
+        "base": "UPP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "RLC_ETH",
+        "base": "RLC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "DBC_USDT",
+        "base": "DBC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "ATOM_USDT",
+        "base": "ATOM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "EON_ETH",
+        "base": "EON",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "EOSDAC_ETH",
+        "base": "EOSDAC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "NEO_USDT",
+        "base": "NEO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "OST_ETH",
+        "base": "OST",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BFT_ETH",
+        "base": "BFT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ADD_ETH",
+        "base": "ADD",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "RLC_USDT",
+        "base": "RLC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "THETA_ETH",
+        "base": "THETA",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "SENC_USDT",
+        "base": "SENC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "XLM_USDT",
+        "base": "XLM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TNC_USDT",
+        "base": "TNC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "BIFI_BTC",
+        "base": "BIFI",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "KICK_USDT",
+        "base": "KICK",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "ATP_ETH",
+        "base": "ATP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "OCN_USDT",
+        "base": "OCN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "QKC_BTC",
+        "base": "QKC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 9
+    },
+    {
+        "id": "MITH_USDT",
+        "base": "MITH",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "VTHO_ETH",
+        "base": "VTHO",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "FUN_ETH",
+        "base": "FUN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "COFI_USDT",
+        "base": "COFI",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BU_ETH",
+        "base": "BU",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "LEO_BTC",
+        "base": "LEO",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "XEM_ETH",
+        "base": "XEM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "GRIN_BTC",
+        "base": "GRIN",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "RCN_ETH",
+        "base": "RCN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DRGN_ETH",
+        "base": "DRGN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "XMC_USDT",
+        "base": "XMC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "NPXS_ETH",
+        "base": "NPXS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BNT_ETH",
+        "base": "BNT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "DADI_ETH",
+        "base": "DADI",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "POWR_BTC",
+        "base": "POWR",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "JNT_USDT",
+        "base": "JNT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BBK_ETH",
+        "base": "BBK",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "SHIP_ETH",
+        "base": "SHIP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "PAY_USDT",
+        "base": "PAY",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BCDN_ETH",
+        "base": "BCDN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MEDX_USDT",
+        "base": "MEDX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BTF_BTC",
+        "base": "BTF",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "LST_ETH",
+        "base": "LST",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "VIDY_ETH",
+        "base": "VIDY",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "QSP_ETH",
+        "base": "QSP",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "RED_USDT",
+        "base": "RED",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "SWTH_ETH",
+        "base": "SWTH",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "MEDX_ETH",
+        "base": "MEDX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "TOMO_USDT",
+        "base": "TOMO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "WICC_ETH",
+        "base": "WICC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "MOBI_ETH",
+        "base": "MOBI",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "GXS_BTC",
+        "base": "GXS",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "ELEC_USDT",
+        "base": "ELEC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "TIPS_ETH",
+        "base": "TIPS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 9
+    },
+    {
+        "id": "ONG_ETH",
+        "base": "ONG",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "DOGE_CNYX",
+        "base": "DOGE",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 5
+    },
+    {
+        "id": "KICK_ETH",
+        "base": "KICK",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "BTO_ETH",
+        "base": "BTO",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "NBOT_ETH",
+        "base": "NBOT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "HSC_USDT",
+        "base": "HSC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 8
+    },
+    {
+        "id": "GNT_ETH",
+        "base": "GNT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "TOMO_ETH",
+        "base": "TOMO",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "PPS_USDT",
+        "base": "PPS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "RATING_USDT",
+        "base": "RATING",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BTM_USDT",
+        "base": "BTM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "RUFF_USDT",
+        "base": "RUFF",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TCT_ETH",
+        "base": "TCT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "GT_USDT",
+        "base": "GT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TFUEL_ETH",
+        "base": "TFUEL",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "SOUL_ETH",
+        "base": "SOUL",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "IOTA_BTC",
+        "base": "IOTA",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "LBA_USDT",
+        "base": "LBA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "DDD_ETH",
+        "base": "DDD",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "CELR_USDT",
+        "base": "CELR",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "LEND_USDT",
+        "base": "LEND",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "WICC_USDT",
+        "base": "WICC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "HSC_ETH",
+        "base": "HSC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ADA_USDT",
+        "base": "ADA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TNT_USDT",
+        "base": "TNT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "TUSD_USDT",
+        "base": "TUSD",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "RUFF_ETH",
+        "base": "RUFF",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 7
+    },
+    {
+        "id": "TFUEL_USDT",
+        "base": "TFUEL",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "IOTX_ETH",
+        "base": "IOTX",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "LRC_USDT",
+        "base": "LRC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "AE_USDT",
+        "base": "AE",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "IOTA_USDT",
+        "base": "IOTA",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "LYM_USDT",
+        "base": "LYM",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "DCR_BTC",
+        "base": "DCR",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "TMT_ETH",
+        "base": "TMT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "ELF_USDT",
+        "base": "ELF",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "KNC_ETH",
+        "base": "KNC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "NAS_USDT",
+        "base": "NAS",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "VIDY_USDT",
+        "base": "VIDY",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "BTC_USDT",
+        "base": "BTC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": "0.0001",
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "WAVES_BTC",
+        "base": "WAVES",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "LTC_USDT",
+        "base": "LTC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": "0.003",
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "ARPA_ETH",
+        "base": "ARPA",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "RFR_ETH",
+        "base": "RFR",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "GMAT_ETH",
+        "base": "GMAT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BTO_USDT",
+        "base": "BTO",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BTC_USDC",
+        "base": "BTC",
+        "quote": "USDC",
+        "fee": "0.2",
+        "min_base_amount": "0.0001",
+        "min_quote_amount": null,
+        "precision": 2
+    },
+    {
+        "id": "NAS_BTC",
+        "base": "NAS",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "MET_ETH",
+        "base": "MET",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "LEND_ETH",
+        "base": "LEND",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "LUN_ETH",
+        "base": "LUN",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "CNNS_ETH",
+        "base": "CNNS",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DNT_ETH",
+        "base": "DNT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "BCH_BTC",
+        "base": "BCH",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 5
+    },
+    {
+        "id": "ICX_USDT",
+        "base": "ICX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "RED_ETH",
+        "base": "RED",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "SBTC_USDT",
+        "base": "SBTC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "REM_ETH",
+        "base": "REM",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "DBC_BTC",
+        "base": "DBC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 8
+    },
+    {
+        "id": "BCDN_USDT",
+        "base": "BCDN",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 6
+    },
+    {
+        "id": "XRP_CNYX",
+        "base": "XRP",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 3
+    },
+    {
+        "id": "ZPT_ETH",
+        "base": "ZPT",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 6
+    },
+    {
+        "id": "LINK_USDT",
+        "base": "LINK",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "EOS_CNYX",
+        "base": "EOS",
+        "quote": "CNYX",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": null,
+        "precision": 3
+    },
+    {
+        "id": "BTT_USDT",
+        "base": "BTT",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 7
+    },
+    {
+        "id": "SBTC_BTC",
+        "base": "SBTC",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 7
+    },
+    {
+        "id": "BTG_BTC",
+        "base": "BTG",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "GTC_USDT",
+        "base": "GTC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    },
+    {
+        "id": "ETH_BTC",
+        "base": "ETH",
+        "quote": "BTC",
+        "fee": "0.2",
+        "min_base_amount": "0.001",
+        "min_quote_amount": "0.0001",
+        "precision": 6
+    },
+    {
+        "id": "QASH_USDT",
+        "base": "QASH",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "BCD_USDT",
+        "base": "BCD",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 3
+    },
+    {
+        "id": "MXC_ETH",
+        "base": "MXC",
+        "quote": "ETH",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "0.001",
+        "precision": 8
+    },
+    {
+        "id": "BTC_PAX",
+        "base": "BTC",
+        "quote": "PAX",
+        "fee": "0.2",
+        "min_base_amount": "0.0001",
+        "min_quote_amount": null,
+        "precision": 2
+    },
+    {
+        "id": "OAX_USDT",
+        "base": "OAX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 4
+    },
+    {
+        "id": "ZEC_USDT",
+        "base": "ZEC",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 2
+    },
+    {
+        "id": "GNX_USDT",
+        "base": "GNX",
+        "quote": "USDT",
+        "fee": "0.2",
+        "min_base_amount": null,
+        "min_quote_amount": "1",
+        "precision": 5
+    }
+]

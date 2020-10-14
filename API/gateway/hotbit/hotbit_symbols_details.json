@@ -1,0 +1,2802 @@
+{
+    "LAMB_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EXPO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GMAT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "JAR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TPT_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XPC_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LCS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ZRX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MGC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SWL_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOB_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "IG_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GEN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FOR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ICX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CPX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GARD_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SERO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "GARD_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "KSM_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "PKG_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EOSDAC_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GOT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VSYS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ECP_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XRP_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TOP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "AERGO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "WTN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NOIA_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "OGO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MATIC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DATP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IOST_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SCV_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SPHTX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HTB_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NIM_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "YCC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MGC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "UGAS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ETH_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PAI_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MIX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IOG_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "VNXLU_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BST_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "MODEX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QDAO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ONT_BTC": {
+        "quote_increment": 1e-07, 
+        "price_max_precision": 7
+    }, 
+    "ZPAY_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ONG_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TERA_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "AMT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ETZ_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CWV_USDT": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "AXE_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "INVE_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ATOM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CWV_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SSN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BBO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UBEX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BNB_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EOSDAC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TERA_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "LTC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HTN_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GLAD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HSN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BCH_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DKYC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EVN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CARAT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "USDQ_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "MODEX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VOLLAR_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MVP_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ATOM_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "FX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TMT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FOR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MEDIBIT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NEXO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MIX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SAP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "SENT_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SOUL_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "POLY_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PPC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FTM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "JHB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GOD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "POCC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EDN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RTE_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "YEED_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QDAO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DML_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BITX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DAG_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ESS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOLT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOLD_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BQT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CPT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SEAD_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VOLLAR_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "EQUAD_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DEEP_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PTN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DREP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VTHO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "META_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TOMO_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XEM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QDAO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ALGO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TIC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EDR_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HDS_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ORS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ENG_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ATN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ARAW_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BKX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TNB_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BTT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LOTO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NEXO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "PAT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "CHR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NIM_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOB_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LOOM_ATOM": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TBX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OSC_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BOLT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LTO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "COT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ROCK2_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LIT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "WNL_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BSV_BTC": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "VET_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ENTS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ADI_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HMQ_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OGO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CNNS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BLACK_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LQD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "USDQ_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RATING_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ANKR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ACAT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SCRL_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FSBT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SOC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TOMO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DICE_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BIR_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ALT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DUO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MFT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "COU_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RSR_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TOP_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TOP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "HMT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XLM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BU_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DOT_BTC": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "WHEN_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HTB_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BZNT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ORS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ZB_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ZEON_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NPXS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UCN_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "WEBN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MIX_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "PROM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HQX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HTN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOOL_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "INVE_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TUSD_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HQT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FTM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FET_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UCN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MCT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TUSD_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CARD_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DACC_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LNKO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DCP_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GUSD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FOTA_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OLT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "AE_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "USDT_USD": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "ELF_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BLACK_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XLM_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DELTA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TMT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NPXSXEM_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SEELE_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LFC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XLAB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "FREE_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IAB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QNT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XEM_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BHD_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XEM_USDQ": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BHD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CYMT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "OWN_HTB": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "DOGE_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PROM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XZC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GENT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XCASH_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RISK_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ETGP_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ALGO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ZXC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "THETA_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "REM_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PCX_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "SWM_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "SNTR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HOT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IMG_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FTXT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PCX_BTC": {
+        "quote_increment": 1e-07, 
+        "price_max_precision": 7
+    }, 
+    "YTNB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "VSYS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BBGC_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BTT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "OMG_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RSR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BUD_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GOT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LOOM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HEDG_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MIG_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BBO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ARPA_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BANCA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HDS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IRIS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SENT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LAMB_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "URAC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UPP_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CPX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GMCI_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XMX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EQUAD_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SCC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IQ_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ZRX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GUSD_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NEW_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DCP_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CNP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DCP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "GUSD_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GOD_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "COVA_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "KSM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CCP_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ORBS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BXA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "WICC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OLT_ATOM": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HAVY_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "POLY_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QKC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HERB_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CMCT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VITE_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PEOS_EOS": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "SS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EGT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FSN_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "QT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GAIC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EOSDAC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BKX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BNB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ETZ_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BLACK_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TNB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GRIN_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "ABX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EMT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FEX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DOT_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "TRTL_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ALI_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NEW_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BHD_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "UBT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MET_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PTA_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BUD_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QCX_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "CELR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LC_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MICRO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RISK_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EKO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HDS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ZNT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BLOC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PTI_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NOS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CTRT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HLL_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LUD_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RRB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TRX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BSV_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "MAS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QCH_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "LFC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOLTT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DKYC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ATOM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MFT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "WEB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EGT_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "INCX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IRIS_ATOM": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "GRFT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SWM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ZCO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CHX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ETC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GVT_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "EOS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VIDY_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "EVE_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OCEAN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UGAS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SOC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HMX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CNNS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ELY_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LTO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BOLT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DERO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "COVA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RHOC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BLOC_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "USDC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TERA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DOT_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "QUN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FML_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ACTP_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PCL_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "0xBTC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "CPT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QNT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "SWM_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ENG_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IRIS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GUSS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QCH_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OLT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CCP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DAG_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PAT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LOTO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BTCB_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SNTVT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QASH_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IRIS_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "USDQ_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XCASH_HTB": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "KAT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ABYSS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NPXSXEM_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ICX_ETH": {
+        "quote_increment": 1e-07, 
+        "price_max_precision": 7
+    }, 
+    "MRPH_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CELR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XPC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ADI_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOLD_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "WNL_HTB": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "SS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BEAM_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "EXRN_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LQD_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GOD_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "UPP_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "WAB_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DOT_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "CELR_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "XZC_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "NOIA_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SCC18_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TRTL_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SPT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SERO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DUO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XTM_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IOG_HTB": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "MEETONE_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FSN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ETH_USD": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "LAMB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "EXPO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "STQ_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ELF_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QKC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SOUL_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XCASH_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LSC_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BCHIP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LNKO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "GENE_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VIDT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IONC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NEXO_HTB": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "FDS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EOS_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "LAMB_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "SKM_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XEM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BOOL_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LC_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BTC_USD": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "PTN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CHR_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GRIN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CMIT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TRAT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EGT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "AE_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QASH_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "AQX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TVNT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "WICC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NOVA_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GRIN_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DEEP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "IX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HYN_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "JAR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LTC_USDT": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "BCH_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BSV_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "OSC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XLM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SCR_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BTT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ETT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "QOB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BQT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "WAVES_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SKM_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BU_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IOTX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SERO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ETH_USDT": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "BTC_USDT": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "ETH_USDQ": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "LTC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IOTX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BEAM_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "QCX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "REM_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "CNNS_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "AXE_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EVE_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SENT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PAX_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GVT_BTC": {
+        "quote_increment": 1e-07, 
+        "price_max_precision": 7
+    }, 
+    "XRP_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HOT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LUD_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FDS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "JIC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "AERGO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OMG_ETH": {
+        "quote_increment": 1e-07, 
+        "price_max_precision": 7
+    }, 
+    "VITE_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MET_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TCASH_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RSR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "QNT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ZIL_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NRP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DASH_BTC": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "FSN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BIR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BDT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RB_TUSD": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BEAM_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "COU_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NEXO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "XLAB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BNC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LIT_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "LUNA_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TGAME_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GARD_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XMX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "IOTX_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MATIC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SWM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EDN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IONC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "XZC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VSYS_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DICE_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "XRP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TRTL_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "GARD_ATOM": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PAI_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EUBC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VOLLAR_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RBLX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SNTR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SRK_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NDX_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TOR_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "SEAD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ARPA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SPHTX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DASH_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "APC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NEW_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TOTO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SOUL_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TRY_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VET_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GRIN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ATOM_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "MAS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "STQ_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "CARAT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "GXI_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SEELE_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FDS_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "FBN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HYN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "USDC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EDR_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PCL_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ABX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VJC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "EKO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NIM_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "HOTTO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FET_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FOXT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "REO_HTB": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "TRX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PAX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TCASH_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "REO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "YTNB_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TAT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CPT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "IMG_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "YEED_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "NOVA_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ATN_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EMT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EVN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "EMT_EOS": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "BLOC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MVP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DICE_EOS": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NOS_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DREP_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VIKKY_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "0xBTC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MEDIBIT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LC_HTB": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "PLG_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UBT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "RHOC_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TOMO_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "DERO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "REL_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "CHX_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "FXP_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "UBEX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "KXC_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "VTHO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DEEP_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "AXE_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "RTE_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "BOMB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ZB_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BCH_BTC": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "MCTP_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "SRH_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ANKR_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "GUSS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FET_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "HNB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "PTA_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ETC_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OWN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ESS_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MRPH_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "JMT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ZXC_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TUSD_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "INCX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "UGAS_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "FOR_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "LST_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QUN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HTB_TUSD": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "HTB_USDQ": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "HTB_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ZEON_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "META_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ONG_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MMDA_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DCNT_BTC": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "LUNA_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VOLLAR_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "HTB_USD": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "XLAB_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "AE_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "NPXS_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TOL_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IOST_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "IMG_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "WAVES_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "TT_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "SNTVT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "CSOUL_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ALGO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DOGE_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "PPC_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "ZCO_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BTC_USDQ": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "KAT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "EOS_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BZNT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "AXA_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "MCT_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "THETA_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BEAM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "VGO_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "PAX_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "SWAG_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "QUIN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "FOIN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "MCTP_USDT": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "GEN_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "ETZ_HTB": {
+        "quote_increment": 0.01, 
+        "price_max_precision": 2
+    }, 
+    "BDT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ETI_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TRY_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "LTO_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "TOTO_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "RATING_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ZIL_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "OCEAN_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "MNX_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "OMG_ATOM": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "USDC_USDT": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "CARD_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ACAT_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "KWATT_ETH": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "HAND_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "ONT_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "PCX_USDT": {
+        "quote_increment": 0.0001, 
+        "price_max_precision": 4
+    }, 
+    "LOOM_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "BIR_BTC": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }, 
+    "DASH_ETH": {
+        "quote_increment": 1e-06, 
+        "price_max_precision": 6
+    }, 
+    "DUSK_BTC": {
+        "quote_increment": 1e-08, 
+        "price_max_precision": 8
+    }, 
+    "PCX_ETH": {
+        "quote_increment": 1e-07, 
+        "price_max_precision": 7
+    }, 
+    "EXRN_ETH": {
+        "quote_increment": 1e-10, 
+        "price_max_precision": 10
+    }
+}
