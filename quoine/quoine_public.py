@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-公共接口
+quoine spot public API
 2020/10/4 hlq
 """
 
@@ -66,6 +66,9 @@ class QuoinePublic:
             return None
 
     def get_price(self, symbol: str):
+        """
+        Get the latest trade price of the specified ticker
+        """
         try:
             symbol = self._symbol_convert(symbol)
             url = self.urlbase + f'/products/{self._product_id(symbol)}'
@@ -79,50 +82,68 @@ class QuoinePublic:
             print(e)
             return None
 
+    def get_ticker(self, symbol: str):
+        """
+        Ticker is an overview of the market status of a trading pair,
+        including the latest trade price, top bid and ask prices
+        and 24-hour trading volume
+        """
+        try:
+            url = self.urlbase + '/products'
+            is_ok, content = self._request('GET', url)
+            result = {}
+            if is_ok:
+                for product in content:
+                    if product['currency_pair_code'] == self._symbol_convert(symbol):
+                        result = {
+                            'symbol_id': symbol,
+                            'url': url,
+                            'base_volume': None,
+                            'volume': float(product['volume_24h']),
+                            'fluctuation': None,
+                            'bid_1_amount': float(product['market_bid']),
+                            'bid_1': None,
+                            'ask_1_amount': float(product['market_ask']),
+                            'ask_1': None,
+                            'current_price': float(product['last_price_24h']),
+                            'lowest_price': None,
+                            'highest_price': None
+                        }
+            else:
+                self._output('get_ticker', content)
+            return result
+        except Exception as e:
+            print(e)
+            return None
+
     def get_orderbook(self, symbol: str):
+        """
+        Get full depth of trading pairs.
+        """
         try:
             symbol = self._symbol_convert(symbol)
             url = self.urlbase + f'/products/{self._product_id(symbol)}/price_levels'
             is_ok, content = self._request('GET', url)
+            orderbook = {
+                'bids': [],
+                'asks': []
+            }
             if is_ok:
                 orderbook = {
                     'asks': [[float(i[0]), float(i[1])]for i in content['buy_price_levels']],
                     'bids': [[float(i[0]), float(i[1])] for i in content['sell_price_levels']],
                 }
-                return orderbook
             else:
                 self._output('get_orderbook', content)
+            return orderbook
         except Exception as e:
             print(e)
-
-    def get_ticker(self, symbol: str):
-        try:
-            url = self.urlbase + '/products'
-            is_ok, content = self._request('GET', url)
-            if is_ok:
-                for product in content:
-                    if product['currency_pair_code'] == self._symbol_convert(symbol):
-                        return {
-                            'symbol_id': symbol,
-                            'url': url,
-                            'fluctuation': None,
-                            'base_volume': None,
-                            'bid_1_amount': product['market_bid'],
-                            'ask_1_amount': product['market_ask'],
-                            'volume': product['volume_24h'],
-                            'ask_1': None,
-                            'bid_1': None,
-                            'current_price': product['last_price_24h'],
-                            'lowest_price': None,
-                            'highest_price': None
-                        }
-                return None
-            else:
-                self._output('get_ticker', content)
-        except Exception as e:
-            print(e)
+            return None
 
     def get_trades(self, symbol: str):
+        """
+        Get the latest trade records of the specified trading pair
+        """
         try:
             symbol = self._symbol_convert(symbol)
             url = self.urlbase + f'/executions?product_id={self._product_id(symbol)}'
@@ -131,10 +152,10 @@ class QuoinePublic:
                 trades = []
                 for trade in content['models']:
                     trades.append({
-                        'count': trade['quantity'],
+                        'count': float(trade['quantity']),
                         'amount': float(trade['quantity']) * float(trade['price']),
                         'type': trade['taker_side'],
-                        'price': trade['price'],
+                        'price': float(trade['price']),
                         'order_time': trade['created_at']
                     })
                 return trades
@@ -151,6 +172,6 @@ class QuoinePublic:
 if __name__ == '__main__':
     quoine = QuoinePublic('https://api.liquid.com')
     # print(quoine.get_price('BTC_USDT'))
-    # print(quoine.get_orderbook('BTC_USDT'))
     # print(quoine.get_ticker('BTC_USDT'))
+    # print(quoine.get_orderbook('BTC_USDT'))
     # print(quoine.get_trades('BTC_USDT'))

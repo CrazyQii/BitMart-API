@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 """
-binance鉴权接口
+binance spot authentication API
 2020/10/10 hlq
 """
 
@@ -33,6 +34,9 @@ class BinanceAuth(BinancePublic):
         return round(time.time()*1000)
 
     def place_order(self, symbol: str, amount: float, price: float, side: str):
+        """
+        Place order
+        """
         try:
             url = self.urlbase + '/api/v3/order'
             params = {
@@ -48,13 +52,18 @@ class BinanceAuth(BinancePublic):
 
             is_ok, content = self._request('POST', url, data=params, headers={'X-MBX-APIKEY': self.api_key})
             if is_ok:
-                return content
+                return content['orderId']
             else:
                 self._output('place_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def cancel_order(self, symbol: str, entrust_id: str):
+        """
+        cancel order
+        """
         try:
             url = self.urlbase + '/api/v3/order'
             params = {
@@ -75,10 +84,15 @@ class BinanceAuth(BinancePublic):
                 return is_ok
             else:
                 self._output('cancel_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def open_orders(self, symbol: str):
+        """
+        Get a list of user orders
+        """
         try:
             url = self.urlbase + '/api/v3/allOrders'
             params = {
@@ -88,28 +102,32 @@ class BinanceAuth(BinancePublic):
             params['signature'] = self._sign_message(params)
 
             is_ok, content = self._request('GET', url, params=params, headers={'X-MBX-APIKEY': self.api_key})
+            results = []
             if is_ok:
-                results = []
                 for order in content:
                     results.append({
                         'entrust_id': order['orderId'],
                         'side': order['side'],
                         'symbol': order['symbol'],
                         'status': order['status'],
-                        'timestamp': order['time'],
-                        'price': order['price'],
-                        'original_amount': order['origQty'],
-                        'executed_amount': order['executedQty'],
+                        'timestamp': round(order['time'] / 1000),
+                        'price': float(order['price']),
+                        'original_amount': float(order['origQty']),
+                        'executed_amount': float(order['executedQty']),
                         'remaining_amount': float(order['origQty']) - float(order['executedQty']),
                         'fees': None
                     })
-                return results
             else:
-                return self._output('open_orders', content)
+                self._output('open_orders', content)
+            return results
         except Exception as e:
             print(e)
+            return None
 
     def order_detail(self, symbol: str, entrust_id: str):
+        """
+        Get order detail
+        """
         try:
             url = self.urlbase + '/api/v3/order'
             params = {
@@ -120,26 +138,32 @@ class BinanceAuth(BinancePublic):
             params['signature'] = self._sign_message(params)
 
             is_ok, content = self._request('GET', url, params=params, headers={'X-MBX-APIKEY': self.api_key})
+            result = {}
             if is_ok:
                 content = content['data']
-                return {
+                result = {
                     'entrust_id': content['orderId'],
                     'side': content['side'],
                     'symbol': content['symbol'],
                     'status': content['status'],
-                    'timestamp': content['time'],
-                    'price': content['price'],
-                    'original_amount': content['origQty'],
-                    'executed_amount': content['executedQty'],
+                    'timestamp': round(content['time'] / 1000),
+                    'price': float(content['price']),
+                    'original_amount': float(content['origQty']),
+                    'executed_amount': float(content['executedQty']),
                     'remaining_amount': float(content['origQty']) - float(content['executedQty']),
                     'fees': None
                 }
             else:
                 self._output('order_detail', content)
+            return result
         except Exception as e:
             print(e)
+            return None
 
     def wallet_balance(self):
+        """
+        Get the user's wallet balance for all currencies
+        """
         try:
             url = self.urlbase + '/api/v3/account'
             params = dict()
@@ -147,20 +171,21 @@ class BinanceAuth(BinancePublic):
             params['signature'] = self._sign_message(params)
 
             is_ok, content = self._request('GET', url, params=params, headers={'X-MBX-APIKEY': self.api_key})
+            free, frozen = {}, {}
             if is_ok:
-                free, frozen = {}, {}
                 for currency in content['balances']:
                     free[currency['asset']], frozen[currency['asset']] = currency['free'], currency['locked']
-                return free, frozen
             else:
                 self._output('wallet_balance', content)
+            return free, frozen
         except Exception as e:
             print(e)
+            return None
 
 
 if __name__ == '__main__':
-    binance = BinanceAuth('https://api.binance.com', '', '')
-    # print(binance.place_order('BTC_USDT', 1, 0.1, 'buy'))
+    binance = BinanceAuth('https://api.binance.com', 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh', 'GS6Us3YWMw7sQQMEm5uC90CrgFcvtSOlGyz3PzWA5KXsUamYG4Y4ieqW6oziKZ72')
+    # print(binance.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # print(binance.order_detail('BTC_USDT', '1'))
     # print(binance.open_orders('BTC_USDT'))
     # print(binance.cancel_order('UMA_USDT', '1'))

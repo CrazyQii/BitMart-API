@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 """
-hoo鉴权接口
+hoo spot authentication API
 2020/9/30 hlq
 """
 
@@ -41,6 +42,9 @@ class HooAuth(HooPublic):
             print(e)
 
     def place_order(self, symbol: str, amount: float, price: float, side: str):
+        """
+        place order
+        """
         try:
             url = self.urlbase + '/open/v1/orders/place'
             params = self._sign_message()
@@ -53,17 +57,20 @@ class HooAuth(HooPublic):
             is_ok, content = self._request('POST', url, data=params)
             if is_ok:
                 if content['code'] == 0:
-                    return content['data']
-                else:
-                    return content
+                    id = content['data']['order_id'] + '_' + content['data']['trade_no']
+                    return id
             else:
                 self._output('place_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
-    def cancel_order(self, symbol: str, entrust_id: str, trade_no: str):
-        # must contain entrust_id and trade_no
+    def cancel_order(self, symbol: str, entrust_id: str):
         try:
+            # handle order_id and trade_no
+            order_id, trade_no = entrust_id.split('_')
+
             url = self.urlbase + '/open/v1/orders/cancel'
             params = self._sign_message()
             params.update({
@@ -82,8 +89,10 @@ class HooAuth(HooPublic):
                 return is_ok
             else:
                 self._output('cancel_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def open_orders(self, symbol: str, pagenum: int = None, pagesize: int = None, side: int = None, start: int = None,
                end: int = None):
@@ -93,20 +102,20 @@ class HooAuth(HooPublic):
             params.update({'symbol': self._symbol_convert(symbol)})
 
             is_ok, content = self._request('GET', url, params=params)
+            results = []
             if is_ok:
-                results = []
                 for order in content['data']['orders']:
                     results.append({
-                        'status': order['status'],
-                        'remaining_amount': float(order['quantity']) - float(order['match_qty']),
-                        'timestamp': order['create_at'],
-                        'price': order['price'],
-                        'executed_amount': order['match_qty'],
-                        'symbol': order['ticker'],
-                        'fees': order['fee'],
-                        'original_amount': order['quantity'],
                         'entrust_id': order['order_id'],
-                        'side': 'buy' if order['side'] == 1 else 'sell'
+                        'side': 'buy' if order['side'] == 1 else 'sell',
+                        'symbol': order['ticker'],
+                        'status': order['status'],
+                        'timestamp': round(order['create_at'] / 1000),
+                        'price': float(order['price']),
+                        'original_amount': float(order['quantity']),
+                        'executed_amount': float(order['match_qty']),
+                        'remaining_amount': float(order['quantity']) - float(order['match_qty']),
+                        'fees': float(order['fee'])
                     })
                 return results
             else:
@@ -121,48 +130,50 @@ class HooAuth(HooPublic):
             params.update({'symbol': self._symbol_convert(symbol), 'order_id': order_id})
 
             is_ok, content = self._request('GET', url, params=params)
+            result = {}
             if is_ok:
                 if content['code'] == 0:
-                    return {
-                        'status': content['status'],
-                        'remaining_amount': float(content['quantity']) - float(content['match_qty']),
-                        'timestamp': content['create_at'],
-                        'price': content['price'],
-                        'executed_amount': content['match_qty'],
-                        'symbol': content['ticker'],
-                        'fees': content['fee'],
-                        'original_amount': content['quantity'],
+                    result = {
                         'entrust_id': content['order_id'],
-                        'side': 'buy' if content['side'] == 1 else 'sell'
+                        'side': 'buy' if content['side'] == 1 else 'sell',
+                        'symbol': content['ticker'],
+                        'status': content['status'],
+                        'timestamp': round(content['create_at'] / 1000),
+                        'price': float(content['price']),
+                        'original_amount': float(content['quantity']),
+                        'executed_amount': float(content['match_qty']),
+                        'remaining_amount': float(content['quantity']) - float(content['match_qty']),
+                        'fees': float(content['fee'])
                     }
-                else:
-                    return content
             else:
                 self._output('order_detail', content)
+            return result
         except Exception as e:
             print(e)
+            return None
 
     def wallet_balance(self):
         try:
             url = self.urlbase + '/open/v1/balance'
             params = self._sign_message()
             is_ok, content = self._request('GET', url, params=params)
+            free, frozen = {}, {}
             if is_ok:
-                free, frozen = {}, {}
                 if content['code'] == 0:
                     for currency in content['data']:
                         free[currency['symbol']], frozen[currency['symbol']] = currency['amount'], currency['freeze']
-                return free, frozen
             else:
                 self._output('wallet_balance', content)
+            return free, frozen
         except Exception as e:
             print(e)
+            return None
 
 
 if __name__ == '__main__':
-    hoo = HooAuth('https://api.hoolgd.com', '', '')
+    hoo = HooAuth('https://api.hoolgd.com', "iJsVEJDESyTXdm8hRBuf79fANdwNB5", "J7EqDCc6FaKA8n5nCy8WJ1uoM4HSZeg2k43mepX5TNjz1qLHUs")
     # print(hoo.place_order('EOS_USDT', 1.0016, 11, 'sell'))
     # print(hoo.order_detail('BTC_USDT', '1'))
     # print(hoo.open_orders('BTC_USDT'))
     # print(hoo.cancel_order('UMA_USDT', '1', '2'))
-    # print(hoo.wallet_balance())
+    print(hoo.wallet_balance())

@@ -77,8 +77,10 @@ class QuoineAuth(QuoinePublic):
                 return content['id']
             else:
                 self._output('place_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def cancel_order(self, symbol: str, entrust_id):
         try:
@@ -100,8 +102,10 @@ class QuoineAuth(QuoinePublic):
                 return is_ok
             else:
                 self._output('cancel_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def order_detail(self, symbol: str, entrust_id):
         try:
@@ -114,24 +118,24 @@ class QuoineAuth(QuoinePublic):
                 'Content-Type': 'application/json'
             }
             is_ok, content = self._request('GET', url, headers=headers)
+            results = []
             if is_ok:
-                results = []
                 for order in content['models']:
                     results.append({
-                        'status': order['status'],
-                        'remaining_amount': float(order['quantity']) - float(order['filled_quantity']),
-                        'timestamp': order['create_at'],
-                        'price': order['price'],
-                        'executed_amount': order['filled_quantity'],
-                        'symbol': order['currency_pair_code'],
-                        'fees': order['order_fee'],
-                        'original_amount': order['quantity'],
                         'entrust_id': order['id'],
-                        'side': order['side']
+                        'symbol': order['currency_pair_code'],
+                        'side': order['side'],
+                        'status': order['status'],
+                        'timestamp': order['create_at'],
+                        'price': float(order['price']),
+                        'original_amount': float(order['quantity']),
+                        'executed_amount': float(order['filled_quantity']),
+                        'remaining_amount': float(order['quantity']) - float(order['filled_quantity']),
+                        'fees': float(order['order_fee'])
                     })
-                return results
             else:
                 self._output('order_detail', content)
+            return results
         except Exception as e:
             print(e)
 
@@ -146,26 +150,27 @@ class QuoineAuth(QuoinePublic):
                 'Content-Type': 'application/json'
             }
             is_ok, content = self._request('GET', url, headers=headers)
+            results = []
             if is_ok:
-                results = []
                 for order in content['models']:
                     results.append({
-                        'status': order['status'],
-                        'remaining_amount': float(order['quantity']) - float(order['filled_quantity']),
-                        'timestamp': order['create_at'],
-                        'price': order['price'],
-                        'executed_amount': order['filled_quantity'],
-                        'symbol': order['currency_pair_code'],
-                        'fees': order['order_fee'],
-                        'original_amount': order['quantity'],
                         'entrust_id': order['id'],
-                        'side': order['side']
+                        'side': order['side'],
+                        'symbol': order['currency_pair_code'],
+                        'status': order['status'],
+                        'timestamp': order['create_at'],
+                        'price': float(order['price']),
+                        'original_amount': float(order['quantity']),
+                        'executed_amount': float(order['filled_quantity']),
+                        'remaining_amount': float(order['quantity']) - float(order['filled_quantity']),
+                        'fees': float(order['order_fee'])
                     })
-                return results
             else:
                 self._output('open_orders', content)
+            return results
         except Exception as e:
             print(e)
+            return None
 
     def wallet_balance(self):
         try:
@@ -184,11 +189,12 @@ class QuoineAuth(QuoinePublic):
             return free, frozen
         except Exception as e:
             print(e)
+            return None
 
 
 if __name__ == '__main__':
-    quoine = QuoineAuth('https://api.liquid.com', '', "")
-    # print(quoine.place_order("XRP_BTC", 30, 0.0002, "sell"))
+    quoine = QuoineAuth('https://api.liquid.com', '1672539', "brSxqeetDWhm9GpUFLV9CsoED2d17J91GHy7UEzK+MJpP20WnkHTtA3Q1bvcOsooCo85KkYJmZW8jaLd8NXIuA==")
+    print(quoine.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # order_id = quoine.place_order("XRP_BTC", 30, 0.0002, "sell")
     # print(quoine.cancel_order('XRP_BTC', 1))
     # print(quoine.order_detail('XRP_BTC', 2))

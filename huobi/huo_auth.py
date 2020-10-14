@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 """
-HuoBi authentication api
+HuoBi spot authentication api
 2020/10/13 hlq
 """
 
@@ -12,7 +13,7 @@ from urllib import parse
 
 
 class HuoAuth(HuoPublic):
-    def __init__(self, urlbase, api_key, api_secret):
+    def __init__(self, urlbase, api_key, api_secret, passphrase=None):
         super().__init__(urlbase)
         self.api_key = api_key
         self.api_secret = api_secret
@@ -60,10 +61,27 @@ class HuoAuth(HuoPublic):
         except Exception as e:
             print(e)
 
-    def place_order(self, symbol: str, amount: float, price: float, side: str, account_id=16267039):
+    def _account_id(self):
+        try:
+            url = self.urlbase + '/v1/account/accounts'
+            signature = self._sign_message('GET', 'api.huobi.pro', '/v1/account/accounts')
+            params = self._set_params(signature)
+            is_ok, content = self._request('GET', url, params=params, headers={'Content-Type': 'application/json'})
+            if is_ok and content['status'] == 'ok':
+                for account in content['data']:
+                    if account['type'] == 'spot':
+                        return account['id']
+            else:
+                return None
+        except Exception as e:
+            print(e)
+            return None
+
+    def place_order(self, symbol: str, amount: float, price: float, side: str):
         try:
             url = self.urlbase + '/v1/order/orders/place'
 
+            account_id = self._account_id()
             params = {
                 'account-id': account_id,
                 'amount': amount,
@@ -81,8 +99,10 @@ class HuoAuth(HuoPublic):
                 return content
             else:
                 self._output('place_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def cancel_order(self, symbol: str, entrust_id: str):
         try:
@@ -102,8 +122,10 @@ class HuoAuth(HuoPublic):
                 return is_ok
             else:
                 self._output('cancel_order', content)
+                return None
         except Exception as e:
             print(e)
+            return None
 
     def open_orders(self, symbol: str, start_time=None, end_time=None, direct=None, size=None):
         try:
@@ -117,26 +139,27 @@ class HuoAuth(HuoPublic):
             params = self._set_params(signature, params)
 
             is_ok, content = self._request('GET', url, params=params, headers={'Content-Type': 'application/json'})
+            results = []
             if is_ok and content['status'] == 'ok':
-                results = []
                 for order in content['data']:
                     results.append({
                         'entrust_id': order['id'],
                         'side': order['type'],
                         'symbol': order['symbol'],
                         'status': order['state'],
-                        'timestamp': order['created-at'],
-                        'price': order['price'],
-                        'original_amount': order['amount'],
-                        'executed_amount': order['field-amount'],
+                        'timestamp': round(order['created-at'] / 1000),
+                        'price': float(order['price']),
+                        'original_amount': float(order['amount']),
+                        'executed_amount': float(order['field-amount']),
                         'remaining_amount': float(order['amount']) - float(order['field-amount']),
-                        'fees': order['field-fees']
+                        'fees': float(order['field-fees'])
                     })
-                return results
             else:
-                return self._output('open_orders', content)
+                self._output('open_orders', content)
+            return results
         except Exception as e:
             print(e)
+            return None
 
     def order_detail(self, symbol: str, entrust_id: str):
         try:
@@ -146,39 +169,27 @@ class HuoAuth(HuoPublic):
             params = self._set_params(signature)
 
             is_ok, content = self._request('GET', url, params=params, headers={'Content-Type': 'application/json'})
+            result = {}
             if is_ok and content['status'] == 'ok':
-                print(content)
                 order = content['data']
-                return {
+                result = {
                     'entrust_id': order['id'],
                     'side': order['type'],
                     'symbol': order['symbol'],
                     'status': order['state'],
-                    'timestamp': order['created-at'],
-                    'price': order['price'],
-                    'original_amount': order['amount'],
-                    'executed_amount': order['field-amount'],
+                    'timestamp': round(order['created-at'] / 1000),
+                    'price': float(order['price']),
+                    'original_amount': float(order['amount']),
+                    'executed_amount': float(order['field-amount']),
                     'remaining_amount': float(order['amount']) - float(order['field-amount']),
-                    'fees': order['field-fees']
+                    'fees': float(order['field-fees'])
                 }
             else:
                 self._output('order_detail', content)
+            return result
         except Exception as e:
             print(e)
-
-    def wallet_info(self):
-        try:
-            url = self.urlbase + '/v1/account/accounts'
-            signature = self._sign_message('GET', 'api.huobi.pro', '/v1/account/accounts')
-            params = self._set_params(signature)
-            is_ok, content = self._request('GET', url, params=params, headers={'Content-Type': 'application/json'})
-            if is_ok and content['status'] == 'ok':
-                return content['data']
-            else:
-                self._output('wallet_info', content)
-
-        except Exception as e:
-            print(e)
+            return None
 
     def wallet_balance(self, account_id=16267039):
         try:
@@ -186,25 +197,24 @@ class HuoAuth(HuoPublic):
             signature = self._sign_message('GET', 'api.huobi.pro', f'/v1/account/accounts/{account_id}/balance')
             params = self._set_params(signature)
             is_ok, content = self._request('GET', url, params=params, headers={'Content-Type': 'application/json'})
+            free, frozen = {}, {}
             if is_ok and content['status'] == 'ok':
-                free, frozen = {}, {}
                 for currency in content['data']['list']:
                     if currency['type'] == 'trade':
                         free[currency['currency']] = currency['balance']
                     if currency['type'] == 'frozen':
                         frozen[currency['currency']] = currency['balance']
-                return free, frozen
             else:
                 self._output('wallet_balance', content)
-
+            return free, frozen
         except Exception as e:
             print(e)
+            return None
 
 
 if __name__ == '__main__':
-    huo = HuoAuth('https://api.huobi.pro', '', '')
-    wallet_id = huo.wallet_info()[0]['id']
-    # print(huo.place_order('EOS_USDT', 1.0016, 11, 'sell', account_id=wallet_id))
+    huo = HuoAuth('https://api.huobi.pro', '868328f5-dqnh6tvdf3-60a6530c-31675', '115158e5-d91ecf17-b53fa082-fcdd8')
+    # print(huo.place_order('EOS_USDT', 1.0016, 11, 'sell'))
     # print(huo.cancel_order('EOS_USDT', '234'))
     # print(huo.open_orders('EOS_USDT'))
     # print(huo.order_detail('EOS_USDT', '234'))
