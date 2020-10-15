@@ -4,7 +4,6 @@ bitmart spot authentication API
 2020/10/10 hlq
 """
 
-from Bourse.bitmart.bitmart_public import BitmartPublic
 import hmac
 import hashlib
 import time
@@ -12,9 +11,9 @@ import json
 import requests
 
 
-class BitmartAuth(BitmartPublic):
+class BitmartAuth(object):
     def __init__(self, urlbase, api_key, api_secret, passphrase):
-        super().__init__(urlbase)
+        self.urlbase = urlbase
         self.api_key = api_key
         self.api_secret = api_secret
         self.memo = passphrase

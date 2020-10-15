@@ -10,7 +10,7 @@ import datetime
 import base64
 import hmac
 import json
-from okex.okex_public import OkexPublic
+from Bourse.okex import OkexPublic
 
 
 class OkexAuth(OkexPublic):
