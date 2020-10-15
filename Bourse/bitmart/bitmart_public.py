@@ -6,44 +6,12 @@ bitmart spot public API
 import requests
 import traceback
 import time
+import math
 
 
 class BitmartPublic(object):
     def __init__(self, urlbase):
         self.urlbase = urlbase
-
-    def _request(self, method, url, params=None, data=None, headers=None):
-        try:
-            resp = requests.request(method, url, params=params, data=data, headers=headers)
-
-            if resp.status_code == 200:
-                return True, resp.json()
-            else:
-                error = {
-                    'code': resp.status_code,
-                    'method': method,
-                    'url': url,
-                    'data': data,
-                    'msg': resp.text
-                }
-                return False, error
-        except requests.exceptions.RequestException as e:
-            error = {
-                'method': method,
-                'url': url,
-                'data': data,
-                'traceback': traceback.format_exc(),
-                'error': e
-            }
-            return False, error
-
-    def _output(self, function_name, content):
-        """ output error info """
-        info = {
-            'function_name': function_name,
-            'content': content
-        }
-        print(info)
 
     def get_price_precision(self, symbol: str):
         """
@@ -51,23 +19,81 @@ class BitmartPublic(object):
         最大价格精度(小数位) 用来查询 k 线和深度
         """
         try:
-            url = self.urlbase + f'/spot/v1/symbols/details?symbol={symbol}'
-            is_ok, content = self._request('GET', url)
-            if is_ok:
-                return content
+            url = self.urlbase + '/spot/v1/symbols/details'
+            resp = requests.get(url).json()
+            if resp['code'] == 1000:
+                for ticker in resp['data']['symbols']:
+                    if ticker['symbol'] == symbol:
+                        return int(ticker['price_max_precision'])
+            else:
+                print(f'Bitmart public request error: {resp["message"]}')
+        except Exception as e:
+            print(f'Bitmart public get price increment error: {e}')
+
+    def get_price_increment(self, symbol: str):
+        """
+        The minimum order quantity is also the minimum order quantity increment
+        最小下单量，也是最小下单量增量
+        """
+        try:
+            url = self.urlbase + '/spot/v1/symbols/details'
+            resp = requests.get(url).json()
+            if resp['code'] == 1000:
+                for ticker in resp['data']['symbols']:
+                    if ticker['symbol'] == symbol:
+                        return float(ticker['quote_increment'])
+            else:
+                print(f'Bitmart public request error: {resp["message"]}')
+        except Exception as e:
+            print(f'Bitmart public get price increment error: {e}')
+
+    def get_amount_precision(self, symbol: str):
+        """
+        minimum order quantity accuracy
+        下单数量精度
+        """
+        try:
+            url = self.urlbase + '/spot/v1/symbols/details'
+            resp = requests.get(url).json()
+            if resp['code'] == 1000:
+                for ticker in resp['data']['symbols']:
+                    if ticker['symbol'] == symbol:
+                        return int(abs(math.log10(float(ticker['base_min_size']))))
+            else:
+                print(f'Bitmart public request error: {resp["message"]}')
+        except Exception as e:
+            print("Bitmart public get amount precision error: %s" % e)
+
+    def get_amount_increment(self, symbol: str):
+        """
+        minimum order quantity increment
+        最小下单数量增量
+        """
+        try:
+            url = self.urlbase + '/spot/v1/symbols/details'
+            resp = requests.get(url).json()
+            if resp['code'] == 1000:
+                for ticker in resp['data']['symbols']:
+                    if ticker['symbol'] == symbol:
+                        return float(ticker['base_min_size'])
+            else:
+                print(f'Bitmart public request error: {resp["message"]}')
+        except Exception as e:
+            print(f'Bitmart public get min amount error: {e}')
 
     def get_price(self, symbol: str):
         """ Get the latest trade price of specified ticker """
         try:
-            url = self.urlbase + f'/spot/v1/ticker?symbol={symbol}'
-            is_ok, content = self._request('GET', url)
-            if is_ok:
-                return float(content['data']['tickers'][0]['last_price'])
+            url = self.urlbase + f'/spot/v1/symbols/trades?symbol={symbol}'
+            resp = requests.get(url).json()
+            price = 0.0
+            if resp['code'] == 1000:
+                price = float(resp['data']['trades'][0]['price'])
             else:
-                self._output('get_price', content)
+                print(f'Bitmart public request error: {resp["message"]}')
+            return price
         except Exception as e:
-            print(e)
-            return None
+            print(f'Bitmart public get price error: {e}')
 
     def get_ticker(self, symbol: str):
         """
@@ -77,53 +103,59 @@ class BitmartPublic(object):
         """
         try:
             url = self.urlbase + f'/spot/v1/ticker?symbol={symbol}'
-            is_ok, content = self._request('GET', url)
-            result = {}
-            if is_ok:
-                ticker = content['data']['tickers'][0]
-                result = {
-                    'symbol_id': ticker['symbol'],
-                    'url': ticker['url'],
+            resp = requests.get(url).json()
+            if resp['code'] == 1000:
+                ticker = resp['data']['tickers'][0]
+                return {
+                    'symbol': ticker['symbol'],
+                    'last_price': float(ticker['last_price']),
+                    'quote_volume': float(ticker['quote_volume_24h']),
                     'base_volume': float(ticker['base_volume_24h']),
-                    'volume': float(ticker['quote_volume_24h']),
-                    'fluctuation': float(ticker['fluctuation']),
-                    'bid_1_amount': float(ticker['best_bid_size']),
-                    'bid_1': float(ticker['best_bid']),
-                    'ask_1_amount': float(ticker['best_ask_size']),
-                    'ask_1': float(ticker['best_ask']),
-                    'current_price': float(ticker['last_price']),
+                    'highest_price': float(ticker['high_24h']),
                     'lowest_price': float(ticker['low_24h']),
-                    'highest_price': float(ticker['high_24h'])
+                    'open_price': float(ticker['open_24h']),
+                    'close_price': float(ticker['close_24h']),
+                    'ask_1': float(ticker['best_ask']),
+                    'ask_1_amount': float(ticker['best_ask_size']),
+                    'bid_1': float(ticker['best_bid']),
+                    'bid_1_amount': float(ticker['best_bid_size']),
+                    'fluctuation': float(ticker['fluctuation']),
+                    'url': ticker['url'],
                 }
             else:
-                self._output('get_ticker', content)
-            return result
+                print(f'Bitmart public request error: {resp["message"]}')
         except Exception as e:
-            print(e)
-            return None
+            print(f'Bitmart public get ticker error: {e}')
 
     def get_orderbook(self, symbol: str):
         """
         Get full depth of trading pairs.
         """
         try:
-            url = self.urlbase + f'/spot/v1/symbols/book?symbol={symbol}'
-            is_ok, content = self._request('GET', url)
-            orderbook = {
-                'bids': [],
-                'asks': []
-            }
-            if is_ok:
-                for item in content['data']['buys']:
-                    orderbook['bids'].append([float(item['price']), float(item['amount'])])
-                for item in content['data']['sells']:
-                    orderbook['asks'].append([float(item['price']), float(item['amount'])])
+            max_precision = self.get_price_precision(symbol)
+            url = self.urlbase + f'/spot/v1/symbols/book?symbol={symbol}&precision={max_precision}'
+            resp = requests.get(url).json()
+            orderbook = {'buys': [], 'sells': []}
+            if resp['code'] == 1000:
+                for item in resp['data']['buys']:
+                    orderbook['buys'].append({
+                        'amount': float(item['amount']),
+                        'total': float(item['total']),
+                        'price': float(item['price']),
+                        'count': int(item['count'])
+                    })
+                for item in resp['data']['sells']:
+                    orderbook['sells'].append({
+                        'amount': float(item['amount']),
+                        'total': float(item['total']),
+                        'price': float(item['price']),
+                        'count': int(item['count'])
+                    })
             else:
-                self._output('get_orderbook', content)
+                print(f'Bitmart public request error: {resp["message"]}')
             return orderbook
         except Exception as e:
-            print(e)
-            return None
+            print(f'Bitmart public get orderbook error: {e}')
 
     def get_trades(self, symbol: str):
         """
@@ -131,55 +163,49 @@ class BitmartPublic(object):
         """
         try:
             url = self.urlbase + f'/spot/v1/symbols/trades?symbol={symbol}'
-            is_ok, content = self._request('GET', url)
-            if is_ok:
-                trades = []
-                for trade in content['data']['trades']:
+            trades = []
+            resp = requests.get(url).json()
+            if resp['code'] == 1000:
+                for trade in resp['data']['trades']:
                     trades.append({
-                        'count': float(trade['count']),
                         'amount': float(trade['amount']),
-                        'type': trade['type'],
+                        'order_time': round(trade['order_time'] / 1000),
                         'price': float(trade['price']),
-                        'order_time': round(trade['order_time'] / 1000)
+                        'count': float(trade['count']),
+                        'type': trade['type']
                     })
-                return trades
             else:
-                self._output('get_trades', content)
-                return {"price": "0.0", "amount": "0.0"}
+                print(f'Bitmart public request error: {resp["message"]}')
+            return trades
         except Exception as e:
-            print(e)
-            return None
+            print(f'Bitmart public get trades error: {e}')
 
-    def get_kline(self, symbol: str, time_period=3600):
+    def get_kline(self, symbol: str, time_period=3000, interval=1):
         """
         Get k-line data within a specified time range of a specified trading pair
         """
-        if time_period % 60 != 0:
-            raise Exception('time period must be the integer multiple of 60')
+        end_time = round(time.time())
+        start_time = end_time - time_period
         try:
-            end = round(time.time())
-            start = end - time_period
-            url = self.urlbase + f'/spot/v1/symbols/kline?symbol={symbol}&step={int(time_period/60)}&from={start}&to={end}'
+            url = self.urlbase + f'/spot/v1/symbols/kline?symbol={symbol}&step={interval}&from={start_time}&to={end_time}'
 
-            is_ok, content = self._request('GET', url)
+            resp = requests.get(url).json()
             lines = []
-            if is_ok:
-                for line in content['data']['klines']:
+            if resp['code'] == 1000:
+                for line in resp['data']['klines']:
                     lines.append({
                         'timestamp': line['timestamp'],
+                        'open': float(line['open']),
+                        'high': float(line['high']),
+                        'low': float(line['low']),
                         'volume': float(line['volume']),
-                        'open_price': float(line['open']),
-                        'current_price': float(line['last_price']),
-                        'lowest_price': float(line['low']),
-                        'highest_price': float(line['high'])
+                        'last_price': float(line['last_price'])
                     })
-                return lines
             else:
-                self._output('get_kline', content)
+                print(f'Bitmart public request error: {resp["message"]}')
             return lines
         except Exception as e:
-            print(e)
-            return None
+            print(f'Bitmart public get kline error: {e}')
 
 
 if __name__ == '__main__':

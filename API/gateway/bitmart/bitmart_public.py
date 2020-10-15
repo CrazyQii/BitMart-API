@@ -119,13 +119,14 @@ class BitmartPublic(object):
             print("Bitmart public get kline error: %s" % e)
 
 if __name__ == "__main__":
-    bitmart_public = BitMartPublic("https://api-cloud.bitmart.com")
+    bitmart_public = BitmartPublic("https://api-cloud.bitmart.com")
     # print (bitmart_public.get_amount_precision("BTC_USDT"))
     # price = bitmart_public.get_ticker("BTC_USDT")
     # print(price)
+    print(bitmart_public.get_trades('BTC_USDT'))
     # price = bitmart_public.get_price("BTC_USDT")
     # print(price)
     # orderbook = bitmart_public.get_orderbook("BTC_USDT")
     # print(orderbook)
-    kline = bitmart_public.get_kline("SG_USDT", timeperiod=604800*2, interval=1440)
-    print(kline)
+    # kline = bitmart_public.get_kline("SG_USDT", timeperiod=604800*2, interval=1440)
+    # print(kline)

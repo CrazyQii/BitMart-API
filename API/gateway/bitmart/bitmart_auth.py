@@ -218,4 +218,3 @@ if __name__ == "__main__":
     balance, frozen = test.wallet_balance()
     print(balance)
     print(frozen)
-    
