@@ -3,10 +3,10 @@ from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 from bitmart.bitmart_auth import BitMartAuth
-from Bourse.bitmart.bitmart_public import BitMartPublic
+from gateway.bitmart.bitmart_public import BitMartPublic
 from key import bitmart_token_production
 
-from constant.base_url import bitmart_base_url_production
+from gateway.base_url import bitmart_base_url_production
 import re
 import random
 import time

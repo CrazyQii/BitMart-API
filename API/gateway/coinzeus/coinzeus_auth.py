@@ -2,18 +2,15 @@ from os import sys, path
 
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
-import json
 import re
 import requests
 import time
-import hmac
 import hashlib
-from constant.base_url import coinzeus_base_url
+from gateway.base_url import coinzeus_base_url
 
 from key.coinzeus_token import wpc
-import random
 import traceback
-from urllib import urlencode
+
 
 class CoinzeusAuth(object):
     def __init__(self, urlbase, api_key, api_secret, login_name):

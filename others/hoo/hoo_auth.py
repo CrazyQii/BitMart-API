@@ -5,7 +5,7 @@ hoo spot authentication API
 """
 
 from faker import Faker
-from hoo.hoo_public import HooPublic
+from others.hoo.hoo_public import HooPublic
 import hmac
 import hashlib
 import time

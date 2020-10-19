@@ -1,7 +1,7 @@
 from os import sys, path
 import importlib
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-import constant.base_url as base_url
+import gateway.base_url as base_url
 
 class IntegratedExchange(object):
     def __init__(self):
@@ -24,7 +24,7 @@ class IntegratedExchange(object):
             if lower_name == "bitmart":
                 url_name += "_production"
             
-            url = getattr(base_url,url_name)
+            url = getattr(base_url, url_name)
             exchange_public = api(url)
             return exchange_public
             
@@ -49,7 +49,7 @@ class IntegratedExchange(object):
             if lower_name == "bitmart":
                 url_name += "_production"
             
-            url = getattr(base_url,url_name)
+            url = getattr(base_url, url_name)
             exchange_auth = api(url,api_key,secret_key,password)
             return exchange_auth
 

@@ -3,9 +3,7 @@ sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__))))
 import os
 import requests
 import json
-import time
-from constant.base_url import hotbit_base_url
-import math
+from gateway.base_url import hotbit_base_url
 
 
 def get_symbol_details(url):

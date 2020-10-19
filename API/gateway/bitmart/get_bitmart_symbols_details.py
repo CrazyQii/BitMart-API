@@ -3,9 +3,7 @@ sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__))))
 import os
 import requests
 import json
-import time
-from constant.base_url import bitmart_base_url_production
-import math
+
 dev_url = "http://api-cloud.bitmart.com/"
 
 def get_symbol_details(url):

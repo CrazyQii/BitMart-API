@@ -3,17 +3,15 @@ from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 import json
-import re
 import requests
 import time
 import hmac
 import hashlib
-from constant.base_url import ooobtc_base_url
+from gateway.base_url import ooobtc_base_url
 
 from key.ooobtc_token import lpk
-import random
 import traceback
-from urllib import urlencode
+
 
 class OoobtcAuth(object):
     def __init__(self, urlbase, key, secret):

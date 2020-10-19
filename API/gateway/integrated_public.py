@@ -24,12 +24,11 @@ from gateway.bw.bw_public import BwPublic
 from gateway.fcoin.fcoin_public import FcoinPublic
 from gateway.xt.xt_public import XtPublic
 from gateway.http_data import get_price, get_orderbook
-import re
 import json
 import random
 import requests
 from constant.ref_symbols import *
-from constant.base_url import *
+from gateway.base_url import *
 from config.limited_price import get_limited_price
 
 

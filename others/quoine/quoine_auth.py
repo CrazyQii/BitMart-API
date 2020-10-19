@@ -4,7 +4,7 @@
 2020/10/4 hlq
 """
 
-from quoine.quoine_public import QuoinePublic
+from others.quoine import QuoinePublic
 import jwt
 import time
 import json

@@ -181,7 +181,7 @@ class BinanceAuth(object):
                         'side': order['side'],
                         'price_avg': float(order["cummulativeQuoteQty"]) / float(order['executedQty']) if float(order['executedQty']) > 0 else 0,
                         'filled_amount': float(order['executedQty']),
-                        'create_time': order['time'],
+                        'create_time': round(order['time'] / 1000),
                     })
             else:
                 print(f'Binance auth error: {resp.json()["msg"]}')
@@ -213,7 +213,7 @@ class BinanceAuth(object):
                     'side': order['side'],
                     'price_avg': None,
                     'filled_amount': float(order['executedQty']),
-                    'create_time': order['time'],
+                    'create_time': round(order['time'] / 1000),
                 }
             else:
                 message = resp.json()['msg']

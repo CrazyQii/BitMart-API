@@ -1,0 +1,2684 @@
+[
+ {
+  "symbol": "PRQ_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "GRIN_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "PAX_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "FDZ_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "FIL_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "MATH_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "QTUM_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "MKR_BTC",
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ {
+  "symbol": "DASH_BTC",
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "DGB_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "DROP_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "LIT_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "LPK_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "FDZ_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "VEIL_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "REPO_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "TRX_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ONE_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LTC_BTC",
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "TERN_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BUY_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "WEB_BMX",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "SKM_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "CCTN_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "CLC_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "NVT_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ZIL_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "YAP_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BCR_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BOB_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LINA_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "TEP_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "VRA_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "SWAP_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "AEF_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "EHRT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "HOT_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "VGX_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "AE_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "HAI_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "STS_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EOS_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "NULS_USDT",
+  "min_amount": 0.1,
+  "min_notional": 5.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "VET_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "FRTS_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BCH_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 3,
+  "price_digit": 2
+ },
+ {
+  "symbol": "AMON_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "NEO_BMX",
+  "min_amount": 0.001,
+  "min_notional": 1.0,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ABX_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "PCL_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "QM_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-05,
+  "amount_digit": 0,
+  "price_digit": 5
+ },
+ {
+  "symbol": "LXT_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LINK_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EUM_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "SRK_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BHD_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.01,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "GOD_USDT",
+  "min_amount": 0.001,
+  "min_notional": 1.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 3,
+  "price_digit": 2
+ },
+ {
+  "symbol": "NEO_ETH",
+  "min_amount": 0.001,
+  "min_notional": 0.001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ {
+  "symbol": "VET_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ALGO_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "HYDRO_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "BMX_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "UNI_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ZEBI_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "MGC_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "mHLX_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "ABT_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ETE_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BTM_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ZRX_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "TRX_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "HDD_BHD",
+  "min_amount": 1.0,
+  "min_notional": 0.1,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "DIA_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ALGO_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "MATIC_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "WICC_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "VEIL_PAX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "CPS_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "HT_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "DAPS_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ONT_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "NEO_BTC",
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BAT_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "VGX_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "EOS_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "USDC_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BOOM_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "EOS_BMX",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "LOOM_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "DOT_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "GE_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ABBC_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BENZI_BHD",
+  "min_amount": 1.0,
+  "min_notional": 0.1,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "CRU_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "PLA_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "MGC_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "NNC_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "VOTE_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "NFC_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ONE_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "KAN_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "REP_ETH",
+  "min_amount": 0.001,
+  "min_notional": 0.001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BRT_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ATOM_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "XRP_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ETE_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BHD_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "SNK_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "XHD_BHD",
+  "min_amount": 1.0,
+  "min_notional": 0.1,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EOS_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "VTHO_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "OM_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "XRP_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "GNY_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "VEIL_USDC",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ODE_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "MKR_ETH",
+  "min_amount": 0.001,
+  "min_notional": 0.001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ULT_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ATOM_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "MATIC_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "SWAP_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "NEO_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.001,
+  "price_increment": 0.001,
+  "amount_digit": 3,
+  "price_digit": 3
+ },
+ {
+  "symbol": "FDZ_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "OMG_BMX",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "QTUM_BTC",
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "REPO_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "VEIL_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "MCC_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "DROP_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "GBT_USDT",
+  "min_amount": 0.01,
+  "min_notional": 2.0,
+  "amount_increment": 0.01,
+  "price_increment": 1e-05,
+  "amount_digit": 2,
+  "price_digit": 5
+ },
+ {
+  "symbol": "XLM_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "WAB_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "BNB_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.01,
+  "amount_digit": 2,
+  "price_digit": 2
+ },
+ {
+  "symbol": "TRN_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "OMG_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "RSR_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ZIL_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "AVA_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "MCC_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "IOTW_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BSV_BTC",
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ {
+  "symbol": "VRA_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "TERN_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "NAT_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "LXT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "FLC_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BSYS_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "GUSD_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "GNT_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "WRX_USDT",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "DASH_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 3,
+  "price_digit": 2
+ },
+ {
+  "symbol": "PCL_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "TERN_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "EUM_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BBK_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EON_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "CRO_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "DAN_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "TSL_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "VRA_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "EWT_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "MTT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LEML_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "CUR_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.01,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "TCNX_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "TRX_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ZEBI_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "XLM_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "CRU_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "FNB_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EBC_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "SKI_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BTM_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "JST_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 1e-05,
+  "amount_digit": 2,
+  "price_digit": 5
+ },
+ {
+  "symbol": "DAS_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ZRX_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "AR_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "XLM_BMX",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BAT_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "KICK_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EWT_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.01,
+  "amount_digit": 2,
+  "price_digit": 2
+ },
+ {
+  "symbol": "DASH_ETH",
+  "min_amount": 0.001,
+  "min_notional": 0.001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "GNT_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "XTP_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "IOST_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "GMC_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "TMT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "COMP_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.001,
+  "price_increment": 0.001,
+  "amount_digit": 3,
+  "price_digit": 3
+ },
+ {
+  "symbol": "BAL_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ZNC_USDT",
+  "min_amount": 1.0,
+  "min_notional": 0.1,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "VOTE_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "HYDRO_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BSV_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "WAVES_USDT",
+  "min_amount": 0.1,
+  "min_notional": 5.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "LPK_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "VEIL_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.01,
+  "amount_digit": 0,
+  "price_digit": 2
+ },
+ {
+  "symbol": "ZEC_BTC",
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ {
+  "symbol": "NYN_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BRT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ULT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BTT_TRX",
+  "min_amount": 100.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "APL_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LINA_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "LHD_BHD",
+  "min_amount": 1.0,
+  "min_notional": 0.1,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "TNS_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "NNC_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ETC_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "XSR_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "WICC_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "HEX_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "ETC_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "TUSD_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "UPG_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "AE_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "STS_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "WAVES_ETH",
+  "min_amount": 0.1,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BOOM_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "LTC_ETH",
+  "min_amount": 0.001,
+  "min_notional": 0.001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ {
+  "symbol": "REP_BTC",
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 1e-06,
+  "amount_digit": 3,
+  "price_digit": 6
+ },
+ {
+  "symbol": "LRC_USDT",
+  "min_amount": 0.1,
+  "min_notional": 5.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "WAB_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ZEON_BMX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "CRO_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ITOC_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.01,
+  "amount_digit": 2,
+  "price_digit": 2
+ },
+ {
+  "symbol": "ABX_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "EBC_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LINK_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ODE_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "SMH_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BRT_USDT",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ {
+  "symbol": "RNO_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.01,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "IOTW_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "UGC_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "VET_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "OKB_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "SG_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "CNC_USDT",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BMX_USDT",
+  "min_amount": 0.1,
+  "min_notional": 5.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "HOT_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BMX_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "OMG_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "FM_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "RFUEL_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ABT_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ETC_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "HYDRO_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "NYN_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "PETRO_USDT",
+  "min_amount": 1e-06,
+  "min_notional": 1.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 6,
+  "price_digit": 2
+ },
+ {
+  "symbol": "BNB_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "LPK_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "BTC_USDT",
+  "min_amount": 1e-05,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 5,
+  "price_digit": 2
+ },
+ {
+  "symbol": "WAVES_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "LTC_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 3,
+  "price_digit": 2
+ },
+ {
+  "symbol": "FLC_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "NFC_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "QTUM_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "FCY_BMX",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BBK_BTC",
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ONT_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "MXW_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "EHRT_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ZEC_ETH",
+  "min_amount": 0.0001,
+  "min_notional": 0.001,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BTC_USDC",
+  "min_amount": 1e-06,
+  "min_notional": 1.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 6,
+  "price_digit": 2
+ },
+ {
+  "symbol": "APL_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "XPT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "SHR_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "CEL_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "LOOM_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "ETH_USDT",
+  "min_amount": 1e-05,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 5,
+  "price_digit": 2
+ },
+ {
+  "symbol": "WNXM_USDT",
+  "min_amount": 0.001,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 3,
+  "price_digit": 2
+ },
+ {
+  "symbol": "BTT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "BCH_BTC",
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ {
+  "symbol": "PLA_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "BTT_USDT",
+  "min_amount": 1.0,
+  "min_notional": 5.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "LINK_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "WINR_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "POCBGH_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ {
+  "symbol": "XSR_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "TERN_PAX",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "SRK_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "XRP_BMX",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "BTCV_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ {
+  "symbol": "SUSHI_USDT",
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ {
+  "symbol": "XDB_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "ETH_BTC",
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ {
+  "symbol": "mUSDC_USDC",
+  "min_amount": 0.1,
+  "min_notional": 1.0,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ {
+  "symbol": "NDAU_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "IOST_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BAT_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "XRP_ETH",
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "XLM_BTC",
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ {
+  "symbol": "BTC_PAX",
+  "min_amount": 1e-06,
+  "min_notional": 1.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 6,
+  "price_digit": 2
+ },
+ {
+  "symbol": "KICK_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ {
+  "symbol": "TFD_USDT",
+  "min_amount": 1.0,
+  "min_notional": 1.0,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ {
+  "symbol": "BRC_USDT",
+  "min_amount": 0.01,
+  "min_notional": 1.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ {
+  "symbol": "ZEC_USDT",
+  "min_amount": 0.0001,
+  "min_notional": 5.0,
+  "amount_increment": 0.0,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ {
+  "symbol": "COT_ETH",
+  "min_amount": 1.0,
+  "min_notional": 0.001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ {
+  "symbol": "KAN_BTC",
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ }
+]

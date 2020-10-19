@@ -5,6 +5,7 @@ binance公共接口
 """
 import requests
 import time
+import math
 
 
 class BinancePublic:
@@ -14,6 +15,62 @@ class BinancePublic:
     def _symbol_convert(self, symbol: str):
         """ convert symbol to appropriate format """
         return ''.join(symbol.split('_'))
+
+    def get_price_precision(self, symbol: str):
+        try:
+            url = self.urlbase + '/api/v3/exchangeInfo'
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                resp = resp.json()
+                for ticker in resp['symbols']:
+                    if ticker['symbol'] == self._symbol_convert(symbol):
+                        return int(abs(math.log10(float(ticker['filters'][0]['tickSize']))))
+            else:
+                print(f'Binance public error: {resp.json()["message"]}')
+        except Exception as e:
+            print(f'Binance public get price precision error: {e}')
+
+    def get_price_increment(self, symbol: str):
+        try:
+            url = self.urlbase + '/api/v3/exchangeInfo'
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                resp = resp.json()
+                for ticker in resp['symbols']:
+                    if ticker['symbol'] == self._symbol_convert(symbol):
+                        return float(ticker['filters'][0]['tickSize'])
+            else:
+                print(f'Binance public error: {resp.json()["message"]}')
+        except Exception as e:
+            print(f'Binance public get price increment error: {e}')
+
+    def get_amount_precision(self, symbol: str):
+        try:
+            url = self.urlbase + '/api/v3/exchangeInfo'
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                resp = resp.json()
+                for ticker in resp['symbols']:
+                    if ticker['symbol'] == self._symbol_convert(symbol):
+                        return int(abs(math.log10(float(ticker['filters'][2]['minQty']))))
+            else:
+                print(f'Binance public error: {resp.json()["message"]}')
+        except Exception as e:
+            print("Binance public get amount precision error: %s" % e)
+
+    def get_amount_increment(self, symbol: str):
+        try:
+            url = self.urlbase + '/api/v3/exchangeInfo'
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                resp = resp.json()
+                for ticker in resp['symbols']:
+                    if ticker['symbol'] == self._symbol_convert(symbol):
+                        return float(ticker['filters'][2]['minQty'])
+            else:
+                print(f'Bitmart public error: {resp.json()["message"]}')
+        except Exception as e:
+            print(f'Bitmart public get min amount error: {e}')
 
     def get_price(self, symbol: str):
         try:
@@ -67,14 +124,14 @@ class BinancePublic:
             if resp.status_code == 200:
                 resp = resp.json()
                 for item in resp['asks']:
-                    orderbook['buys'].append({
+                    orderbook['sells'].append({
                         'amount': float(item[1]),
                         'total': None,
                         'price': float(item[0]),
                         'count': None
                     })
                 for item in resp['bids']:
-                    orderbook['sells'].append({
+                    orderbook['buys'].append({
                         'amount': float(item[1]),
                         'total': None,
                         'price': float(item[0]),
@@ -136,6 +193,10 @@ class BinancePublic:
 
 if __name__ == '__main__':
     binance = BinancePublic('https://api.binance.com')
+    print(binance.get_price_precision('BTC_USDT'))
+    print(binance.get_price_increment('BTC_USDT'))
+    print(binance.get_amount_precision('BTC_USDT'))
+    print(binance.get_amount_increment('BTC_USDT'))
     # print(binance.get_price('BTC_USDT'))
     # print(binance.get_ticker('BTC_USDT'))
     # print(binance.get_orderbook('BTC_USDT'))

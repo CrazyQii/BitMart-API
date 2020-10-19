@@ -3,83 +3,70 @@
 bitmart spot public API
 2020/10/9 hlq
 """
+import os
 import requests
-import traceback
 import time
 import math
+import json
+
+cur_path = os.path.abspath(os.path.dirname(__file__))
 
 
 class BitmartPublic(object):
     def __init__(self, urlbase):
         self.urlbase = urlbase
 
-    def get_price_precision(self, symbol: str):
-        """
-        accuracy (decimal places), used to query k-line and depth
-        最大价格精度(小数位) 用来查询 k 线和深度
-        """
+    def _batch_load_symbols(self):
+        """ batch write symbol details into json """
         try:
             url = self.urlbase + '/spot/v1/symbols/details'
             resp = requests.get(url).json()
             if resp['code'] == 1000:
-                for ticker in resp['data']['symbols']:
-                    if ticker['symbol'] == symbol:
-                        return int(ticker['price_max_precision'])
+                data = []
+                for symbol in resp['data']['symbols']:
+                    data.append({
+                        'symbol': symbol['symbol'],
+                        'min_amount': float(symbol['base_min_size']),  # 最小下单数量
+                        'min_notional': float(symbol['min_buy_amount']),  # 最小下单金额
+                        'amount_increment': float(symbol['quote_increment']),  # 数量最小变化
+                        'price_increment': round(0.1 ** float(symbol['price_max_precision']),
+                                                 int(symbol['price_max_precision'])),  # 价格最小变化
+                        'amount_digit': int(abs(math.log10(float(symbol['base_min_size'])))),  # 数量小数位
+                        'price_digit': int(symbol['price_max_precision'])  # 价格小数位
+                    })
+                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                    json.dump(data, f, indent=1)
+                f.close()
             else:
-                print(f'Bitmart public request error: {resp["message"]}')
+                print('Bitmart batch load symbols error')
         except Exception as e:
-            print(f'Bitmart public get price increment error: {e}')
+            print(f'Bitmart batch load symbols exception {e}')
 
-    def get_price_increment(self, symbol: str):
-        """
-        The minimum order quantity is also the minimum order quantity increment
-        最小下单量，也是最小下单量增量
-        """
+    def _update_symbol_info(self, symbol: str):
+        """ if symbol do not exsit in json, it will return the latest symbol detail and update json """
         try:
-            url = self.urlbase + '/spot/v1/symbols/details'
-            resp = requests.get(url).json()
-            if resp['code'] == 1000:
-                for ticker in resp['data']['symbols']:
-                    if ticker['symbol'] == symbol:
-                        return float(ticker['quote_increment'])
-            else:
-                print(f'Bitmart public request error: {resp["message"]}')
+            self._batch_load_symbols()
+            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+            for symbols in symbols_detail:
+                if symbols['symbol'] == symbol:
+                    return symbols
         except Exception as e:
-            print(f'Bitmart public get price increment error: {e}')
+            print(f'Bitmart update symbol info exception {e}')
 
-    def get_amount_precision(self, symbol: str):
-        """
-        minimum order quantity accuracy
-        下单数量精度
-        """
+    def get_symbol_info(self, symbol: str):
         try:
-            url = self.urlbase + '/spot/v1/symbols/details'
-            resp = requests.get(url).json()
-            if resp['code'] == 1000:
-                for ticker in resp['data']['symbols']:
-                    if ticker['symbol'] == symbol:
-                        return int(abs(math.log10(float(ticker['base_min_size']))))
-            else:
-                print(f'Bitmart public request error: {resp["message"]}')
+            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+            for symbols in symbols_detail:
+                if symbols['symbol'] == symbol:
+                    return symbols
+            # return symbol detail and update symbols_detail.json
+            return self._update_symbol_info(symbol)
         except Exception as e:
-            print("Bitmart public get amount precision error: %s" % e)
-
-    def get_amount_increment(self, symbol: str):
-        """
-        minimum order quantity increment
-        最小下单数量增量
-        """
-        try:
-            url = self.urlbase + '/spot/v1/symbols/details'
-            resp = requests.get(url).json()
-            if resp['code'] == 1000:
-                for ticker in resp['data']['symbols']:
-                    if ticker['symbol'] == symbol:
-                        return float(ticker['base_min_size'])
-            else:
-                print(f'Bitmart public request error: {resp["message"]}')
-        except Exception as e:
-            print(f'Bitmart public get min amount error: {e}')
+            print(f'Bitmart get symbol info error: {e}')
 
     def get_price(self, symbol: str):
         """ Get the latest trade price of specified ticker """
@@ -104,9 +91,10 @@ class BitmartPublic(object):
         try:
             url = self.urlbase + f'/spot/v1/ticker?symbol={symbol}'
             resp = requests.get(url).json()
+            ticker = {}
             if resp['code'] == 1000:
                 ticker = resp['data']['tickers'][0]
-                return {
+                ticker = {
                     'symbol': ticker['symbol'],
                     'last_price': float(ticker['last_price']),
                     'quote_volume': float(ticker['quote_volume_24h']),
@@ -124,6 +112,7 @@ class BitmartPublic(object):
                 }
             else:
                 print(f'Bitmart public request error: {resp["message"]}')
+            return ticker
         except Exception as e:
             print(f'Bitmart public get ticker error: {e}')
 
@@ -210,6 +199,7 @@ class BitmartPublic(object):
 
 if __name__ == '__main__':
     bit = BitmartPublic('https://api-cloud.bitmart.info')
+    print(bit.get_symbol_info('PRQ_BTC'))
     # print(bit.get_price('BTC_USDT'))
     # print(bit.get_ticker('BTC_USDT'))
     # print(bit.get_orderbook('BTC_USDT'))

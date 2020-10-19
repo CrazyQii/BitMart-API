@@ -33,7 +33,7 @@ class BitmartAuth(object):
     def _timestamp(self):
         return str(round(time.time()*1000))
 
-    def place_order(self, symbol: str, amount: float, price: float, side: str, type='limit'):
+    def place_order(self, symbol: str, amount: float, price: float, side: str):
         if side not in ['buy', 'sell']:
             print('side is wrong')
             return None
@@ -42,7 +42,7 @@ class BitmartAuth(object):
             params = {
                 'symbol': symbol,
                 'side': side,
-                'type': type,
+                'type': 'LIMIT',
                 'price': price,
                 'size': amount
             }
@@ -78,17 +78,17 @@ class BitmartAuth(object):
             resp = requests.post(url, data=json.dumps(params), headers=headers).json()
             data = False
             if resp['code'] == 1000:
-                data = resp["data"]
-                message = resp["message"]
+                data = resp['data']
+                message = resp['message']
             else:
-                message = resp["message"]
+                message = resp['message']
                 print(f'Bitmart auth error: {message}')
 
             info = {
-                "func_name": "cancel_order",
-                "order_id": order_id,
-                "message": message,
-                "data": data
+                'func_name': 'cancel_order',
+                'order_id': order_id,
+                'message': message,
+                'data': data
             }
             return info
         except Exception as e:
@@ -112,16 +112,16 @@ class BitmartAuth(object):
 
             data = False
             if resp['code'] == 1000:
-                data = resp["data"]
-                message = resp["message"]
+                data = resp['data']
+                message = resp['message']
             else:
-                message = resp["message"]
+                message = resp['message']
                 print(f'Bitmart auth error: {message}')
 
             info = {
-                "func_name": "cancel_order",
-                "message": message,
-                "data": data
+                'func_name': 'cancel_order',
+                'message': message,
+                'data': data
             }
             return info
         except Exception as e:
@@ -215,7 +215,7 @@ class BitmartAuth(object):
 if __name__ == '__main__':
     bit = BitmartAuth('https://api-cloud.bitmart.info', '5de397b9cef8bebc31f65e124c3a4a162d6d1f99', 'f4b7c83dc9c6790d6ea344ba3beafdfd70fe9481dccc7e70f0dd7d84b76e1ed2', 'mock')
     # print(bit.place_order('EOS_USDT', 1.0016, 11, 'buy'))
-    # print(bit.order_detail('BTC_USDT', '1'))
+    print(bit.order_detail('BTC_USDT', '1'))
     # print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('UMA_USDT', '1'))
     # print(bit.cancel_all('BTC_USDT', 'buy'))
