@@ -1,0 +1,114 @@
+{
+ "BCHABC_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0,
+  "amount_increment": 1e-05,
+  "price_increment": 0.01,
+  "amount_digit": 5,
+  "price_digit": 2
+ },
+ "BNB_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "BSV_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "BTC_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0,
+  "amount_increment": 1e-08,
+  "price_increment": 0.01,
+  "amount_digit": 8,
+  "price_digit": 2
+ },
+ "DASH_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0,
+  "amount_increment": 1e-05,
+  "price_increment": 0.01,
+  "amount_digit": 5,
+  "price_digit": 2
+ },
+ "DOT_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "EOS_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "ETH_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0,
+  "amount_increment": 1e-06,
+  "price_increment": 0.01,
+  "amount_digit": 6,
+  "price_digit": 2
+ },
+ "HT_USDT": {
+  "min_amount": 0.1,
+  "min_notional": 0.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "LINK_USDT": {
+  "min_amount": 0.1,
+  "min_notional": 0.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "LTC_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0,
+  "amount_increment": 1e-06,
+  "price_increment": 0.01,
+  "amount_digit": 6,
+  "price_digit": 2
+ },
+ "OKB_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "TRX_USDT": {
+  "min_amount": 10.0,
+  "min_notional": 0.0,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ "ZEC_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ }
+}

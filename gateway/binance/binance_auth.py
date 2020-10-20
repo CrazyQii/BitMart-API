@@ -144,16 +144,20 @@ class BinanceAuth(object):
         try:
             orders = self.open_orders(symbol)
             # verify request error
-            if orders is None:
-                return orders
+            if len(orders) == 0:
+                return {
+                        'func_name': 'cancel_order',
+                        'message': 'orders are empty',
+                        'data': False
+                    }
 
             for order in orders:
                 if str(order['side']).lower() == side:
                     self.cancel_order(symbol, order['orderId'])
             info = {
-                "func_name": "cancel_order",
-                "message": 'OK',
-                "data": True
+                'func_name': 'cancel_order',
+                'message': 'OK',
+                'data': True
             }
             return info
         except Exception as e:
@@ -179,7 +183,7 @@ class BinanceAuth(object):
                         'original_amount': float(order['origQty']),
                         'price': float(order['price']),
                         'side': order['side'],
-                        'price_avg': float(order["cummulativeQuoteQty"]) / float(order['executedQty']) if float(order['executedQty']) > 0 else 0,
+                        'price_avg': float(order['cummulativeQuoteQty']) / float(order['executedQty']) if float(order['executedQty']) > 0 else 0,
                         'filled_amount': float(order['executedQty']),
                         'create_time': round(order['time'] / 1000),
                     })

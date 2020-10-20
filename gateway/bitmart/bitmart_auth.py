@@ -142,7 +142,7 @@ class BitmartAuth(object):
                     results.append({
                         'order_id': order['order_id'],
                         'symbol': order['symbol'],
-                        'original_amount': float(order['size']),
+                        'amount': float(order['size']),
                         'price': float(order['price']),
                         'side': order['side'],
                         'price_avg': float(order['price_avg']),

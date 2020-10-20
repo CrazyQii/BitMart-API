@@ -1,7 +1,7 @@
 import requests
-import time
 import os
 import json
+
 
 class GateioPublic(object):
     def __init__(self, urlbase):

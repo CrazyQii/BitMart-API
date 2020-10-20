@@ -6,71 +6,69 @@ binance公共接口
 import requests
 import time
 import math
+import os
+import json
 
+cur_path = os.path.abspath(os.path.dirname(__file__))
 
 class BinancePublic:
     def __init__(self, urlbase):
         self.urlbase = urlbase
 
     def _symbol_convert(self, symbol: str):
-        """ convert symbol to appropriate format """
         return ''.join(symbol.split('_'))
 
-    def get_price_precision(self, symbol: str):
+    def _load_symbols_info(self):
         try:
             url = self.urlbase + '/api/v3/exchangeInfo'
             resp = requests.get(url)
             if resp.status_code == 200:
                 resp = resp.json()
+                data = {}
                 for ticker in resp['symbols']:
-                    if ticker['symbol'] == self._symbol_convert(symbol):
-                        return int(abs(math.log10(float(ticker['filters'][0]['tickSize']))))
+                    data.update({
+                        f'{ticker["baseAsset"]}_{ticker["quoteAsset"]}': {
+                            'min_amount': float(ticker['filters'][2]['minQty']),  # 最小下单数量
+                            'min_notional': float(ticker['filters'][0]['minPrice']),  # 最小下单金额
+                            'amount_increment': float(ticker['filters'][2]['stepSize']),  # 数量最小变化
+                            'price_increment': float(ticker['filters'][0]['tickSize']),  # 价格最小变化
+                            'amount_digit': int(abs(math.log10(float(ticker['filters'][2]['stepSize'])))),  # 数量小数位
+                            'price_digit': int(abs(math.log10(float(ticker['filters'][0]['tickSize']))))  # 价格小数位
+                        }
+                    })
+                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                    json.dump(data, f, indent=1)
+                f.close()
             else:
-                print(f'Binance public error: {resp.json()["message"]}')
+                print('Binance batch load symbols error')
         except Exception as e:
-            print(f'Binance public get price precision error: {e}')
+            print(f'Binance batch load symbols exception {e}')
 
-    def get_price_increment(self, symbol: str):
+    def get_symbol_info(self, symbol: str):
         try:
-            url = self.urlbase + '/api/v3/exchangeInfo'
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                resp = resp.json()
-                for ticker in resp['symbols']:
-                    if ticker['symbol'] == self._symbol_convert(symbol):
-                        return float(ticker['filters'][0]['tickSize'])
-            else:
-                print(f'Binance public error: {resp.json()["message"]}')
-        except Exception as e:
-            print(f'Binance public get price increment error: {e}')
+            symbol_info = dict()
+            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
 
-    def get_amount_precision(self, symbol: str):
-        try:
-            url = self.urlbase + '/api/v3/exchangeInfo'
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                resp = resp.json()
-                for ticker in resp['symbols']:
-                    if ticker['symbol'] == self._symbol_convert(symbol):
-                        return int(abs(math.log10(float(ticker['filters'][2]['minQty']))))
-            else:
-                print(f'Binance public error: {resp.json()["message"]}')
-        except Exception as e:
-            print("Binance public get amount precision error: %s" % e)
+            if symbol not in symbols_detail.keys():
+                # update symbols detail
+                self._load_symbols_info()
 
-    def get_amount_increment(self, symbol: str):
-        try:
-            url = self.urlbase + '/api/v3/exchangeInfo'
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                resp = resp.json()
-                for ticker in resp['symbols']:
-                    if ticker['symbol'] == self._symbol_convert(symbol):
-                        return float(ticker['filters'][2]['minQty'])
-            else:
-                print(f'Bitmart public error: {resp.json()["message"]}')
+                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                    symbols_detail = json.load(f)
+                f.close()
+
+            symbol_info['symbol'] = symbol
+            symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
+            symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
+            symbol_info['amount_increment'] = symbols_detail[symbol]['amount_increment']
+            symbol_info['price_increment'] = symbols_detail[symbol]['price_increment']
+            symbol_info['amount_digit'] = symbols_detail[symbol]['amount_digit']
+            symbol_info['price_digit'] = symbols_detail[symbol]['price_digit']
+            return symbol_info
         except Exception as e:
-            print(f'Bitmart public get min amount error: {e}')
+            print(f'Binance get symbol info error: {e}')
 
     def get_price(self, symbol: str):
         try:
@@ -123,17 +121,21 @@ class BinancePublic:
             }
             if resp.status_code == 200:
                 resp = resp.json()
+                total_amount_buys = 0
+                total_amount_sells = 0
                 for item in resp['asks']:
+                    total_amount_sells += float(item[1])
                     orderbook['sells'].append({
                         'amount': float(item[1]),
-                        'total': None,
+                        'total': total_amount_sells,
                         'price': float(item[0]),
                         'count': None
                     })
                 for item in resp['bids']:
+                    total_amount_buys += float(item[1])
                     orderbook['buys'].append({
                         'amount': float(item[1]),
-                        'total': None,
+                        'total': total_amount_buys,
                         'price': float(item[0]),
                         'count': None
                     })
@@ -193,10 +195,7 @@ class BinancePublic:
 
 if __name__ == '__main__':
     binance = BinancePublic('https://api.binance.com')
-    print(binance.get_price_precision('BTC_USDT'))
-    print(binance.get_price_increment('BTC_USDT'))
-    print(binance.get_amount_precision('BTC_USDT'))
-    print(binance.get_amount_increment('BTC_USDT'))
+    print(binance.get_symbol_info('BTC_USDT'))
     # print(binance.get_price('BTC_USDT'))
     # print(binance.get_ticker('BTC_USDT'))
     # print(binance.get_orderbook('BTC_USDT'))

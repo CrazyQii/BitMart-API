@@ -12,7 +12,7 @@ from gateway.bitmart.bitmart_public import BitmartPublic
 from gateway.lbank.lbank_public import LbankPublic
 from gateway.bitforex.bitforex_public import BitforexPublic
 from gateway.bittrex.bittrex_public import BittrexPublic
-from gateway.gateio.gateio_public import GateioPublic
+from gateway.gateio.gateio_auth import GateioPublic
 from gateway.idax.idax_public import IdaxPublic
 from gateway.hotbit.hotbit_public import HotbitPublic
 from gateway.hitbtc.hitbtc_public import HitbtcPublic
