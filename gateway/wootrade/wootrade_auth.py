@@ -157,7 +157,7 @@ class WootradeAuth(object):
             if len(orders) == 0:
                 return {
                     'func_name': 'cancel_order',
-                    'message': 'orders are empty',
+                    'message': 'Wootrade auth cancel order error',
                     'data': False
                 }
 
