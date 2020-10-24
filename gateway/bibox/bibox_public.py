@@ -209,9 +209,9 @@ class BiboxPublic(object):
 
 if __name__ == '__main__':
     bibox = BiboxPublic('https://api.bibox.com')
-    # print(bibox.get_symbol_info('BTC_USDT'))
-    # print(bibox.get_price('BTC_USDT'))
-    # print(bibox.get_ticker('BTC_USDT'))
-    # print(bibox.get_orderbook('BTC_USDT'))
-    # print(bibox.get_trades('BTC_USDT'))
-    # print(bibox.get_kline('BTC_USDT'))
+    print(bibox.get_symbol_info('BTC_USDT'))
+    print(bibox.get_price('BTC_USDT'))
+    print(bibox.get_ticker('BTC_USDT'))
+    print(bibox.get_orderbook('BTC_USDT'))
+    print(bibox.get_trades('BTC_USDT'))
+    print(bibox.get_kline('BTC_USDT'))

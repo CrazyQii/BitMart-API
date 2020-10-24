@@ -1,0 +1,2274 @@
+{
+ "BTC_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "ETH_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "BCH_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "QTUM_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "NEO_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "ZEC_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "ETH_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "QTUM_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "ETC_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "ZEC_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "SC_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "FIL6_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "FIL12_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "FIL36_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "EOS_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "ZEC_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "FIL6_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "FIL12_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "FIL36_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "SEER_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "AAC_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "DDD_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "TRX_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "GRAMS_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "EAI_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "PNT_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "DAX_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "DAX_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "SSC_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "IDHUB_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "PTT_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "BNB_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "HT_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "PAI_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "VET_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-09,
+  "amount_increment": 1.0,
+  "price_increment": 1e-09,
+  "amount_digit": 0,
+  "price_digit": 9
+ },
+ "VET_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-09,
+  "amount_increment": 1.0,
+  "price_increment": 1e-09,
+  "amount_digit": 0,
+  "price_digit": 9
+ },
+ "VET_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "DALI_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "UT_ETH": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "SAIT_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "AMO_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "VENA_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "SKY_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "ATP_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "ABBC_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "BLOC_USDT": {
+  "min_amount": 0.1,
+  "min_notional": 1e-06,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ "IOEX_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "KBC_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "KBC_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "EOS_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "EOS_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "GALT_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "GT_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ "CYE_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "BRC_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "BTC_AUSD": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "DDM_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "SEAL_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "BTY_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "FO_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "BFC_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-05,
+  "amount_increment": 1.0,
+  "price_increment": 1e-05,
+  "amount_digit": 0,
+  "price_digit": 5
+ },
+ "LBK_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "SERO_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "CKB_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "ARPA_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "DOT_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "TEP_USDT": {
+  "min_amount": 0.1,
+  "min_notional": 0.0001,
+  "amount_increment": 0.1,
+  "price_increment": 0.0001,
+  "amount_digit": 1,
+  "price_digit": 4
+ },
+ "OKB_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "FLDT_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "CCTC_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "WIN_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "BTT_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "TRX_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "GRS_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "GST_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "ABBC_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "UTK_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "LM_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "HTDF_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ "FOG_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "SLA_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "ATOM_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "DOGE_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "XRP_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-05,
+  "amount_increment": 0.01,
+  "price_increment": 1e-05,
+  "amount_digit": 2,
+  "price_digit": 5
+ },
+ "CNEX_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "ETC_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "ETC_ETH": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "ATOM_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "XRP_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "XRP_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "BTC3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BTC3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ETH3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ETH3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "GL_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "GE_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "QNUT_USDT": {
+  "min_amount": 0.1,
+  "min_notional": 1e-06,
+  "amount_increment": 0.1,
+  "price_increment": 1e-06,
+  "amount_digit": 1,
+  "price_digit": 6
+ },
+ "BKS_USDT": {
+  "min_amount": 0.001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.001,
+  "price_increment": 0.0001,
+  "amount_digit": 3,
+  "price_digit": 4
+ },
+ "HEX_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "GLEEC_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "FOIN_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "BBC_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "XWC2_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "ELAMA_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "PLF_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "PLF_ETH": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "LBKL_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "TFD_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "ELAMA_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "BV_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "AIN_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "ABTC_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "ABTC_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "BAL_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "REN_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "SNX_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "BHD_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "BTCV_BTC": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-08,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-08,
+  "amount_digit": 4,
+  "price_digit": 8
+ },
+ "DGB_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "DOGE3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DOGE3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "VET3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "VET3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "FIL6_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "FIL12_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "FIL36_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "DCN_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "LTC_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "BTS_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "PAI_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-06,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ "NAS_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "ELA_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "SHR_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-10,
+  "amount_increment": 1.0,
+  "price_increment": 1e-10,
+  "amount_digit": 0,
+  "price_digit": 10
+ },
+ "SHR_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "AVAX_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "CCXX_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "UCA_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-10,
+  "amount_increment": 0.01,
+  "price_increment": 1e-10,
+  "amount_digit": 2,
+  "price_digit": 10
+ },
+ "BCH3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BCH3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "EOS3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "EOS3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "LTC3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "LTC3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFI_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "YFII_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "DASH_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "ANT_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "BASID_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "BASID_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "LINK_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "TTT_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "SKM_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "VTHO_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "BNB3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BNB3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "OKB3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "OKB3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "HT3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "HT3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "TOMO_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "OSST_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "FOUR_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "LID_ETH": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "LINK3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "LINK3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ZEC3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ZEC3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "CRV_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "MW_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "EFK_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "OMG3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "WAVES3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "WAVES3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ATOM3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ATOM3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "COMP3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "COMP3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "OMG3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "TT_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "DOT3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DOT3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "PDF_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "SNX3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "SNX3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BAND3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BAND3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "KAVA3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "KAVA3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "PAMP_ETH": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "SUSHI3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "SUSHI3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "MINI_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "YAMV2_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "SUSHI_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "UMA_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "CVP_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "TRX3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "TRX3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFI3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFI3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFII3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFII3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DEFI3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DEFI3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "SOL3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "SOL3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "PEARL_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "MTA_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "LIEN_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.001,
+  "amount_digit": 4,
+  "price_digit": 3
+ },
+ "SLINK_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "DMD_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "SWRV_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "FARM_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "AVF_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "SRM3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "SRM3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "CRV3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "CRV3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BZRX3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BZRX3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "GOF_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "SUN_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "BGPT_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 1e-06,
+  "amount_increment": 0.0001,
+  "price_increment": 1e-06,
+  "amount_digit": 4,
+  "price_digit": 6
+ },
+ "USDN_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "WAVES_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "CREAM3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "CREAM3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ONT3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ONT3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "STORJ3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "STORJ3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "UNI3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "UNI3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFFII_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "UNI_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "MKCY_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "CDB_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "ALGO_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "LEAD_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "COLA_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "ONES_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "ALGO3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ALGO3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "AVAX3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "AVAX3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BCK_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "WDS_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "FLM_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "ARTE_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "RARI_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "MEME_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.01,
+  "amount_increment": 0.0001,
+  "price_increment": 0.01,
+  "amount_digit": 4,
+  "price_digit": 2
+ },
+ "GHST_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "WHALE_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "FLM3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "FLM3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "SON_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "MILKTEA_USDT": {
+  "min_amount": 1.0,
+  "min_notional": 0.0001,
+  "amount_increment": 1.0,
+  "price_increment": 0.0001,
+  "amount_digit": 0,
+  "price_digit": 4
+ },
+ "DODO_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "EAURIC_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "MOYU_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "BID_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "ADA3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "ADA3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "XRP3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "XRP3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "NEO3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "NEO3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BSV3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "BSV3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DOKI_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "HMR_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "HMR_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-08,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
+ "AAVE_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "AAVE3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "AAVE3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "FIC24_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "FIL_USDT": {
+  "min_amount": 0.0001,
+  "min_notional": 0.0001,
+  "amount_increment": 0.0001,
+  "price_increment": 0.0001,
+  "amount_digit": 4,
+  "price_digit": 4
+ },
+ "LRC3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "LRC3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DASH3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "DASH3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "IOST3L_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "IOST3S_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "CVA_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ }
+}

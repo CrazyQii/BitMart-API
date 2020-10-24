@@ -1,5 +1,5 @@
-class HitbtcAuth(object):
-    def __init__(self, urlbase, api_key, api_secret, passphrase=None):
+class DigifinexAuth(object):
+    def __init__(self, urlbase, api_key, api_secret, passphrase):
         self.urlbase = urlbase
         self.api_key = api_key
         self.api_secret = api_secret
