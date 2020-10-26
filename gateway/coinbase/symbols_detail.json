@@ -1,0 +1,50 @@
+{
+ "ETH_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 1e-05,
+  "amount_increment": 1e-08,
+  "price_increment": 1e-05,
+  "amount_digit": 8,
+  "price_digit": 5
+ },
+ "BTC_EUR": {
+  "min_amount": 0.001,
+  "min_notional": 0.01,
+  "amount_increment": 1e-08,
+  "price_increment": 0.01,
+  "amount_digit": 8,
+  "price_digit": 2
+ },
+ "LINK_USDC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "BAT_USDC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1e-06,
+  "price_increment": 1e-06,
+  "amount_digit": 6,
+  "price_digit": 6
+ },
+ "BTC_USD": {
+  "min_amount": 0.001,
+  "min_notional": 0.01,
+  "amount_increment": 1e-08,
+  "price_increment": 0.01,
+  "amount_digit": 8,
+  "price_digit": 2
+ },
+ "BTC_GBP": {
+  "min_amount": 0.001,
+  "min_notional": 0.01,
+  "amount_increment": 1e-08,
+  "price_increment": 0.01,
+  "amount_digit": 8,
+  "price_digit": 2
+ }
+}

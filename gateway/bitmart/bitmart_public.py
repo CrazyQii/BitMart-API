@@ -35,7 +35,7 @@ class BitmartPublic(object):
                             'price_digit': int(ticker['price_max_precision'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -44,20 +44,31 @@ class BitmartPublic(object):
             print(f'Bitmart batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -78,7 +89,7 @@ class BitmartPublic(object):
             if resp['code'] == 1000:
                 price = float(resp['data']['trades'][0]['price'])
             else:
-                print(f'Bitmart public request error: {resp["message"]}')
+                print(f'Bitmart public get price request error: {resp["message"]}')
             return price
         except Exception as e:
             print(f'Bitmart public get price error: {e}')
@@ -112,7 +123,7 @@ class BitmartPublic(object):
                     'url': ticker['url'],
                 }
             else:
-                print(f'Bitmart public request error: {resp["message"]}')
+                print(f'Bitmart public get ticker request error: {resp["message"]}')
             return ticker
         except Exception as e:
             print(f'Bitmart public get ticker error: {e}')
@@ -142,7 +153,7 @@ class BitmartPublic(object):
                         'count': int(item['count'])
                     })
             else:
-                print(f'Bitmart public request error: {resp["message"]}')
+                print(f'Bitmart public get orderbook request error: {resp["message"]}')
             return orderbook
         except Exception as e:
             print(f'Bitmart public get orderbook error: {e}')
@@ -165,7 +176,7 @@ class BitmartPublic(object):
                         'type': trade['type']
                     })
             else:
-                print(f'Bitmart public request error: {resp["message"]}')
+                print(f'Bitmart public get trades request error: {resp["message"]}')
             return trades
         except Exception as e:
             print(f'Bitmart public get trades error: {e}')
@@ -192,7 +203,7 @@ class BitmartPublic(object):
                         'last_price': float(line['last_price'])
                     })
             else:
-                print(f'Bitmart public request error: {resp["message"]}')
+                print(f'Bitmart public get kline request error: {resp["message"]}')
             return lines
         except Exception as e:
             print(f'Bitmart public get kline error: {e}')
@@ -202,7 +213,7 @@ if __name__ == '__main__':
     bit = BitmartPublic('https://api-cloud.bitmart.info')
     # print(bit.get_symbol_info('MATH_USDT'))
     # print(bit.get_price('BTC_USDT'))
-    # print(bit.get_ticker('BTC_USDT'))
-    print(bit.get_orderbook('BTC_USDT'))
+    print(bit.get_ticker('BTC_USDT'))
+    # print(bit.get_orderbook('BTC_USDT'))
     # print(bit.get_trades('BTC_USDT'))
     # print(bit.get_kline('BTC_USDT'))

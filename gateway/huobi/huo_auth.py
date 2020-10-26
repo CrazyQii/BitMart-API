@@ -99,7 +99,7 @@ class HuoAuth(object):
             if resp['status'] == 'ok':
                 return resp['data']
             else:
-                print(f'Huobi auth error: {resp["err-msg"]}')
+                print(f'Huobi auth place order error: {resp["err-msg"]}')
                 return None
         except Exception as e:
             print(f'Huobi auth place order error: {e}')
@@ -142,7 +142,6 @@ class HuoAuth(object):
             resp = requests.post(url, data=params, headers={'Content-Type': 'application/json'}).json()
             data = False
             if resp['status'] == 'ok':
-                print(resp)
                 data = resp['data']
                 message = resp['status']
             else:
@@ -184,7 +183,7 @@ class HuoAuth(object):
                         'create_time': round(order['created-at'] / 1000)
                     })
             else:
-                print(f'Huobi auth error: {resp["err-msg"]}')
+                print(f'Huobi auth open order error: {resp["err-msg"]}')
             return results
         except Exception as e:
             print(f'Huobi auth open order error: {e}')
@@ -211,7 +210,7 @@ class HuoAuth(object):
                     'create_time': round(order['created-at'] / 1000)
                 }
             else:
-                print(f'Huobi auth error: {resp["err-msg"]}')
+                print(f'Huobi auth order detail error: {resp["err-msg"]}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
@@ -237,7 +236,7 @@ class HuoAuth(object):
                     if currency['type'] == 'frozen':
                         frozen[currency['currency']] = currency['balance']
             else:
-                print(f'Huobi auth error: {resp["message"]}')
+                print(f'Huobi auth wallet balance error: {resp["message"]}')
             return balance, frozen
         except Exception as e:
             print(f'Huobi auth wallet balance error: {e}')

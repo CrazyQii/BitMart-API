@@ -9,7 +9,6 @@ class BiboxAuth(object):
         self.urlbase = urlbase
         self.api_key = api_key
         self.api_secret = api_secret
-        self.memo = passphrase
 
     def _sign_message(self, cmd, body):
         try:
@@ -47,8 +46,7 @@ class BiboxAuth(object):
             if 'result' in resp['result'][0].keys():
                 return resp.json()['result']
             else:
-                print(f'Bibox auth error: {resp["result"][0]["error"]}')
-                return None
+                print(f'Bibox auth place order error: {resp["result"][0]["error"]}')
         except Exception as e:
             print(f'Bibox auth place order error: {e}')
 
@@ -89,7 +87,7 @@ class BiboxAuth(object):
                 return {
                     'func_name': 'cancel_order',
                     'message': 'Bibox auth cancel order is empty',
-                    'data': False
+                    'data': True
                 }
 
             for order in orders:
@@ -169,6 +167,41 @@ class BiboxAuth(object):
         except Exception as e:
             print(f'Bibox auth order detail error: {e}')
 
+    def user_trades(self, symbol: str, offset=1, limit=100):
+        try:
+            url = self.urlbase + '/v1/orderpending'
+            params = {'pair': symbol, 'account_type': 0, 'id': '10000000000', 'page': offset}
+            params = self._sign_message('orderpending/order', params)
+
+            resp = requests.post(url, data=params)
+            trades = []
+            resp = resp.json()
+            if 'result' in resp['result'][0]:
+                content = resp['result'][0]['result']
+                i = 0
+                for trade in content:
+                    if i > limit:
+                        break
+                    trades.append({
+                        'detail_id': trade['relay_id'],
+                        'order_id': trade['id'],
+                        'symbol': f'{trade["coin_symbol"]}_{trade["currency_symbol"]}',
+                        'create_time': int(trade['createdAt'] / 1000),
+                        'side': 'buy' if trade['order_side'] == 1 else 'sell',
+                        'price_avg': float(float(trade['amount']) / float(trade['price'])),
+                        'notional': float(trade['price']),
+                        'size': float(trade['amount']),
+                        'fees': float(trade['fee']),
+                        'fee_coin_name': trade['fee_symbol'],
+                        'exec_type': 'M' if trade['is_maker'] == 1 else 'T',
+                    })
+                    i = i + 1
+            else:
+                print(f'Bibox auth user trades error: {resp["result"][0]["error"]}')
+            return trades
+        except Exception as e:
+            print(f'Bibox auth user trades error: {e}')
+
     def wallet_balance(self):
         try:
             url = self.urlbase + '/v1/transfer'
@@ -191,10 +224,11 @@ class BiboxAuth(object):
 
 
 if __name__ == '__main__':
-    bit = BiboxAuth('https://api.bibox.com', '59ed9c456d6d1d5bc843ac2fde9fdbe34b820a89', '851fdebdc8a40d20b70056d08e0dd3a2cbacc35d')
+    bit = BiboxAuth('https://api.bibox.com', '59ed9c456d6d1d5bc843ac2fde9fdbe34b820a89',
+                    '851fdebdc8a40d20b70056d08e0dd3a2cbacc35d')
     # print(bit.place_order('BTC_USDT', 1.0016, 1.5, 'buy'))
     # print(bit.order_detail('BTC_USDT', '1'))
     # print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('UMA_USDT', '1'))
-    print(bit.cancel_all('BTC_USDT', 'buy'))
+    # print(bit.cancel_all('BTC_USDT', 'buy'))
     # print(bit.wallet_balance())

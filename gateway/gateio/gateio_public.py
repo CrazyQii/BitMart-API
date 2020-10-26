@@ -29,7 +29,7 @@ class GateioPublic(object):
                             'price_digit': int(ticker['precision'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -38,20 +38,31 @@ class GateioPublic(object):
             print(f'Gateio batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -61,7 +72,7 @@ class GateioPublic(object):
             symbol_info['price_digit'] = symbols_detail[symbol]['price_digit']
             return symbol_info
         except Exception as e:
-            print(f'Wootrade get symbol info error: {e}')
+            print(f'Gateio get symbol info error: {e}')
 
     def get_price(self, symbol: str):
         try:
@@ -71,7 +82,7 @@ class GateioPublic(object):
             if resp.status_code == 200:
                 price = float(resp.json()[0]["last"])
             else:
-                print(f'Gateio public request error: {resp.json()["message"]}')
+                print(f'Gateio public get price request error: {resp.json()}')
             return price
         except Exception as e:
             print(f'Gateio public get price error: {e}')
@@ -100,7 +111,7 @@ class GateioPublic(object):
                     'url': url,
                 }
             else:
-                print(f'Gateio public request error: {resp.json()["message"]}')
+                print(f'Gateio public get ticker request error: {resp.json()}')
             return ticker
         except Exception as e:
             print(f'Gateio public get ticker error: {e}')
@@ -131,7 +142,7 @@ class GateioPublic(object):
                         'count': None
                     })
             else:
-                print(f'Gateio public request error: {resp.json()["message"]}')
+                print(f'Gateio public get orderbook request error: {resp.json()}')
             return orderbook
         except Exception as e:
             print(f'Gateio public get orderbook error: {e}')
@@ -151,7 +162,7 @@ class GateioPublic(object):
                         'type': trade['side']
                     })
             else:
-                print(f'Gateio public request error: {resp.json()["message"]}')
+                print(f'Gateio public get trades request error: {resp.json()}')
             return trades
         except Exception as e:
             print(f'Gateio public get trades error: {e}')
@@ -175,7 +186,7 @@ class GateioPublic(object):
                         'last_price': float(line[2])
                     })
             else:
-                print(f'Gateio public request error: {resp.json()["message"]}')
+                print(f'Gateio public get kline request error: {resp.json()}')
             return lines
         except Exception as e:
             print(f'Gateio public get kline error: {e}')
@@ -188,4 +199,4 @@ if __name__ == '__main__':
     # print(gate.get_ticker('BTC_USDT'))
     # print(gate.get_orderbook('BTC_USDT'))
     # print(gate.get_trades('BTC_USDT'))
-    print(gate.get_kline('BTC_USDT'))
+    # print(gate.get_kline('BTC_USDT'))

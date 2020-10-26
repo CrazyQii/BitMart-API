@@ -43,7 +43,7 @@ class WootradeAuth(object):
                             'price_digit': int(abs(math.log10(float(ticker['quote_tick']))))  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -54,7 +54,7 @@ class WootradeAuth(object):
     def get_symbol_info(self, symbol: str):
         try:
             symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
 

@@ -1,5 +1,4 @@
 import requests
-import os
 import json
 import hmac
 import hashlib
@@ -11,7 +10,6 @@ class GateioAuth(object):
         self.urlbase = urlbase
         self.api_key = api_key
         self.api_secret = api_secret
-        self.memo = passphrase
 
     def _sign_message(self, method, path, params=None, body=None):
         try:
@@ -59,7 +57,7 @@ class GateioAuth(object):
             if resp.status_code == 200:
                 return resp.json()['id']
             else:
-                print(f'Gateio auth error: {resp.json()["label"]}')
+                print(f'Gateio auth place order error: {resp.json()}')
                 return None
         except Exception as e:
             print(f'Gateio auth place order error: {e}')
@@ -84,7 +82,7 @@ class GateioAuth(object):
                 message = resp.json()['label']
             else:
                 message = resp.json()['label']
-                print(f'Gateio auth error: {resp.json()["label"]}')
+                print(f'Gateio auth error: {resp.json()}')
 
             info = {
                 'func_name': 'cancel_order',
@@ -112,10 +110,10 @@ class GateioAuth(object):
             data = False
             if resp.status_code == 200:
                 data = True
-                message = resp.json()['label']
+                message = resp.json()
             else:
-                message = resp.json()['label']
-                print(f'Gateio auth error: {resp.json()["label"]}')
+                message = resp.json()
+                print(f'Gateio auth cancel order error: {message}')
 
             info = {
                 'func_name': 'cancel_order',
@@ -154,10 +152,10 @@ class GateioAuth(object):
                             'create_time': order['create_time']
                         })
             else:
-                print(f'Gateio auth error: {resp.json()["label"]}')
+                print(f'Gateio auth open orders error: {resp.json()}')
             return results
         except Exception as e:
-            print(f'Gateio auth open order error: {e}')
+            print(f'Gateio auth open orders error: {e}')
 
     def order_detail(self, symbol: str, order_id: str):
         try:
@@ -187,7 +185,7 @@ class GateioAuth(object):
                     'create_time': order['create_time']
                 }
             else:
-                print(f'Gateio auth error: {resp.json()["label"]}')
+                print(f'Gateio auth order detail error: {resp.json()}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
@@ -197,6 +195,40 @@ class GateioAuth(object):
             return info
         except Exception as e:
             print(f'Gateio auth order detail error: {e}')
+
+    def user_trades(self, symbol: str, offset=1, limit=100):
+        try:
+            url = self.urlbase + '/spot/my_trades'
+            params = {'currency_pair': symbol, 'limit': limit, 'page': offset}
+            headers = self._sign_message('GET', '/spot/my_trades', params=params)
+            headers.update({
+                'Content-type': 'application/json',
+                'Accept': 'application/json',
+            })
+
+            resp = requests.get(url, params=params, headers=headers)
+            trades = []
+            if resp.status_code == 200:
+                resp = resp.json()
+                for trade in resp:
+                    trades.append({
+                        'detail_id': trade['id'],
+                        'order_id': trade['order_id'],
+                        'symbol': symbol,
+                        'create_time': int(trade['create_time']),
+                        'side': trade['side'],
+                        'price_avg': float(float(trade['amount']) / float(trade['notional'])),
+                        'notional': float(trade['notional']),
+                        'size': float(trade['amount']),
+                        'fees': float(trade['fee']),
+                        'fee_coin_name': trade['fee_currency'],
+                        'exec_type': 'M' if trade['role'] == 'maker' else 'T'
+                    })
+            else:
+                print(f'Gateio auth user trades error: {resp.json()}')
+            return trades
+        except Exception as e:
+            print(f'Gateio auth user trades error: {e}')
 
     def wallet_balance(self):
         try:
@@ -215,7 +247,7 @@ class GateioAuth(object):
                 balance = {row['currency']: float(row['available']) for row in wallet}
                 frozen = {row['currency']: float(row['locked']) for row in wallet}
             else:
-                print(f'Gateio auth error: {resp.json()["label"]}')
+                print(f'Gateio auth wallet balance error: {resp.json()}')
             return balance, frozen
         except Exception as e:
             print(f'Gateio auth wallet balance error: {e}')
@@ -230,4 +262,5 @@ if __name__ == '__main__':
     # print(gate.open_orders('BTC_USDT'))
     # print(gate.cancel_order('UMA_USDT', '1'))
     # print(gate.cancel_all('BTC_USDT', 'buy'))
+    # print(gate.user_trades('BTC_USDT'))
     # print(gate.wallet_balance())

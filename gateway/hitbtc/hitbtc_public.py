@@ -37,7 +37,7 @@ class HitbtcPublic(object):
                             'price_digit': int(abs(math.log10(float(ticker['tickSize']))))  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -46,20 +46,31 @@ class HitbtcPublic(object):
             print(f'Hitbtc batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -104,7 +115,7 @@ class HitbtcPublic(object):
                     'url': url,
                 }
             else:
-                print(f'Hitbtc public request error: {resp.json()["error"]}')
+                print(f'Hitbtc public get ticker request error: {resp.json()["error"]}')
             return ticker
         except Exception as e:
             print(f'Hitbtc public get ticker error: {e}')
@@ -137,7 +148,7 @@ class HitbtcPublic(object):
                         'count': None
                     })
             else:
-                print(f'Hitbtc public request error: {resp.json()["error"]}')
+                print(f'Hitbtc public get orderbook request error: {resp.json()["error"]}')
             return orderbook
         except Exception as e:
             print(f'Hitbtc public get orderbook error: {e}')
@@ -159,7 +170,7 @@ class HitbtcPublic(object):
                         'type': trade['side']
                     })
             else:
-                print(f'Hitbtc public request error: {resp.json()["error"]}')
+                print(f'Hitbtc public get trades request error: {resp.json()["error"]}')
             return trades
         except Exception as e:
             print(f'Hitbtc public get trades error: {e}')
@@ -188,7 +199,7 @@ class HitbtcPublic(object):
                         'last_price': float(line['close'])
                     })
             else:
-                print(f'Hitbtc public request error: {resp.json()["error"]}')
+                print(f'Hitbtc public get kline request error: {resp.json()["error"]}')
             return lines
         except Exception as e:
             print(f'Hitbtc public get kline error: {e}')

@@ -36,7 +36,7 @@ class HuoPublic(object):
                             'price_digit': int(ticker['price-precision'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -45,20 +45,31 @@ class HuoPublic(object):
             print(f'Huobi batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -78,7 +89,7 @@ class HuoPublic(object):
             if resp['status'] == 'ok':
                 return float(resp['tick']['data'][0]['price'])
             else:
-                print(f'Huobi public request error: {resp["err-msg"]}')
+                print(f'Huobi public get price request error: {resp["err-msg"]}')
             return price
         except Exception as e:
             print(f'Huobi public get price error: {e}')
@@ -108,7 +119,7 @@ class HuoPublic(object):
                             'url': url
                         }
             else:
-                print(f'Huobi public request error: {resp["err-msg"]}')
+                print(f'Huobi public get ticker request error: {resp["err-msg"]}')
             return result
         except Exception as e:
             print(f'Huobi public get ticker error: {e}')
@@ -138,7 +149,7 @@ class HuoPublic(object):
                         'count': None
                     })
             else:
-                print(f'Huobi public request error: {resp["err-msg"]}')
+                print(f'Huobi public get orderbook request error: {resp["err-msg"]}')
             return orderbook
         except Exception as e:
             print(f'Huobi public get orderbook error: {e}')
@@ -159,7 +170,7 @@ class HuoPublic(object):
                     })
                 return trades
             else:
-                print(f'Bitmart public request error: {resp["err-msg"]}')
+                print(f'Bitmart public get trades request error: {resp["err-msg"]}')
             return trades
         except Exception as e:
             print(f'Bitmart public get trades error: {e}')
@@ -182,7 +193,7 @@ class HuoPublic(object):
                         'last_price': float(line['close'])
                     })
             else:
-                print(f'Huobi public request error: {resp["err-msg"]}')
+                print(f'Huobi public get kline request error: {resp["err-msg"]}')
             return lines
         except Exception as e:
             print(f'Huobi public get kline error: {e}')
@@ -190,8 +201,7 @@ class HuoPublic(object):
 
 if __name__ == '__main__':
     huo = HuoPublic('https://api.huobi.pro')
-    huo._load_symbols_info()
-    print(huo.get_symbol_info('BTC_USDT'))
+    # print(huo.get_symbol_info('BTC_USDT'))
     # print(huo.get_price('BTC_USDT'))
     # print(huo.get_ticker('BTC_USDT'))
     # print(huo.get_orderbook('BTC_USDT'))

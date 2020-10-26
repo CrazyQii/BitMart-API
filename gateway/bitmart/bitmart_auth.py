@@ -56,7 +56,7 @@ class BitmartAuth(object):
             if resp['code'] == 1000:
                 return resp['data']['order_id']
             else:
-                print(f'Bitmart auth error: {resp["message"]}')
+                print(f'Bitmart auth place order error: {resp["message"]}')
                 return None
         except Exception as e:
             print(f'Bitmart auth place order error: {e}')
@@ -150,10 +150,43 @@ class BitmartAuth(object):
                         'create_time': order['create_time']
                     })
             else:
-                print(f'Bitmart auth error: {resp["message"]}')
+                print(f'Bitmart auth open order error: {resp["message"]}')
             return results
         except Exception as e:
             print(f'Bitmart auth open order error: {e}')
+
+    def user_trades(self, symbol: str, offset=1, limit=100):
+        try:
+            url = self.urlbase + '/spot/v1/trades'
+            params = {'symbol': symbol, 'limit': limit, 'offset': offset}
+            headers = {
+                'X-BM-KEY': self.api_key,
+                'X-BM-TIMESTAMP': self._timestamp(),
+                'Content-type': 'application/json'
+            }
+
+            resp = requests.get(url, params=params, headers=headers).json()
+            trades = []
+            if resp['code'] == 1000:
+                for trade in resp['data']['trades']:
+                    trades.append({
+                        'detail_id': trade['detail_id'],
+                        'order_id': trade['order_id'],
+                        'symbol': symbol,
+                        'create_time': int(trade['create_time'] / 1000),
+                        'side': trade['side'],
+                        'price_avg': float(trade['price_avg']),
+                        'notional': float(trade['notional']),
+                        'size': float(trade['size']),
+                        'fees': float(trade['fees']),
+                        'fee_coin_name': trade['fee_coin_name'],
+                        'exec_type': trade['exec_type']
+                    })
+            else:
+                print(f'Bitmart auth user trades error: {resp.json()}')
+            return trades
+        except Exception as e:
+            print(f'Bitmart auth user trades error: {e}')
 
     def order_detail(self, symbol: str, order_id: str):
         try:
@@ -179,7 +212,7 @@ class BitmartAuth(object):
                     'create_time': content['create_time']
                 }
             else:
-                print(f'Bitmart auth error: {resp["message"]}')
+                print(f'Bitmart auth order detail error: {resp["message"]}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
@@ -205,7 +238,7 @@ class BitmartAuth(object):
                 balance = {row["id"]: float(row["available"]) for row in wallet}
                 frozen = {row["id"]: float(row["frozen"]) for row in wallet}
             else:
-                print(f'Bitmart auth error: {resp["message"]}')
+                print(f'Bitmart auth wallet balance error: {resp["message"]}')
             return balance, frozen
         except Exception as e:
             print(f'Bitmart auth wallet balance error: {e}')
@@ -215,8 +248,9 @@ class BitmartAuth(object):
 if __name__ == '__main__':
     bit = BitmartAuth('https://api-cloud.bitmart.info', '5de397b9cef8bebc31f65e124c3a4a162d6d1f99', 'f4b7c83dc9c6790d6ea344ba3beafdfd70fe9481dccc7e70f0dd7d84b76e1ed2', 'mock')
     # print(bit.place_order('EOS_USDT', 1.0016, 11, 'buy'))
-    print(bit.order_detail('BTC_USDT', '1'))
+    # print(bit.order_detail('BTC_USDT', '1'))
     # print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('UMA_USDT', '1'))
     # print(bit.cancel_all('BTC_USDT', 'buy'))
+    # print(bit.user_trades('BTC_USDT'))
     # print(bit.wallet_balance())

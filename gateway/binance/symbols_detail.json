@@ -6409,7 +6409,7 @@
  },
  "BTCUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.234,
+  "min_notional": 1.516,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6417,7 +6417,7 @@
  },
  "BTCDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.468,
+  "min_notional": 0.368,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6865,7 +6865,7 @@
  },
  "ETHUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.98,
+  "min_notional": 2.158,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6873,7 +6873,7 @@
  },
  "ETHDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.197,
+  "min_notional": 0.15,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6881,7 +6881,7 @@
  },
  "ADAUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.407,
+  "min_notional": 0.37,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6889,7 +6889,7 @@
  },
  "ADADOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.643,
+  "min_notional": 0.652,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6897,7 +6897,7 @@
  },
  "LINKUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.899,
+  "min_notional": 1.079,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -6905,7 +6905,7 @@
  },
  "LINKDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.036,
+  "min_notional": 0.026,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -7201,7 +7201,7 @@
  },
  "BNBUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 2.106,
+  "min_notional": 2.269,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -7209,7 +7209,7 @@
  },
  "BNBDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.149,
+  "min_notional": 0.135,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -7217,7 +7217,7 @@
  },
  "XTZUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.302,
+  "min_notional": 0.279,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -7225,7 +7225,7 @@
  },
  "XTZDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.873,
+  "min_notional": 0.917,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8161,7 +8161,7 @@
  },
  "EOSUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.702,
+  "min_notional": 0.78,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8169,7 +8169,7 @@
  },
  "EOSDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.045,
+  "min_notional": 0.941,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8177,7 +8177,7 @@
  },
  "TRXUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.454,
+  "min_notional": 0.513,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8185,7 +8185,7 @@
  },
  "TRXDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.402,
+  "min_notional": 1.244,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8193,7 +8193,7 @@
  },
  "XRPUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.966,
+  "min_notional": 1.007,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8201,7 +8201,7 @@
  },
  "XRPDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.911,
+  "min_notional": 0.873,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8209,7 +8209,7 @@
  },
  "DOTUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.709,
+  "min_notional": 0.856,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8217,7 +8217,7 @@
  },
  "DOTDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.75,
+  "min_notional": 0.539,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8337,7 +8337,7 @@
  },
  "LTCUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.982,
+  "min_notional": 1.491,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8345,7 +8345,7 @@
  },
  "LTCDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.872,
+  "min_notional": 0.512,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8617,7 +8617,7 @@
  },
  "UNIUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.515,
+  "min_notional": 0.413,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8625,7 +8625,7 @@
  },
  "UNIDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.179,
+  "min_notional": 1.302,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8857,7 +8857,7 @@
  },
  "SXPUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 0.817,
+  "min_notional": 0.525,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8865,7 +8865,7 @@
  },
  "SXPDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.057,
+  "min_notional": 1.409,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8921,7 +8921,7 @@
  },
  "FILUP_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.0,
+  "min_notional": 1.661,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
@@ -8929,10 +8929,122 @@
  },
  "FILDOWN_USDT": {
   "min_amount": 0.01,
-  "min_notional": 1.0,
+  "min_notional": 0.254,
   "amount_increment": 0.01,
   "price_increment": 0.001,
   "amount_digit": 2,
   "price_digit": 3
+ },
+ "YFIUP_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.999,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "YFIDOWN_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.93,
+  "amount_increment": 0.01,
+  "price_increment": 0.001,
+  "amount_digit": 2,
+  "price_digit": 3
+ },
+ "INJ_BNB": {
+  "min_amount": 0.1,
+  "min_notional": 1e-05,
+  "amount_increment": 0.1,
+  "price_increment": 1e-05,
+  "amount_digit": 1,
+  "price_digit": 5
+ },
+ "INJ_BTC": {
+  "min_amount": 0.1,
+  "min_notional": 1e-08,
+  "amount_increment": 0.1,
+  "price_increment": 1e-08,
+  "amount_digit": 1,
+  "price_digit": 8
+ },
+ "INJ_BUSD": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "INJ_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 0.0001,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
+ "AERGO_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "AERGO_BUSD": {
+  "min_amount": 0.1,
+  "min_notional": 1e-05,
+  "amount_increment": 0.1,
+  "price_increment": 1e-05,
+  "amount_digit": 1,
+  "price_digit": 5
+ },
+ "LINK_EUR": {
+  "min_amount": 0.001,
+  "min_notional": 0.001,
+  "amount_increment": 0.001,
+  "price_increment": 0.001,
+  "amount_digit": 3,
+  "price_digit": 3
+ },
+ "ONE_BUSD": {
+  "min_amount": 1.0,
+  "min_notional": 1e-06,
+  "amount_increment": 1.0,
+  "price_increment": 1e-06,
+  "amount_digit": 0,
+  "price_digit": 6
+ },
+ "EASY_ETH": {
+  "min_amount": 0.01,
+  "min_notional": 1e-06,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
+  "amount_digit": 2,
+  "price_digit": 6
+ },
+ "AUDIO_BTC": {
+  "min_amount": 1.0,
+  "min_notional": 1e-08,
+  "amount_increment": 1.0,
+  "price_increment": 1e-08,
+  "amount_digit": 0,
+  "price_digit": 8
+ },
+ "AUDIO_BUSD": {
+  "min_amount": 0.1,
+  "min_notional": 1e-05,
+  "amount_increment": 0.1,
+  "price_increment": 1e-05,
+  "amount_digit": 1,
+  "price_digit": 5
+ },
+ "AUDIO_USDT": {
+  "min_amount": 0.1,
+  "min_notional": 1e-05,
+  "amount_increment": 0.1,
+  "price_increment": 1e-05,
+  "amount_digit": 1,
+  "price_digit": 5
  }
 }

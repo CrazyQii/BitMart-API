@@ -60,7 +60,7 @@ class BiboxPublic(object):
                             'price_digit': int(ticker['decimal'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -69,20 +69,31 @@ class BiboxPublic(object):
             print(f'Bibox batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -125,7 +136,7 @@ class BiboxPublic(object):
                     'url': url
                 }
             else:
-                print(f'Bibox public request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get ticker request error: {resp.json()["error"]["msg"]}')
             return ticker
         except Exception as e:
             print(f'Bibox public get ticker error: {e}')
@@ -156,7 +167,7 @@ class BiboxPublic(object):
                         'count': None
                     })
             else:
-                print(f'Bibox public request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get orderbook request error: {resp.json()["error"]["msg"]}')
             return orderbook
         except Exception as e:
             print(f'Bibox public get orderbook error: {e}')
@@ -178,7 +189,7 @@ class BiboxPublic(object):
                         'type': 'buy' if trade['side'] == 1 else 'sell'
                     })
             else:
-                print(f'Bibox public request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get trades request error: {resp.json()["error"]["msg"]}')
             return trades
         except Exception as e:
             print(f'Bibox public get trades error: {e}')
@@ -201,7 +212,7 @@ class BiboxPublic(object):
                         'last_price': float(line['close'])
                     })
             else:
-                print(f'Bibox public request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get kline request error: {resp.json()["error"]["msg"]}')
             return lines
         except Exception as e:
             print(f'Bibox public get kline error: {e}')
@@ -209,9 +220,9 @@ class BiboxPublic(object):
 
 if __name__ == '__main__':
     bibox = BiboxPublic('https://api.bibox.com')
-    print(bibox.get_symbol_info('BTC_USDT'))
-    print(bibox.get_price('BTC_USDT'))
-    print(bibox.get_ticker('BTC_USDT'))
-    print(bibox.get_orderbook('BTC_USDT'))
-    print(bibox.get_trades('BTC_USDT'))
-    print(bibox.get_kline('BTC_USDT'))
+    # print(bibox.get_symbol_info('BTC_USDT'))
+    # print(bibox.get_price('BTC_USDT'))
+    # print(bibox.get_ticker('BTC_USDT'))
+    # print(bibox.get_orderbook('BTC_USDT'))
+    # print(bibox.get_trades('BTC_USDT'))
+    # print(bibox.get_kline('BTC_USDT'))
