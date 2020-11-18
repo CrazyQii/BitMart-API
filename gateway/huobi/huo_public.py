@@ -201,7 +201,7 @@ class HuoPublic(object):
 
 if __name__ == '__main__':
     huo = HuoPublic('https://api.huobi.pro')
-    # print(huo.get_symbol_info('BTC_USDT'))
+    print(huo.get_symbol_info('BTC_USDT'))
     # print(huo.get_price('BTC_USDT'))
     # print(huo.get_ticker('BTC_USDT'))
     # print(huo.get_orderbook('BTC_USDT'))

@@ -188,7 +188,7 @@ class BiboxAuth(object):
                         'symbol': f'{trade["coin_symbol"]}_{trade["currency_symbol"]}',
                         'create_time': int(trade['createdAt'] / 1000),
                         'side': 'buy' if trade['order_side'] == 1 else 'sell',
-                        'price_avg': float(float(trade['amount']) / float(trade['price'])),
+                        'price_avg': float(float(trade['price']) / float(trade['amount'])),
                         'notional': float(trade['price']),
                         'size': float(trade['amount']),
                         'fees': float(trade['fee']),

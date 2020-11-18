@@ -247,7 +247,7 @@ class BinanceAuth(object):
                         'symbol': self._symbol_convert(symbol),
                         'create_time': int(trade['time'] / 1000),
                         'side': None,
-                        'price_avg': float(float(trade['qty']) / float(trade['price'])),
+                        'price_avg': float(float(trade['price']) / float(trade['qty'])),
                         'notional': float(trade['price']),
                         'size': float(trade['qty']),
                         'fees': float(trade['commission']),

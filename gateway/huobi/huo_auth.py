@@ -11,7 +11,6 @@ import base64
 import requests
 from urllib import parse
 
-
 class HuoAuth(object):
     def __init__(self, urlbase, api_key, api_secret, passphrase=None):
         self.urlbase = urlbase
@@ -56,6 +55,7 @@ class HuoAuth(object):
                           f'{par_str}'
             # concat string
             msg = f'{method}\n{host}\n{path}\n{req_str}'
+            print(msg)
             digest = hmac.new(self.api_secret.encode('utf-8'), msg=msg.encode('utf-8'),
                               digestmod=hashlib.sha256).digest()
             sign = base64.b64encode(digest).decode()
@@ -74,7 +74,7 @@ class HuoAuth(object):
                     if account['type'] == 'spot':
                         return account['id']
             else:
-                print(resp['err-msg'])
+                print(resp)
         except Exception as e:
             print(e)
 
@@ -99,7 +99,7 @@ class HuoAuth(object):
             if resp['status'] == 'ok':
                 return resp['data']
             else:
-                print(f'Huobi auth place order error: {resp["err-msg"]}')
+                print(f'Huobi auth place order error: {resp}')
                 return None
         except Exception as e:
             print(f'Huobi auth place order error: {e}')
@@ -145,7 +145,7 @@ class HuoAuth(object):
                 data = resp['data']
                 message = resp['status']
             else:
-                message = resp['err-msg']
+                message = resp
 
             info = {
                 'func_name': 'cancel_order',
@@ -183,7 +183,7 @@ class HuoAuth(object):
                         'create_time': round(order['created-at'] / 1000)
                     })
             else:
-                print(f'Huobi auth open order error: {resp["err-msg"]}')
+                print(f'Huobi auth open order error: {resp}')
             return results
         except Exception as e:
             print(f'Huobi auth open order error: {e}')
@@ -210,16 +210,49 @@ class HuoAuth(object):
                     'create_time': round(order['created-at'] / 1000)
                 }
             else:
-                print(f'Huobi auth order detail error: {resp["err-msg"]}')
+                print(f'Huobi auth order detail error: {resp}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
-                'message': resp['err-msg'],
+                'message': resp,
                 'data': order_detail
             }
             return info
         except Exception as e:
             print(f'Huobi auth order detail error: {e}')
+
+    def user_trades(self, symbol: str, offset=1, limit=100):
+        try:
+            url = self.urlbase + '/v1/order/matchresults'
+            params = {
+                'symbol': self._symbol_convert(symbol),
+                'size': limit
+            }
+            signature = self._sign_message('GET', 'api.huobi.pro', '/v1/order/matchresults', params)
+            params = self._set_params(signature, params)
+
+            resp = requests.get(url, params=params, headers={'Content-Type': 'application/json'}).json()
+            trades = []
+            if resp['status'] == 'ok':
+                for trade in resp['data']:
+                    trades.append({
+                        'detail_id': trade['trade-id'],
+                        'order_id': trade['order-id'],
+                        'symbol': self._symbol_convert(symbol),
+                        'create_time': int(trade['created-at'] / 1000),
+                        'side': trade['type'].split('-')[0],
+                        'price_avg': float(float(trade['price'] / float(trade['filled-amount']))),
+                        'notional': float(trade['price']),
+                        'size': float(trade['filled-amount']),
+                        'fees': float(trade['filled-fees']),
+                        'fee_coin_name': None,
+                        'exec_type': 'T' if trade['role'] == 'taker' else 'M'
+                    })
+            else:
+                print(f'Huobi auth user trades error: {resp}')
+            return trades
+        except Exception as e:
+            print(f'Huobi auth user trades error: {e}')
 
     def wallet_balance(self):
         try:
@@ -236,7 +269,7 @@ class HuoAuth(object):
                     if currency['type'] == 'frozen':
                         frozen[currency['currency']] = currency['balance']
             else:
-                print(f'Huobi auth wallet balance error: {resp["message"]}')
+                print(f'Huobi auth wallet balance error: {resp}')
             return balance, frozen
         except Exception as e:
             print(f'Huobi auth wallet balance error: {e}')
@@ -249,5 +282,6 @@ if __name__ == '__main__':
     # print(huo.cancel_order('EOS_USDT', '234'))
     # print(huo.cancel_all('EOS_USDT', 'sell'))
     # print(huo.open_orders('EOS_USDT'))
-    # print(huo.order_detail('EOS_USDT', '234'))
+    print(huo.order_detail('EOS_USDT', '234'))
+    print(huo.user_trades('EOS_USDT'))
     # print(huo.wallet_balance())
