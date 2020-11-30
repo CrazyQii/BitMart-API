@@ -172,6 +172,7 @@ class MxcAuth(object):
                     'amount': float(content['quantity']),
                     'price_avg': None,
                     'filled_amount': float(content['deal_quantity']),
+                    'status': float(content['status']),
                     'create_time': round(content['create_time'] / 1000)
                 }
             else:

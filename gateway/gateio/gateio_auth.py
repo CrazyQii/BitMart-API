@@ -195,16 +195,17 @@ class GateioAuth(object):
             resp = requests.get(url, params=params, headers=headers)
             order_detail = {}
             if resp.status_code == 200:
-                order = resp.json()
+                content = resp.json()
                 order_detail = {
-                    'order_id': order['id'],
-                    'symbol': order['currency_pair'],
-                    'amount': float(order['amount']),
-                    'price': float(order['price']),
-                    'side': order['side'],
+                    'order_id': content['id'],
+                    'symbol': content['currency_pair'],
+                    'amount': float(content['amount']),
+                    'price': float(content['price']),
+                    'side': content['side'],
                     'price_avg': None,
-                    'filled_amount': float(order['amount']) - float(order['left']),
-                    'create_time': order['create_time']
+                    'filled_amount': float(content['amount']) - float(content['left']),
+                    'status': float(content['status']),
+                    'create_time': content['create_time']
                 }
             else:
                 print(f'Gateio auth order detail error: {resp.json()}')

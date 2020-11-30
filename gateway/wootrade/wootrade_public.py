@@ -5,6 +5,8 @@ import json
 import time
 import hmac
 import hashlib
+import operator
+from urllib.parse import urlencode
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 
@@ -19,11 +21,22 @@ class Wootrade(object):
     def _symbol_convert(self, symbol):
         return "SPOT_" + symbol
 
-    def _sign_message(self, data):
+    def _sign_message(self, ts, params=None):
         try:
-            return hmac.new(self.api_secret.encode(), data.encode(), hashlib.sha256).hexdigest()
+            sort = sorted(params.items(), key=operator.itemgetter(0))
+            msg = urlencode(sort)
+            msg += '|' + ts
+            return hmac.new(self.api_secret.encode(), msg.encode(), hashlib.sha256).hexdigest()
         except Exception as e:
             print(e)
+
+    def get_headers(self, ts, sign):
+        headers = {"Content-Type": "application/x-www-form-urlencoded",
+                   "x-api-key": self.api_key,
+                   "x-api-signature": sign,
+                   "x-api-timestamp": ts,
+                   "cache-control": "no-cache"}
+        return headers
 
     def _load_symbols_info(self):
         try:
@@ -36,14 +49,14 @@ class Wootrade(object):
                     data.update({
                         symbol: {
                             'min_amount': float(ticker['base_min']),  # 最小下单数量
-                            'min_notional': float(ticker['quote_min']),  # 最小下单金额
+                            'min_notional': float(ticker['min_notional']),  # 最小下单金额
                             'amount_increment': float(ticker['base_tick']),  # 数量最小变化
-                            'price_increment': float(ticker['quote_tick']),  # 价格最小变化
+                            'price_increment': float(ticker['price_range']),  # 价格最小变化
                             'amount_digit': int(abs(math.log10(float(ticker['base_tick'])))),  # 数量小数位
-                            'price_digit': int(abs(math.log10(float(ticker['quote_tick']))))  # 价格小数位
+                            'price_digit': int(abs(math.log10(float(ticker['price_range']))))  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -54,7 +67,7 @@ class Wootrade(object):
     def get_symbol_info(self, symbol: str):
         try:
             symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
 
@@ -62,7 +75,7 @@ class Wootrade(object):
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
@@ -79,7 +92,7 @@ class Wootrade(object):
 
     def get_price(self, symbol: str):
         try:
-            last_trade = self.get_trades(symbol, 1)
+            last_trade = self.get_trades(symbol)
             return last_trade[0]["price"]
         except Exception as e:
             print(f'Wootrade public get price error: {e}')
@@ -90,20 +103,13 @@ class Wootrade(object):
 
     def get_orderbook(self, symbol: str):
         try:
-            symbol = self._symbol_convert(symbol)
-            url = self.urlbase + f'/v1/orderbook/{symbol}?max_level={30}'
+            url = self.urlbase + f'/v1/orderbook/{self._symbol_convert(symbol)}'
+            params = {'max_level': 100}
+            ts = str(time.time() * 1000)
+            sign = self._sign_message(ts, params)
+            headers = self.get_headers(ts, sign)
 
-            ts = str(time.time())
-            msg = "max_level=30|" + str(ts)
-            sign = self._sign_message(msg)
-
-            headers = {"Content-Type": "application/x-www-form-urlencoded",
-                      "x-api-key": self.api_key,
-                      "x-api-signature": sign,
-                      "x-api-timestamp": ts,
-                      "cache-control": "no-cache"}
-
-            resp = requests.get(url, headers=headers).json()
+            resp = requests.get(url, params=params, headers=headers).json()
             orderbook = {'buys': [], 'sells': []}
             if resp['success'] is True:
                 total_amount_buys = 0
@@ -114,7 +120,7 @@ class Wootrade(object):
                         'amount': float(item['quantity']),
                         'total': total_amount_buys,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['asks']:
                     total_amount_sells += float(item['total'])
@@ -122,18 +128,18 @@ class Wootrade(object):
                         'amount': float(item['amount']),
                         'total': total_amount_sells,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Wootrade public request error: {resp["message"]}')
+                print(f'Wootrade public get orderbook error: {resp}')
             return orderbook
         except Exception as e:
             print(f'Wootrade public get orderbook error: {e}')
 
-    def get_trades(self, symbol: str, limit=10):
+    def get_trades(self, symbol: str):
         try:
             symbol = self._symbol_convert(symbol)
-            url = self.urlbase + f'/v1/public/market_trades?symbol={symbol}&limit={limit}'
+            url = self.urlbase + f'/v1/public/market_trades?symbol={symbol}'
             resp = requests.get(url).json()
             trades = []
             if resp['success'] is True:
@@ -146,12 +152,12 @@ class Wootrade(object):
                         'type': trade['side'].lower()
                     })
             else:
-                print(f'Wootrade public request error: {resp["message"]}')
+                print(f'Wootrade public get trades error: {resp}')
             return trades
         except Exception as e:
             print(f'Wootrade public get trades error: {e}')
 
-    # kline not supported
+    # 不支持kline
     def get_kline(self, symbol: str, time_period=3000, interval=1):
         pass
 
@@ -161,6 +167,6 @@ if __name__ == '__main__':
     # print(woo.get_symbol_info('BTC_USDT'))
     # print(woo.get_price('BTC_USDT'))
     # print(woo.get_ticker('BTC_USDT'))
-    print(woo.get_orderbook('BTC_USDT'))
+    # print(woo.get_orderbook('BTC_USDT'))
     # print(woo.get_trades('BTC_USDT'))
     # print(woo.get_kline('BTC_USDT'))

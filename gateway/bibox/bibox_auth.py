@@ -229,6 +229,6 @@ if __name__ == '__main__':
     # print(bit.place_order('BTC_USDT', 1.0016, 1.5, 'buy'))
     # print(bit.order_detail('BTC_USDT', '1'))
     # print(bit.open_orders('BTC_USDT'))
-    # print(bit.cancel_order('UMA_USDT', '1'))
+    # print(bit.cancel_order('BTC_USDT', '1'))
     # print(bit.cancel_all('BTC_USDT', 'buy'))
     # print(bit.wallet_balance())

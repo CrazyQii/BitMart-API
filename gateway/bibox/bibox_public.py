@@ -13,7 +13,6 @@ class BiboxPublic(object):
     def _handle_limitation(self, limitation, ticker):
         """ 匹配对应交易对限制信息 """
         min_amount = limitation['min_trade_amount']['default']  # 最小下单数量
-
         min_trade_money = limitation['min_trade_money']  # 最小下单金额
 
         symbol = ticker.split('_')[1]
@@ -221,7 +220,7 @@ class BiboxPublic(object):
 if __name__ == '__main__':
     bibox = BiboxPublic('https://api.bibox.com')
     # print(bibox.get_symbol_info('BTC_USDT'))
-    # print(bibox.get_price('BTC_USDT'))
+    print(bibox.get_price('BTC_USDT'))
     # print(bibox.get_ticker('BTC_USDT'))
     # print(bibox.get_orderbook('BTC_USDT'))
     # print(bibox.get_trades('BTC_USDT'))

@@ -102,7 +102,7 @@ class BinancePublic:
             if resp.status_code == 200:
                 ticker = resp.json()
                 result = {
-                    'symbol': ticker['symbol'],
+                    'symbol': symbol,
                     'last_price': float(ticker['lastPrice']),
                     'quote_volume': float(ticker['quoteVolume']),
                     'base_volume': float(ticker['volume']),
@@ -141,7 +141,7 @@ class BinancePublic:
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['bids']:
                     total_amount_buys += float(item[1])
@@ -149,7 +149,7 @@ class BinancePublic:
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
                 print(f'Binance public request error: {resp.json()}')
@@ -170,7 +170,7 @@ class BinancePublic:
                         'order_time': round(trade['time'] / 1000),
                         'price': float(trade['price']),
                         'amount': float(trade['qty'])*float(trade['price']),
-                        'type': None
+                        'type': 'buy' if trade['isBuyerMaker'] else 'sell'
                     })
                 return trades
             else:
@@ -193,10 +193,10 @@ class BinancePublic:
                     lines.append({
                         'timestamp': round(line[0] / 1000),
                         'volume': float(line[5]),
-                        'open_price': float(line[1]),
-                        'current_price': float(line[4]),
-                        'lowest_price': float(line[3]),
-                        'highest_price': float(line[2])
+                        'open': float(line[1]),
+                        'last_price': float(line[4]),
+                        'low': float(line[3]),
+                        'high': float(line[2])
                     })
             else:
                 print(f'Binance public request error: {resp.json()}')
@@ -208,8 +208,8 @@ class BinancePublic:
 if __name__ == '__main__':
     binance = BinancePublic('https://api.binance.com')
     # print(binance.get_symbol_info('BTC_USDT'))
-    # print(binance.get_price('BTC_USDT'))
-    # print(binance.get_ticker('BTC_USDT'))
-    # print(binance.get_orderbook('BTC_USDT'))
-    # print(binance.get_trades('BTC_USDT'))
-    # print(binance.get_kline('BTC_USDT'))
+    print(binance.get_price('BTC_USDT'))
+    print(binance.get_ticker('BTC_USDT'))
+    print(binance.get_orderbook('BTC_USDT'))
+    print(binance.get_trades('BTC_USDT'))
+    print(binance.get_kline('BTC_USDT'))

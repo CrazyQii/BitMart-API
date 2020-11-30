@@ -204,17 +204,16 @@ class BinanceAuth(object):
             resp = requests.get(url, params=params, headers={'X-MBX-APIKEY': self.api_key})
             result = {}
             if resp.status_code == 200:
-                message = 'OK'
-                resp = resp.json()
-                order = resp['data']
+                order = resp.json()['data']
                 result = {
                     'order_id': order['orderId'],
                     'symbol': order['symbol'],
-                    'original_amount': float(order['origQty']),
                     'price': float(order['price']),
+                    'amount': float(order['size']),
                     'side': order['side'],
                     'price_avg': None,
                     'filled_amount': float(order['executedQty']),
+                    'status': float(content['status']),
                     'create_time': round(order['time'] / 1000),
                 }
             else:
@@ -284,7 +283,7 @@ class BinanceAuth(object):
 if __name__ == '__main__':
     binance = BinanceAuth('https://api.binance.com', 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh', 'GS6Us3YWMw7sQQMEm5uC90CrgFcvtSOlGyz3PzWA5KXsUamYG4Y4ieqW6oziKZ72')
     # print(binance.place_order("BTC_USDT", 30, 0.01, "buy"))
-    # print(binance.order_detail('BTC_USDT', '1'))
+    print(binance.order_detail('BTC_USDT', '1'))
     # print(binance.open_orders('BTC_USDT'))
     # print(binance.cancel_order('BTC_USDT', '1'))
     # print(binance.cancel_all('BTC_USDT', 'sell'))
