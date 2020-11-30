@@ -23,8 +23,9 @@ class MxcPublic(object):
                 for ticker in resp['data']:
                     data.update({
                         ticker['symbol']: {
-                            'min_amount': float(ticker['min_amount']),  # 最小下单数量
-                            'min_notional': None,  # 最小下单金额
+                            'min_amount': round(math.pow(0.1, int(ticker['quantity_scale'])),
+                                                int(ticker['quantity_scale'])),  # 最小下单数量
+                            'min_notional': float(ticker['min_amount']),  # 最小下单金额
                             'amount_increment': round(math.pow(0.1, int(ticker['quantity_scale'])),
                                                       int(ticker['quantity_scale'])),  # 数量最小变化
                             'price_increment': round(math.pow(0.1, float(ticker['price_scale'])),
@@ -33,7 +34,7 @@ class MxcPublic(object):
                             'price_digit': int(ticker['price_scale'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -42,20 +43,31 @@ class MxcPublic(object):
             print(f'Mxc batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -118,7 +130,7 @@ class MxcPublic(object):
                         'amount': float(item['quantity']),
                         'total': total_amount_buys,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['data']['asks']:
                     total_amount_sells += float(item['quantity'])
@@ -126,7 +138,7 @@ class MxcPublic(object):
                         'amount': float(item['quantity']),
                         'total': total_amount_buys,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
             else:
                 print(f'Mxc public request error: {resp["msg"]}')
@@ -184,8 +196,8 @@ class MxcPublic(object):
 if __name__ == '__main__':
     mxc = MxcPublic('https://www.mxcio.co', 'mx0Iw5GHIlySTepTAN', 'ec4f09f088d642d2b2ebfae695b9c511')
     # print(mxc.get_symbol_info('BTC_USDT'))
-    # print(mxc.get_price('BTC_USDT'))
-    # print(mxc.get_ticker('BTC_USDT'))
-    # print(mxc.get_orderbook('BTC_USDT'))
-    # print(mxc.get_trades('BTC_USDT'))
-    # print(mxc.get_kline('BTC_USDT'))
+    print(mxc.get_price('BTC_USDT'))
+    print(mxc.get_ticker('BTC_USDT'))
+    print(mxc.get_orderbook('BTC_USDT'))
+    print(mxc.get_trades('BTC_USDT'))
+    print(mxc.get_kline('BTC_USDT'))

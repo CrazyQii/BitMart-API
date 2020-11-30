@@ -207,6 +207,14 @@
   "amount_digit": 0,
   "price_digit": 4
  },
+ "GIX_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 0.0001,
+  "amount_digit": 2,
+  "price_digit": 4
+ },
  "ZIL_BTC": {
   "min_amount": 1.0,
   "min_notional": 0.0001,
@@ -854,6 +862,14 @@
   "price_increment": 0.0001,
   "amount_digit": 2,
   "price_digit": 4
+ },
+ "WOO_USDT": {
+  "min_amount": 0.01,
+  "min_notional": 5.0,
+  "amount_increment": 0.01,
+  "price_increment": 1e-05,
+  "amount_digit": 2,
+  "price_digit": 5
  },
  "SNK_USDT": {
   "min_amount": 1.0,
@@ -1527,6 +1543,14 @@
   "amount_digit": 3,
   "price_digit": 4
  },
+ "GIX_BTC": {
+  "min_amount": 0.01,
+  "min_notional": 0.001,
+  "amount_increment": 0.01,
+  "price_increment": 1e-08,
+  "amount_digit": 2,
+  "price_digit": 8
+ },
  "ZNC_USDT": {
   "min_amount": 1.0,
   "min_notional": 0.1,
@@ -1840,11 +1864,11 @@
   "price_digit": 8
  },
  "SMH_BTC": {
-  "min_amount": 1.0,
+  "min_amount": 0.01,
   "min_notional": 0.001,
-  "amount_increment": 1.0,
+  "amount_increment": 0.01,
   "price_increment": 1e-08,
-  "amount_digit": 0,
+  "amount_digit": 2,
   "price_digit": 8
  },
  "BRT_USDT": {

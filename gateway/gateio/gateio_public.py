@@ -131,7 +131,7 @@ class GateioPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['asks']:
                     total_amount_sells += float(item[1])
@@ -139,7 +139,7 @@ class GateioPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
                 print(f'Gateio public get orderbook request error: {resp.json()}')
@@ -195,8 +195,8 @@ class GateioPublic(object):
 if __name__ == '__main__':
     gate = GateioPublic('https://api.gateio.ws/api/v4')
     # print(gate.get_symbol_info('BTC_USDT'))
-    # print(gate.get_price('BTC_USDT'))
-    # print(gate.get_ticker('BTC_USDT'))
-    # print(gate.get_orderbook('BTC_USDT'))
-    # print(gate.get_trades('BTC_USDT'))
-    # print(gate.get_kline('BTC_USDT'))
+    print(gate.get_price('BTC_USDT'))
+    print(gate.get_ticker('BTC_USDT'))
+    print(gate.get_orderbook('BTC_USDT'))
+    print(gate.get_trades('BTC_USDT'))
+    print(gate.get_kline('BTC_USDT'))
