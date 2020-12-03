@@ -123,8 +123,8 @@ class KucoinPublic(object):
 if __name__ == '__main__':
     ku = KucoinPublic('https://api.kucoin.com')
     # print(ku.get_symbol_info('BTC_USDT'))
-    print(ku.get_price('BTC_USDT'))
-    # print(ku.get_ticker('BTC_USDT'))
-    print(ku.get_orderbook('BTC_USDT'))
-    print(ku.get_trades('BTC_USDT'))
-    print(ku.get_kline('BTC_USDT'))
+    # print(ku.get_price('BTC_USDT'))
+    print(ku.get_ticker('BTC_USDT'))
+    # print(ku.get_orderbook('BTC_USDT'))
+    # print(ku.get_trades('BTC_USDT'))
+    # print(ku.get_kline('BTC_USDT'))

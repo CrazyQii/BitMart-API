@@ -104,7 +104,7 @@ class GateioAuth(object):
             orders = self.open_orders(symbol)
             if len(orders) == 0:
                 info = {
-                    "func_name": "cancel_order",
+                    "func_name": "cancel_all",
                     "message": 'Empty orders',
                     "data": False
                 }
@@ -130,7 +130,7 @@ class GateioAuth(object):
                 print(f'Gateio auth cancel order error: {message}')
 
             info = {
-                'func_name': 'cancel_order',
+                'func_name': 'cancel_all',
                 'message': message,
                 'data': data
             }
@@ -204,7 +204,7 @@ class GateioAuth(object):
                     'side': content['side'],
                     'price_avg': None,
                     'filled_amount': float(content['amount']) - float(content['left']),
-                    'status': float(content['status']),
+                    'status': content['status'],
                     'create_time': content['create_time']
                 }
             else:

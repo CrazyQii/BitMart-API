@@ -93,18 +93,21 @@ class WootradeAuth(object):
             orders = self.open_orders(symbol)
             if len(orders) == 0:
                 return {
-                    'func_name': 'cancel_order',
+                    'func_name': 'cancel_all',
                     'message': 'Empty orders',
                     'data': False
                 }
 
+            data = True
             for order in orders:
                 if str(order['side']).lower() == side:
-                    self.cancel_order(symbol, order['order_id'])
+                    result = self.cancel_order(symbol, order['order_id'])['data']
+                    if result is False:
+                        data = False
             info = {
-                'func_name': 'cancel_order',
+                'func_name': 'cancel_all',
                 'message': 'OK',
-                'data': True
+                'data': data
             }
             return info
         except Exception as e:
@@ -156,7 +159,7 @@ class WootradeAuth(object):
 
     def order_detail(self, symbol: str, order_id: str):
         try:
-            url = self.urlbase + '/v1/order/order_id'
+            url = self.urlbase + f'/v1/order/{order_id}'
             ts = str(time.time())
 
             sign = self._sign_message(ts)
@@ -172,7 +175,7 @@ class WootradeAuth(object):
                     'side': resp['side'].lower(),
                     'price_avg': None,
                     'filled_amount': float(resp['executed']),
-                    'status': float(resp['status']),
+                    'status': resp['status'],
                     'create_time': round(float(resp['created_time']))
                 }
             else:
@@ -247,7 +250,7 @@ class WootradeAuth(object):
 if __name__ == '__main__':
     woo = WootradeAuth('https://nexus.kronostoken.com', 'AbmyVJGUpN064ks5ELjLfA==', 'QHKRXHPAW1MC9YGZMAT8YDJG2HPR')
     # print(woo.place_order('BTC_USDT', 1.0016, 11, 'buy'))
-    # print(woo.order_detail('BTC_USDT', '1'))
+    print(woo.order_detail('BTC_USDT', '1'))
     # print(woo.open_orders('BTC_USDT'))
     # print(woo.cancel_order('BTC_USDT', '1'))
     # print(woo.cancel_all('BTC_USDT', 'buy'))

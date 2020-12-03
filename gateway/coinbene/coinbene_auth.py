@@ -11,7 +11,6 @@ class CoinbeneAuth(object):
         self.urlbase = urlbase
         self.api_key = api_key
         self.api_secret = api_secret
-        self.memo = passphrase
 
     def _symbol_convert(self, symbol: str):
         return '/'.join(symbol.split('_'))
@@ -30,12 +29,37 @@ class CoinbeneAuth(object):
         except Exception as e:
             print(e)
 
+    def _request(self, method: str, path: str, params: dict = None):
+        try:
+            url = self.urlbase + path
+            timestamp = datetime.utcnow().isoformat('T', 'milliseconds') + 'Z'
+            if method == 'POST':
+                msg = timestamp + method + path + ('' if params is None else json.dumps(params))
+                headers = {
+                    'ACCESS-KEY': self.api_key,
+                    'ACCESS-SIGN': self._sign_message(msg),
+                    'ACCESS-TIMESTAMP': timestamp,
+                    'Content-type': 'application/json'
+                }
+                resp = requests.post(url, data=json.dumps(params), headers=headers).json()
+            else:
+                msg = timestamp + method + path + ('' if params is None else '?' + urlencode(params))
+                headers = {
+                    'ACCESS-KEY': self.api_key,
+                    'ACCESS-SIGN': self._sign_message(msg),
+                    'ACCESS-TIMESTAMP': timestamp,
+                    'Content-type': 'application/json'
+                }
+                resp = requests.get(url, params=params, headers=headers).json()
+            return resp
+        except Exception as e:
+            print(e)
+
     def place_order(self, symbol: str, amount: float, price: float, side: str):
         if side not in ['buy', 'sell']:
             print('side is wrong')
             return None
         try:
-            url = self.urlbase + '/api/exchange/v2/order/place'
             params = {
                 'symbol': self._symbol_convert(symbol),
                 'direction': 1 if side == 'buy' else 2,
@@ -43,41 +67,24 @@ class CoinbeneAuth(object):
                 'price': price,
                 'quantity': amount
             }
-            timestamp = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            msg = timestamp + 'POST' + '/api/exchange/v2/order/place' + json.dumps(params)
-            headers = {
-                'ACCESS-KEY': self.api_key,
-                'ACCESS-SIGN': self._sign_message(msg),
-                'ACCESS-TIMESTAMP': timestamp,
-                'Content-type': 'application/json'
-            }
-            resp = requests.post(url, data=json.dumps(params), headers=headers).json()
+            resp = self._request('POST', '/api/exchange/v2/order/place', params)
             if resp['code'] == 200:
                 return resp['data']['orderId']
             else:
                 print(f'Coinbene auth place order error: {resp}')
-                return None
+            return None
         except Exception as e:
             print(f'Coinbene auth place order error: {e}')
 
     def cancel_order(self, symbol: str, order_id: str):
         try:
-            url = self.urlbase + '/api/exchange/v2/order/cancel'
             params = {
                 'orderId': order_id
             }
-            timestamp = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            msg = timestamp + 'POST' + '/api/exchange/v2/order/cancel' + json.dumps(params)
-            headers = {
-                'ACCESS-KEY': self.api_key,
-                'ACCESS-SIGN': self._sign_message(msg),
-                'ACCESS-TIMESTAMP': timestamp,
-                'Content-type': 'application/json'
-            }
-            resp = requests.post(url, data=json.dumps(params), headers=headers).json()
+            resp = self._request('POST', '/api/exchange/v2/order/cancel', params)
             data = False
             if resp['code'] == 200:
-                data = resp['data']
+                data = True
                 message = resp
             else:
                 message = resp
@@ -95,65 +102,70 @@ class CoinbeneAuth(object):
 
     def cancel_all(self, symbol: str, side: str):
         try:
-            url = self.urlbase + '/api/exchange/v2/order/batchCancel'
             orders = self.open_orders(symbol)
+            if len(orders) == 0:
+                info = {
+                    'func_name': 'cancel_all',
+                    'message': 'Empty order',
+                    'data': False
+                }
+                return info
+
             orderIds = []
             for order in orders:
                 if order['side'] == side:
                     orderIds.append(order['order_id'])
 
-            params = {
-                'orderIds': orderIds
-            }
-            timestamp = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            msg = timestamp + 'POST' + '/api/exchange/v2/order/batchCancel' + json.dumps(params)
-            headers = {
-                'ACCESS-KEY': self.api_key,
-                'ACCESS-SIGN': self._sign_message(msg),
-                'ACCESS-TIMESTAMP': timestamp,
-                'Content-type': 'application/json'
-            }
-            resp = requests.post(url, data=json.dumps(params), headers=headers).json()
-
+            params = {'orderIds': orderIds}
+            resp = self._request('POST', '/api/exchange/v2/order/batchCancel', params)
             data = False
             if resp['code'] == 200:
-                data = resp['data']
-                message = resp
+                data = True
+                message = 'ok'
             else:
-                message = resp['message']
-                print(f'Coinbene auth error: {message}')
+                message = resp
+                print(f'Coinbene auth cancel all error: {message}')
 
             info = {
-                'func_name': 'cancel_order',
+                'func_name': 'cancel_all',
                 'message': message,
                 'data': data
             }
             return info
         except Exception as e:
-            print(f'Coinbene auth cancel order error: {e}')
+            print(f'Coinbene auth cancel all error: {e}')
 
-    def open_orders(self, symbol: str, status='Open', offset=1, limit=100):
+    def open_orders(self, symbol):
         try:
-            url = self.urlbase + '/api/exchange/v2/order/closedOrders'
+            orders = []
+            for page in [5, 4, 3, 2, 1]:
+                if len(orders) == 0:
+                    orders_on_this_page = self.order_list(symbol)
+                else:
+                    last_id = orders[-1]['order_id']
+                    orders_on_this_page = self.order_list(symbol, latestOrderId=last_id)
+                if orders_on_this_page and len(orders_on_this_page) > 0:
+                    orders.extend(orders_on_this_page)
+                else:
+                    break
+            return orders
+        except Exception as e:
+            print(f'Okex auth open orders error: {e}')
+
+    def order_list(self, symbol: str, status=None, latestOrderId=None):
+        if status is None:
+            status = ['Cancelled', 'Partially cancelled']
+        try:
             params = {
                 'symbol': self._symbol_convert(symbol)
             }
-            timestamp = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            msg = timestamp + 'GET' + '/api/exchange/v2/order/closedOrder?' + urlencode(params)
-            headers = {
-                'ACCESS-KEY': self.api_key,
-                'ACCESS-SIGN': self._sign_message(msg),
-                'ACCESS-TIMESTAMP': timestamp,
-                'Content-type': 'application/json'
-            }
-            resp = requests.get(url, params=params, headers=headers).json()
+            #  订单分页查询
+            '' if latestOrderId is None else params.update({'latestOrderId': latestOrderId})
+            resp = self._request('GET', '/api/exchange/v2/order/openOrders', params)
             results = []
             if resp['code'] == 200:
-                i = 0
                 for order in resp['data']:
-                    if i >= limit:
-                        break
-                    if order['orderStatus'] == status:
+                    if order['orderStatus'] in status:
                         results.append({
                             'order_id': order['orderId'],
                             'symbol': f'{order["baseAsset"]}_{order["quoteAsset"]}',
@@ -164,7 +176,6 @@ class CoinbeneAuth(object):
                             'filled_amount': float(order['filledAmount']),
                             'create_time': self._utc_to_ts(order['orderTime'])
                         })
-                        i = i + 1
             else:
                 print(f'Coinbene auth open order error: {resp}')
             return results
@@ -172,74 +183,62 @@ class CoinbeneAuth(object):
             print(f'Coinbene auth open order error: {e}')
 
     def user_trades(self, symbol: str, offset=1, limit=100):
+        # 按用户请求进行订单成交明细列表查询
+        order_ids = self.open_orders(symbol)
+        trades = []
         try:
-            url = self.urlbase + '/spot/v1/trades'
-            params = {'symbol': symbol, 'limit': limit, 'offset': offset}
-            headers = {
-                'X-BM-KEY': self.api_key,
-                'X-BM-TIMESTAMP': self._timestamp(),
-                'Content-type': 'application/json'
-            }
-
-            resp = requests.get(url, params=params, headers=headers).json()
-            trades = []
-            if resp['code'] == 200:
-                for trade in resp['data']:
-                    trades.append({
-                        'detail_id': trade['detail_id'],
-                        'order_id': trade['order_id'],
-                        'symbol': symbol,
-                        'create_time': int(trade['create_time'] / 1000),
-                        'side': trade['side'],
-                        'price_avg': float(trade['price_avg']),
-                        'notional': float(trade['notional']),
-                        'size': float(trade['size']),
-                        'fees': float(trade['fees']),
-                        'fee_coin_name': trade['fee_coin_name'],
-                        'exec_type': trade['exec_type']
-                    })
-            else:
-                print(f'Coinbene auth user trades error: {resp}')
+            for order_id in order_ids:
+                params = {'orderId': order_id}
+                resp = self._request('GET', '/api/exchange/v2/order/trade/fills', params)
+                if resp['code'] == 200:
+                    for trade in resp['data']:
+                        trades.append({
+                            'detail_id': None,
+                            'order_id': order_id,
+                            'symbol': symbol,
+                            'create_time': self._utc_to_ts(trade['tradeTime']),
+                            'side': trade['direction'],
+                            'price_avg': None,
+                            'notional': float(trade['price']),
+                            'size': float(trade['quantity']),
+                            'fees': float(trade['fee']),
+                            'fee_coin_name': trade['feeByConi'],
+                            'exec_type': None
+                        })
+                else:
+                    print(f'Coinbene auth user trades error: {resp}')
             return trades
         except Exception as e:
             print(f'Coinbene auth user trades error: {e}')
 
     def order_detail(self, symbol: str, order_id: str):
         try:
-            url = self.urlbase + '/api/exchange/v2/order/info'
             params = {
                 'orderId': order_id
             }
-            timestamp = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            msg = timestamp + 'GET' + '/api/exchange/v2/order/info?' + urlencode(params)
-            headers = {
-                'ACCESS-KEY': self.api_key,
-                'ACCESS-SIGN': self._sign_message(msg),
-                'ACCESS-TIMESTAMP': timestamp,
-                'Content-type': 'application/json'
-            }
-
-            resp = requests.get(url, params=params, headers=headers).json()
+            resp = self._request('GET', '/api/exchange/v2/order/info', params)
             order_detail = {}
             if resp['code'] == 200:
                 content = resp['data']
-                if content['orderId'] is not None:
-                    order_detail = {
-                        'order_id': content['orderId'],
-                        'symbol': f'{content["baseAsset"]}_{content["quoteAsset"]}',
-                        'amount': float(content['amount']),
-                        'price': float(content['price']),
-                        'side': content['orderDirection'],
-                        'price_avg': float(content['avgPrice']),
-                        'filled_amount': float(content['filledAmount']),
-                        'create_time': self._utc_to_ts(content['orderTime'])
-                    }
+                order_detail = {
+                    'order_id': content['orderId'],
+                    'symbol': f'{content["baseAsset"]}_{content["quoteAsset"]}',
+                    'amount': float(content['amount']),
+                    'price': float(content['price']),
+                    'side': content['orderDirection'],
+                    'price_avg': float(content['avgPrice']),
+                    'filled_amount': float(content['filledAmount']),
+                    'status': resp['orderStatus'],
+                    'create_time': self._utc_to_ts(content['orderTime'])
+                }
+                message = 'ok'
             else:
-                print(f'Coinbene auth order detail error: {resp}')
+                message = resp
+                print(f'Coinbene auth order detail error: {message}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
-                'message': resp,
+                'message': message,
                 'data': order_detail
             }
             return info
@@ -248,21 +247,12 @@ class CoinbeneAuth(object):
 
     def wallet_balance(self):
         try:
-            url = self.urlbase + '/api/exchange/v2/account/list'
-            timestamp = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            msg = timestamp + 'GET' + '/api/exchange/v2/account/list'
-            headers = {
-                'ACCESS-KEY': self.api_key,
-                'ACCESS-SIGN': self._sign_message(msg),
-                'ACCESS-TIMESTAMP': timestamp,
-                'Content-type': 'application/json'
-            }
-            resp = requests.get(url, headers=headers).json()
+            resp = self._request('GET', '/api/exchange/v2/account/list')
             balance, frozen = {}, {}
             if resp['code'] == 200:
-                wallet = resp["data"]
-                balance = {row["asset"]: float(row["available"]) for row in wallet}
-                frozen = {row["asset"]: float(row["frozenBalance"]) for row in wallet}
+                wallet = resp['data']
+                balance = {row['asset']: float(row['available']) for row in wallet}
+                frozen = {row['asset']: float(row['frozenBalance']) for row in wallet}
             else:
                 print(f'Coinbene auth wallet balance error: {resp}')
             return balance, frozen
@@ -272,11 +262,12 @@ class CoinbeneAuth(object):
 
 
 if __name__ == '__main__':
+    # 网络错误，没有办法测试
     bit = CoinbeneAuth('https://openapi-exchange.coinbene.com', '8ce194f269f2a06387575fb5230a81b6', '71690075331647309e11b23238dcdced', 'mock')
     # print(bit.place_order('BTC_USDT', 1.03, 11, 'buy'))
     # print(bit.order_detail('BTC_USDT', '1'))
-    print(bit.open_orders('BTC_USDT'))  # 未处理解决
+    # print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('UMA_USDT', '1'))
-    print(bit.cancel_all('BTC_USDT', 'buy'))
-    print(bit.user_trades('BTC_USDT'))
+    # print(bit.cancel_all('BTC_USDT', 'buy'))
+    # print(bit.user_trades('BTC_USDT'))
     # print(bit.wallet_balance())

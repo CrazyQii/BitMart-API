@@ -34,19 +34,21 @@ class BiboxPublic(object):
 
     def _load_symbols_info(self):
         try:
+            # 获取下单限制信息
             url = self.urlbase + '/v1/orderpending?cmd=tradeLimit'
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                limitation = resp.json()['result']
+            resp = requests.get(url).json()
+            if 'result' in resp:
+                limitation = resp['result']
             else:
-                print('Bitmart batch load symbols error')
+                print('Bibox batch load symbols error')
                 return None
 
+            # 获取交易所支持的交易对
             url = self.urlbase + '/v1/mdata?cmd=pairList'
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             data = {}
-            if resp.status_code == 200:
-                for ticker in resp.json()['result']:
+            if 'result' in resp:
+                for ticker in resp['result']:
                     limit = self._handle_limitation(limitation, ticker['pair'])
                     data.update({
                         ticker['pair']: {
@@ -106,7 +108,11 @@ class BiboxPublic(object):
 
     def get_price(self, symbol: str):
         try:
-            return self.get_trades(symbol)[0]['price']
+            price = 0.0
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
+            return price
         except Exception as e:
             print(f'Bibox public get price error: {e}')
 
@@ -114,10 +120,10 @@ class BiboxPublic(object):
         try:
             url = self.urlbase + f'/v1/mdata?cmd=ticker&pair={symbol}'
 
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             ticker = {}
-            if resp.status_code == 200:
-                ticker = resp.json()['result']
+            if 'result' in resp:
+                ticker = resp['result']
                 ticker = {
                     'symbol': ticker['pair'],
                     'last_price': float(ticker['last']),
@@ -135,7 +141,7 @@ class BiboxPublic(object):
                     'url': url
                 }
             else:
-                print(f'Bibox public get ticker request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get ticker error: {resp["error"]["msg"]}')
             return ticker
         except Exception as e:
             print(f'Bibox public get ticker error: {e}')
@@ -143,10 +149,10 @@ class BiboxPublic(object):
     def get_orderbook(self, symbol: str):
         try:
             url = self.urlbase + f'/v1/mdata?cmd=depth&pair={symbol}'
-            resp = requests.get(url)
+
+            resp = requests.get(url).json()
             orderbook = {'buys': [], 'sells': []}
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'result' in resp:
                 total_amount_buys = 0
                 total_amount_sells = 0
                 for item in resp['result']['bids']:
@@ -155,7 +161,7 @@ class BiboxPublic(object):
                         'amount': float(item['volume']),
                         'total': total_amount_buys,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['result']['asks']:
                     total_amount_sells += float(item['volume'])
@@ -163,10 +169,10 @@ class BiboxPublic(object):
                         'amount': float(item['volume']),
                         'total': total_amount_sells,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Bibox public get orderbook request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get orderbook error: {resp["error"]["msg"]}')
             return orderbook
         except Exception as e:
             print(f'Bibox public get orderbook error: {e}')
@@ -175,33 +181,31 @@ class BiboxPublic(object):
         try:
             url = self.urlbase + f'/v1/mdata?cmd=deals&pair={symbol}'
 
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             trades = []
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'result' in resp:
                 for trade in resp['result']:
                     trades.append({
-                        'amount': float(trade['amount']),
+                        'amount': float(trade['amount']) * float(trade['price']),
                         'order_time': round(trade['time'] / 1000),
                         'price': float(trade['price']),
-                        'count': None,
+                        'count': float(trade['amount']),
                         'type': 'buy' if trade['side'] == 1 else 'sell'
                     })
             else:
-                print(f'Bibox public get trades request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get trades error: {resp["error"]["msg"]}')
             return trades
         except Exception as e:
             print(f'Bibox public get trades error: {e}')
 
     def get_kline(self, symbol: str, time_period=60, interval=1):
         try:
-            time_period = int(time_period/60)
-            url = self.urlbase + f'/v1/mdata?cmd=kline&pair={symbol}&period={time_period}min'
+            url = self.urlbase + f'/v1/mdata?cmd=kline&pair={symbol}&period={interval}min'
 
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             lines = []
-            if resp.status_code == 200:
-                for line in resp.json()['result']:
+            if 'result' in resp:
+                for line in resp['result']:
                     lines.append({
                         'timestamp': int(line['time'] / 1000),
                         'open': float(line['open']),
@@ -211,7 +215,7 @@ class BiboxPublic(object):
                         'last_price': float(line['close'])
                     })
             else:
-                print(f'Bibox public get kline request error: {resp.json()["error"]["msg"]}')
+                print(f'Bibox public get kline error: {resp["error"]["msg"]}')
             return lines
         except Exception as e:
             print(f'Bibox public get kline error: {e}')
@@ -220,7 +224,7 @@ class BiboxPublic(object):
 if __name__ == '__main__':
     bibox = BiboxPublic('https://api.bibox.com')
     # print(bibox.get_symbol_info('BTC_USDT'))
-    print(bibox.get_price('BTC_USDT'))
+    # print(bibox.get_price('BTC_USDT'))
     # print(bibox.get_ticker('BTC_USDT'))
     # print(bibox.get_orderbook('BTC_USDT'))
     # print(bibox.get_trades('BTC_USDT'))

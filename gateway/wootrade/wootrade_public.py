@@ -65,12 +65,22 @@ class Wootrade(object):
             print(f'Wootrade batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
             with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
@@ -79,6 +89,7 @@ class Wootrade(object):
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -92,8 +103,11 @@ class Wootrade(object):
 
     def get_price(self, symbol: str):
         try:
-            last_trade = self.get_trades(symbol)
-            return last_trade[0]["price"]
+            price = 0.0
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
+            return price
         except Exception as e:
             print(f'Wootrade public get price error: {e}')
 

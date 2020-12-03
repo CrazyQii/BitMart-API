@@ -16,9 +16,8 @@ class XtPublic(object):
     def _load_symbols_info(self):
         try:
             url = self.urlbase + '/data/api/v1/getMarketConfig'
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                resp = resp.json()
+            resp = requests.get(url).json()
+            if 'code' not in resp:
                 data = {}
                 for ticker_key, ticker_value in resp.items():
                     data.update({
@@ -31,7 +30,7 @@ class XtPublic(object):
                             'price_digit': int(ticker_value['pricePoint'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -40,20 +39,31 @@ class XtPublic(object):
             print(f'Xt batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -67,9 +77,10 @@ class XtPublic(object):
 
     def get_price(self, symbol: str):
         try:
-            price = self.get_trades(symbol)[0]['price']
-            if price is None:
-                return 0.0
+            price = 0.0
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
             return price
         except Exception as e:
             print(f'Xt public get price error: {e}')
@@ -78,10 +89,10 @@ class XtPublic(object):
         try:
             url = self.urlbase + '/data/api/v1/getTicker'
             params = {'market': self._symbol_convert(symbol)}
-            resp = requests.get(url, params=params)
+            resp = requests.get(url, params=params).json()
             result = {}
-            if resp.status_code == 200:
-                ticker = resp.json()
+            if 'code' not in resp:
+                ticker = resp
                 result = {
                     'symbol': symbol,
                     'last_price': float(ticker['price']),
@@ -99,7 +110,7 @@ class XtPublic(object):
                     'url': url,
                 }
             else:
-                print(f'Xt public request error: {resp.json()}')
+                print(f'Xt public get ticker error: {resp["info"]}')
             return result
         except Exception as e:
             print(f'Xt public get ticker error: {e}')
@@ -108,13 +119,9 @@ class XtPublic(object):
         try:
             url = self.urlbase + '/data/api/v1/getDepth'
             params = {'market': self._symbol_convert(symbol)}
-            resp = requests.get(url, params=params)
-            orderbook = {
-                'buys': [],
-                'sells': []
-            }
-            if resp.status_code == 200:
-                resp = resp.json()
+            resp = requests.get(url, params=params).json()
+            orderbook = {'buys': [], 'sells': []}
+            if 'code' not in resp:
                 total_amount_buys = 0
                 total_amount_sells = 0
                 for item in resp['asks']:
@@ -123,7 +130,7 @@ class XtPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['bids']:
                     total_amount_buys += float(item[1])
@@ -131,10 +138,10 @@ class XtPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Xt public request error: {resp.json()}')
+                print(f'Xt public get orderbook error: {resp["info"]}')
             return orderbook
         except Exception as e:
             print(f'Xt public get orderbook error: {e}')
@@ -143,21 +150,20 @@ class XtPublic(object):
         try:
             url = self.urlbase + '/data/api/v1/getTrades'
             params = {'market': self._symbol_convert(symbol)}
-            resp = requests.get(url, params=params)
+            resp = requests.get(url, params=params).json()
             trades = []
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 for trade in resp:
                     trades.append({
                         'count': float(trade[2]),
                         'order_time': round(trade[0] / 1000),
                         'price': float(trade[1]),
                         'amount': float(trade[1]) * float(trade[2]),
-                        'type': trade[3]
+                        'type': 'buy' if trade[3] == 'bid' else 'sell'
                     })
                 return trades
             else:
-                print(f'Xt public request error: {resp.json()}')
+                print(f'Xt public get trades error: {resp["info"]}')
             return trades
         except Exception as e:
             print(f'Xt public get trades error: {e}')
@@ -167,22 +173,21 @@ class XtPublic(object):
             end_time = round(time.time())
             start_time = end_time - time_period
             url = self.urlbase + '/data/api/v1/getKLine'
-            params = {'market': self._symbol_convert(symbol), 'type': f'{interval}min'}
-            resp = requests.get(url, params=params)
+            params = {'market': self._symbol_convert(symbol), 'type': f'{interval}min', 'since': start_time}
+            resp = requests.get(url, params=params).json()
             lines = []
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 for line in resp['datas']:
                     lines.append({
                         'timestamp': line[0],
                         'volume': float(line[5]),
-                        'open_price': float(line[1]),
-                        'current_price': float(line[4]),
-                        'lowest_price': float(line[3]),
-                        'highest_price': float(line[2])
+                        'open': float(line[1]),
+                        'last_price': float(line[4]),
+                        'low': float(line[3]),
+                        'high': float(line[2])
                     })
             else:
-                print(f'Xt public request error: {resp.json()}')
+                print(f'Xt public get kline error: {resp["info"]}')
             return lines
         except Exception as e:
             print(f'Xt public get kline error: {e}')
@@ -191,8 +196,8 @@ class XtPublic(object):
 if __name__ == '__main__':
     bit = XtPublic('https://api.xt.com')
     # print(bit.get_symbol_info('BTC_USDT'))
-    # print(bit.get_price('BNA_USDT'))
-    # print(bit.get_ticker('BNA_USDT'))
-    # print(bit.get_orderbook('BNA_USDT'))
-    # print(bit.get_trades('BNA_USDT'))
-    # print(bit.get_kline('BNA_USDT'))
+    # print(bit.get_price('BTC_USDT'))
+    # print(bit.get_ticker('BTC_USDT'))
+    # print(bit.get_orderbook('BTC_USDT'))
+    # print(bit.get_trades('BTC_USDT'))
+    # print(bit.get_kline('BTC_USDT'))

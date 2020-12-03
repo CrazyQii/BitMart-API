@@ -12,7 +12,6 @@ class VinexPublic(object):
         self.urlbase = urlbase
 
     def _load_symbols_info(self):
-        """ initialize symbol details in json """
         try:
             url = self.urlbase + '/api/v2/markets'
             resp = requests.get(url).json()
@@ -76,14 +75,14 @@ class VinexPublic(object):
             symbol_info['price_digit'] = symbols_detail[symbol]['price_digit']
             return symbol_info
         except Exception as e:
-            print(f'Bitmart get symbol info error: {e}')
+            print(f'Vinex get symbol info error: {e}')
 
     def get_price(self, symbol: str):
         try:
             price = 0.0
-            trade = self.get_trades(symbol)[0]
-            if trade is not None:
-                price = trade['price']
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
             return price
         except Exception as e:
             print(f'Vinex public get price error: {e}')
@@ -93,7 +92,7 @@ class VinexPublic(object):
             url = self.urlbase + f'/api/v2/get-ticker?market={symbol}'
             resp = requests.get(url).json()
             ticker = {}
-            if resp['status'] == 200:
+            if 'status' in resp and resp['status'] == 200:
                 ticker = resp['data']
                 ticker = {
                     'symbol': symbol,
@@ -112,7 +111,7 @@ class VinexPublic(object):
                     'url': url,
                 }
             else:
-                print(f'Vinex public get ticker request error: {resp}')
+                print(f'Vinex public get ticker error: {resp["error"]["message"]}')
             return ticker
         except Exception as e:
             print(f'Vinex public get ticker error: {e}')
@@ -121,18 +120,17 @@ class VinexPublic(object):
         try:
             url = self.urlbase + f'/api/v2/get-order-book?market={symbol}'
             resp = requests.get(url).json()
-            print(resp)
             orderbook = {'buys': [], 'sells': []}
             total_amount_buys = 0
             total_amount_sells = 0
-            if resp['status'] == 200:
+            if 'status' in resp and resp['status'] == 200:
                 for item in resp['data']['bids']:
                     total_amount_buys += float(item['quantity'])
                     orderbook['buys'].append({
                         'amount': float(item['quantity']),
                         'total': total_amount_buys,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['data']['asks']:
                     total_amount_sells += float(item['quantity'])
@@ -140,10 +138,10 @@ class VinexPublic(object):
                         'amount': float(item['quantity']),
                         'total': total_amount_sells,
                         'price': float(item['price']),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Vinex public get orderbook request error: {resp}')
+                print(f'Vinex public get orderbook error: {resp["error"]["message"]}')
             return orderbook
         except Exception as e:
             print(f'Vinex public get orderbook error: {e}')
@@ -153,17 +151,17 @@ class VinexPublic(object):
             url = self.urlbase + f'/api/v2/get-market-history?market={symbol}'
             trades = []
             resp = requests.get(url).json()
-            if resp['status'] == 200:
+            if 'status' in resp and resp['status'] == 200:
                 for trade in resp['data']:
                     trades.append({
-                        'amount': float(trade['amount']) * int(trade['amount']),
-                        'order_time': int(trade['createdAt']),
+                        'amount': float(trade['amount']) * float(trade['price']),
+                        'order_time': round(trade['createdAt']),
                         'price': float(trade['price']),
                         'count': float(trade['amount']),
                         'type': 'buy' if trade['type'] == 1 else 'sell'
                     })
             else:
-                print(f'Vinex public get trades request error: {resp}')
+                print(f'Vinex public get trades error: {resp["error"]["message"]}')
             return trades
         except Exception as e:
             print(f'Vinex public get trades error: {e}')
@@ -172,20 +170,21 @@ class VinexPublic(object):
         endTime = round(time.time())
         startTime = endTime - time_period
         try:
-            url = self.urlbase + f'/api/v2/candles?symbol={symbol}&interval={interval}m&from={startTime}&to={endTime}'
-
+            url = self.urlbase + f'/api/v2/candles?symbol={symbol}&interval={interval}m&startTime={startTime}&endTime={endTime}'
             resp = requests.get(url).json()
             lines = []
-            print(resp)
-            if resp['status'] == 200:
+            if 'status' in resp and resp['status'] == 200:
                 for line in resp['data']:
                     lines.append({
                         'timestamp': int(line['timestamp']),
                         'open': float(line['open']),
-                        'high': float(line['high'])
+                        'high': float(line['hight']),
+                        'volume': None,
+                        'last_price': float(line['close']),
+                        'low': float(line['low'])
                     })
             else:
-                print(f'Vinex public get kline request error: {resp}')
+                print(f'Vinex public get kline error: {resp["error"]["message"]}')
             return lines
         except Exception as e:
             print(f'Vinex public get kline error: {e}')

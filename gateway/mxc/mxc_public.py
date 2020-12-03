@@ -8,30 +8,34 @@ cur_path = os.path.abspath(os.path.dirname(__file__))
 
 
 class MxcPublic(object):
-    def __init__(self, urlbase, api_key, api_secret=None):
+    def __init__(self, urlbase):
         self.urlbase = urlbase
-        self.api_key = api_key
-        self.api_secret = api_secret
+
+    def _uts_to_ts(self, uts):
+        timeArray = time.strptime(uts, '%Y-%m-%d %H:%M:%S.%f')
+        ts = time.mktime(timeArray)
+        return ts
 
     def _load_symbols_info(self):
         try:
-            url = self.urlbase + '/open/api/v2/market/symbols'
-            params = {'api_key': self.api_key}
-            resp = requests.get(url, params=params).json()
+            url = self.urlbase + '/open/api/v1/data/markets_info'
+            resp = requests.get(url).json()
             if resp['code'] == 200:
                 data = {}
-                for ticker in resp['data']:
+                for ticker in resp['data'].items():
+                    key = ticker[0]
+                    value = ticker[1]
                     data.update({
-                        ticker['symbol']: {
-                            'min_amount': round(math.pow(0.1, int(ticker['quantity_scale'])),
-                                                int(ticker['quantity_scale'])),  # 最小下单数量
-                            'min_notional': float(ticker['min_amount']),  # 最小下单金额
-                            'amount_increment': round(math.pow(0.1, int(ticker['quantity_scale'])),
-                                                      int(ticker['quantity_scale'])),  # 数量最小变化
-                            'price_increment': round(math.pow(0.1, float(ticker['price_scale'])),
-                                                     int(ticker['price_scale'])),  # 价格最小变化
-                            'amount_digit': int(ticker['quantity_scale']),  # 数量小数位
-                            'price_digit': int(ticker['price_scale'])  # 价格小数位
+                        key: {
+                            'min_amount': float(value['minAmount']),  # 最小下单数量
+                            'min_notional': round(math.pow(0.1, int(value['priceScale'])),
+                                                  int(value['priceScale'])),  # 最小下单金额
+                            'amount_increment': round(math.pow(0.1, int(value['quantityScale'])),
+                                                      int(value['quantityScale'])),  # 数量最小变化
+                            'price_increment': round(math.pow(0.1, float(value['priceScale'])),
+                                                     int(value['priceScale'])),  # 价格最小变化
+                            'amount_digit': int(value['quantityScale']),  # 数量小数位
+                            'price_digit': int(value['priceScale'])  # 价格小数位
                         }
                     })
                 with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
@@ -81,20 +85,24 @@ class MxcPublic(object):
 
     def get_price(self, symbol: str):
         try:
-            return self.get_trades(symbol)[0]['price']
+            price = 0.0
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
+            return price
         except Exception as e:
             print(f'Mxc public get price error: {e}')
 
     def get_ticker(self, symbol: str):
         try:
-            url = self.urlbase + '/open/api/v2/market/ticker'
-            params = {'api_key': self.api_key, 'symbol': symbol}
+            url = self.urlbase + '/open/api/v1/data/ticker'
+            params = {'market': symbol}
             resp = requests.get(url, params=params).json()
             ticker = {}
             if resp['code'] == 200:
-                ticker = resp['data'][0]
+                ticker = resp['data']
                 ticker = {
-                    'symbol': ticker['symbol'],
+                    'symbol': symbol,
                     'last_price': float(ticker['last']),
                     'quote_volume': None,
                     'base_volume': float(ticker['volume']),
@@ -102,23 +110,23 @@ class MxcPublic(object):
                     'lowest_price': float(ticker['low']),
                     'open_price': float(ticker['open']),
                     'close_price': None,
-                    'ask_1': float(ticker['ask']),
+                    'ask_1': float(ticker['sell']),
                     'ask_1_amount': None,
-                    'bid_1': float(ticker['bid']),
+                    'bid_1': float(ticker['buy']),
                     'bid_1_amount': None,
-                    'fluctuation': float(ticker['change_rate']),
+                    'fluctuation': None,
                     'url': url,
                 }
             else:
-                print(f'Mxc public request error: {resp["msg"]}')
+                print(f'Mxc public get ticker error: {resp["msg"]}')
             return ticker
         except Exception as e:
             print(f'Mxc public get ticker error: {e}')
 
     def get_orderbook(self, symbol: str):
         try:
-            url = self.urlbase + "/open/api/v2/market/depth"
-            params = {'api_key': self.api_key, 'symbol': symbol, 'depth': 20}
+            url = self.urlbase + '/open/api/v1/data/depth'
+            params = {'market': symbol, 'depth': 20}
             resp = requests.get(url, params=params).json()
             orderbook = {"buys": [], "sells": []}
             if resp['code'] == 200:
@@ -141,38 +149,38 @@ class MxcPublic(object):
                         'count': 1
                     })
             else:
-                print(f'Mxc public request error: {resp["msg"]}')
+                print(f'Mxc public get orderbook error: {resp["msg"]}')
             return orderbook
         except Exception as e:
             print(f'Mxc public get orderbook error: {e}')
 
     def get_trades(self, symbol: str):
         try:
-            url = self.urlbase + f"/open/api/v2/market/deals"
-            params = {'api_key': self.api_key, 'symbol': symbol}
+            url = self.urlbase + '/open/api/v1/data/history'
+            params = {'market': symbol}
             resp = requests.get(url, params=params).json()
             trades = []
             if resp['code'] == 200:
                 for trade in resp['data']:
                     trades.append({
-                        'amount': float(trade['trade_quantity']) * float(trade['trade_price']),
-                        'order_time': int(trade['trade_time'] / 1000),
-                        'price': float(trade['trade_price']),
-                        'count': float(trade['trade_quantity']),
-                        'type': 'buy' if trade['trade_type'] == 'BID' else 'sell'
+                        'amount': float(trade['tradeQuantity']) * float(trade['tradePrice']),
+                        'order_time': round(self._uts_to_ts(trade['tradeTime'])),
+                        'price': float(trade['tradePrice']),
+                        'count': float(trade['tradeQuantity']),
+                        'type': 'buy' if trade['tradeType'] == '1' else 'sell'
                     })
             else:
-                print(f'Mxc public request error: {resp["msg"]}')
+                print(f'Mxc public get trades error: {resp["msg"]}')
             return trades
         except Exception as e:
             print(f'Mxc public get trades error: {e}')
 
     def get_kline(self, symbol: str, time_period=3000, interval=1):
         try:
-            url = self.urlbase + '/open/api/v2/market/kline'
+            url = self.urlbase + '/open/api/v1/data/kline'
             end_time = int(time.time())
             start_time = end_time - time_period
-            params = {'api_key': self.api_key, 'symbol': symbol, 'start_time': start_time, 'interval': interval}
+            params = {'market': symbol, 'startTime': start_time, 'interval': f'{interval}m'}
 
             resp = requests.get(url, params=params).json()
             lines = []
@@ -187,14 +195,14 @@ class MxcPublic(object):
                         'last_price': float(line[2])
                     })
             else:
-                print(f'Mxc public request error: {resp["msg"]}')
+                print(f'Mxc public get kline error: {resp["msg"]}')
             return lines
         except Exception as e:
             print(f'Mxc public get kline error: {e}')
 
 
 if __name__ == '__main__':
-    mxc = MxcPublic('https://www.mxcio.co', 'mx0Iw5GHIlySTepTAN', 'ec4f09f088d642d2b2ebfae695b9c511')
+    mxc = MxcPublic('https://www.mxcio.co')
     # print(mxc.get_symbol_info('BTC_USDT'))
     print(mxc.get_price('BTC_USDT'))
     print(mxc.get_ticker('BTC_USDT'))

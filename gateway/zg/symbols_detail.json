@@ -784,12 +784,12 @@
   "price_digit": 2
  },
  "LXC_USDT": {
-  "min_amount": 0.001,
+  "min_amount": 0.01,
   "min_notional": 1.0,
-  "amount_increment": 0.001,
-  "price_increment": 1e-05,
+  "amount_increment": 0.01,
+  "price_increment": 1e-06,
   "amount_digit": 3,
-  "price_digit": 5
+  "price_digit": 6
  },
  "MBB_USDT": {
   "min_amount": 0.01,
@@ -831,12 +831,12 @@
   "amount_digit": 2,
   "price_digit": 4
  },
- "MOVE_USDT": {
+ "MOVE1_USDT": {
   "min_amount": 0.0001,
   "min_notional": 1.0,
   "amount_increment": 0.0001,
   "price_increment": 0.0001,
-  "amount_digit": 4,
+  "amount_digit": 0,
   "price_digit": 4
  },
  "MR_USDT": {
@@ -1095,12 +1095,12 @@
   "amount_digit": 2,
   "price_digit": 4
  },
- "TON_USDT": {
+ "TON1_USDT": {
   "min_amount": 0.01,
   "min_notional": 1.0,
   "amount_increment": 0.01,
   "price_increment": 1e-05,
-  "amount_digit": 2,
+  "amount_digit": 1,
   "price_digit": 5
  },
  "TRX_BTC": {
@@ -1127,7 +1127,7 @@
   "amount_digit": 2,
   "price_digit": 6
  },
- "UENC_USDT": {
+ "UENC1_USDT": {
   "min_amount": 0.01,
   "min_notional": 1.0,
   "amount_increment": 0.01,

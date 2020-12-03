@@ -12,13 +12,9 @@ class BiboxAuth(object):
 
     def _sign_message(self, cmd, body):
         try:
-            param = [{
-                'cmd': cmd,
-                'body': body
-            }]
+            param = [{'cmd': cmd, 'body': body}]
             sign = hmac.new(bytes(self.api_secret, encoding='utf-8'), bytes(json.dumps(param), encoding='utf-8'),
                             hashlib.md5).hexdigest()
-
             return {
                 'cmds': json.dumps(param),
                 'apikey': self.api_key,
@@ -38,15 +34,13 @@ class BiboxAuth(object):
                 'price': price,
                 'amount': amount
             }
-
             params = self._sign_message('orderpending/trade', params)
 
-            resp = requests.post(url, data=params)
-            resp = resp.json()
-            if 'result' in resp['result'][0].keys():
-                return resp.json()['result']
+            resp = requests.post(url, data=params).json()
+            if 'result' in resp['result'][0]:
+                return resp['result']
             else:
-                print(f'Bibox auth place order error: {resp["result"][0]["error"]}')
+                print(f'Bibox auth place order error: {resp["error"]["msg"]}')
         except Exception as e:
             print(f'Bibox auth place order error: {e}')
 
@@ -59,14 +53,13 @@ class BiboxAuth(object):
 
             params = self._sign_message('orderpending/cancelTrade', params)
 
-            resp = requests.post(url, data=params)
-            resp = resp.json()
+            resp = requests.post(url, data=params).json()
             data = False
-            if 'result' in resp['result'][0].keys():
+            if 'result' in resp['result'][0]:
                 data = True
                 message = resp['result'][0]['result']
             else:
-                message = resp['result'][0]['error']
+                message = resp['error']['msg']
                 print(f'Bibox auth cancel order error: {message}')
 
             info = {
@@ -85,24 +78,40 @@ class BiboxAuth(object):
             orders = self.open_orders(symbol)
             if len(orders) == 0:
                 return {
-                    'func_name': 'cancel_order',
-                    'message': 'Bibox auth cancel order is empty',
+                    'func_name': 'cancel_all',
+                    'message': 'Empty order',
                     'data': True
                 }
 
+            data = True
             for order in orders:
-                if str(order['order_side']) == side:
-                    self.cancel_order(symbol, order['order_id'])
+                if str(order['side']) == side:
+                    result = self.cancel_order(symbol, order['order_id'])['data']
+                    if result is False:
+                        data = False
             info = {
-                'func_name': 'cancel_order',
+                'func_name': 'cancel_all',
                 'message': 'OK',
-                'data': True
+                'data': data
             }
             return info
         except Exception as e:
             print(f'Bibox auth cancel order error: {e}')
 
-    def open_orders(self, symbol: str, status=1, offset=1, limit=100):
+    def open_orders(self, symbol):
+        try:
+            orders = []
+            for page in [5, 4, 3, 2, 1]:
+                orders_on_this_page = self.order_list(symbol, offset=page)
+                if orders_on_this_page and len(orders_on_this_page) > 0:
+                    orders.extend(orders_on_this_page)
+            return orders
+        except Exception as e:
+            print(f'Bibox auth open orders error: {e}')
+
+    def order_list(self, symbol: str, status: list = None, offset=1, limit=50):
+        if status is None:
+            status = [1, 2]
         try:
             url = self.urlbase + '/v1/orderpending'
             params = {
@@ -111,15 +120,14 @@ class BiboxAuth(object):
                 'page': offset,
                 'size': limit
             }
-
             params = self._sign_message('orderpending/orderPendingList', params)
 
             resp = requests.post(url, data=params)
             results = []
             resp = resp.json()
-            if 'result' in resp['result'][0].keys():
+            if 'result' in resp['result'][0]:
                 for order in resp['result'][0]['result']['items']:
-                    if order['status'] == status or 0:
+                    if order['status'] in status:
                         results.append({
                             'order_id': order['id'],
                             'symbol': symbol,
@@ -131,7 +139,7 @@ class BiboxAuth(object):
                             'create_time': int(order['createdAt'] / 1000)
                         })
             else:
-                print(f'Bibox auth open orders error: {resp["result"][0]["error"]}')
+                print(f'Bibox auth open orders error: {resp["error"]["msg"]}')
             return results
         except Exception as e:
             print(f'Bibox auth open orders error: {e}')
@@ -143,12 +151,10 @@ class BiboxAuth(object):
                 'id': order_id,
                 'account_type': 0,
             }
-
             params = self._sign_message('orderpending/order', params)
 
-            resp = requests.post(url, data=params)
+            resp = requests.post(url, data=params).json()
             order_detail = {}
-            resp = resp.json()
             if 'result' in resp['result'][0]:
                 content = resp['result'][0]['result']
                 order_detail = {
@@ -156,13 +162,14 @@ class BiboxAuth(object):
                     'symbol': symbol,
                     'amount': float(content['amount']),
                     'price': float(content['price']),
-                    'side': content['side'],
+                    'side': 'buy' if content['order_side'] == 1 else 'sell',
                     'price_avg': None,
                     'filled_amount': float(content['deal_amount']),
-                    'create_time': int(content['createdAt'] / 1000)
+                    'status': content['status'],
+                    'create_time': round(content['createdAt'] / 1000)
                 }
             else:
-                print(f'Bibox auth order detail error: {resp["result"][0]["error"]}')
+                print(f'Bibox auth order detail error: {resp["error"]["msg"]}')
             return order_detail
         except Exception as e:
             print(f'Bibox auth order detail error: {e}')
@@ -173,31 +180,31 @@ class BiboxAuth(object):
             params = {'pair': symbol, 'account_type': 0, 'id': '10000000000', 'page': offset}
             params = self._sign_message('orderpending/order', params)
 
-            resp = requests.post(url, data=params)
+            resp = requests.post(url, data=params).json()
             trades = []
-            resp = resp.json()
             if 'result' in resp['result'][0]:
                 content = resp['result'][0]['result']
-                i = 0
-                for trade in content:
-                    if i > limit:
-                        break
-                    trades.append({
-                        'detail_id': trade['relay_id'],
-                        'order_id': trade['id'],
-                        'symbol': f'{trade["coin_symbol"]}_{trade["currency_symbol"]}',
-                        'create_time': int(trade['createdAt'] / 1000),
-                        'side': 'buy' if trade['order_side'] == 1 else 'sell',
-                        'price_avg': float(float(trade['price']) / float(trade['amount'])),
-                        'notional': float(trade['price']),
-                        'size': float(trade['amount']),
-                        'fees': float(trade['fee']),
-                        'fee_coin_name': trade['fee_symbol'],
-                        'exec_type': 'M' if trade['is_maker'] == 1 else 'T',
-                    })
-                    i = i + 1
+                if 'items' in content:
+                    i = 0
+                    for trade in content['items']:
+                        if i > limit:
+                            break
+                        trades.append({
+                            'detail_id': trade['relay_id'],
+                            'order_id': trade['id'],
+                            'symbol': f'{trade["coin_symbol"]}_{trade["currency_symbol"]}',
+                            'create_time': int(trade['createdAt'] / 1000),
+                            'side': 'buy' if trade['order_side'] == 1 else 'sell',
+                            'price_avg': None,
+                            'notional': float(trade['price']),
+                            'size': float(trade['amount']),
+                            'fees': float(trade['fee']),
+                            'fee_coin_name': trade['fee_symbol'],
+                            'exec_type': 'M' if trade['is_maker'] == 1 else 'T',
+                        })
+                        i = i + 1
             else:
-                print(f'Bibox auth user trades error: {resp["result"][0]["error"]}')
+                print(f'Bibox auth user trades error: {resp["error"]["msg"]}')
             return trades
         except Exception as e:
             print(f'Bibox auth user trades error: {e}')
@@ -208,15 +215,14 @@ class BiboxAuth(object):
             params = {'select': 1}
             params = self._sign_message('transfer/assets', params)
 
-            resp = requests.post(url, data=params)
+            resp = requests.post(url, data=params).json()
             balance, frozen = {}, {}
-            resp = resp.json()
-            if 'result' in resp.keys():
+            if 'result' in resp['result'][0]:
                 wallet = resp['result'][0]['result']['assets_list']
                 balance = {row['coin_symbol']: float(row['balance']) for row in wallet}
                 frozen = {row['coin_symbol']: float(row['freeze']) for row in wallet}
             else:
-                print(f'Bibox auth wallet balance error: {resp.json()["error"]}')
+                print(f'Bibox auth wallet balance error: {resp["error"]["msg"]}')
             return balance, frozen
         except Exception as e:
             print(f'Bibox auth wallet balance error: {e}')
@@ -231,4 +237,5 @@ if __name__ == '__main__':
     # print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('BTC_USDT', '1'))
     # print(bit.cancel_all('BTC_USDT', 'buy'))
+    # print(bit.user_trades('BTC_USDT'))
     # print(bit.wallet_balance())

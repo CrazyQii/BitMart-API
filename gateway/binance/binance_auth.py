@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-binance spot authentication API
-2020/10/10 hlq
-"""
-
 import hmac
 import hashlib
 import time
@@ -17,11 +12,9 @@ class BinanceAuth(object):
         self.api_secret = api_secret
 
     def _symbol_convert(self, symbol: str):
-        """ convert symbol to appropriate format """
         return ''.join(symbol.split('_'))
 
     def _sign_message(self, param: dict):
-        """ authtication """
         try:
             query_string = ''
             if param is not None:
@@ -129,10 +122,10 @@ class BinanceAuth(object):
                 message = resp.json()['msg']
                 print(f'Binance auth error: {message}')
             info = {
-                "func_name": "cancel_order",
-                "order_id": order_id,
-                "message": message,
-                "data": data
+                'func_name': 'cancel_order',
+                'order_id': order_id,
+                'message': message,
+                'data': data
             }
             return info
         except Exception as e:
@@ -141,27 +134,38 @@ class BinanceAuth(object):
     def cancel_all(self, symbol: str, side: str):
         try:
             orders = self.open_orders(symbol)
-            # verify request error
             if len(orders) == 0:
                 return {
-                        'func_name': 'cancel_order',
-                        'message': 'orders are empty',
-                        'data': True
-                    }
+                    'func_name': 'cancel_all',
+                    'message': 'Empty orders',
+                    'data': False
+                }
 
+            data = True
             for order in orders:
                 if str(order['side']).lower() == side:
-                    self.cancel_order(symbol, order['orderId'])
+                    result = self.cancel_order(symbol, order['order_id'])['data']
+                    if result is False:
+                        data = False
             info = {
-                'func_name': 'cancel_order',
+                'func_name': 'cancel_all',
                 'message': 'OK',
-                'data': True
+                'data': data
             }
             return info
         except Exception as e:
             print(f'Binance auth cancel order error: {e}')
 
-    def open_orders(self, symbol: str, status=9, offset=1, limit=100):
+    def open_orders(self, symbol):
+        try:
+            orders = self.order_list(symbol, limit=500)
+            return orders
+        except Exception as e:
+            print(f'Binance auth open orders error: {e}')
+
+    def order_list(self, symbol: str, status: list = None, offset=1, limit=100):
+        if status is None:
+            status = ['NEW', 'PARTIALLY_FILLED']
         try:
             url = self.urlbase + '/api/v3/openOrders'
             params = {
@@ -174,17 +178,22 @@ class BinanceAuth(object):
             results = []
             if resp.status_code == 200:
                 resp = resp.json()
+                i = 0
                 for order in resp:
-                    results.append({
-                        'order_id': order['orderId'],
-                        'symbol': order['symbol'],
-                        'original_amount': float(order['origQty']),
-                        'price': float(order['price']),
-                        'side': order['side'],
-                        'price_avg': float(order['cummulativeQuoteQty']) / float(order['executedQty']) if float(order['executedQty']) > 0 else 0,
-                        'filled_amount': float(order['executedQty']),
-                        'create_time': round(order['time'] / 1000),
-                    })
+                    if i > limit:
+                        break
+                    if order['status'] in status:
+                        results.append({
+                            'order_id': order['orderId'],
+                            'symbol': symbol,
+                            'original_amount': float(order['origQty']),
+                            'price': float(order['price']),
+                            'side': order['side'],
+                            'price_avg': float(order['cummulativeQuoteQty']) / float(order['executedQty']) if float(order['executedQty']) > 0 else 0,
+                            'filled_amount': float(order['executedQty']),
+                            'create_time': round(order['time'] / 1000),
+                        })
+                    i = i + 1
             else:
                 print(f'Binance auth open order error: {resp.json()["msg"]}')
             return results
@@ -204,21 +213,22 @@ class BinanceAuth(object):
             resp = requests.get(url, params=params, headers={'X-MBX-APIKEY': self.api_key})
             result = {}
             if resp.status_code == 200:
-                order = resp.json()['data']
+                order = resp.json()
                 result = {
                     'order_id': order['orderId'],
-                    'symbol': order['symbol'],
+                    'symbol': symbol,
                     'price': float(order['price']),
-                    'amount': float(order['size']),
+                    'amount': float(order['origQty']),
                     'side': order['side'],
                     'price_avg': None,
                     'filled_amount': float(order['executedQty']),
-                    'status': float(content['status']),
+                    'status': order['status'],
                     'create_time': round(order['time'] / 1000),
                 }
+                message = 'OK'
             else:
-                message = resp.json()['msg']
-                print(f'Binance auth order detail error: {resp.json()["msg"]}')
+                message = resp.json()["msg"]
+                print(f'Binance auth order detail error: {message}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
@@ -232,7 +242,11 @@ class BinanceAuth(object):
     def user_trades(self, symbol: str, offset=1, limit=100):
         try:
             url = self.urlbase + '/api/v3/myTrades'
-            params = {'symbol': self._symbol_convert(symbol), 'limit': limit, 'timestamp': self._timestamp()}
+            params = {
+                'symbol': self._symbol_convert(symbol),
+                'limit': limit,
+                'timestamp': self._timestamp()
+            }
             params['signature'] = self._sign_message(params)
 
             resp = requests.get(url, params=params, headers={'X-MBX-APIKEY': self.api_key})
@@ -243,18 +257,18 @@ class BinanceAuth(object):
                     trades.append({
                         'detail_id': trade['id'],
                         'order_id': trade['orderId'],
-                        'symbol': self._symbol_convert(symbol),
-                        'create_time': int(trade['time'] / 1000),
-                        'side': None,
-                        'price_avg': float(float(trade['price']) / float(trade['qty'])),
+                        'symbol': symbol,
+                        'create_time': round(trade['time'] / 1000),
+                        'side': 'buy' if trade['isBuyer'] else 'sell',
+                        'price_avg': None,
                         'notional': float(trade['price']),
                         'size': float(trade['qty']),
                         'fees': float(trade['commission']),
-                        'fee_coin_name': None,
+                        'fee_coin_name': trade['commissionAsset'],
                         'exec_type': 'M' if trade['isMaker'] else 'T',
                     })
             else:
-                print(f'Binance auth user trades error: {resp.json()}')
+                print(f'Binance auth user trades error: {resp.json()["msg"]}')
             return trades
         except Exception as e:
             print(f'Binance auth user trades error: {e}')
@@ -282,10 +296,10 @@ class BinanceAuth(object):
 
 if __name__ == '__main__':
     binance = BinanceAuth('https://api.binance.com', 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh', 'GS6Us3YWMw7sQQMEm5uC90CrgFcvtSOlGyz3PzWA5KXsUamYG4Y4ieqW6oziKZ72')
-    # print(binance.place_order("BTC_USDT", 30, 0.01, "buy"))
+    print(binance.place_order('BTC_USDT', 30, 0.01, 'buy'))
     print(binance.order_detail('BTC_USDT', '1'))
-    # print(binance.open_orders('BTC_USDT'))
-    # print(binance.cancel_order('BTC_USDT', '1'))
-    # print(binance.cancel_all('BTC_USDT', 'sell'))
-    # print(binance.user_trades('BTC_USDT'))
-    # print(binance.wallet_balance())
+    print(binance.open_orders('BTC_USDT'))
+    print(binance.cancel_order('BTC_USDT', '1'))
+    print(binance.cancel_all('BTC_USDT', 'sell'))
+    print(binance.user_trades('BTC_USDT'))
+    print(binance.wallet_balance())

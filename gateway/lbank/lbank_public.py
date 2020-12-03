@@ -35,7 +35,7 @@ class LbankPublic(object):
                             'price_digit': int(ticker['priceAccuracy'])  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -44,20 +44,31 @@ class LbankPublic(object):
             print(f'Lbank batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -71,13 +82,13 @@ class LbankPublic(object):
 
     def get_price(self, symbol: str):
         try:
-            price = self.get_trades(symbol)[0]
-            if price:
-                return price
-            else:
-                return 0.0
+            price = 0.0
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
+            return price
         except Exception as e:
-            print(e)
+            print(f'Lbank public get price error: {e}')
 
     def get_ticker(self, symbol: str):
         try:
@@ -85,7 +96,7 @@ class LbankPublic(object):
             params = {'symbol': self._symbol_conver(symbol)}
             resp = requests.get(url, params=params).json()
             ticker = {}
-            if resp['result']:
+            if resp['result'] and 'data' in resp:
                 ticker = resp['data'][0]['ticker']
                 ticker = {
                     'symbol': symbol,
@@ -104,7 +115,7 @@ class LbankPublic(object):
                     'url': url,
                 }
             else:
-                print(f'Lbank public request error: {resp["data"]}')
+                print(f'Lbank public get ticker error: {resp}')
             return ticker
         except Exception as e:
             print(f'Lbank public get ticker error: {e}')
@@ -119,14 +130,14 @@ class LbankPublic(object):
             orderbook = {'buys': [], 'sells': []}
             total_amount_buys = 0
             total_amount_sells = 0
-            if resp['result']:
+            if resp['result'] and 'data' in resp:
                 for item in resp['data']['bids']:
                     total_amount_buys += float(item[1])
                     orderbook['buys'].append({
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['data']['asks']:
                     total_amount_sells += float(item[1])
@@ -134,34 +145,34 @@ class LbankPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Lbank public request error: {resp["data"]}')
+                print(f'Lbank public get orderbook error: {resp}')
             return orderbook
         except Exception as e:
             print(f'Lbank public get orderbook error: {e}')
 
     def get_trades(self, symbol: str):
         try:
-            url = self.urlbase + f'/trades.do'
+            url = self.urlbase + '/trades.do'
             params = {
                 'symbol': self._symbol_conver(symbol),
                 'size': 100
             }
             trades = []
             resp = requests.get(url, params=params).json()
-            if resp['result']:
+            if resp['result'] and 'data' in resp:
                 for trade in resp['data']:
                     trades.append({
-                        'amount': float(trade['amount']),
+                        'amount': float(trade['amount']) * float(trade['price']),
                         'order_time': round(trade['date_ms'] / 1000),
                         'price': float(trade['price']),
-                        'count': None,
+                        'count': float(trade['amount']),
                         'type': trade['type']
                     })
             else:
-                print(f'Lbank public request error: {resp["data"]}')
+                print(f'Lbank public get trades error: {resp}')
             return trades
         except Exception as e:
             print(f'Lbank public get trades error: {e}')
@@ -179,9 +190,8 @@ class LbankPublic(object):
             }
 
             resp = requests.get(url, params=params).json()
-            print(resp)
             lines = []
-            if resp['result']:
+            if resp['result'] and 'data' in resp:
                 for line in resp['data']:
                     lines.append({
                         'timestamp': line[0],
@@ -192,7 +202,7 @@ class LbankPublic(object):
                         'last_price': float(line[4])
                     })
             else:
-                print(f'Lbank public request error: {resp["data"]}')
+                print(f'Lbank public get kline error: {resp}')
             return lines
         except Exception as e:
             print(f'Lbank public get kline error: {e}')
@@ -203,6 +213,6 @@ if __name__ == '__main__':
     # print(bit.get_symbol_info('BTC_USDT'))
     # print(bit.get_price('BTC_USDT'))
     # print(bit.get_ticker('BTC_USDT'))
-    # print(bit.get_orderbook('BTC_USDT'))
-    # print(bit.get_trades('BTC_USDT'))
-    # print(bit.get_kline('BTC_USDT'))
+    print(bit.get_orderbook('BTC_USDT'))
+    print(bit.get_trades('BTC_USDT'))
+    print(bit.get_kline('BTC_USDT'))

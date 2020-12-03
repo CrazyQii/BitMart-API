@@ -10,14 +10,13 @@ class YobitAuth(object):
         self.urlbase = urlbase
         self.api_key = api_key
         self.api_secret = api_secret
-        self.memo = passphrase
 
-    def _sign_message(self, params=None):
+    def _sign_message(self, params: dict = None):
         if params is None:
             params = {}
         try:
             # signature string
-            params['nonce'] = int(time.time())
+            params['nonce'] = str(time.time())
             msg = urlencode(params)
             # signature method
             digest = hmac.new(bytes(self.api_secret, encoding='utf-8'), bytes(msg, encoding='utf-8'),

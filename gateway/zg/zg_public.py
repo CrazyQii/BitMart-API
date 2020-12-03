@@ -80,12 +80,12 @@ class ZGPublic(object):
     def get_price(self, symbol: str):
         try:
             url = self.urlbase + f'/openapi/quote/v1/ticker/price?symbol={self._symbol_convert(symbol)}'
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             price = 0.0
-            if resp.status_code == 200:
-                price = resp.json()['price']
+            if 'code' not in resp:
+                price = resp['price']
             else:
-                print(f'ZG public get price request error: {resp.json()}')
+                print(f'ZG public get price error: {resp["msg"]}')
             return price
         except Exception as e:
             print(f'ZG public get price error: {e}')
@@ -93,10 +93,9 @@ class ZGPublic(object):
     def get_ticker(self, symbol: str):
         try:
             url = self.urlbase + f'/openapi/quote/v1/ticker/24hr?symbol={self._symbol_convert(symbol)}'
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             ticker = {}
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 ticker = resp
                 ticker = {
                     'symbol': symbol,
@@ -115,7 +114,7 @@ class ZGPublic(object):
                     'url': url,
                 }
             else:
-                print(f'ZG public get ticker request error: {resp.json()}')
+                print(f'ZG public get ticker error: {resp["msg"]}')
             return ticker
         except Exception as e:
             print(f'ZG public get ticker error: {e}')
@@ -123,10 +122,9 @@ class ZGPublic(object):
     def get_orderbook(self, symbol: str):
         try:
             url = self.urlbase + f'/openapi/quote/v1/depth?symbol={self._symbol_convert(symbol)}'
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             orderbook = {'buys': [], 'sells': []}
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 total_amount_buys = 0
                 total_amount_sells = 0
                 for item in resp['asks']:
@@ -135,7 +133,7 @@ class ZGPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['bids']:
                     total_amount_buys += float(item[1])
@@ -143,10 +141,10 @@ class ZGPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'ZG public get orderbook request error: {resp.json()}')
+                print(f'ZG public get orderbook error: {resp["msg"]}')
             return orderbook
         except Exception as e:
             print(f'ZG public get orderbook error: {e}')
@@ -155,9 +153,8 @@ class ZGPublic(object):
         try:
             url = self.urlbase + f'/openapi/quote/v1/trades?symbol={self._symbol_convert(symbol)}'
             trades = []
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                resp = resp.json()
+            resp = requests.get(url).json()
+            if 'code' not in resp:
                 for trade in resp:
                     trades.append({
                         'amount': float(trade['qty']) * float(trade['price']),
@@ -167,7 +164,7 @@ class ZGPublic(object):
                         'type': 'buy' if trade['isBuyerMaker'] else 'sell'
                     })
             else:
-                print(f'ZG public get trades request error: {resp.json()}')
+                print(f'ZG public get trades error: {resp["msg"]}')
             return trades
         except Exception as e:
             print(f'ZG public get trades error: {e}')
@@ -179,10 +176,9 @@ class ZGPublic(object):
             url = self.urlbase + f'/openapi/quote/v1/klines?symbol={self._symbol_convert(symbol)}&interval={interval}m' \
                                  f'&startTime={start_time}&endTime={end_time}'
 
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             lines = []
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 for line in resp:
                     lines.append({
                         'timestamp': line[6],
@@ -193,15 +189,15 @@ class ZGPublic(object):
                         'last_price': float(line[4])
                     })
             else:
-                print(f'ZG public get kline request error: {resp.json()}')
+                print(f'ZG public get kline error: {resp["msg"]}')
             return lines
         except Exception as e:
             print(f'ZG public get kline error: {e}')
 
 
 if __name__ == '__main__':
-    bit = ZGPublic('https://api.zg.com')
-    # print(bit.get_symbol_info('BTC_USDT'))
+    bit = ZGPublic('https://api.zg6.com')
+    print(bit.get_symbol_info('BTC_USDT'))
     # print(bit.get_price('BTC_USDT'))
     # print(bit.get_ticker('BTC_USDT'))
     # print(bit.get_orderbook('BTC_USDT'))

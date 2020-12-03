@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-binance公共接口
-2020/10/10 hlq
-"""
 import requests
 import time
 import math
@@ -118,7 +114,7 @@ class BinancePublic:
                     'url': url,
                 }
             else:
-                print(f'Binance public request error: {resp.json()}')
+                print(f'Binance public request error: {resp.json()["msg"]}')
             return result
         except Exception as e:
             print(f'Binance public get ticker error: {e}')
@@ -152,7 +148,7 @@ class BinancePublic:
                         'count': 1
                     })
             else:
-                print(f'Binance public request error: {resp.json()}')
+                print(f'Binance public request error: {resp.json()["msg"]}')
             return orderbook
         except Exception as e:
             print(f'Binance public get orderbook error: {e}')
@@ -174,7 +170,7 @@ class BinancePublic:
                     })
                 return trades
             else:
-                print(f'Binance public request error: {resp.json()}')
+                print(f'Binance public request error: {resp.json()["msg"]}')
             return trades
         except Exception as e:
             print(f'Binance public get trades error: {e}')
@@ -199,7 +195,7 @@ class BinancePublic:
                         'high': float(line[2])
                     })
             else:
-                print(f'Binance public request error: {resp.json()}')
+                print(f'Binance public request error: {resp.json()["msg"]}')
             return lines
         except Exception as e:
             print(f'Binance public get kline error: {e}')
@@ -208,8 +204,8 @@ class BinancePublic:
 if __name__ == '__main__':
     binance = BinancePublic('https://api.binance.com')
     # print(binance.get_symbol_info('BTC_USDT'))
-    print(binance.get_price('BTC_USDT'))
-    print(binance.get_ticker('BTC_USDT'))
-    print(binance.get_orderbook('BTC_USDT'))
-    print(binance.get_trades('BTC_USDT'))
-    print(binance.get_kline('BTC_USDT'))
+    # print(binance.get_price('BTC_USDT'))
+    # print(binance.get_ticker('BTC_USDT'))
+    # print(binance.get_orderbook('BTC_USDT'))
+    # print(binance.get_trades('BTC_USDT'))
+    # print(binance.get_kline('BTC_USDT'))

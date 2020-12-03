@@ -3,7 +3,6 @@
 bitmart spot authentication API
 2020/10/10 hlq
 """
-
 import hmac
 import hashlib
 import time
@@ -144,7 +143,7 @@ class BitmartAuth(object):
                 print(f'Bitmart auth error: {message}')
 
             info = {
-                'func_name': 'cancel_order',
+                'func_name': 'cancel_all',
                 'message': message,
                 'data': data
             }
@@ -161,7 +160,7 @@ class BitmartAuth(object):
                     orders.extend(orders_on_this_page)
             return orders
         except Exception as e:
-            print("Bitmart auth open orders error: %s" % e)
+            print(f'Bitmart auth open orders error: {e}')
 
     def order_list(self, symbol: str, status=9, offset=1, limit=100):
         try:
@@ -205,7 +204,7 @@ class BitmartAuth(object):
                     'amount': float(content['size']),
                     'price_avg': float(content['price_avg']),
                     'filled_amount': float(content['filled_size']),
-                    'status': float(content['status']),
+                    'status': content['status'],
                     'create_time': content['create_time']/1000
                 }
             else:
@@ -246,7 +245,7 @@ class BitmartAuth(object):
                     })
             else:
                 message = resp["message"]
-                print("Bitmart auth error: %s" % message)
+                print(f"Bitmart auth error: {message}")
             return user_trades
         except Exception as e:
             print("Bitmart auth get user trades error: %s" % e)
@@ -273,9 +272,9 @@ class BitmartAuth(object):
 if __name__ == '__main__':
     bit = BitmartAuth('https://api-cloud.bitmart.news', '5de397b9cef8bebc31f65e124c3a4a162d6d1f99', 'f4b7c83dc9c6790d6ea344ba3beafdfd70fe9481dccc7e70f0dd7d84b76e1ed2', 'mock')
     print(bit.place_order('EOS_USDT', 1.0016, 11, 'buy'))
-    # print(bit.order_detail('BTC_USDT', '1'))
+    print(bit.order_detail('BTC_USDT', '1'))
     print(bit.open_orders('BTC_USDT'))
     # print(bit.cancel_order('UMA_USDT', '1'))
-    # print(bit.cancel_all('BTC_USDT', 'buy'))
+    print(bit.cancel_all('BTC_USDT', 'buy'))
     # print(bit.wallet_balance())
     # print(bit.user_trades("BTC_USDT"))

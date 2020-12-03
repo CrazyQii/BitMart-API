@@ -42,7 +42,7 @@ class OkexPublic(object):
                             'price_digit': int(abs(math.log10(float(ticker['tick_size']))))  # 价格小数位
                         }
                     })
-                with open(f'{cur_path}\symbols_detail.json', 'w+') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'w+') as f:
                     json.dump(data, f, indent=1)
                 f.close()
             else:
@@ -51,20 +51,31 @@ class OkexPublic(object):
             print(f'Okex batch load symbols exception {e}')
 
     def get_symbol_info(self, symbol: str):
+        symbols_detail = None
+        # if file is exist
         try:
-            symbol_info = dict()
-            with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                 symbols_detail = json.load(f)
             f.close()
+        except FileNotFoundError:
+            self._load_symbols_info()
+            with open(f'{cur_path}/symbols_detail.json', 'r') as f:
+                symbols_detail = json.load(f)
+            f.close()
+        except Exception as e:
+            print(e)
 
+        # read file
+        try:
             if symbol not in symbols_detail.keys():
                 # update symbols detail
                 self._load_symbols_info()
 
-                with open(f'{cur_path}\symbols_detail.json', 'r') as f:
+                with open(f'{cur_path}/symbols_detail.json', 'r') as f:
                     symbols_detail = json.load(f)
                 f.close()
 
+            symbol_info = dict()
             symbol_info['symbol'] = symbol
             symbol_info['min_amount'] = symbols_detail[symbol]['min_amount']
             symbol_info['min_notional'] = symbols_detail[symbol]['min_notional']
@@ -78,32 +89,30 @@ class OkexPublic(object):
 
     def get_price(self, symbol: str):
         try:
-            url = self.urlbase + f'api/spot/v3/instruments/{self._symbol_convert(symbol)}/ticker'
-            resp = requests.get(url)
             price = 0.0
-            if resp.status_code == 200:
-                resp = resp.json()
-                return float(resp['last'])
-            else:
-                print(f'Okex public request error: {resp.json()["message"]}')
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
             return price
         except Exception as e:
             print(f'Okex public get price error: {e}')
 
     def get_ticker(self, symbol: str):
         try:
-            url = self.urlbase + f"api/spot/v3/instruments/{self._symbol_convert(symbol)}/ticker"
+            url = self.urlbase + f'api/spot/v3/instruments/{self._symbol_convert(symbol)}/ticker'
             resp = requests.get(url)
             ticker = {}
             if resp.status_code == 200:
                 resp = resp.json()
                 ticker = {
-                    'symbol': resp['instrument_id'],
+                    'symbol': symbol,
                     'last_price': float(resp['last']),
                     'quote_volume': float(resp['quote_volume_24h']),
                     'base_volume': float(resp['base_volume_24h']),
                     'highest_price': float(resp['high_24h']),
                     'lowest_price': float(resp['low_24h']),
+                    'open_price': float(resp['open_24h']),
+                    'close_price': float(resp['last']),
                     'ask_1': float(resp['ask']),
                     'ask_1_amount': float(resp['best_ask_size']),
                     'bid_1': float(resp['bid']),
@@ -112,14 +121,14 @@ class OkexPublic(object):
                     'url': url
                 }
             else:
-                print(f'Okex public request error: {resp.json()["message"]}')
+                print(f'Okex public get ticker error: {resp.json()["error_message"]}')
             return ticker
         except Exception as e:
                 print(f'Okex public get ticker error: {e}')
 
     def get_orderbook(self, symbol: str):
         try:
-            url = self.urlbase + f"api/spot/v3/instruments/{self._symbol_convert(symbol)}/book"
+            url = self.urlbase + f'api/spot/v3/instruments/{self._symbol_convert(symbol)}/book?size=200&depth=0.2'
             resp = requests.get(url)
             orderbook = {'buys': [], 'sells': []}
             total_amount_buys = 0
@@ -143,28 +152,28 @@ class OkexPublic(object):
                         'count': int(item[2])
                     })
             else:
-                print(f'Okex public request error: {resp.json()["message"]}')
+                print(f'Okex public get orderbook error: {resp.json()["message"]}')
             return orderbook
         except Exception as e:
             print(f'Okex public get orderbook error: {e}')
 
     def get_trades(self, symbol: str):
         try:
-            url = self.urlbase + f"api/spot/v3/instruments/{self._symbol_convert(symbol)}/trades"
+            url = self.urlbase + f'api/spot/v3/instruments/{self._symbol_convert(symbol)}/trades'
             resp = requests.get(url)
             trades = []
             if resp.status_code == 200:
                 resp = resp.json()
                 for trade in resp:
                     trades.append({
-                        "amount": float(trade["size"]) * float(trade["price"]),
-                        "order_time": self._utc_to_ts(trade["timestamp"]),
-                        "price": float(trade["price"]),
-                        "count": float(trade["size"]),
-                        "type": trade["side"]
+                        'amount': float(trade['size']) * float(trade['price']),
+                        'order_time': self._utc_to_ts(trade['timestamp']),
+                        'price': float(trade['price']),
+                        'count': float(trade['size']),
+                        'type': trade['side']
                     })
             else:
-                print(f'Okex public request error: {resp.json()["message"]}')
+                print(f'Okex public get trades error: {resp.json()["message"]}')
             return trades
         except Exception as e:
             print(f'Okex public get trades error: {e}')
@@ -174,23 +183,23 @@ class OkexPublic(object):
             end = datetime.utcnow()
             start = end - timedelta(seconds=time_period)
             granularity = int(interval * 60)
-            url = self.urlbase + f"api/spot/v3/instruments/{self._symbol_convert(symbol)}/candles?" \
-                                 f"granularity={granularity}&start={start.isoformat()}Z&end={end.isoformat()}Z"
+            url = self.urlbase + f'api/spot/v3/instruments/{self._symbol_convert(symbol)}/candles?' \
+                                 f'granularity={granularity}&start={start.isoformat()}Z&end={end.isoformat()}Z'
             resp = requests.get(url)
             lines = []
             if resp.status_code == 200:
                 resp = resp.json()
                 for line in resp:
                     lines.append({
-                        "timestamp": self._utc_to_ts(line[0]),
-                        "open": float(line[1]),
-                        "high": float(line[2]),
-                        "low": float(line[3]),
-                        "volume": float(line[5]),
-                        "last_price": float(line[4])
+                        'timestamp': self._utc_to_ts(line[0]),
+                        'open': float(line[1]),
+                        'high': float(line[2]),
+                        'low': float(line[3]),
+                        'volume': float(line[5]),
+                        'last_price': float(line[4])
                     })
             else:
-                print(f'Okex public request error: {resp.json()["message"]}')
+                print(f'Okex public get kline error: {resp.json()["message"]}')
             return lines
         except Exception as e:
             print(f'Okex public get kline error: {e}')

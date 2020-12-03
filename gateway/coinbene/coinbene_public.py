@@ -20,7 +20,6 @@ class CoinbenePublic(object):
         t = f'{Ymd} {HMS[:-1]}'
         return round(datetime.strptime(t, '%Y-%m-%d %H:%M:%S.%f').timestamp())
 
-
     def _load_symbols_info(self):
         try:
             url = self.urlbase + '/api/exchange/v2/market/tradePair/list'
@@ -88,9 +87,10 @@ class CoinbenePublic(object):
 
     def get_price(self, symbol: str):
         try:
-            price = self.get_trades(symbol)[0]['price']
-            if price is None:
-                return 0.0
+            price = 0.0
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
             return price
         except Exception as e:
             print(f'Coinbene public get price error: {e}')
@@ -119,7 +119,7 @@ class CoinbenePublic(object):
                     'url': url,
                 }
             else:
-                print(f'Coinbene public get ticker request error: {resp}')
+                print(f'Coinbene public get ticker error: {resp}')
             return ticker
         except Exception as e:
             print(f'Coinbene public get ticker error: {e}')
@@ -138,7 +138,7 @@ class CoinbenePublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['data']['bids']:
                     total_amount_buys += float(item[1])
@@ -146,10 +146,10 @@ class CoinbenePublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Coinbene public get orderbook request error: {resp}')
+                print(f'Coinbene public get orderbook error: {resp}')
             return orderbook
         except Exception as e:
             print(f'Coinbene public get orderbook error: {e}')
@@ -162,14 +162,14 @@ class CoinbenePublic(object):
             if resp['code'] == 200:
                 for trade in resp['data']:
                     trades.append({
-                        'amount': float(trade[2]),
+                        'amount': float(trade[2]) * float(trade[1]),
                         'order_time': self._utc_to_ts(trade[4]),
                         'price': float(trade[1]),
-                        'count': None,
+                        'count': float(trade[2]),
                         'type': trade[3]
                     })
             else:
-                print(f'Coinbene public get trades request error: {resp}')
+                print(f'Coinbene public get trades error: {resp}')
             return trades
         except Exception as e:
             print(f'Coinbene public get trades error: {e}')
@@ -194,7 +194,7 @@ class CoinbenePublic(object):
                         'last_price': float(line[4])
                     })
             else:
-                print(f'Coinbene public get kline request error: {resp}')
+                print(f'Coinbene public get kline error: {resp}')
             return lines
         except Exception as e:
             print(f'Coinbene public get kline error: {e}')
@@ -207,4 +207,4 @@ if __name__ == '__main__':
     # print(bit.get_ticker('BTC_USDT'))
     # print(bit.get_orderbook('BTC_USDT'))
     # print(bit.get_trades('BTC_USDT'))
-    # print(bit.get_kline('BTC_USDT'))
+    print(bit.get_kline('BTC_USDT'))

@@ -3,10 +3,8 @@
 okex spot authentication API
 2020/10/14 hlq
 """
-from os import path
-import sys
-sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from datetime import datetime
+from urllib.parse import urlencode
 import base64
 import hmac
 import json
@@ -22,82 +20,92 @@ class OkexAuth(object):
     
     def _symbol_convert(self, symbol):
         return '-'.join(symbol.split('_'))
-    
-    def sign_message(self, data):
-        try:
-            mac = hmac.new(bytes(self.api_secret, encoding='utf8'), bytes(data, encoding='utf-8'), digestmod='sha256')
-            d = mac.digest()
-            return base64.b64encode(d)
-        except Exception as e:
-            print(e)
 
     def _utc_to_ts(self, utc_time: str):
         Ymd, HMS = utc_time.split('T')
         t = f'{Ymd} {HMS[:-1]}'
         return round(datetime.strptime(t, '%Y-%m-%d %H:%M:%S.%f').timestamp())
 
+    def _get_utc(self):
+        return datetime.utcnow().isoformat('T', 'milliseconds') + 'Z'
+
+    def _sign_message(self, message):
+        try:
+            mac = hmac.new(bytes(self.api_secret, encoding='utf8'), bytes(message, encoding='utf-8'), digestmod='sha256')
+            d = mac.digest()
+            return base64.b64encode(d)
+        except Exception as e:
+            print(e)
+
+    def _request(self, method, path, params):
+        try:
+            url = self.urlbase + path
+            ts = self._get_utc()
+            if method == 'POST':
+                msg = f'{ts}{method}{path}{json.dumps(params)}'
+                signature = self._sign_message(msg)
+                headers = {
+                    'OK-ACCESS-KEY': self.api_key,
+                    'OK-ACCESS-SIGN': signature,
+                    'OK-ACCESS-TIMESTAMP': ts,
+                    'OK-ACCESS-PASSPHRASE': self.passphrase,
+                    'Content-Type': 'application/json'
+                }
+                resp = requests.post(url, data=json.dumps(params), headers=headers).json()
+            else:
+                if len(params) == 0:
+                    msg = f'{ts}{method}{path}'
+                else:
+                    msg = f'{ts}{method}{path}?{urlencode(params)}'
+                signature = self._sign_message(msg)
+                headers = {
+                    'OK-ACCESS-KEY': self.api_key,
+                    'OK-ACCESS-SIGN': signature,
+                    'OK-ACCESS-TIMESTAMP': ts,
+                    'OK-ACCESS-PASSPHRASE': self.passphrase,
+                    'Content-Type': 'application/json'
+                }
+                resp = requests.get(url, params=params, headers=headers).json()
+            return resp
+        except Exception as e:
+            print(e)
+
     def place_order(self, symbol: str, amount: float, price: float, side: str):
         try:
-            url = self.urlbase + "api/spot/v3/orders"
-            ts = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
             params = {
-                    "type": "limit", 
-                    "side": side, 
-                    "instrument_id": self._symbol_convert(symbol),
-                    "size": amount,
-                    "price": price
-                    }
-            message = ts + "POST" + "/api/spot/v3/orders" + json.dumps(params)
-            signed = self.sign_message(message)
-            headers = {"OK-ACCESS-KEY": self.api_key, "OK-ACCESS-SIGN": signed, 
-                "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase, 
-                "Content-Type": "application/json"
-                }
-
-            resp = requests.post(url, data=json.dumps(params), headers=headers)
-            if resp.status_code == 200:
-                resp = resp.json()
-                if resp['result']:
-                    return resp["order_id"]
-                else:
-                    print(resp['error_message'])
+                'type': 'limit',
+                'side': side,
+                'instrument_id': self._symbol_convert(symbol),
+                'size': amount,
+                'price': price
+            }
+            resp = self._request('POST', '/api/spot/v3/orders', params)
+            if resp['result']:
+                return resp['order_id']
             else:
-                print(f'Okex auth error: {resp.json()["message"]}')
-            return None
+                print(f'Okex auth error: {resp["error_message"]}')
+                return None
         except Exception as e:
             print(f'Okex auth place order error: {e}')
 
     def cancel_order(self, symbol: str, order_id: str):
         try:
-            url = self.urlbase + f"api/spot/v3/cancel_orders/{order_id}"
-            ts = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
             params = {
-                    "instrument_id": self._symbol_convert(symbol),
-                    "order_id": order_id
-                    }
-            message = ts + "POST" + f"/api/spot/v3/cancel_orders/{order_id}" + json.dumps(params)
-            signed = self.sign_message(message)
-            headers = {"OK-ACCESS-KEY": self.api_key, "OK-ACCESS-SIGN": signed, 
-                "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase, 
-                "Content-Type": "application/json"
-                }
-            
-            resp = requests.post(url, data=json.dumps(params), headers=headers)
+                "instrument_id": self._symbol_convert(symbol)
+            }
+            resp = self._request('POST', f'/api/spot/v3/cancel_orders/{order_id}', params)
             data = False
-            if resp.status_code == 200:
-                resp = resp.json()
-                data = resp['result']
+            if resp['result']:
+                data = True
                 message = resp['error_message']
             else:
-                resp = resp.json()
                 message = resp['error_message']
-                print(f'Okex auth error: {message}')
-
+                print(f'Okex auth cancel order error: {message}')
             info = {
-                "func_name": "cancel_order",
-                "order_id": order_id,
-                "message": message,
-                "data": data
+                'func_name': 'cancel_order',
+                'order_id': order_id,
+                'message': message,
+                'data': data
             }
             return info
         except Exception as e:
@@ -108,132 +116,127 @@ class OkexAuth(object):
             orders = self.open_orders(symbol)
             if len(orders) == 0:
                 info = {
-                    "func_name": "cancel_order",
-                    "message": None,
-                    "data": False
+                    'func_name': 'cancel_all',
+                    'message': 'Empty order',
+                    'data': False
                 }
                 return info
 
-            order_ids = [order['order_id'] for order in orders if order['side'] == side]
-            url = self.urlbase + "api/spot/v3/cancel_batch_orders"
-            ts = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
+            order_ids = []
+            for order in orders:
+                if order['side'] == side:
+                    order_ids.append(order['order_id'])
             params = {
-                "instrument_id": "-".join(symbol.split('_')).lower(),
-                "order_ids": order_ids
+                'instrument_id': self._symbol_convert(symbol),
+                'order_ids': order_ids
             }
-            message = ts + "POST" + f"/api/spot/v3/cancel_batch_orders[" + json.dumps(params) + "]"
-            signed = self.sign_message(message)
-            headers = {"OK-ACCESS-KEY": self.api_key, "OK-ACCESS-SIGN": signed,
-                       "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase,
-                       "Content-Type": "application/json"
-                       }
-
-            resp = requests.post(url, data=json.dumps(params), headers=headers)
+            resp = self._request('POST', '/api/spot/v3/cancel_batch_orders', params)
             data = False
-            if resp.status_code == 200:
-                resp = resp.json()
-                data = resp['result']
+            if resp['result']:
+                data = True
                 message = resp['error_message']
             else:
-                resp = resp.json()
                 message = resp['error_message']
-                print(f'Okex auth error: {message}')
+                print(f'Okex auth cancel all error: {message}')
 
             info = {
-                "func_name": "cancel_order",
-                "message": message,
-                "data": data
+                'func_name': 'cancel_all',
+                'message': message,
+                'data': data
             }
             return info
         except Exception as e:
-            print(f'Okex auth cancel order error: {e}')
+            print(f'Okex auth cancel all error: {e}')
 
     def order_detail(self, symbol: str, order_id: str):
         try:
-            url = self.urlbase + f"api/spot/v3/orders/{order_id}?instrument_id={self._symbol_convert(symbol)}"
-            ts = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            message = ts + "GET" + f"/api/spot/v3/orders/{order_id}?instrument_id={self._symbol_convert(symbol)}"
-            signed = self.sign_message(message)
-            headers = {"OK-ACCESS-KEY": self.api_key, "OK-ACCESS-SIGN": signed, 
-                "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase, 
-                "Content-Type": "application/json"
-                }
-            
-            resp = requests.get(url, headers=headers)
+            params = {
+                'instrument_id': self._symbol_convert(symbol)
+            }
+            resp = self._request('GET', f'/api/spot/v3/orders/{order_id}', params)
             order_detail = {}
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 order_detail = {
-                    "order_id": order_id,
-                    "symbol": symbol,
-                    "side": resp["side"],
-                    "price": float(resp["price"]),
-                    "amount": float(resp["size"]),
-                    "price_avg": float(resp["price_avg"]),
-                    "filled_amount": float(resp["filled_size"]),
-                    "timestamp": self._utc_to_ts(resp["created_at"])
+                    'order_id': order_id,
+                    'symbol': symbol,
+                    'side': resp['side'],
+                    'price': float(resp['price']),
+                    'amount': float(resp['size']),
+                    'price_avg': float(resp['price_avg']),
+                    'filled_amount': float(resp['filled_size']),
+                    'status': resp['state'],
+                    'timestamp': self._utc_to_ts(resp['timestamp'])
                 }
+                message = 'ok'
             else:
-                print(f'Okex auth error: {resp.json()["message"]}')
+                message = resp['error_message']
+                print(f'Okex auth order detail error: {message}')
             info = {
                 'func_name': 'order_detail',
                 'order_id': order_id,
-                'message': resp['message'],
+                'message': message,
                 'data': order_detail
             }
             return info
         except Exception as e:
             print(f'Okex auth order detail error: {e}')
 
-    def open_orders(self, symbol: str, status=6, limit=100):
+    def open_orders(self, symbol):
         try:
-            url = self.urlbase + f"api/spot/v3/orders?instrument_id={self._symbol_convert(symbol)}&state={status}&limit={limit}"
-            ts = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            message = ts + "GET" + f"/api/spot/v3/orders?instrument_id={self._symbol_convert(symbol)}&state={status}&limit={limit}"
-            signed = self.sign_message(message)
-            headers = {"OK-ACCESS-KEY": self.api_key, "OK-ACCESS-SIGN": signed, 
-                "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase, 
-                "Content-Type": "application/json"
-                }
-            resp = requests.get(url, headers=headers)
+            orders = []
+            for page in [5, 4, 3, 2, 1]:
+                if len(orders) == 0:
+                    orders_on_this_page = self.order_list(symbol, status=6)
+                else:
+                    last_id = orders[-1]['order_id']
+                    orders_on_this_page = self.order_list(symbol, status=6, before=last_id)
+                if orders_on_this_page and len(orders_on_this_page) > 0:
+                    orders.extend(orders_on_this_page)
+                else:
+                    break
+            return orders
+        except Exception as e:
+            print(f'Okex auth open orders error: {e}')
+
+    def order_list(self, symbol: str, status=6, before=None, limit=100):
+        try:
+            params = {
+                'instrument_id': self._symbol_convert(symbol),
+                'state': status,
+                'limit': limit
+            }
+            if before is not None:
+                params.update({'before': before})
+            resp = self._request('GET', '/api/spot/v3/orders', params)
             results = []
-            if resp.status_code == 200:
-                resp = resp.json()
+            if 'code' not in resp:
                 for order in resp:
                     results.append({
-                        "order_id": order['order_id'],
-                        "symbol": symbol,
-                        "side": order["side"],
-                        "price": float(order["price"]),
-                        "amount": float(order["size"]),
-                        "price_avg": float(order["price_avg"]),
-                        "filled_amount": float(order["filled_size"]),
-                        "timestamp": self._utc_to_ts(order["timestamp"])
+                        'order_id': order['order_id'],
+                        'symbol': symbol,
+                        'side': order['side'],
+                        'price': float(order['price']),
+                        'amount': float(order['size']),
+                        'price_avg': float(order['price_avg']),
+                        'filled_amount': float(order['filled_size']),
+                        'timestamp': self._utc_to_ts(order['timestamp'])
                     })
             else:
-                print(f'Okex auth error: {resp.json()["message"]}')
+                print(f'Okex auth open order error: {resp["error_message"]}')
             return results
         except Exception as e:
             print(f'Okex auth open order error: {e}')
 
     def wallet_balance(self):
         try:
-            url = self.urlbase + "api/spot/v3/accounts"
-            ts = datetime.utcnow().isoformat("T", "milliseconds") + "Z"
-            message = ts + "GET" + "/api/spot/v3/accounts"
-            signed = self.sign_message(message)
-            headers = {"OK-ACCESS-KEY": self.api_key, "OK-ACCESS-SIGN": signed, 
-                "OK-ACCESS-TIMESTAMP": ts, "OK-ACCESS-PASSPHRASE": self.passphrase, 
-                "Content-Type": "application/json"
-                }
-            resp = requests.get(url, headers=headers)
+            resp = self._request('GET', '/api/spot/v3/accounts', {})
             balance, frozen = {}, {}
-            if resp.status_code == 200:
-                wallet = resp.json()
+            if 'code' not in resp:
+                wallet = resp
                 balance = {row["currency"]: float(row["available"]) for row in wallet}
                 frozen = {row["currency"]: float(row["hold"]) for row in wallet}
             else:
-                print(f'Okex auth error: {resp.json()["message"]}')
+                print(f'Okex auth wallet balance error: {resp["err_message"]}')
             return balance, frozen
         except Exception as e:
             print(f'Okex auth wallet balance error: {e}')
@@ -241,7 +244,7 @@ class OkexAuth(object):
 
 
 if __name__ == "__main__":
-    okex = OkexAuth("https://www.okex.com/", "dda0063c-70fc-42b1-8390-281e77b532a5", "A06AFB73716F15DC1805D183BCE07BED", "okexpassphrase")
+    okex = OkexAuth("https://www.okex.com", "dda0063c-70fc-42b1-8390-281e77b532a5", "A06AFB73716F15DC1805D183BCE07BED", "okexpassphrase")
     # print(okex.place_order("XRP_BTC", 30, 0.0002, "sell"))
     # print(okex.cancel_order("XRP_BTC", '123'))
     # print(okex.order_detail("XRP_BTC", '123'))

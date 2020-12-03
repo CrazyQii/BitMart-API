@@ -76,8 +76,9 @@ class YoubitPublic(object):
     def get_price(self, symbol: str):
         try:
             price = 0.0
-            if len(self.get_trades(symbol)) != 0:
-                price = self.get_trades(symbol)[0]['price']
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
             return price
         except Exception as e:
             print(f'Yobit public get price error: {e}')
@@ -85,16 +86,12 @@ class YoubitPublic(object):
     def get_ticker(self, symbol: str):
         try:
             url = self.urlbase + f'/ticker/{symbol.lower()}'
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             ticker = {}
-            if resp.status_code == 200:
-                resp = resp.json()
-                key = ''
-                for key in resp.keys():
-                    key = key
-                ticker = resp[key]
+            if 'success' not in resp:
+                ticker = resp[symbol.lower()]
                 ticker = {
-                    'symbol': key.upper(),
+                    'symbol': symbol,
                     'last_price': float(ticker['last']),
                     'quote_volume': float(ticker['vol_cur']),
                     'base_volume': float(ticker['vol']),
@@ -110,7 +107,7 @@ class YoubitPublic(object):
                     'url': url,
                 }
             else:
-                print(f'Yobit public get ticker request error: {resp.json()}')
+                print(f'Yobit public get ticker error: {resp["error"]}')
             return ticker
         except Exception as e:
             print(f'Yobit public get ticker error: {e}')
@@ -118,33 +115,29 @@ class YoubitPublic(object):
     def get_orderbook(self, symbol: str):
         try:
             url = self.urlbase + f'/depth/{symbol.lower()}'
-            resp = requests.get(url)
+            resp = requests.get(url).json()
             orderbook = {'buys': [], 'sells': []}
-            if resp.status_code == 200:
-                resp = resp.json()
-                key = ''
-                for key in resp.keys():
-                    key = key
+            if 'success' not in resp:
                 total_amount_buys = 0
                 total_amount_sells = 0
-                for item in resp[key]['asks']:
+                for item in resp[symbol.lower()]['asks']:
                     total_amount_sells += float(item[1])
                     orderbook['sells'].append({
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
-                for item in resp[key]['bids']:
+                for item in resp[symbol.lower()]['bids']:
                     total_amount_buys += float(item[1])
                     orderbook['buys'].append({
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Yobit public get orderbook request error: {resp.json()}')
+                print(f'Yobit public get orderbook error: {resp["error"]}')
             return orderbook
         except Exception as e:
             print(f'Yobit public get orderbook error: {e}')
@@ -153,22 +146,18 @@ class YoubitPublic(object):
         try:
             url = self.urlbase + f'/trades/{symbol.lower()}'
             trades = []
-            resp = requests.get(url)
-            if resp.status_code == 200:
-                resp = resp.json()
-                key = ''
-                for key in resp.keys():
-                    key = key
-                for trade in resp[key]:
+            resp = requests.get(url).json()
+            if 'success' not in resp:
+                for trade in resp[symbol.lower()]:
                     trades.append({
-                        'amount': float(trade['amount']),
+                        'amount': float(trade['amount']) * float(trade['price']),
                         'order_time': round(trade['timestamp']),
                         'price': float(trade['price']),
-                        'count': None,
+                        'count': float(trade['amount']),
                         'type': 'sell' if trade['type'] == 'ask' else 'buy'
                     })
             else:
-                print(f'Yobit public get trades request error: {resp.json()}')
+                print(f'Yobit public get trades error: {resp["error"]}')
             return trades
         except Exception as e:
             print(f'Yobit public get trades error: {e}')
@@ -181,7 +170,7 @@ if __name__ == '__main__':
     bit = YoubitPublic('https://yobit.net/api/3')
     # print(bit.get_symbol_info('BTC_USDT'))
     # print(bit.get_price('BTC_USDT'))
-    # print(bit.get_ticker('BTC_USDT'))
+    print(bit.get_ticker('BTC_USD'))
     # print(bit.get_orderbook('BTC_USDT'))
     # print(bit.get_trades('BTC_USDT'))
     # print(bit.get_kline('BTC_USDT'))

@@ -83,13 +83,10 @@ class HuoPublic(object):
 
     def get_price(self, symbol: str):
         try:
-            url = self.urlbase + f'/market/trade?symbol={self._symbol_convert(symbol)}'
-            resp = requests.get(url).json()
             price = 0.0
-            if resp['status'] == 'ok':
-                return float(resp['tick']['data'][0]['price'])
-            else:
-                print(f'Huobi public get price request error: {resp["err-msg"]}')
+            trade = self.get_trades(symbol)
+            if len(trade) > 0:
+                price = trade[0]['price']
             return price
         except Exception as e:
             print(f'Huobi public get price error: {e}')
@@ -119,7 +116,7 @@ class HuoPublic(object):
                             'url': url
                         }
             else:
-                print(f'Huobi public get ticker request error: {resp["err-msg"]}')
+                print(f'Huobi public get ticker error: {resp["err-msg"]}')
             return result
         except Exception as e:
             print(f'Huobi public get ticker error: {e}')
@@ -138,7 +135,7 @@ class HuoPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_buys,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
                 for item in resp['tick']['asks']:
                     total_amount_sells += float(item[1])
@@ -146,10 +143,10 @@ class HuoPublic(object):
                         'amount': float(item[1]),
                         'total': total_amount_sells,
                         'price': float(item[0]),
-                        'count': None
+                        'count': 1
                     })
             else:
-                print(f'Huobi public get orderbook request error: {resp["err-msg"]}')
+                print(f'Huobi public get orderbook error: {resp["err-msg"]}')
             return orderbook
         except Exception as e:
             print(f'Huobi public get orderbook error: {e}')
@@ -160,26 +157,25 @@ class HuoPublic(object):
             resp = requests.get(url).json()
             trades = []
             if resp['status'] == 'ok':
-                for trade in resp['data']:
-                    trades.append({
-                        'amount': float(trade['data'][0]['amount']) * float(trade['data'][0]['price']),
-                        'order_time': round(trade['data'][0]['ts'] / 1000),
-                        'price': float(trade['data'][0]['price']),
-                        'count': float(trade['data'][0]['amount']),
-                        'type': trade['data'][0]['direction']
-                    })
+                for orders in resp['data']:
+                    for trade in orders['data']:
+                        trades.append({
+                            'amount': float(trade['amount']) * float(trade['price']),
+                            'order_time': round(trade['ts'] / 1000),
+                            'price': float(trade['price']),
+                            'count': float(trade['amount']),
+                            'type': trade['direction']
+                        })
                 return trades
             else:
-                print(f'Bitmart public get trades request error: {resp["err-msg"]}')
+                print(f'Huobi public get trades error: {resp["err-msg"]}')
             return trades
         except Exception as e:
-            print(f'Bitmart public get trades error: {e}')
+            print(f'Huobi public get trades error: {e}')
 
     def get_kline(self, symbol: str, time_period=60, interval=1):
         try:
-            time_period = int(time_period / 60)
-            url = self.urlbase + f'/market/history/kline?symbol={self._symbol_convert(symbol)}&period={time_period}min'
-
+            url = self.urlbase + f'/market/history/kline?symbol={self._symbol_convert(symbol)}&period={interval}min'
             resp = requests.get(url).json()
             lines = []
             if resp['status'] == 'ok':
@@ -193,7 +189,7 @@ class HuoPublic(object):
                         'last_price': float(line['close'])
                     })
             else:
-                print(f'Huobi public get kline request error: {resp["err-msg"]}')
+                print(f'Huobi public get kline error: {resp["err-msg"]}')
             return lines
         except Exception as e:
             print(f'Huobi public get kline error: {e}')
@@ -202,7 +198,7 @@ class HuoPublic(object):
 if __name__ == '__main__':
     huo = HuoPublic('https://api.huobi.pro')
     # print(huo.get_symbol_info('BTC_USDT'))
-    # print(huo.get_price('BTC_USDT'))
+    print(huo.get_price('BTC_USDT'))
     # print(huo.get_ticker('BTC_USDT'))
     # print(huo.get_orderbook('BTC_USDT'))
     # print(huo.get_trades('BTC_USDT'))
