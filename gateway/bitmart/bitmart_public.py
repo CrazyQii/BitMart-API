@@ -211,8 +211,8 @@ class BitmartPublic(object):
 
 if __name__ == '__main__':
     bit = BitmartPublic('https://api-cloud.bitmart.news')
-    print(bit.get_symbol_info('BTC_USDT'))
-    # print(bit.get_price('BTC_USDT'))
+    # print(bit.get_symbol_info('BTC_USDT'))
+    print(bit.get_price('BTC_USDT'))
     # print(bit.get_ticker('BTC_USDT'))
     # print(bit.get_orderbook('BTC_USDT'))
     # print(bit.get_trades('BTC_USDT'))

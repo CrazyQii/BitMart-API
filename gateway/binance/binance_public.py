@@ -204,8 +204,8 @@ class BinancePublic:
 if __name__ == '__main__':
     binance = BinancePublic('https://api.binance.com')
     # print(binance.get_symbol_info('BTC_USDT'))
-    # print(binance.get_price('BTC_USDT'))
+    print(binance.get_price('BTC_USDT'))
     # print(binance.get_ticker('BTC_USDT'))
     # print(binance.get_orderbook('BTC_USDT'))
     # print(binance.get_trades('BTC_USDT'))
-    # print(binance.get_kline('BTC_USDT'))
+    print(binance.get_kline('BTC_USDT'))
