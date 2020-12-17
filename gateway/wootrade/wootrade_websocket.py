@@ -1,220 +1,294 @@
 from threading import Thread
+from collections import defaultdict
+from urllib.parse import urlencode
+import requests
 import websocket
 import json
 import time
+import operator
+import hmac
+import hashlib
 
 
 class WootradeWs(Thread):
-    def __init__(self, urlbase, application_id):
+    def __init__(self, urlbase, api_key, api_secret, passphrase=None):
         super().__init__()
         self.urlbase = urlbase
-        self.application_id = application_id
-        self.data = {}
+        self.api_key = api_key
+        self.api_secret = api_secret
+        self._init_container()
+
+    def _init_container(self):
+        self.data = defaultdict(dict)
+        self.urlrest = 'https://api.woo.network/v1/client/info'
+        self.application_id = self._get_account_id()
+        if self.application_id is None:
+            self.application_id = 'e1f40bde-0e4e-4c2c-b369-bd00e434b754'
 
     def _symbol_convert(self, symbol: str):
         return 'SPOT_' + symbol
 
-    def _connect_auth(self, symbol: str = None):
-        # connect authentication endpoint
-        ws = None
-        symbol = self._symbol_convert(symbol)
-        sub_url = f'{self.urlbase}{self.application_id}/{symbol}'
-        while True:
-            try:
-                time.sleep(2)
-                print(f'start to connect auth {sub_url}')
-                ws = websocket.create_connection(sub_url)
-                break
-            except Exception as e:
-                print(f'Wootrade connect auth error {e}')
-                continue
-        return ws
-
-    def _connect_public(self, streams=None):
-        # connect public endpoint
-        if streams is None:
-            streams = ['ticker', 'bbo']
-        ws = None
-        sub_url = f'{self.urlbase}stream?streams={",".join(streams)}'
-        while True:
-            try:
-                time.sleep(2)
-                print(f'start to connect public {sub_url}')
-                ws = websocket.create_connection(sub_url)
-                break
-            except Exception as e:
-                print(f'Wootrade connect public error {e}')
-                continue
-        return ws
-
-    def _get_orderbook(self, data: dict):
-        orderbook = {'buys': [], 'sells': []}
-        total_amount_buys = 0
-        total_amount_sells = 0
-        for item in data['data']['bids']:
-            total_amount_buys += float(item['quantity'])
-            orderbook['buys'].append({
-                'amount': float(item['quantity']),
-                'total': total_amount_buys,
-                'price': float(item['price']),
-                'count': 1
-            })
-        for item in data['data']['asks']:
-            total_amount_sells += float(item['quantity'])
-            orderbook['sells'].append({
-                'amount': float(item['quantity']),
-                'total': total_amount_sells,
-                'price': float(item['price']),
-                'count': 1
-            })
-        return orderbook
-
-    def _get_trade(self, data: dict):
+    def _sign_message(self, ts, params=None):
         try:
-            trade = data['data']
+            if params is not None:
+                sort = sorted(params.items(), key=operator.itemgetter(0))
+            else:
+                sort = ''
+            msg = urlencode(sort)
+            msg += '|' + ts
+            return hmac.new(self.api_secret.encode(), msg.encode(), hashlib.sha256).hexdigest()
+        except Exception as e:
+            print(e)
+
+    def _get_account_id(self):
+        try:
+            ts = str(time.time() * 1000)
+            sign = self._sign_message(ts)
+            headers = {'Content-Type': 'application/x-www-form-urlencoded',
+                       'x-api-key': self.api_key,
+                       'x-api-signature': sign,
+                       'x-api-timestamp': ts,
+                       'cache-control': 'no-cache'}
+            url = self.urlrest
+            resp = requests.get(url, headers=headers).json()
+            if resp['success']:
+                return resp['application']['application_id']
+            else:
+                print(f'Wootrade auth get account id error: {resp}')
+        except Exception as e:
+            print(e)
+
+    def _connect(self, symbol: str, private, streams=None):
+        if private:
+            ws = None
+            symbol = self._symbol_convert(symbol)
+            sub_url = f'{self.urlbase}{self.application_id}/{symbol}'
+            while True:
+                try:
+                    time.sleep(2)
+                    print(f'Wootrade start to connect auth {sub_url}')
+                    ws = websocket.create_connection(sub_url)
+                    break
+                except Exception as e:
+                    print(f'Wootrade connect auth error {e}')
+                    continue
+            return ws
+        else:
+            if streams is None:
+                streams = ['ticker']
+            ws = None
+            sub_url = f'{self.urlbase}stream?streams={",".join(streams)}'
+            while True:
+                try:
+                    time.sleep(2)
+                    print(f'Wootrade start to connect public {sub_url}')
+                    ws = websocket.create_connection(sub_url)
+                    break
+                except Exception as e:
+                    print(f'Wootrade connect public error {e}')
+                    continue
+            return ws
+
+    def _get_orderbook(self, symbol: str, params: dict):
+        try:
+            orderbook = {'buys': [], 'sells': []}
+            total_amount_buys = 0
+            total_amount_sells = 0
+            for item in params['data']['bids']:
+                total_amount_buys += float(item['quantity'])
+                orderbook['buys'].append({
+                    'amount': float(item['quantity']),
+                    'total': total_amount_buys,
+                    'price': float(item['price']),
+                    'count': 1
+                })
+            for item in params['data']['asks']:
+                total_amount_sells += float(item['quantity'])
+                orderbook['sells'].append({
+                    'amount': float(item['quantity']),
+                    'total': total_amount_sells,
+                    'price': float(item['price']),
+                    'count': 1
+                })
+            self.data[symbol].update({
+                'orderbook': orderbook
+            })
+        except Exception as e:
+            print(f'Wootrade get orderbook error: {e}')
+
+    def _get_trade(self, symbol: str, params: dict):
+        try:
+            trade = params['data']
             trade = {
                 'amount': float(trade['quantity']) * float(trade['price']),
-                'order_time': round(data['timestamp'] / 1000),
+                'order_time': round(params['timestamp'] / 1000),
                 'price': float(trade['price']),
                 'count': float(trade['quantity']),
                 'type': trade['side'].lower()
             }
-            return trade
+            self.data[symbol].update({
+                'trade': trade
+            })
         except Exception as e:
-            print(e)
+            print(f'Wootrade get trade error: {e}')
 
-    def _update_order(self, data: dict):
+    def _get_order(self, symbol: str, params: dict, status=None, limit=200):
         try:
-            order = data['data']
-            order = {
-                'order_id': order['order_id'],
-                'symbol': order['symbol'],
-                'side': order['side'].lower(),
-                'price': float(order['order_price']),
-                'amount': float(order['order_quantity']),
-                'price_avg': None,
-                'filled_amount': float(order['executed_quantity']),
-                'status': order['status'],
-                'create_time': round(data['timestamp'] / 1000)
+            if status is None:
+                status = ['PARTIAL_FILLED']
+            order = params['data']
+            if 'order' not in self.data[symbol]:
+                self.data[symbol]['order'] = []
+            if order['status'] in status:
+                order = {
+                    'order_id': order['order_id'],
+                    'symbol': symbol,
+                    'side': order['side'].lower(),
+                    'price': float(order['order_price']),
+                    'amount': float(order['order_quantity']),
+                    'price_avg': float(float(order['order_price']) / float(order['order_quantity'])),
+                    'filled_amount': float(order['executed_quantity']),
+                    'status': order['status'],
+                    'create_time': round(params['timestamp'] / 1000)
+                }
+                index, isExist = 0, False
+                for item in self.data[symbol]['order']:
+                    # update order which exists in data
+                    if item['create_time'] == order['create_time']:
+                        self.data[symbol]['order'][index] = order
+                        isExist = True
+                        break
+                    index = index + 1
+                if not isExist:
+                    if len(self.data[symbol]['order']) > limit:
+                        self.data[symbol]['order'].pop(-1)
+                    self.data[symbol]['order'].insert(0, order)
+        except Exception as e:
+            print(f'Wootrade get order error: {e}')
+
+    def _get_position(self, symbol: str, params: dict):
+        try:
+            self.data['wallet'] = {
+                symbol.split("_")[0]: {
+                    'balance': None,
+                    'frozen': None
+                },
+                symbol.split("_")[1]: {
+                    'balance': None,
+                    'frozen': None
+                }
             }
-            return order
+            params = params['data']['positions']
+            base = symbol.split('_')[0]
+            quote = symbol.split('_')[1]
+            if base in params.keys():
+                self.data['wallet'][base].update({
+                    'balance': params[base]['holding'],
+                    'frozen': params[base]['outstanding_holding']
+                })
+            if quote in params.keys():
+                self.data['wallet'][quote].update({
+                    'balance': params[quote]['holding'],
+                    'frozen': params[quote]['outstanding_holding']
+                })
         except Exception as e:
-            print(e)
+            print(f'Wootrade get wallet balance error: {e}')
 
-    def _get_position(self, data: dict):
+    def _get_price(self, symbol: str, params: dict):
         try:
-            return data['data']
-        except Exception as e:
-            print(e)
-
-    def _get_price(self, symbol: str, data: dict):
-        try:
-            for ticker in data['data']:
+            for ticker in params['data']:
                 if self._symbol_convert(symbol) == ticker['symbol']:
-                    return {
-                        'symbol': symbol,
-                        'open': ticker['o'],
-                        'close': ticker['c']
-                    }
+                    self.data[symbol]['price'] = ticker['c']
         except Exception as e:
-            print(e)
+            print(f'Wootrade get price error: {e}')
 
-    def sub_public(self, symbol: str):
+    def on_message(self, symbol: str, private: bool):
         # Support types
-        # ticker / bbo(best bid offer)
-        def _public():
+        # ticker / book / trade / order_update / position
+        def _message():
             try:
-                ws = self._connect_public()
+                ws = self._connect(symbol, private)
                 while True:
                     recv = json.loads(ws.recv())
                     if 'error' in recv and recv['error']:
                         # identify error in receive
-                        print(f'Sub event error: {recv["data"]}')
+                        print(f'Wootrade Sub error: {recv["data"]}')
                         break
                     elif recv['event'] == 'ticker':
-                        price = self._get_price(symbol, recv)
-                        self.data.update({'price': price})
+                        self._get_price(symbol, recv)
                     elif recv['event'] == 'PING':  # receive ping from server and send pong
                         print(recv)
                         ws.send(json.dumps({'event': 'PONG'}))
                     else:
                         print(recv)
             except websocket.WebSocketException as e:
-                print(f'Sub public error {e} : try to connect again')
-                _public()
+                print(f'Wootrade Sub public error {e} : try to connect again')
+                _message()
             except Exception as e:
-                print(f'Sub public error {e}: connection end')
-        Thread(target=_public).start()
+                print(f'Wootrade Sub public error {e}: connection end')
 
-    def sub_event(self, symbol: str):
-        # Support types
-        # book / trade / order_update / position
-        def _event():
+        def _auth_message():
             try:
-                ws = self._connect_auth(symbol)
+                ws = self._connect(symbol, private)
                 while True:
                     recv = json.loads(ws.recv())
+                    print(recv)
                     if 'error' in recv and recv['error']:
                         # identify error in receive
-                        print(f'Sub event error: {recv["data"]}')
+                        print(f'Wootrade Sub error: {recv["data"]}')
                         break
-                    elif recv['event'] == 'TRADE':
-                        trade = self._get_trade(recv)
-                        self.data.update({'trade': trade})
-                    elif recv['event'] == 'BOOK':
-                        orderbook = self._get_orderbook(recv)
-                        self.data.update({'orderbook': orderbook})
-                    elif recv['event'] == 'ORDER_UPDATE':
-                        order = self._update_order(recv)
-                        self.data.update({'order': order})
-                    elif recv['event'] == 'POSITIONS':
-                        position = self._get_position(recv)
-                        self.data.update({'position': position})
-                    elif recv['event'] == 'PING':  # receive ping from server and send pong
-                        print(recv)
-                        ws.send(json.dumps({'event': 'PONG'}))
                     else:
-                        print(recv)
+                        switch = {
+                            'TRADE': self._get_trade,
+                            'BOOK': self._get_orderbook,
+                            'ORDER_UPDATE': self._get_order,
+                            'POSITIONS': self._get_position,
+                            'PING': lambda sym, re: ws.send(json.dumps({'event': 'PONG'}))
+                        }
+                        switch.get(recv['event'], lambda params: print(recv))(symbol, recv)
             except websocket.WebSocketException as e:
-                print(f'Sub event error {e} : try to connect again')
-                _event()
+                print(f'Wootrade Sub auth error {e} : try to connect again')
+                _auth_message()
             except Exception as e:
-                print(f'Sub event error {e}: connection end')
-        Thread(target=_event).start()
+                print(f'Wootrade Sub auth error {e}: connection end')
+
+        if private:
+            Thread(target=_auth_message).start()
+        else:
+            Thread(target=_message).start()
 
     def sub_price(self, symbol: str):
-        self.sub_public(symbol)
-
-    def sub_bbo(self, symbol: str):
-        # best bid offer
-        self.sub_public(symbol)
+        self.on_message(symbol, private=False)
 
     def sub_orderbook(self, symbol: str):
-        self.sub_event(symbol)
+        self.on_message(symbol, private=True)
 
     def sub_kline(self, symbol: str):
-        pass
-
-    def sub_order(self, symbol: str):
-        self.sub_event(symbol)
+        self.data[symbol]['kline'] = []
 
     def sub_trade(self, symbol: str):
-        self.sub_event(symbol)
+        self.on_message(symbol, private=True)
 
-    def sub_position(self, symbol: str):
-        self.sub_event(symbol)
+    def sub_order(self, symbol: str):
+        self.on_message(symbol, private=True)
+
+    def sub_wallet_balance(self, symbol: str):
+        self.on_message(symbol, private=True)
 
 
 if __name__ == '__main__':
-    woo = WootradeWs('wss://api.woo.network/ws/', 'e1f40bde-0e4e-4c2c-b369-bd00e434b754')
-    # woo.sub_price('BTC_USDT')
-    woo.sub_trade('BTC_USDT')
+    woo = WootradeWs('wss://api.woo.network/ws/', 'AbmyVJGUpN064ks5ELjLfA==', 'QHKRXHPAW1MC9YGZMAT8YDJG2HPR')
+    # woo.sub_kline('BTC_USDT')
+    woo.sub_price('BTC_USDT')
+    # woo.sub_orderbook('BTC_USDT')
+    # woo.sub_trade('BTC_USDT')
+    # woo.sub_wallet_balance('BTC_USDT')
+    # woo.sub_order('BTC_USDT')
 
-    # while True:
-    #     time.sleep(3)
-        # print(woo.data['price'])
-        # print(woo.data['bbo'])
-        # print(woo.data['trade'])
-        # print(woo.data['orderbook'])
-        # print(woo.data['order'])
-        # print(woo.data['position'])
+    while True:
+        time.sleep(3)
+        print(woo.data['BTC_USDT']['price'])
+        # print(woo.data['BTC_USDT']['order'])
+    #     print(woo.data['trade'])
+    #     # print(woo.data['price'])
+

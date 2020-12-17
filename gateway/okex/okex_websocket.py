@@ -11,7 +11,7 @@ import zlib
 
 
 class OkexWss(Thread):
-    def __init__(self, urlbase, api_key=None, api_secret=None, passphrase=None):
+    def __init__(self, urlbase, api_key, api_secret, passphrase):
         super().__init__()
         self.urlbase = urlbase
         self.api_key = api_key
@@ -393,17 +393,17 @@ class OkexWss(Thread):
 if __name__ == '__main__':
     okws = OkexWss('wss://real.okex.com:8443/ws/v3', 'dda0063c-70fc-42b1-8390-281e77b532a5', 'A06AFB73716F15DC1805D183BCE07BED', 'okexpassphrase')
     # okws.sub_kline('BTC_USDT')
-    # okws.sub_price('BTC_USDT')
+    okws.sub_price('BTC_USDT')
     # okws.sub_orderbook('BTC_USDT')
     # okws.sub_trade('BTC_USDT')
     # okws.sub_trade('ETH_BTC')
-    okws.sub_wallet_balance('BTC_USDT')
-    okws.sub_order('BTC_USDT')
+    # okws.sub_wallet_balance('BTC_USDT')
+    # okws.sub_order('BTC_USDT')
 
     while True:
         for i in range(10):
             time.sleep(2)
-            print(okws.data)
+            print(okws.data['BTC_USDT']['price'])
     #         if i == 4:
     #             okws.stop_kline('BTC_USDT')
     #         if i == 8:

@@ -10,3 +10,9 @@ for item in Asin:
         Asin[i] = 'sdf'
     i = i + 1
 print(Asin)
+
+str = 'auth#'
+if '#' in str:
+    print('asf')
+# print(re.search('\w+#', str).group())
+# print(str.split()[0])

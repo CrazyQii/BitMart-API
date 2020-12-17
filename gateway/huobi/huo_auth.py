@@ -268,6 +268,7 @@ class HuoAuth(object):
             params = self._set_params('GET', 'api.huobi.pro', f'/v1/account/accounts/{account_id}/balance')
 
             resp = requests.get(url, params=params, headers={'Content-Type': 'application/json'}).json()
+            print(resp)
             balance, frozen = {}, {}
             if resp['status'] == 'ok':
                 for currency in resp['data']['list']:
@@ -284,8 +285,8 @@ class HuoAuth(object):
 
 
 if __name__ == '__main__':
-    huo = HuoAuth('https://api.huobi.pro', '7f5dffb3-ur2fg6h2gf-31a3e34b-f14f0', '86fdfa61-06ed4556-042c0f72-4665f')
-    # print(huo.place_order('EOS_USDT', 1.0016, 11, 'sell'))
+    huo = HuoAuth('https://api.huobi.pro', '4b145d1f-e62125b7-b23d557c-mk0lklo0de', '95f79be7-490da711-a98b8019-5cd45')
+    print(huo.place_order('EOS_USDT', 1.0016, 11, 'sell'))
     # print(huo.cancel_order('EOS_USDT', '234'))
     # print(huo.cancel_all('EOS_USDT', 'sell'))
     # print(huo.open_orders('EOS_USDT'))

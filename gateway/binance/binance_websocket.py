@@ -196,7 +196,7 @@ class BinanceWs(Thread):
         try:
             for row in params['B']:
                 if row['a'] in self.data['wallet']:
-                    self.data['wallet'].update({
+                    self.data['wallet']['a'].update({
                         'balance': row['f'],
                         'frozen': row['l']
                     })
@@ -324,24 +324,24 @@ class BinanceWs(Thread):
 
 if __name__ == '__main__':
     bw = BinanceWs('wss://stream.binance.com:9443/stream', 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh')
-    bw.sub_kline('BTC_USDT')
+    # bw.sub_kline('BTC_USDT')
     # bw.sub_kline('ETH_BTC')
     bw.sub_price('BTC_USDT')
-    bw.sub_price('ETH_BTC')
+    # bw.sub_price('ETH_BTC')
     # bw.sub_orderbook('BTC_USDT')
     # bw.sub_orderbook('ETH_BTC')
     # bw.sub_trade('ETH_BTC')
     # bw.sub_trade('BTC_USDT')
-    bw.sub_order('BTC_USDT')
-    bw.sub_wallet_balance('BTC_USDT')
+    # bw.sub_order('BTC_USDT')
+    # bw.sub_wallet_balance('BTC_USDT')
 
     while True:
         for i in range(20):
             time.sleep(2)
-            print(bw.data)
-            if i == 6:
-                bw.sub_orderbook('BTC_USDT')
-            if i == 16:
-                bw.stop_orderbook('BTC_USDT')
+            print(bw.data['BTC_USDT']['price'])
+            # if i == 6:
+            #     bw.sub_orderbook('BTC_USDT')
+            # if i == 16:
+            #     bw.stop_orderbook('BTC_USDT')
 
 

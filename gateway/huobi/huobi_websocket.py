@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 from threading import Thread
 from collections import defaultdict
-from urllib.parse import urlencode
+from urllib import parse
 from datetime import datetime
 import websocket
-import time
+import re
 import json
 import gzip
 import hashlib
 import hmac
 import base64
+import operator
 
 
 class HuobiWs(Thread):
@@ -44,10 +45,12 @@ class HuobiWs(Thread):
 
     def _sign_message(self, params):
         try:
-            # get请求，参数排序并验证
-            params = sorted(params.items(), key=lambda d: d[0], reverse=False)
-            string = urlencode(params)
-            msg = f'GET\napi.huobi.pro\n/ws/v2\n{string}'
+            sort = sorted(params.items(), key=operator.itemgetter(0))
+            string = parse.urlencode(sort)
+            host = parse.urlparse(self.urlbase).hostname
+            path = parse.urlparse(self.urlbase).path
+            msg = f'GET\n{host}\n{path}\n{string}'
+
             digest = hmac.new(self.api_secret.encode('utf-8'), msg=msg.encode('utf-8'),
                               digestmod=hashlib.sha256).digest()
             sign = base64.b64encode(digest).decode()
@@ -60,9 +63,22 @@ class HuobiWs(Thread):
         while True:
             try:
                 if private:
-                    urlbase = 'wss://api.huobi.pro/ws/v2'
+                    urlbase = self.urlbase + '/v2'
                     print('Huobi start to connect ' + urlbase)
                     ws = websocket.create_connection(urlbase)
+                    params = dict()
+                    params['accessKey'] = self.api_key
+                    params['signatureMethod'] = 'HmacSHA256'
+                    params['signatureVersion'] = '2.1'
+                    params['timestamp'] = self._ts_to_uts()
+                    params['signature'] = self._sign_message(params)
+                    params['authType'] = 'api'
+                    data = {
+                        'action': 'req',
+                        'ch': 'auth',
+                        'params': params
+                    }
+                    ws.send(json.dumps(data))
                 else:
                     print('Huobi start to connect ' + self.urlbase)
                     ws = websocket.create_connection(self.urlbase)
@@ -85,21 +101,6 @@ class HuobiWs(Thread):
     def _sub(self, channel, private=False):
         try:
             if private:
-                params = {
-                    'authType': 'api',
-                    'accessKey': self.api_key,
-                    'signatureMethod': 'HmacSHA256',
-                    'signatureVersion': '2.1',
-                    'timestamp': self._ts_to_uts()
-                }
-                params['signature'] = self._sign_message(params)
-                params = {
-                    'action': 'req',
-                    'ch': 'auth',
-                    'params': params
-                }
-                self.wss.send(json.dumps(params))
-                time.sleep(1)
                 params = {
                     'action': 'sub',
                     'ch': channel
@@ -197,6 +198,53 @@ class HuobiWs(Thread):
         except Exception as e:
             print(f'Huobi get orderbook error: {e}')
 
+    def _get_order(self, params: dict, status=None, limit=200):
+        if status is None:
+            status = ['submitted', 'partial-filled', 'partial-canceled']
+        try:
+            params = params['data']
+            if params['orderStatus'] in status:
+                order = {
+                    'order_id': params['orderId'],
+                    'symbol': params['symbol'],
+                    'price': float(params['orderPrice']),
+                    'amount': float(params['orderSize']),
+                    'side': params['type'].split('-')[0],
+                    'price_avg': float(float(params['orderPrice']) / float(params['orderSize'])),
+                    'filled_amount': float(params['execAmt']),
+                    'status': params['orderStatus'],
+                    'create_time': round(params['lastActTime'] / 1000),
+                }
+                for key, value in self.data.items():
+                    if ''.join(key.split('_')) == order['symbol'].upper():
+                        order['symbol'] = key
+                        index, isExist = 0, False
+                        for item in value['order']:
+                            # update order which exists in data
+                            if item['create_time'] == order['create_time']:
+                                value['order'][index] = order
+                                isExist = True
+                                break
+                            index = index + 1
+                        if not isExist:
+                            if len(value['order']) > limit:
+                                value['order'].pop(-1)
+                            value['order'].insert(0, order)
+        except Exception as e:
+            print(f'Huobi get order error: {e}')
+
+    def _get_wallet_balance(self, params: dict):
+        try:
+            params = params['data']
+            ticker = params['currency'].upper()
+            if ticker in self.data['wallet']:
+                self.data['wallet'][ticker].update({
+                    'balance': params['balance'],
+                    'frozen': None
+                })
+        except Exception as e:
+            print(f'Huobi get wallet balance error: {e}')
+
     def on_message(self):
         def _message():
             try:
@@ -246,48 +294,39 @@ class HuobiWs(Thread):
         def _auth_message():
             try:
                 while True:
-                    recv = self.wss.recv()
-                    print(recv)
-                    # if 'ch' in recv:
-                    #     stream = self._channel_convert(recv['ch'])
-                    #     switch = {
-                    #         'trade.detail': self._get_trade,
-                    #         'kline.1min': self._get_kline,
-                    #         'detail': self._get_price,
-                    #         'mbp.refresh.20': self._get_orderbook
-                    #     }
-                    #     switch.get(stream, lambda recv: print(recv))(recv)
-                    # elif 'ping' in recv:
-                    #     self.ws.send(json.dumps({'pong': recv['ping']}))
-                    # elif 'status' in recv and recv['status'] == 'ok':
-                    #     if 'subbed' in recv:
-                    #         self.channel.append(recv['subbed'])
-                    #         recv = {
-                    #             'code': 200,
-                    #             'id': self.SUB_ID,
-                    #             'data': recv['status'],
-                    #             'msg': 'Huobi sub completely!'
-                    #         }
-                    #         print(recv)
-                    #     if 'unsubbed' in recv:
-                    #         self.channel.remove(recv['unsubbed'])
-                    #         recv = {
-                    #             'code': 200,
-                    #             'id': self.STOP_ID,
-                    #             'data': recv['status'],
-                    #             'msg': 'Huobi unsub completely!'
-                    #         }
-                    #         print(recv)
-                    # else:
-                    #     print(recv)
-                    #     break
+                    recv = json.loads(self.wss.recv())
+                    if 'action' in recv:
+                        if 'ch' in recv:
+                            if '#' in recv['ch']:
+                                stream = recv['ch'].split('#')[0]
+                            else:
+                                stream = recv['ch']
+                            switch = {
+                                'accounts.update': self._get_wallet_balance,
+                                'orders': self._get_order,
+                            }
+                            switch.get(stream, lambda r: print({
+                                'code': r['code'],
+                                'id': 0,
+                                'data': r['ch'],
+                                'msg': f'Huobi {r["message"]}'
+                            }))(recv)
+                        elif recv['action'] == 'ping':
+                            self.wss.send(json.dumps({
+                                'action': 'pong',
+                                'data': {'ts': recv['data']['ts']}
+                            }))
+                        else:
+                            print(recv)
+                    else:
+                        print(recv)
             except websocket.WebSocketException as e:
                 print(f'Huobi Sub account error {e} : try to connect again')
-                self.ws = self._connect()
-                self._sub(','.join(self.channel))
+                self.wss = self._connect(True)
+                _auth_message()
             except Exception as e:
                 print(f'Huobi Sub account error {e}: connection end')
-                self.ws.close()
+                self.wss.close()
 
         Thread(target=_message).start()
         Thread(target=_auth_message).start()
@@ -315,7 +354,7 @@ class HuobiWs(Thread):
             symbol.split('_')[0]: {'balance': None, 'frozen': None},
             symbol.split('_')[1]: {'balance': None, 'frozen': None},
         }
-        self._sub('accounts.update', private=True)
+        self._sub('accounts.update#1', private=True)
 
     def sub_order(self, symbol: str):
         self.data[symbol]['order'] = []
@@ -336,7 +375,7 @@ class HuobiWs(Thread):
 
 
 if __name__ == '__main__':
-    bw = HuobiWs('wss://api.huobi.pro/ws', '7f5dffb3-ur2fg6h2gf-31a3e34b-f14f0', '86fdfa61-06ed4556-042c0f72-4665f')
+    bw = HuobiWs('wss://api.huobi.pro/ws', '4b145d1f-e62125b7-b23d557c-mk0lklo0de', '95f79be7-490da711-a98b8019-5cd45')
     # bw.sub_kline('BTC_USDT')
     # bw.sub_kline('ETH_BTC')
     # bw.sub_price('BTC_USDT')
@@ -345,13 +384,14 @@ if __name__ == '__main__':
     # bw.sub_orderbook('ETH_BTC')
     # bw.sub_trade('ETH_BTC')
     # bw.sub_trade('BTC_USDT')
-    bw.sub_order('BTC_USDT')
-    bw.sub_wallet_balance('BTC_USDT')
+    # 认证接口：验签失败，包括API Key绑定的IP错误
+    # bw.sub_order('BTC_USDT')
+    # bw.sub_wallet_balance('BTC_USDT')
 
-    while True:
-        for i in range(10):
-            time.sleep(2)
-            print(bw.data)
+    # while True:
+    #     for i in range(10):
+    #         time.sleep(2)
+    #         print(bw.data)
             # if i == 4:
             #     bw.stop_kline('BTC_USDT')
             # if i == 8:
