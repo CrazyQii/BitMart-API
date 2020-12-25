@@ -1,4 +1,4 @@
-from threading import Thread
+from threading import Thread, enumerate
 from collections import defaultdict
 from urllib.parse import urlencode
 import requests
@@ -11,16 +11,23 @@ import hashlib
 
 
 class WootradeWs(Thread):
-    def __init__(self, urlbase, api_key, api_secret, passphrase=None):
+    def __init__(self, urlbase=None, api_key=None, api_secret=None, passphrase=None):
         super().__init__()
-        self.urlbase = urlbase
-        self.api_key = api_key
-        self.api_secret = api_secret
+        if urlbase is None:
+            self.urlbase = 'wss://api.woo.network/ws/'
+        else:
+            self.urlbase = urlbase
+        if api_key is None or api_secret is None:
+            self.api_key = 'AbmyVJGUpN064ks5ELjLfA=='
+            self.api_secret = 'QHKRXHPAW1MC9YGZMAT8YDJG2HPR'
+        else:
+            self.api_key = api_key
+            self.api_secret = api_secret
         self._init_container()
 
     def _init_container(self):
+        self.rest_url = 'https://api.woo.network/v1/client/info'
         self.data = defaultdict(dict)
-        self.urlrest = 'https://api.woo.network/v1/client/info'
         self.application_id = self._get_account_id()
         if self.application_id is None:
             self.application_id = 'e1f40bde-0e4e-4c2c-b369-bd00e434b754'
@@ -49,18 +56,19 @@ class WootradeWs(Thread):
                        'x-api-signature': sign,
                        'x-api-timestamp': ts,
                        'cache-control': 'no-cache'}
-            url = self.urlrest
+            url = self.rest_url
             resp = requests.get(url, headers=headers).json()
             if resp['success']:
                 return resp['application']['application_id']
             else:
                 print(f'Wootrade auth get account id error: {resp}')
         except Exception as e:
-            print(e)
+            print(f'Wootrade auth get account id error: {e}')
 
-    def _connect(self, symbol: str, private, streams=None):
+    def _connect(self, symbol: str, private: bool, streams=None):
         if private:
             ws = None
+            times = 0
             symbol = self._symbol_convert(symbol)
             sub_url = f'{self.urlbase}{self.application_id}/{symbol}'
             while True:
@@ -68,26 +76,46 @@ class WootradeWs(Thread):
                     time.sleep(2)
                     print(f'Wootrade start to connect auth {sub_url}')
                     ws = websocket.create_connection(sub_url)
-                    break
                 except Exception as e:
                     print(f'Wootrade connect auth error {e}')
-                    continue
+                    times = times + 1
+                    if times >= 5:
+                        print(f'Wootrade has connected {times} times, and connection end!!!')
+                        break
+                else:
+                    break
             return ws
         else:
             if streams is None:
                 streams = ['ticker']
             ws = None
+            times = 0
             sub_url = f'{self.urlbase}stream?streams={",".join(streams)}'
             while True:
                 try:
                     time.sleep(2)
                     print(f'Wootrade start to connect public {sub_url}')
                     ws = websocket.create_connection(sub_url)
-                    break
                 except Exception as e:
                     print(f'Wootrade connect public error {e}')
-                    continue
+                    times = times + 1
+                    if times >= 5:
+                        print(f'Wootrade has connected {times} times, and connection end!!!')
+                        break
+                else:
+                    break
             return ws
+
+    def _get_price(self, symbol: str, params: dict):
+        try:
+            for ticker in params['data']:
+                if self._symbol_convert(symbol) == ticker['symbol']:
+                    self.data[symbol]['price'] = {
+                        'price': ticker['c'],
+                        'timestamp': round(params['timestamp'] / 1000)
+                    }
+        except Exception as e:
+            print(f'Wootrade get price error: {e}')
 
     def _get_orderbook(self, symbol: str, params: dict):
         try:
@@ -194,63 +222,56 @@ class WootradeWs(Thread):
         except Exception as e:
             print(f'Wootrade get wallet balance error: {e}')
 
-    def _get_price(self, symbol: str, params: dict):
-        try:
-            for ticker in params['data']:
-                if self._symbol_convert(symbol) == ticker['symbol']:
-                    self.data[symbol]['price'] = ticker['c']
-        except Exception as e:
-            print(f'Wootrade get price error: {e}')
-
     def on_message(self, symbol: str, private: bool):
         # Support types
         # ticker / book / trade / order_update / position
         def _message():
             try:
                 ws = self._connect(symbol, private)
-                while True:
-                    recv = json.loads(ws.recv())
-                    if 'error' in recv and recv['error']:
-                        # identify error in receive
-                        print(f'Wootrade Sub error: {recv["data"]}')
-                        break
-                    elif recv['event'] == 'ticker':
-                        self._get_price(symbol, recv)
-                    elif recv['event'] == 'PING':  # receive ping from server and send pong
-                        print(recv)
-                        ws.send(json.dumps({'event': 'PONG'}))
-                    else:
-                        print(recv)
-            except websocket.WebSocketException as e:
-                print(f'Wootrade Sub public error {e} : try to connect again')
-                _message()
+                if ws is None:
+                    print('Binance public does not connected, and connection closed!')
+                else:
+                    while True:
+                        recv = json.loads(ws.recv())
+                        if 'error' in recv and recv['error']:
+                            # identify error in receive
+                            print(f'Wootrade Sub error: {recv["data"]}')
+                            break
+                        elif recv['event'] == 'ticker':
+                            self._get_price(symbol, recv)
+                        elif recv['event'] == 'PING':  # receive ping from server and send pong
+                            print(recv)
+                            ws.send(json.dumps({'event': 'PONG'}))
+                        else:
+                            print(recv)
             except Exception as e:
-                print(f'Wootrade Sub public error {e}: connection end')
+                print(f'Wootrade Sub public error {e}: try to connect again')
+                _message()
 
         def _auth_message():
             try:
                 ws = self._connect(symbol, private)
-                while True:
-                    recv = json.loads(ws.recv())
-                    print(recv)
-                    if 'error' in recv and recv['error']:
-                        # identify error in receive
-                        print(f'Wootrade Sub error: {recv["data"]}')
-                        break
-                    else:
-                        switch = {
-                            'TRADE': self._get_trade,
-                            'BOOK': self._get_orderbook,
-                            'ORDER_UPDATE': self._get_order,
-                            'POSITIONS': self._get_position,
-                            'PING': lambda sym, re: ws.send(json.dumps({'event': 'PONG'}))
-                        }
-                        switch.get(recv['event'], lambda params: print(recv))(symbol, recv)
-            except websocket.WebSocketException as e:
-                print(f'Wootrade Sub auth error {e} : try to connect again')
-                _auth_message()
+                if ws is None:
+                    print('Binance auth does not connected, and connection closed!')
+                else:
+                    while True:
+                        recv = json.loads(ws.recv())
+                        if 'error' in recv and recv['error']:
+                            # identify error in receive
+                            print(f'Wootrade Sub error: {recv["data"]}')
+                            break
+                        else:
+                            switch = {
+                                'TRADE': self._get_trade,
+                                'BOOK': self._get_orderbook,
+                                'ORDER_UPDATE': self._get_order,
+                                'POSITIONS': self._get_position,
+                                'PING': lambda sym, re: ws.send(json.dumps({'event': 'PONG'}))
+                            }
+                            switch.get(recv['event'], lambda params: print(recv))(symbol, recv)
             except Exception as e:
-                print(f'Wootrade Sub auth error {e}: connection end')
+                print(f'Wootrade Sub public error {e}: try to connect again')
+                _auth_message()
 
         if private:
             Thread(target=_auth_message).start()
@@ -258,37 +279,47 @@ class WootradeWs(Thread):
             Thread(target=_message).start()
 
     def sub_price(self, symbol: str):
+        self.data[symbol]['price'] = None
         self.on_message(symbol, private=False)
 
     def sub_orderbook(self, symbol: str):
+        self.data[symbol]['orderbook'] = None
         self.on_message(symbol, private=True)
 
     def sub_kline(self, symbol: str):
         self.data[symbol]['kline'] = []
+        pass
 
     def sub_trade(self, symbol: str):
+        self.data[symbol]['trade'] = None
         self.on_message(symbol, private=True)
 
     def sub_order(self, symbol: str):
+        self.data[symbol]['order'] = []
         self.on_message(symbol, private=True)
 
     def sub_wallet_balance(self, symbol: str):
+        self.data['wallet'] = {
+            symbol.split("_")[0]: {
+                'balance': None,
+                'frozen': None
+            },
+            symbol.split("_")[1]: {
+                'balance': None,
+                'frozen': None
+            }
+        }
         self.on_message(symbol, private=True)
 
 
-if __name__ == '__main__':
-    woo = WootradeWs('wss://api.woo.network/ws/', 'AbmyVJGUpN064ks5ELjLfA==', 'QHKRXHPAW1MC9YGZMAT8YDJG2HPR')
-    # woo.sub_kline('BTC_USDT')
-    woo.sub_price('BTC_USDT')
-    # woo.sub_orderbook('BTC_USDT')
-    # woo.sub_trade('BTC_USDT')
-    # woo.sub_wallet_balance('BTC_USDT')
-    # woo.sub_order('BTC_USDT')
+# wootrade = WootradeWs()
 
-    while True:
-        time.sleep(3)
-        print(woo.data['BTC_USDT']['price'])
-        # print(woo.data['BTC_USDT']['order'])
-    #     print(woo.data['trade'])
-    #     # print(woo.data['price'])
+# if __name__ == '__main__':
+#     b = WootradeWs()
+#     # b.sub_price('BTC_USDT')
+#     b.sub_price('XPO_USDT')
+#     while True:
+#         time.sleep(3)
+#         print(enumerate())
+#         print(b.data)
 

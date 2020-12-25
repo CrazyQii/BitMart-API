@@ -1,4 +1,4 @@
-from threading import Thread
+from threading import Thread, enumerate
 from datetime import datetime
 from collections import defaultdict
 import websocket
@@ -10,17 +10,26 @@ import json
 import zlib
 
 
-class OkexWss(Thread):
-    def __init__(self, urlbase, api_key, api_secret, passphrase):
+class OkexWs(Thread):
+    def __init__(self, urlbase=None, api_key=None, api_secret=None, passphrase=None):
         super().__init__()
-        self.urlbase = urlbase
-        self.api_key = api_key
-        self.api_secret = api_secret
-        self.passphrase = passphrase
+        if urlbase is None:
+            self.urlbase = 'wss://real.okex.com:8443/ws/v3'
+        else:
+            self.urlbase = urlbase
+        if api_key is None or api_secret is None or passphrase is None:
+            self.api_key = 'dda0063c-70fc-42b1-8390-281e77b532a5'
+            self.api_secret = 'A06AFB73716F15DC1805D183BCE07BED'
+            self.passphrase = 'okexpassphrase'
+        else:
+            self.api_key = api_key
+            self.api_secret = api_secret
+            self.passphrase = passphrase
         self._init_container()
 
     def _init_container(self):
         self.data = defaultdict(dict)
+        self.tmp_orderbook = {'asks': [], 'bids': []}
         self.channel = []
         self.start_time = None                          # keep alive
         self.header_ts = str(round(time.time(), 3))     # sign timestamp
@@ -47,6 +56,41 @@ class OkexWss(Thread):
         except Exception as e:
             print(e)
 
+    def _binary_search(self, alist, item, reverse=False):
+        """二分查找"""
+        length = len(alist)
+        start = 0
+        end = length - 1
+        if reverse:
+            while start <= end:
+                mid = (start + end) // 2
+                if alist[mid][0] == item[0]:
+                    if item[1] == '0':
+                        alist.pop(mid)
+                    else:
+                        alist[mid] = item
+                    return alist
+                elif item[0] < alist[mid][0]:
+                    start = mid + 1
+                else:
+                    end = mid - 1
+            alist.insert(start, item)
+        else:
+            while start <= end:
+                mid = (start + end) // 2
+                if alist[mid][0] == item[0]:
+                    if item[1] == '0':
+                        alist.pop(mid)
+                    else:
+                        alist[mid] = item
+                    return alist
+                elif item[0] < alist[mid][0]:
+                    end = mid - 1
+                else:
+                    start = mid + 1
+            alist.insert(start, item)
+        return alist
+
     def _sign_message(self):
         try:
             message = f'{self.header_ts}GET/users/self/verify'
@@ -59,6 +103,7 @@ class OkexWss(Thread):
 
     def _connect(self):
         ws = None
+        times = 0
         while True:
             try:
                 time.sleep(2)
@@ -71,10 +116,15 @@ class OkexWss(Thread):
                     'Content-Type': 'application/json'
                 }
                 ws = websocket.create_connection(self.urlbase, header=headers)
-                break
             except Exception as e:
                 print(f'Okex connect error {e}')
-                continue
+                times = times + 1
+                time.sleep(3)
+                if times >= 5:
+                    print(f'Okex has connected {times} times, and connection end!!!')
+                    break
+            else:
+                break
         return ws
 
     def _stop(self, channel):
@@ -83,6 +133,8 @@ class OkexWss(Thread):
                 'op': 'unsubscribe',
                 'args': [channel]
             }
+            if channel in self.channel:
+                self.channel.remove(channel)
             self.ws.send(json.dumps(params))
         except Exception as e:
             print(e)
@@ -99,6 +151,7 @@ class OkexWss(Thread):
                     'op': 'subscribe',
                     'args': [channel]
                 }
+            self.channel.append(channel)
             self.ws.send(json.dumps(params))
         except Exception as e:
             print(e)
@@ -116,10 +169,8 @@ class OkexWss(Thread):
                 'high': float(params[2])
             }
             if len(self.data[ticker]['kline']) > limit:
-                self.data[ticker]['kline'].insert(0, kline)
                 self.data[ticker]['kline'].pop()
-            else:
-                self.data[ticker]['kline'].insert(0, kline)
+            self.data[ticker]['kline'].insert(0, kline)
         except Exception as e:
             print(f'Okex get kline error: {e}')
 
@@ -141,8 +192,11 @@ class OkexWss(Thread):
     def _get_price(self, params: dict):
         try:
             ticker = '_'.join(params['data'][0]['instrument_id'].split('-'))
-            params = params['data'][0]
-            self.data[ticker]['price'] = params['last']
+            price = {
+                'price': params['data'][0]['last'],
+                'timestamp': self._utc_to_ts(params['data'][0]['timestamp'])
+            }
+            self.data[ticker]['price'] = price
         except Exception as e:
             print(f'Okex get price error: {e}')
 
@@ -152,6 +206,8 @@ class OkexWss(Thread):
             if params['action'] == 'partial':
                 # partial part
                 params = params['data'][0]
+                self.tmp_orderbook['asks'] = params['asks']
+                self.tmp_orderbook['bids'] = params['bids']
                 orderbook = {'buys': [], 'sells': []}
                 total_amount_buys = 0
                 total_amount_sells = 0
@@ -176,48 +232,31 @@ class OkexWss(Thread):
                 # update part
                 params = params['data'][0]
                 for ask_new in params['asks']:
-                    index, is_new = 0, False
-                    for ask_old in self.data[ticker]['orderbook']['sells']:
-                        if ask_old['price'] == ask_new[0]:
-                            if ask_new[1] == 0:
-                                self.data[ticker]['orderbook']['sells'].pop(index)
-                            else:
-                                self.data[ticker]['orderbook']['sells'][index] = {
-                                    'amount': ask_new(ask_new[1]),
-                                    'total': None,  # 无法计算
-                                    'price': float(ask_new[0]),
-                                    'count': ask_new[0]
-                                }
-                        index = index + 1
-                    if is_new:
-                        self.data[ticker]['orderbook']['ask'].append({
-                            'amount': float(ask_new[1]),
-                            'total': None,  # 无法计算
-                            'price': float(ask_new[0]),
-                            'count': ask_new[2]
-                        })
+                    self.tmp_orderbook['asks'] = self._binary_search(self.tmp_orderbook['asks'], ask_new, reverse=False)
+
                 for buy_new in params['bids']:
-                    index, is_new = 0, True
-                    for ask_old in self.data[ticker]['orderbook']['buys']:
-                        if ask_old['price'] == buy_new[0]:
-                            is_new = False
-                            if buy_new[1] == 0:
-                                self.data[ticker]['orderbook']['buys'].pop(index)
-                            else:
-                                self.data[ticker]['orderbook']['buys'][index] = {
-                                    'amount': float(buy_new[1]),
-                                    'total': None,  # 无法计算
-                                    'price': float(buy_new[0]),
-                                    'count': buy_new[2]
-                                }
-                        index = index + 1
-                    if is_new:
-                        self.data[ticker]['orderbook']['buys'].append({
-                            'amount': float(buy_new[1]),
-                            'total': None,  # 无法计算
-                            'price': float(buy_new[0]),
-                            'count': buy_new[2]
-                        })
+                    self.tmp_orderbook['bids'] = self._binary_search(self.tmp_orderbook['bids'], buy_new, reverse=True)
+
+                orderbook = {'buys': [], 'sells': []}
+                total_amount_buys = 0
+                total_amount_sells = 0
+                for item in self.tmp_orderbook['asks']:
+                    total_amount_sells += float(item[1])
+                    orderbook['sells'].append({
+                        'amount': float(item[1]),
+                        'total': total_amount_sells,
+                        'price': float(item[0]),
+                        'count': int(item[2])
+                    })
+                for item in self.tmp_orderbook['bids']:
+                    total_amount_buys += float(item[1])
+                    orderbook['buys'].append({
+                        'amount': float(item[1]),
+                        'total': total_amount_buys,
+                        'price': float(item[0]),
+                        'count': int(item[2])
+                    })
+                self.data[ticker]['orderbook'] = orderbook
         except Exception as e:
             print(f'Okex get orderbook error: {e}')
 
@@ -269,68 +308,72 @@ class OkexWss(Thread):
             print(f'Okex get wallet balance error: {e}')
 
     def _ping(self):
-        while True:
-            if time.time() - self.start_time > 20:
-                self.ws.send('ping')
-            time.sleep(1)
+        if self.ws is None:
+            print('Okex public does not connected, and connection closed!')
+        else:
+            while True:
+                if time.time() - self.start_time > 20:
+                    self.ws.send('ping')
+                time.sleep(1)
 
     def on_message(self):
         def _message():
             try:
-                while True:
-                    # record interval time
-                    self.start_time = time.time()
-                    # start to receive data
-                    recv = self._inflate(self.ws.recv())
-                    if recv == 'pong':
-                        print('pong')
-                        continue
-                    else:
-                        if recv is None:
-                            raise Exception('Receive is None')
+                if self.ws is None:
+                    print('Okex public does not connected, and connection closed!')
+                else:
+                    while True:
+                        # record interval time
+                        self.start_time = time.time()
+                        # start to receive data
+                        recv = self._inflate(self.ws.recv())
+                        if recv == 'pong':
+                            print('okex receive pong')
+                            continue
                         else:
-                            recv = json.loads(recv)
-                    if 'table' in recv:
-                        switch = {
-                            'spot/ticker': self._get_price,
-                            'spot/trade': self._get_trade,
-                            'spot/candle60s': self._get_kline,
-                            'spot/depth': self._get_orderbook,
-                            'spot/account': self._get_wallet_balance,
-                            'spot/order': self._get_order
-                        }
-                        switch.get(recv['table'], lambda recv: print(recv))(recv)
-                    elif 'event' in recv:
-                        switch = {
-                            'login': lambda recv: print({
-                                'code': 200,
-                                'id': 2,
-                                'data': recv['success'],
-                                'msg': 'Okex login completely!'
-                            }),
-                            'subscribe': lambda recv: print({
-                                'code': 200,
-                                'id': 0,
-                                'data': 'ok',
-                                'msg': f'Okex sub \'{recv["channel"]}\' completely!'
-                            }),
-                            'unsubscribe': lambda recv: print({
-                                'code': 200,
-                                'id': 1,
-                                'data': 'ok',
-                                'msg': f'Okex unsub \'{recv["channel"]}\' completely!'
-                            })
-                        }
-                        switch.get(recv['event'], lambda recv: print(recv))(recv)
-                    else:
-                        raise Exception(f'STREAM DATA: {recv}')
-            except websocket.WebSocketException as e:
+                            if recv is None:
+                                raise Exception('Receive is None')
+                            else:
+                                recv = json.loads(recv)
+                        if 'table' in recv:
+                            switch = {
+                                'spot/ticker': self._get_price,
+                                'spot/trade': self._get_trade,
+                                'spot/candle60s': self._get_kline,
+                                'spot/depth': self._get_orderbook,
+                                'spot/account': self._get_wallet_balance,
+                                'spot/order': self._get_order
+                            }
+                            switch.get(recv['table'], lambda r: print(r))(recv)
+                        elif 'event' in recv:
+                            switch = {
+                                'login': lambda r: print({
+                                    'code': 200,
+                                    'id': 2,
+                                    'data': r['success'],
+                                    'msg': 'Okex login completely!'
+                                }),
+                                'subscribe': lambda r: print({
+                                    'code': 200,
+                                    'id': 0,
+                                    'data': 'ok',
+                                    'msg': f'Okex sub "{r["channel"]}" completely!'
+                                }),
+                                'unsubscribe': lambda r: print({
+                                    'code': 200,
+                                    'id': 1,
+                                    'data': 'ok',
+                                    'msg': f'Okex unsub "{r["channel"]}" completely!'
+                                })
+                            }
+                            switch.get(recv['event'], lambda r: print(r))(recv)
+                        else:
+                            raise Exception(f'STREAM DATA: {recv}')
+            except Exception as e:
                 print(f'Okex Sub error {e} : try to connect again')
                 self.ws = self._connect()
                 self._sub(','.join(self.channel))
-            except Exception as e:
-                print(f'Okex Sub error {e}: connection end')
-                self.ws.close()
+                _message()
 
         Thread(target=_message).start()
         time.sleep(1)
@@ -390,21 +433,13 @@ class OkexWss(Thread):
         self._stop(f'spot/depth:{self._symbol_convert(symbol)}')
 
 
-if __name__ == '__main__':
-    okws = OkexWss('wss://real.okex.com:8443/ws/v3', 'dda0063c-70fc-42b1-8390-281e77b532a5', 'A06AFB73716F15DC1805D183BCE07BED', 'okexpassphrase')
-    # okws.sub_kline('BTC_USDT')
-    okws.sub_price('BTC_USDT')
-    # okws.sub_orderbook('BTC_USDT')
-    # okws.sub_trade('BTC_USDT')
-    # okws.sub_trade('ETH_BTC')
-    # okws.sub_wallet_balance('BTC_USDT')
-    # okws.sub_order('BTC_USDT')
+# okex = OkexWs()
 
+if __name__ == '__main__':
+    b = OkexWs()
+    # b.sub_price('BTC_USDT')
+    b.sub_orderbook('BTC_USDT')
     while True:
-        for i in range(10):
-            time.sleep(2)
-            print(okws.data['BTC_USDT']['price'])
-    #         if i == 4:
-    #             okws.stop_kline('BTC_USDT')
-    #         if i == 8:
-    #             okws.sub_kline('BTC_USDT')
+        time.sleep(1)
+        # print(enumerate())
+        print(b.data)

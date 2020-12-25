@@ -1,65 +1,84 @@
 #!/usr/bin/python3
-from threading import Thread
+from threading import Thread, enumerate
 from collections import defaultdict
 import websocket
 import json
 import time
 import requests
+import logging
 
 
 class BinanceWs(Thread):
-    def __init__(self, urlbase, api_key, api_secret=None, passphrase=None):
+    def __init__(self, urlbase=None, api_key=None, api_secret=None, passphrase=None):
         super().__init__()
-        self.urlbase = urlbase
-        self.api_key = api_key
+        if urlbase is None:
+            self.urlbase = 'wss://stream.binance.com:9443/stream'
+        else:
+            self.urlbase = urlbase
+        if api_key is None:
+            self.api_key = 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh'
+        else:
+            self.api_key = api_key
         self._init_container()
 
     def _init_container(self):
-        self.channel = []               # record subscribed channel
-        self.data = defaultdict(dict)   # record lasted data
-        self.SUB_ID = 0                 # start to subscribe id
-        self.STOP_ID = 1                # stop subscribing id
-        self.listenKey = None           # listenKey
-        self.ws = self._connect()       # create connection with ws
+        self.rest_url = 'https://api.binance.com/api/v3/userDataStream'
+        self.channel = []  # record subscribed channel
+        self.data = defaultdict(dict)  # record lasted data
+        self.SUB_ID = 0  # start to subscribe id
+        self.STOP_ID = 1  # stop subscribing id
+        self.lastUpdateId = None  # latest orderbook id
+        self.listenKey = None  # listenKey
+        self.ws = self._connect(private=False)  # create connection with ws
         self.wss = self._connect(private=True)
-        self.on_message()               # keep receiving data
+        self.on_message()
 
     def _symbol_convert(self, symbol: str):
         return ''.join(symbol.split('_')).lower()
 
     def _sign_message(self):
-        def sign():
-            try:
-                while True:
-                    urlbase = 'https://api.binance.com/api/v3/userDataStream'
-                    resp = requests.post(urlbase, headers={'X-MBX-APIKEY': self.api_key})
+        def _sign():
+            while True:
+                try:
+                    resp = requests.post(self.rest_url, headers={'X-MBX-APIKEY': self.api_key})
                     if resp.status_code == 200:
                         self.listenKey = resp.json()['listenKey']
+                        # keep listenkey alive every 30min
+                        time.sleep(1800)
                     else:
-                        print('Binance get listenKey error')
-                    # keep listenkey alive every 30min
-                    time.sleep(1800)
-            except Exception as e:
-                print(e)
-        Thread(target=sign).start()
+                        logging.error(f'Binance cannot get listenKey: {resp.json()}')
+                        break
+                except Exception as e:
+                    logging.error(f'Binance sign message error: {e}')
+                    break
+        Thread(target=_sign).start()
 
-    def _connect(self, private=False):
+    def _connect(self, private: bool):
         ws = None
-        self._sign_message()
+        times = 0
         while True:
             try:
-                time.sleep(2)
                 if private:
+                    self._sign_message()
+                    time.sleep(1)
+                    if self.listenKey is None:
+                        raise Exception('ListenKey is None')
                     urlbase = f'{self.urlbase}?streams={self.listenKey}'
-                    print('Binance start to connect ' + urlbase)
+                    logging.info('Binance start to connect ' + urlbase)
                     ws = websocket.create_connection(urlbase)
                 else:
-                    print('Binance start to connect ' + self.urlbase)
+                    time.sleep(1)
+                    logging.info('Binance start to connect ' + self.urlbase)
                     ws = websocket.create_connection(self.urlbase)
-                break
             except Exception as e:
-                print(f'Binance connect error {e}')
-                continue
+                logging.error(f'Binance connect error: {e}')
+                time.sleep(3)
+                times = times + 1
+                if times >= 5:
+                    logging.error(f'Binance has connected {times} times, and connection end!!!')
+                    break
+            else:
+                break
         return ws
 
     def _stop(self, channel):
@@ -71,7 +90,7 @@ class BinanceWs(Thread):
             }
             self.ws.send(json.dumps(params))
         except Exception as e:
-            print(e)
+            logging.warning(f'Binance stop channel warning: {e}')
 
     def _sub(self, channel):
         try:
@@ -82,7 +101,7 @@ class BinanceWs(Thread):
             }
             self.ws.send(json.dumps(params))
         except Exception as e:
-            print(e)
+            logging.warning(f'Binance start channel warning: {e}')
 
     # format data
     def _get_kline(self, params: dict, limit=500):
@@ -97,7 +116,6 @@ class BinanceWs(Thread):
                 'low': float(params['k']['l']),
                 'high': float(params['k']['h'])
             }
-            # 从本地data中找到到对应的订阅频道
             for key, value in self.data.items():
                 if ''.join(key.split('_')) == ticker:
                     if len(value['kline']) > limit:
@@ -107,12 +125,12 @@ class BinanceWs(Thread):
                         value['kline'].insert(0, kline)
                     break
         except Exception as e:
-            print(f'Binance get kline error: {e}')
+            logging.warning(f'Binance get kline warning: {e}')
 
     def _get_trade(self, params: dict):
         try:
             ticker = params['stream'].split('@')[0].upper()  # ticker
-            params = params['data']                          # data
+            params = params['data']  # data
             trade = {
                 'count': float(params['q']),
                 'order_time': round(params['E'] / 1000),
@@ -124,38 +142,45 @@ class BinanceWs(Thread):
                 # standard for Bitmart symbol
                 if ''.join(key.split('_')) == ticker:
                     value['trade'] = trade
-                    value['price'] = trade['price']
+                    value['price'] = {
+                        'price': trade['price'],
+                        'timestamp': trade['order_time']
+                    }
         except Exception as e:
-            print(f'Binance get trade error: {e}')
+            logging.warning(f'Binance get trade warning: {e}')
 
     def _get_orderbook(self, params: dict):
         try:
             ticker = params['stream'].split('@')[0].upper()
             params = params['data']
-            orderbook = {'buys': [], 'sells': []}
-            total_amount_buys = 0
-            total_amount_sells = 0
-            for item in params['asks']:
-                total_amount_sells += float(item[1])
-                orderbook['sells'].append({
-                    'amount': float(item[1]),
-                    'total': total_amount_sells,
-                    'price': float(item[0]),
-                    'count': 1
-                })
-            for item in params['bids']:
-                total_amount_buys += float(item[1])
-                orderbook['buys'].append({
-                    'amount': float(item[1]),
-                    'total': total_amount_buys,
-                    'price': float(item[0]),
-                    'count': 1
-                })
+            if params['lastUpdateId'] == self.lastUpdateId:
+                orderbook = None
+            else:
+                self.lastUpdateId = params['lastUpdateId']
+                orderbook = {'buys': [], 'sells': []}
+                total_amount_buys = 0
+                total_amount_sells = 0
+                for item in params['asks']:
+                    total_amount_sells += float(item[1])
+                    orderbook['sells'].append({
+                        'amount': float(item[1]),
+                        'total': total_amount_sells,
+                        'price': float(item[0]),
+                        'count': 1
+                    })
+                for item in params['bids']:
+                    total_amount_buys += float(item[1])
+                    orderbook['buys'].append({
+                        'amount': float(item[1]),
+                        'total': total_amount_buys,
+                        'price': float(item[0]),
+                        'count': 1
+                    })
             for key, value in self.data.items():
                 if ''.join(key.split('_')) == ticker:
                     value['orderbook'] = orderbook
         except Exception as e:
-            print(f'Binance get orderbook error: {e}')
+            logging.warning(f'Binance get orderbook warning: {e}')
 
     def _get_order(self, params: dict, status=None, limit=200):
         if status is None:
@@ -190,7 +215,7 @@ class BinanceWs(Thread):
                                 value['order'].pop(-1)
                             value['order'].insert(0, order)
         except Exception as e:
-            print(f'Binance get order error: {e}')
+            logging.warning(f'Binance get order warning: {e}')
 
     def _get_wallet_balance(self, params: dict):
         try:
@@ -201,14 +226,18 @@ class BinanceWs(Thread):
                         'frozen': row['l']
                     })
         except Exception as e:
-            print(f'Binance get wallet error: {e}')
+            logging.warning(f'Binance get wallet warning: {e}')
 
     # main function
     def on_message(self):
         def _message():
             try:
+                if self.ws is None:
+                    logging.error('Binance public does not connected, and connection closed!')
+                    return
                 while True:
                     recv = json.loads(self.ws.recv())
+                    # print(recv)
                     if 'stream' in recv:
                         # stream data
                         stream = '@'.join(recv['stream'].split('@')[1:])
@@ -217,7 +246,7 @@ class BinanceWs(Thread):
                             'kline_1m': self._get_kline,
                             'depth20@100ms': self._get_orderbook,
                         }
-                        switch.get(stream, lambda recv: print(recv))(recv)
+                        switch.get(stream, lambda r: logging.info(r))(recv)
                     elif recv['id'] == self.SUB_ID:
                         recv = {
                             'code': 200,
@@ -225,7 +254,7 @@ class BinanceWs(Thread):
                             'data': 'ok',
                             'msg': 'Binance sub completely!'
                         }
-                        print(recv)
+                        logging.info(recv)
                     elif recv['id'] == self.STOP_ID:
                         recv = {
                             'code': 200,
@@ -233,38 +262,39 @@ class BinanceWs(Thread):
                             'data': 'ok',
                             'msg': 'Binance stop sub completely!'
                         }
-                        print(recv)
+                        logging.info(recv)
                     else:
-                        raise Exception(f'STREAM DATA: {recv}')
-            except websocket.WebSocketException as e:
-                print(f'Binance Sub error {e} : try to connect again')
-                self.ws = self._connect()
-                self._sub(','.join(self.channel))
+                        logging.info(recv)
             except Exception as e:
-                print(f'Binance Sub error {e}: connection end')
-                self.ws.close()
+                logging.error(f'Binance Sub error {e}: try to connect again')
+                self.ws = self._connect(private=False)
+                self._sub(','.join(self.channel))
+                _message()
 
         def _auth_message():
             try:
+                if self.wss is None:
+                    logging.error('Binance auth does not connected, and connection closed!')
+                    return
                 while True:
                     recv = json.loads(self.wss.recv())
                     # print(recv)
                     if recv['e'] == 'outboundAccountPosition':
                         self._get_wallet_balance(recv)
                     elif recv['e'] == 'balanceUpdate':
-                        print(recv)
+                        logging.info(recv)
                     elif recv['e'] == 'executionReport':
                         self._get_order(recv)
                     else:
-                        print(recv)
-            except websocket.WebSocketException as e:
-                print(f'Binance Sub account error {e} : try to connect again')
-                self._connect(private=True)
+                        logging.info(recv)
             except Exception as e:
-                print(f'Binance Sub account error {e}: connection end')
-                self.wss.close()
+                logging.error(f'Binance Sub auth error {e}: try to connect again')
+                self.ws = self._connect(private=False)
+                self._sub(','.join(self.channel))
+                self.on_message()
+
         Thread(target=_message).start()
-        Thread(target=_auth_message).start()
+        # Thread(target=_auth_message).start()
 
     # subscribe
     def sub_price(self, symbol: str):
@@ -286,6 +316,22 @@ class BinanceWs(Thread):
         self.channel.append(f'{self._symbol_convert(symbol)}@trade')
         self._sub(f'{self._symbol_convert(symbol)}@trade')
 
+    # subscribe account
+    def sub_wallet_balance(self, symbol: str):
+        self.data['wallet'] = {
+            symbol.split("_")[0]: {
+                'balance': None,
+                'frozen': None
+            },
+            symbol.split("_")[1]: {
+                'balance': None,
+                'frozen': None
+            }
+        }
+
+    def sub_order(self, symbol: str):
+        self.data[symbol]['order'] = []
+
     # stop subscribing
     def stop_kline(self, symbol: str):
         channel = f'{self._symbol_convert(symbol)}@kline_1m'
@@ -305,43 +351,12 @@ class BinanceWs(Thread):
             self.channel.remove(channel)
         self._stop(channel)
 
-    # subscribe account
-    def sub_wallet_balance(self, symbol: str):
-        self.data['wallet'] = {
-            symbol.split("_")[0]: {
-                'balance': None,
-                'frozen': None
-            },
-            symbol.split("_")[1]: {
-                'balance': None,
-                'frozen': None
-            }
-        }
-
-    def sub_order(self, symbol: str):
-        self.data[symbol]['order'] = []
-
 
 if __name__ == '__main__':
-    bw = BinanceWs('wss://stream.binance.com:9443/stream', 'peHvRKu7QGVZIezAlZfIAhmK5zPxa5ptLo6kkMOLGeJpD1UJhpufUVY6WvYqrDrh')
-    # bw.sub_kline('BTC_USDT')
-    # bw.sub_kline('ETH_BTC')
-    bw.sub_price('BTC_USDT')
-    # bw.sub_price('ETH_BTC')
-    # bw.sub_orderbook('BTC_USDT')
-    # bw.sub_orderbook('ETH_BTC')
-    # bw.sub_trade('ETH_BTC')
-    # bw.sub_trade('BTC_USDT')
-    # bw.sub_order('BTC_USDT')
-    # bw.sub_wallet_balance('BTC_USDT')
+    b = BinanceWs()
+    b.sub_price('BTC_USDT')
+    # b.sub_kline('XPO_USDT')
 
     while True:
-        for i in range(20):
-            time.sleep(2)
-            print(bw.data['BTC_USDT']['price'])
-            # if i == 6:
-            #     bw.sub_orderbook('BTC_USDT')
-            # if i == 16:
-            #     bw.stop_orderbook('BTC_USDT')
-
-
+        time.sleep(2)
+        print(b.data)
