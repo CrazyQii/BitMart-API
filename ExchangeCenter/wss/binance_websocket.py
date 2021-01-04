@@ -241,6 +241,7 @@ class BinanceWs(Thread):
                     return
                 while True:
                     recv = json.loads(self.ws.recv())
+                    # print(recv)
                     if 'stream' in recv:  # response of data
                         stream = '@'.join(recv['stream'].split('@')[1:])
                         switch = {
@@ -356,8 +357,8 @@ class BinanceWs(Thread):
 
 if __name__ == '__main__':
     b = BinanceWs()
-    b.sub_trade('BTC_USDT')
-    # b.sub_kline('XPO_USDT')
+    # b.sub_trade('BTC_USDT')
+    b.sub_kline('PAX_USDT')
 
     while True:
         time.sleep(2)

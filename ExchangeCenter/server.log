@@ -1,0 +1,21 @@
+12/31/2020 10:30:52 AM - INFO - Binance start to connect wss://stream.binance.com:9443/stream
+12/31/2020 10:30:55 AM - ERROR - Binance connect error: ListenKey is None
+12/31/2020 10:30:59 AM - INFO - Binance start to connect wss://stream.binance.com:9443/stream?streams=T4Js9Imu0rZAnlE9YR1CY5ACG7NeVlpBhOUM2x76cgLyKZ2XynIBnKIjgGCM
+12/31/2020 10:31:00 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:31:04 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:31:06 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:31:43 AM - ERROR - receiver error: Error 10061 connecting to localhost:6379. 由于目标计算机积极拒绝，无法连接。.
+12/31/2020 10:36:27 AM - INFO - Binance start to connect wss://stream.binance.com:9443/stream
+12/31/2020 10:36:28 AM - INFO - Binance start to connect wss://stream.binance.com:9443/stream?streams=T4Js9Imu0rZAnlE9YR1CY5ACG7NeVlpBhOUM2x76cgLyKZ2XynIBnKIjgGCM
+12/31/2020 10:36:29 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:36:31 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:36:35 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:36:41 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:36:45 AM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 10:37:26 AM - ERROR - Publisher error: Error 10061 connecting to localhost:6379. 由于目标计算机积极拒绝，无法连接。.
+12/31/2020 16:00:02 PM - ERROR - receiver error: Error 10061 connecting to localhost:6379. 由于目标计算机积极拒绝，无法连接。.
+12/31/2020 16:00:54 PM - INFO - Binance start to connect wss://stream.binance.com:9443/stream
+12/31/2020 16:00:56 PM - INFO - Binance start to connect wss://stream.binance.com:9443/stream?streams=T4Js9Imu0rZAnlE9YR1CY5ACG7NeVlpBhOUM2x76cgLyKZ2XynIBnKIjgGCM
+12/31/2020 16:00:56 PM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 16:04:02 PM - INFO - {'code': 200, 'id': 0, 'data': 'ok', 'msg': 'Binance sub completely!'}
+12/31/2020 16:04:30 PM - INFO - Okex start to connect wss://real.okex.com:8443/ws/v3

@@ -1,1 +1,0 @@
-print(isinstance(['sf', 'saf'], list))
