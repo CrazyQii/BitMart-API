@@ -175,7 +175,7 @@ class HuoPublic(object):
 
     def get_kline(self, symbol: str, time_period=60, interval=1):
         try:
-            url = self.urlbase + f'/market/history/kline?symbol={self._symbol_convert(symbol)}&period={interval}min'
+            url = self.urlbase + f'/market/history/kline?symbol={self._symbol_convert(symbol)}&period={interval}day'
             resp = requests.get(url).json()
             lines = []
             if resp['status'] == 'ok':
@@ -198,9 +198,9 @@ class HuoPublic(object):
 if __name__ == '__main__':
     huo = HuoPublic('https://api.huobi.pro')
     # print(huo.get_symbol_info('BTC_USDT'))
-    print(huo.get_price('BTC_USDT'))
+    # print(huo.get_price('BTC_USDT'))
     # print(huo.get_ticker('BTC_USDT'))
     # print(huo.get_orderbook('BTC_USDT'))
     # print(huo.get_trades('BTC_USDT'))
-    # print(huo.get_kline('BTC_USDT'))
+    print(huo.get_kline('BTC_USDT'))
 

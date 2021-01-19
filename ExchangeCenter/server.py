@@ -16,7 +16,7 @@ import json
 import logging
 
 
-class Gateway(Thread):
+class Server(Thread):
     def __init__(self):
         super().__init__()
         self.channels = []  # save subscribed channels
@@ -142,4 +142,4 @@ class Gateway(Thread):
 
 
 if __name__ == '__main__':
-    g = Gateway()
+    Server()

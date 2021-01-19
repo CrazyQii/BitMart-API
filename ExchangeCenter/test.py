@@ -24,7 +24,7 @@ def get_logger(logger_name, log_file, level=logging.INFO):
 
 def client1():
     logger1 = get_logger('client1', 'client1.log')
-    for item in client.receiver('PAX_USDT', 'kline', 'binance'):
+    for item in client.receiver('USDC_USDT', 'kline', 'binance'):
         logger1.info(item)
 
 

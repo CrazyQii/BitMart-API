@@ -105,7 +105,7 @@ class BinanceWs(Thread):
             logging.error(f'Binance start channel error: {e}')
 
     # format data
-    def _get_kline(self, params: dict, limit=500):
+    def _get_kline(self, params: dict, limit=1000):
         try:
             ticker = params['stream'].split('@')[0].upper()  # ticker
             params = params['data']
@@ -358,7 +358,7 @@ class BinanceWs(Thread):
 if __name__ == '__main__':
     b = BinanceWs()
     # b.sub_trade('BTC_USDT')
-    b.sub_kline('PAX_USDT')
+    b.sub_kline('BTC_USDT')
 
     while True:
         time.sleep(2)

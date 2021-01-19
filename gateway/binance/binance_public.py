@@ -180,7 +180,7 @@ class BinancePublic:
             end_time = round(time.time())
             start_time = end_time - time_period
             url = self.urlbase + f'/api/v3/klines?symbol={self._symbol_convert(symbol)}' \
-                                 f'&interval={interval}m&startTime={start_time}&endTime={end_time}'
+                                 f'&interval={interval}h&limit=1000'
             resp = requests.get(url)
             lines = []
             if resp.status_code == 200:
@@ -204,8 +204,11 @@ class BinancePublic:
 if __name__ == '__main__':
     binance = BinancePublic('https://api.binance.com')
     # print(binance.get_symbol_info('BTC_USDT'))
-    print(binance.get_price('BTC_USDT'))
+    # print(binance.get_price('BTC_USDT'))
     # print(binance.get_ticker('BTC_USDT'))
     # print(binance.get_orderbook('BTC_USDT'))
     # print(binance.get_trades('BTC_USDT'))
-    print(binance.get_kline('BTC_USDT'))
+    # import pandas as pd
+    # data = pd.DataFrame(binance.get_kline('PAX_USDT'))
+    # data.to_csv('data.csv', index=False)
+    # print(binance.get_kline('BTC_USDT'))
