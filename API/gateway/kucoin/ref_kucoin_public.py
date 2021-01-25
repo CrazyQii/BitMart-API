@@ -3,7 +3,7 @@ import requests
 import time
 import os
 import json
-from gateway.kucoin.kucoin_public import KucoinPublic
+from Gateway.kucoin.kucoin_public import KucoinPublic
 
 class RefKucoinPublic(object):
     def __init__(self, urlbase):

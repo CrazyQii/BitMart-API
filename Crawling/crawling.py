@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 from all_symbols import mm_symbols, ty_symbols
+from auto_email import AutoEmail
+from openpyxl import Workbook
 import requests
-import pandas as pd
 import time
 
 
@@ -12,27 +13,25 @@ class BitmartCrawling(object):
         self.headers = {
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
         }
-        self.init_csv()
+        self.data = []
 
     def symbol_convert(self, symbol: str):
         return symbol.replace('/', '_')
 
-    def init_csv(self):
-        """ 写入文件头 """
+    def write_to_xlsx(self):
+        """ 写入数据到excel """
         try:
-            a = pd.DataFrame(columns=['symbol', 'price', 'spread', 'depth+2%', 'depth-2%', 'volume', 'volume%', 'spread>5%', 'category'])
-            a.to_csv('data.csv', mode='w', index=False)
-            print('Init csv file successfully!')
+            wb = Workbook()  # 创建工作簿
+            ws = wb.active  # 正在运行的工作表
+            ws.title = 'data'  # 表名称
+            header = ['symbol', 'price', 'spread', 'depth+2%', 'depth-2%', 'volume', 'volume%', 'spread>5%', 'category']
+            ws.append(header)  # 添加索引
+            for row, item in enumerate(self.data):  # 添加数据
+                ws.append(item)
+            wb.save('data.xlsx')
+            print('Save data to excel successfully!')
         except Exception as e:
-            print(f'Init csv error:{e}')
-
-    def write_to_csv(self, data):
-        """ 写入文件 """
-        try:
-            data = pd.DataFrame(data)
-            data.to_csv('data.csv', mode='a', index=False, header=False)
-        except Exception as e:
-            print(f'Write to csv error:{e}')
+            print(f'Write to xlsx error: {e}')
 
     def request_page(self, url, more=False):
         try:
@@ -81,27 +80,34 @@ class BitmartCrawling(object):
                 else:
                     category = 4
 
-                info = {
-                    'symbol':  symbol,
-                    'price':  price,
-                    'spread':  spread,
-                    'depth+2%':  ticker.find_all('td')[6].get_text().replace('\n', ''),
-                    'depth-2%':  ticker.find_all('td')[7].get_text().replace('\n', ''),
-                    'volume':  ticker.find_all('td')[8].find('div').get_text().replace('\n', ''),
-                    'volume%':  ticker.find_all('td')[9].get_text().replace('\n', ''),
-                    'spread>5%': limit_spread,
-                    'category': category
-                }
+                info = [
+                    symbol,
+                    price,
+                    spread,
+                    ticker.find_all('td')[6].get_text().replace('\n', ''),  # depth+2%
+                    ticker.find_all('td')[7].get_text().replace('\n', ''),  # depth-2%
+                    ticker.find_all('td')[8].find('div').get_text().replace('\n', ''),  # volume
+                    ticker.find_all('td')[9].get_text().replace('\n', ''),  # volume%
+                    limit_spread,  # spread>5%
+                    category  # category
+                ]
                 print(info)
-                self.write_to_csv([info])
+                self.data.append(info)
             print(f'{"-"*10}{len(tickers)} items were wrote into csv {"-"*10}')
         except Exception as e:
             print(f'Parse page error:{e}')
 
     def run(self):
         try:
+            print(f'{"-"*10}Start to crawl{"-"*10}')
             self.request_page(self.base_url)
             self.request_page(self.base_url_more, more=True)
+            self.write_to_xlsx()  # 写入数据
+            print('Send email after 5s!')
+            time.sleep(5)
+            # 发送信息
+            email = AutoEmail()
+            email.send()
             print(f'{"-"*10}Function end{"-"*10}')
         except Exception as e:
             print(f'Main function error: {e}')

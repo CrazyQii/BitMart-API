@@ -1,5 +1,5 @@
 import os
-from gateway.kucoin.kucoin_python_sdk.kucoin.client import Market
+from Gateway.kucoin.kucoin_python_sdk.kucoin.client import Market
 import math
 import json
 

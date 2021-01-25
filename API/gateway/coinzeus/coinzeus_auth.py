@@ -6,7 +6,7 @@ import re
 import requests
 import time
 import hashlib
-from gateway.base_url import coinzeus_base_url
+from Gateway.base_url import coinzeus_base_url
 
 from key.coinzeus_token import wpc
 import traceback

@@ -1,0 +1,1002 @@
+{
+ "USDC_WETH": {
+  "id": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_USDT": {
+  "id": "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "DAI_WETH": {
+  "id": "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WBTC_WETH": {
+  "id": "0xbb2b8038a1640196fbe3e38816f3e67cba72d940",
+  "WBTC": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "UNI_WETH": {
+  "id": "0xd3d2e2692501a5c9ca623199d38826e513033a17",
+  "UNI": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YFI_WETH": {
+  "id": "0x2fdbadf3c4d5a8666bc06645b8358ab803996e28",
+  "YFI": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_AMPL": {
+  "id": "0xc5be99a02c6857f9eac67bbce58df5572498f40c",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "AMPL": "0xd46ba6d942050d489dbd938a2c909a5d5039a161"
+ },
+ "LINK_WETH": {
+  "id": "0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974",
+  "LINK": "0x514910771af9ca656af840dff83e8264ecf986ca",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SUSHI_WETH": {
+  "id": "0xce84867c3c02b05dc570d0135103d3fb9cc19433",
+  "SUSHI": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "TEND_WETH": {
+  "id": "0xcfb8cf118b4f0abb2e8ce6dbeb90d6bc0a62693d",
+  "TEND": "0x1453dbb8a29551ade11d89825ca812e05317eaeb",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "CORE_WETH": {
+  "id": "0x32ce7e48debdccbfe0cd037cc89526e4382cb81b",
+  "CORE": "0x62359ed7505efc61ff1d56fef82158ccaffa23d7",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "KP3R_WETH": {
+  "id": "0x87febfb3ac5791034fd5ef1a615e9d9627c2665d",
+  "KP3R": "0x1ceb5cb57c4d4e2b2433641b95dd330a33185a44",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DAI_BAS": {
+  "id": "0x0379da7a5895d13037b6937b109fa8607a659adf",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "BAS": "0xa7ed29b253d8b4e3109ce07c80fc570f81b63696"
+ },
+ "BAC_DAI": {
+  "id": "0xd4405f0704621dbe9d4dea60e128e0c3b26bddbd",
+  "BAC": "0x3449fc1cd036255ba1eb19d65ff4ba2b8903a69a",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f"
+ },
+ "ESD_USDC": {
+  "id": "0x88ff79eb2bc5850f27315415da8685282c7610f9",
+  "ESD": "0x36f3fd68e7325a35eb768f1aedaae9ea0689d723",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "USDC_DSD": {
+  "id": "0x66e33d2605c5fb25ebb7cd7528e7997b0afa55e8",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "DSD": "0xbd2f0cd039e0bfcf88901c98c0bfac5ab27566e3"
+ },
+ "SNX_WETH": {
+  "id": "0x43ae24960e5534731fc831386c07755a2dc33d47",
+  "SNX": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "PICKLE_WETH": {
+  "id": "0xdc98556ce24f007a5ef6dc1ce96322d65832a819",
+  "PICKLE": "0x429881672b9ae42b8eba0e26cd9c73711b891ca5",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "USDC_USDT": {
+  "id": "0x3041cbd36888becc7bbcbc0045e3b1f144466f5f",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "WISE_WETH": {
+  "id": "0x21b8065d10f73ee2e260e5b47d3344d3ced7596e",
+  "WISE": "0x66a0f676479cee1d7373f3dc2e2952778bff5bd6",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "AAVE_WETH": {
+  "id": "0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f",
+  "AAVE": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BASE_WETH": {
+  "id": "0xde5b7ff5b10cc5f8c95a2e2b643e3abf5179c987",
+  "BASE": "0x07150e919b4de5fd6a63de1f9384828396f25fdc",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "CEL_WETH": {
+  "id": "0xa5e79baee540f000ef6f23d067cd3ac22c7d9fe6",
+  "CEL": "0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "FARM_USDC": {
+  "id": "0x514906fc121c7878424a5c928cad1852cc545892",
+  "FARM": "0xa0246c9032bc3a600820415ae600c6388619a14d",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "LEND_WETH": {
+  "id": "0xab3f9bf1d81ddb224a2014e98b238638824bcf20",
+  "LEND": "0x80fb784b7ed66730e8b1dbd9820afd29931aab03",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "COMP_WETH": {
+  "id": "0xcffdded873554f362ac02f8fb1f02e5ada10516f",
+  "COMP": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "MKR_WETH": {
+  "id": "0xc2adda861f89bbb333c90c492cb837741916a225",
+  "MKR": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "HEX_WETH": {
+  "id": "0x55d5c232d921b9eaa6b37b5845e439acd04b4dba",
+  "HEX": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_CRV": {
+  "id": "0x3da1313ae46132a397d90d95b1424a9a7e3e0fce",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "CRV": "0xd533a949740bb3306d119cc777fa900ba034cd52"
+ },
+ "LRC_WETH": {
+  "id": "0x8878df9e1a7c87dcbf6d3999d997f262c05d8c70",
+  "LRC": "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "sUSD_WETH": {
+  "id": "0xf80758ab42c3b07da84053fd88804bcb6baa4b5c",
+  "sUSD": "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "REN_WETH": {
+  "id": "0x8bd1661da98ebdd3bd080f0be4e6d9be8ce9858c",
+  "REN": "0x408e41876cccdc0f92210600ef50372656052a38",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "API3_WETH": {
+  "id": "0x4dd26482738be6c06c31467a19dcda9ad781e8c4",
+  "API3": "0x0b38210ea11411557c13457d4da7dc6ea731b88a",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "CREAM_WETH": {
+  "id": "0xddf9b7a31b32ebaf5c064c80900046c9e5b7c65f",
+  "CREAM": "0x2ba592f78db6436527729929aaf6c908497cb200",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "STAKE_WETH": {
+  "id": "0x3b3d4eefdc603b232907a7f3d0ed1eea5c62b5f7",
+  "STAKE": "0x0ae055097c6d159879521c384f1d2123d1f195e6",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DPI_WETH": {
+  "id": "0x4d5ef58aac27d99935e5b6b4a6778ff292059991",
+  "DPI": "0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_SWAP": {
+  "id": "0xd90a1ba0cbaaaabfdc6c814cdf1611306a26e1f8",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "SWAP": "0xcc4304a31d09258b0029ea7fe63d032f52e44efe"
+ },
+ "POLS_WETH": {
+  "id": "0xffa98a091331df4600f87c9164cd27e8a5cd2405",
+  "POLS": "0x83e6f1e41cdd28eaceb20cb649155049fac3d5aa",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YFL_WETH": {
+  "id": "0x1d6432aefeae2c0ff1393120541863822a4e6fa7",
+  "YFL": "0x28cb7e841ee97947a86b06fa4090c8451f64c0be",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "MPH_WETH": {
+  "id": "0x4d96369002fc5b9687ee924d458a7e5baa5df34e",
+  "MPH": "0x8888801af4d980682e47f1a9036e589479e835c5",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "wNXM_WETH": {
+  "id": "0x23bff8ca20aac06efdf23cee3b8ae296a30dfd27",
+  "wNXM": "0x0d438f3b5175bebc262bf23753c1e53d03432bde",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "FRAX_USDC": {
+  "id": "0x97c4adc5d28a86f9470c70dd91dc6cc2f20d2d4d",
+  "FRAX": "0x853d955acef822db058eb8505911ed77f175b99e",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "BZRX_WETH": {
+  "id": "0xb9b752f7f4a4680eeb327ffe728f46666763a796",
+  "BZRX": "0x56d811088235f11c8920698a204a5010a788f4b3",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "RSR_WETH": {
+  "id": "0xba65016890709dbc9491ca7bf5de395b8441dc8b",
+  "RSR": "0x8762db106b2c2a0bccb3a80d1ed41273552616e8",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "UMA_WETH": {
+  "id": "0x88d97d199b9ed37c29d846d00d443de980832a22",
+  "UMA": "0x04fa0d235c4abf4bcf4787af4cf447de572ef828",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_ROOK": {
+  "id": "0x70ec2fa6eccf4010eaf572d1c1a7bcbc72dec983",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "ROOK": "0xfa5047c9c78b8877af97bdcb85db743fd7313d4a"
+ },
+ "MTA_WETH": {
+  "id": "0x0d0d65e7a7db277d3e0f5e1676325e75f3340455",
+  "MTA": "0xa3bed4e1c75d00fa6f4e5e6922db7261b5e9acd2",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "USDC_GRT": {
+  "id": "0xdfa42ba0130425b21a1568507b084cc246fb0c8f",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "GRT": "0xc944e90c64b2c07662a292be6244bdf05cda44a7"
+ },
+ "DIA_WETH": {
+  "id": "0x4dc02e1bb2ec1ce4c50c351e6e06505e7b1dce8d",
+  "DIA": "0x84ca8bc7997272c7cfb4d0cd3d55cd942b3c9419",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DAI_USDC": {
+  "id": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "KIMCHI_WETH": {
+  "id": "0xc4da39e646e7f5d233b89ca0f7b75344e7ddb2cc",
+  "KIMCHI": "0x1e18821e69b9faa8e6e75dffe54e7e25754beda0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_DMG": {
+  "id": "0x8175362afbeee32afb22d05adc0bbd08de32f5ae",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "DMG": "0xed91879919b71bb6905f23af0a68d231ecf87b14"
+ },
+ "YAMv2_WETH": {
+  "id": "0xa5904961f61bae7c4dd8478077556c91bf291cfd",
+  "YAMv2": "0xaba8cac6866b83ae4eec97dd07ed254282f6ad8a",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YFV_WETH": {
+  "id": "0xcb4f983e705caeb7217c5c3785001cb138115f0b",
+  "YFV": "0x45f24baeef268bb6d63aee5129015d69702bcdfa",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "TRADE_WETH": {
+  "id": "0xd2e0c4928789e5db620e53af29f5fc7bca262635",
+  "TRADE": "0x6f87d756daf0503d08eb8993686c7fc01dc44fb1",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_GRT": {
+  "id": "0x2e81ec0b8b4022fac83a21b2f2b4b8f5ed744d70",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "GRT": "0xc944e90c64b2c07662a292be6244bdf05cda44a7"
+ },
+ "CVP_WETH": {
+  "id": "0x12d4444f96c644385d8ab355f6ddf801315b6254",
+  "CVP": "0x38e4adb44ef08f22f5b5b76a8f0c2d0dcbe7dca1",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "FRAX_WETH": {
+  "id": "0xfd0a40bc83c5fae4203dec7e5929b446b07d1c76",
+  "FRAX": "0x853d955acef822db058eb8505911ed77f175b99e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SFI_WETH": {
+  "id": "0xc76225124f3caab07f609b1d147a31de43926cd6",
+  "SFI": "0xb753428af26e81097e7fd17f40c88aaa3e04902c",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "sUSD_$BASED": {
+  "id": "0xaad22f5543fcdaa694b68f94be177b561836ae57",
+  "sUSD": "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+  "$BASED": "0x68a118ef45063051eac49c7e647ce5ace48a68a5"
+ },
+ "YFII_WETH": {
+  "id": "0x8973be4402bf0a39448f419c2d64bd3591dd2299",
+  "YFII": "0xa1d0e215a23d7030842fc67ce582a6afa3ccab83",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BID_WETH": {
+  "id": "0x0f9768ee0914c48f65234cf10e8aeb6028c8426c",
+  "BID": "0x25e1474170c4c0aa64fa98123bdc8db49d7802fa",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BAND_WETH": {
+  "id": "0xf421c3f2e695c2d4c0765379ccace8ade4a480d9",
+  "BAND": "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "EDC_WETH": {
+  "id": "0x30ee4e8e49d81312b93f41778f6446827a080ade",
+  "EDC": "0xae66bea480f7a6c91f07c58f2aee185883558fb8",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "XOR_WETH": {
+  "id": "0x01962144d41415cca072900fe87bbe2992a99f10",
+  "XOR": "0x40fd72257597aa14c7231a7b1aaa29fce868f677",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "OM_WETH": {
+  "id": "0x99b1db3318aa3040f336fb65c55400e164ddcd7f",
+  "OM": "0x2baecdf43734f22fd5c152db08e3c27233f0c7d2",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "XFI_WETH": {
+  "id": "0xaf996125e98b5804c00ffdb4f7ff386307c99a00",
+  "XFI": "0x5befbb272290dd5b8521d4a938f6c4757742c430",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "XRT_WETH": {
+  "id": "0x3185626c14acb9531d19560decb9d3e5e80681b1",
+  "XRT": "0x7de91b204c1c737bcee6f000aaa6569cf7061cb7",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_renBTC": {
+  "id": "0x81fbef4704776cc5bba0a5df3a90056d2c6900b3",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "renBTC": "0xeb4c2781e4eba804ce9a9803c67d0893436bb27d"
+ },
+ "YAM_yDAI+yUSDC+yUSDT+yTUSD": {
+  "id": "0x2c7a51a357d5739c5c74bf3c96816849d2c9f726",
+  "YAM": "0x0e2298e3b3390e3b945a5456fbf59ecc3f55da16",
+  "yDAI+yUSDC+yUSDT+yTUSD": "0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8"
+ },
+ "WBTC_USDC": {
+  "id": "0x004375dff511095cc5a197a54140a24efef3a416",
+  "WBTC": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "DAI_USDT": {
+  "id": "0xb20bd5d04be54f870d5c0d3ca85d82b34b836405",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "PRQ_WETH": {
+  "id": "0x64cac8fa24f437ceca90e20a7a24a609f162b0d1",
+  "PRQ": "0x362bc847a3a9637d3af6624eec853618a43ed7d2",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "TRU_WETH": {
+  "id": "0xec6a6b7db761a5c9910ba8fcab98116d384b1b85",
+  "TRU": "0x4c19596f5aaff459fa38b0f7ed92f11ae6543784",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_MEME": {
+  "id": "0x5dfbe95925ffeb68f7d17920be7b313289a1a583",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "MEME": "0xd5525d397898e5502075ea5e830d8914f6f0affe"
+ },
+ "OCEAN_WETH": {
+  "id": "0x9b7dad79fc16106b47a3dab791f389c167e15eb0",
+  "OCEAN": "0x967da4048cd07ab37855c090aaf366e4ce1b9f48",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SWRV_WETH": {
+  "id": "0xc139d8450177c0b8c3788608518687b585f7ae5a",
+  "SWRV": "0xb8baa0e4287890a5f79863ab62b7f175cecbd433",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "1INCH_WETH": {
+  "id": "0x26aad2da94c59524ac0d93f6d6cbf9071d7086f2",
+  "1INCH": "0x111111111117dc0aa78b770fa6a738034120c302",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_FSW": {
+  "id": "0xe275eb6154cb4a73f0ba573e43b2b06e9e78b7f0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "FSW": "0xfffffffff15abf397da76f1dcc1a1604f45126db"
+ },
+ "WETH_RMPL": {
+  "id": "0x6a3d23fa07c455f88d70c29d230467c407a3964b",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "RMPL": "0xe17f017475a709de58e976081eb916081ff4c9d5"
+ },
+ "WETH_UBOMB": {
+  "id": "0xed9c854cb02de75ce4c9bba992828d6cb7fd5c71",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "UBOMB": "0xe31debd7abff90b06bca21010dd860d8701fd901"
+ },
+ "WETH_SASHIMI": {
+  "id": "0x4b618087dae7765823bc47ffbf38c8ee8489f5ca",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "SASHIMI": "0xc28e27870558cf22add83540d2126da2e4b464c2"
+ },
+ "WETH_XAMP": {
+  "id": "0x6c35c40447e8011a63ab05f088fa7cd914d66904",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "XAMP": "0xf911a7ec46a2c6fa49193212fe4a2a9b95851c27"
+ },
+ "WETH_Yf-DAI": {
+  "id": "0x84e34df6f8f85f15d24ec8e347d32f1184089a14",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "Yf-DAI": "0xf4cd3d3fda8d7fd6c5a500203e38640a70bf9577"
+ },
+ "wANATHA_WETH": {
+  "id": "0x85609c626b532ca8bea6c36be53afdcb15dd4a48",
+  "wANATHA": "0x3383c5a8969dc413bfddc9656eb80a1408e4ba20",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SRM_WETH": {
+  "id": "0xcc3d1ecef1f9fd25599dbea2755019dc09db3c54",
+  "SRM": "0x476c5e26a75bd202a9683ffd34359c0cc15be0ff",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_HEX2T": {
+  "id": "0xedaedd22e653c504ff6806bf61664292848eb26e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "HEX2T": "0xed1199093b1abd07a368dd1c0cdc77d8517ba2a0"
+ },
+ "MAHA_WETH": {
+  "id": "0xc0897d6ba893e31f42f658eead777aa15b8f824d",
+  "MAHA": "0xb4d930279552397bba2ee473229f89ec245bc365",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "UST_USDT": {
+  "id": "0xc50ef7861153c51d383d9a7d48e6c9467fb90c38",
+  "UST": "0xa47c8bf37f92abed4a126bda807a7b7498661acd",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "UBT_WETH": {
+  "id": "0xb27de0ba2abfbfdf15667a939f041b52118af5ba",
+  "UBT": "0x8400d94a5cb0fa0d041a3788e395285d61c9ee5e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BOND_USDC": {
+  "id": "0x6591c4bcd6d7a1eb4e537da8b78676c1576ba244",
+  "BOND": "0x0391d2021f89dc339f60fff84546ea23e337750f",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "WETH_yDAI+yUSDC+yUSDT+yTUSD": {
+  "id": "0x55df969467ebdf954fe33470ed9c3c0f8fab0816",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "yDAI+yUSDC+yUSDT+yTUSD": "0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8"
+ },
+ "YAX_WETH": {
+  "id": "0x1107b6081231d7f256269ad014bf92e041cb08df",
+  "YAX": "0xb1dc9124c395c1e97773ab855d66e879f053a289",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "MOON_WETH": {
+  "id": "0x8927616110cf23c4e87dc98614eb9fbaae95216c",
+  "MOON": "0x68a3637ba6e75c0f66b61a42639c4e9fcd3d4824",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YFIM_WETH": {
+  "id": "0xc3fa0a8d68a43ed336174cb5673903572bbace8e",
+  "YFIM": "0x2e2f3246b6c65ccc4239c9ee556ec143a7e5de2c",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "AXN_WETH": {
+  "id": "0x0d0f908ad29bd8a9f8d99533e3ad69e2e40f3094",
+  "AXN": "0x7d85e23014f84e6e21d5663acd8751bef3562352",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "ALBT_WETH": {
+  "id": "0xe5c5227d8105d8d5f26ff3634eb52e2d7cc15b50",
+  "ALBT": "0x00a8b738e453ffd858a7edf03bccfe20412f0eb0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SHARE_WETH": {
+  "id": "0x18f238a96392a8fabb87065b5129dd00192e6cb1",
+  "SHARE": "0x39795344cbcc76cc3fb94b9d1b15c23c2070c66d",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_KNC": {
+  "id": "0xf49c43ae0faf37217bdcb00df478cf793edd6687",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "KNC": "0xdd974d5c2e2928dea5f71b9825b8b646686bd200"
+ },
+ "RFI_WETH": {
+  "id": "0x4c8341379e95f70c08defb76c4f9c036525edc30",
+  "RFI": "0xa1afffe3f4d611d252010e3eaf6f4d77088b0cd7",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YFBETA_WETH": {
+  "id": "0xed643618dd5194f243a8f23c7bd786a37a6dcf8b",
+  "YFBETA": "0x89ee58af4871b474c30001982c3d7439c933c838",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_ENCORE": {
+  "id": "0x2e0721e6c951710725997928dcaaa05daafa031b",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "ENCORE": "0xe0e4839e0c7b2773c58764f9ec3b9622d01a0428"
+ },
+ "FXS_WETH": {
+  "id": "0xecba967d84fcf0405f6b32bc45f4d36bfdbb2e81",
+  "FXS": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "LAYER_WETH": {
+  "id": "0xb1a824a6caf1f789aa7ca1072e36e83cd62ba3ee",
+  "LAYER": "0x0ff6ffcfda92c53f615a4a75d982f399c989366b",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YFV_USDT": {
+  "id": "0xd58b1b5d2148f744e9eb3a87f20bebf3ca5f8974",
+  "YFV": "0x45f24baeef268bb6d63aee5129015d69702bcdfa",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "ANT_WETH": {
+  "id": "0xfa19de406e8f5b9100e4dd5cad8a503a6d686efe",
+  "ANT": "0x960b236a07cf122663c4303350609a66a7b288c0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "GHST_WETH": {
+  "id": "0xab659dee3030602c1af8c29d146facd4aed6ec85",
+  "GHST": "0x3f382dbd960e3a9bbceae22651e88158d2791550",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "ORAI_WETH": {
+  "id": "0x9081b50bad8beefac48cc616694c26b027c559bb",
+  "ORAI": "0x4c11249814f11b9346808179cf06e71ac328c1b5",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "ELF_WETH": {
+  "id": "0xa6be7f7c6c454b364cda446ea39be9e5e4369de8",
+  "ELF": "0xbf2179859fc6d5bee9bf9158632dc51678a4100e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BCS_DAI": {
+  "id": "0xb3e325b62c0c3222c1adc16f530d5dba7a01f7ba",
+  "BCS": "0x03066da434e5264ef0b32f787923f974a5726fdc",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f"
+ },
+ "BAT_WETH": {
+  "id": "0xb6909b960dbbe7392d405429eb2b3649752b4838",
+  "BAT": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WHITE_WETH": {
+  "id": "0xa3b79b78678c15eec77389b380988b0229da1876",
+  "WHITE": "0x5f0e628b693018f639d10e4a4f59bd4d8b2b6b44",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "RFuel_WETH": {
+  "id": "0x05f21e62952566cefb77f5153ec6b83c14fb6b1d",
+  "RFuel": "0xaf9f549774ecedbd0966c52f250acc548d3f36e5",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "POND_USDC": {
+  "id": "0xd18748b9839b0081a867a1a871d5b562b2ec9884",
+  "POND": "0x57b946008913b82e4df85f501cbaed910e58d26c",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "RAMP_WETH": {
+  "id": "0xecfe2c3c1ac0a5a59227a01f3dd7044159b11a57",
+  "RAMP": "0x33d0568941c0c64ff7e0fb4fba0b11bd37deed9f",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "HEGIC_WETH": {
+  "id": "0x1273ad5d8f3596a7a39efdb5a4b8f82e8f003fc3",
+  "HEGIC": "0x584bc13c7d411c00c01a62e8019472de68768430",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_SHROOM": {
+  "id": "0x7d611e4cf1c7b94561c4caa5602f329d108336e3",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "SHROOM": "0xed0439eacf4c4965ae4613d77a5c2efe10e5f183"
+ },
+ "QNT_WETH": {
+  "id": "0x0c4a68cf6857cc76fe946d04fe85fac5fae9625e",
+  "QNT": "0x4a220e6096b25eadb88358cb44068a3248254675",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "yyDAI+yUSDC+yUSDT+yTUSD_WETH": {
+  "id": "0x9346c20186d1794101b8517177a1b15c49c9ff9b",
+  "yyDAI+yUSDC+yUSDT+yTUSD": "0x5dbcf33d8c2e976c6b560249878e6f1491bca25c",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "FNK_USDT": {
+  "id": "0x61b62c5d56ccd158a38367ef2f539668a06356ab",
+  "FNK": "0xb5fe099475d3030dde498c3bb6f3854f762a48ad",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "PERP_WETH": {
+  "id": "0xf66369997ae562bc9eec2ab9541581252f9ca383",
+  "PERP": "0xbc396689893d065f41bc2c6ecbee5e0085233447",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SPI_WETH": {
+  "id": "0xe3ee3d5f7e9c750490d99ab166edc1886de0a85e",
+  "SPI": "0x9b02dd390a603add5c07f9fd9175b7dabe8d63b7",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "STRONG_WETH": {
+  "id": "0xc0bf97bffa94a50502265c579a3b7086d081664b",
+  "STRONG": "0x990f341946a3fdb507ae7e52d17851b87168017c",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "KEEP_WETH": {
+  "id": "0xe6f19dab7d43317344282f803f8e8d240708174a",
+  "KEEP": "0x85eee30c52b0b379b046fb0f85f4f3dc3009afec",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DRC_WETH": {
+  "id": "0x276e62c70e0b540262491199bc1206087f523af6",
+  "DRC": "0xb78b3320493a4efaa1028130c5ba26f0b6085ef8",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_HEZ": {
+  "id": "0x23d15edceb5b5b3a23347fa425846de80a2e8e5c",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "HEZ": "0xeef9f339514298c6a857efcfc1a762af84438dee"
+ },
+ "DOKI_WETH": {
+  "id": "0x1d4b2b2a2ca8762410801b51f128b73743439e39",
+  "DOKI": "0x9ceb84f92a0561fa3cc4132ab9c0b76a59787544",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "EPAN_WETH": {
+  "id": "0xeb4770eea58fefab132663b852a8b7a35a843c71",
+  "EPAN": "0x72630b1e3b42874bf335020ba0249e3e9e47bafc",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SAKE_WETH": {
+  "id": "0xb8172076ceb35b6701f96eb9088818efc010bd44",
+  "SAKE": "0x066798d9ef0833ccc719076dab77199ecbd178b0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_BONDLY": {
+  "id": "0x9dc696f1067a6b9929986283f6d316be9c9198fd",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "BONDLY": "0xd2dda223b2617cb616c1580db421e4cfae6a8a85"
+ },
+ "ONS_DAI": {
+  "id": "0x896dc58182c3b78598c11aa10f940257a1ce32b1",
+  "ONS": "0x5bb29c33c4a3c29f56f8aca40b4db91d8a5fe2c5",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f"
+ },
+ "SMARTCREDIT_WETH": {
+  "id": "0x6061a36ad6b7958f68129bb313e6eff81cd9113c",
+  "SMARTCREDIT": "0x72e9d9038ce484ee986fea183f8d8df93f9ada13",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "TRB_WETH": {
+  "id": "0x70258aa9830c2c84d855df1d61e12c256f6448b4",
+  "TRB": "0x0ba45a8b5d5575935b8158a88c631e9f9c95a2e5",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "pBTC35A_USDT": {
+  "id": "0x5b1e45ca08fa4d65aa7fdcf9e116990fb7fce73b",
+  "pBTC35A": "0xa8b12cc90abf65191532a12bb5394a714a46d358",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+ },
+ "DEXT_WETH": {
+  "id": "0x37a0464f8f4c207b54821f3c799afd3d262aa944",
+  "DEXT": "0x26ce25148832c04f3d7f26f32478a9fe55197166",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "OWL_WETH": {
+  "id": "0x414fbf662fc98415dbee27c72013a6f3a937ed66",
+  "OWL": "0x2a7f709ee001069771ceb6d42e85035f7d18e736",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SBTC_WETH": {
+  "id": "0xb0fa501e1f97d32133e742acbc499cf4d8840772",
+  "SBTC": "0x309013d55fb0e8c17363bcc79f25d92f711a5802",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "ARCH_WETH": {
+  "id": "0x48a91882552dad988ae758fcb7070b8e9844dec5",
+  "ARCH": "0x1f3f9d3068568f8040775be2e8c03c103c61f3af",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "CIBS_WETH": {
+  "id": "0xb58645ac31c5c40f03ea4cc44885ffeff1d74851",
+  "CIBS": "0x51b4b27a7bd296fd34ca7c469f49d5bcd7fe5137",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "RING_WETH": {
+  "id": "0xa32523371390b0cc4e11f6bb236ecf4c2cdea101",
+  "RING": "0x9469d013805bffb7d3debe5e7839237e535ec483",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "UNN_WETH": {
+  "id": "0x7f1da3697236d4a5e0efd2a99de5d9c076937856",
+  "UNN": "0x226f7b842e0f0120b7e194d05432b3fd14773a9d",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "eXRD_USDC": {
+  "id": "0x684b00a5773679f88598a19976fbeb25a68e9a5f",
+  "eXRD": "0x6468e79a80c0eab0f9a2b574c8d5bc374af59414",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "WETH_COIN": {
+  "id": "0xff62e62e8b3cf80050464b86194e52c3ead43bb6",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "COIN": "0xe61fdaf474fac07063f2234fb9e60c1163cfa850"
+ },
+ "DEC_WETH": {
+  "id": "0x3aeee5ba053ef8406420dbc5801fc95ec57b0e0a",
+  "DEC": "0x30f271c9e86d2b7d00a6376cd96a1cfbd5f0b9b3",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_XED": {
+  "id": "0x481efdd010433ded1a931b557e4fe63b7b897964",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "XED": "0xee573a945b01b788b9287ce062a0cfc15be9fd86"
+ },
+ "LID_WETH": {
+  "id": "0xc822d85d2dcedfaf2cefcf69dbd5588e7ffc9f10",
+  "LID": "0x0417912b3a7af768051765040a55bb0925d4ddcf",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "AKRO_USDC": {
+  "id": "0x98f90bfc702ec548d21b5a566a4df6853e2890d4",
+  "AKRO": "0x8ab7404063ec4dbcfd4598215992dc3f8ec853d7",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "OCTO_USDC": {
+  "id": "0x1b87fde6af5396165fdadf7f532784622a824abf",
+  "OCTO": "0x7240ac91f01233baaf8b064248e80feaa5912ba3",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+ },
+ "SBREE_WETH": {
+  "id": "0x596f7383223db0d484fd220d0ab036e042bafea4",
+  "SBREE": "0x25377ddb16c79c93b0cbf46809c8de8765f03fcd",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_RBASE": {
+  "id": "0x5ad0b52264961893e5d9397ec1f22d456ce9f92d",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "RBASE": "0xe8b251822d003a2b2466ee0e38391c2db2048739"
+ },
+ "Skey_WETH": {
+  "id": "0xf346d00965776e504930675100c8e2871bd6530d",
+  "Skey": "0x06a01a4d579479dd5d884ebf61a31727a3d8d442",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_DDIM": {
+  "id": "0x38a94c4f4d9400643f0fb97198f90c93986f018e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "DDIM": "0xfbeea1c75e4c4465cb2fccc9c6d6afe984558e20"
+ },
+ "DAI_ONC": {
+  "id": "0x3ba3c8fb0142a6f2bf3e2990a08957866203f961",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "ONC": "0xd90e69f67203ebe02c917b5128629e77b4cd92dc"
+ },
+ "WETH_SURF": {
+  "id": "0x32d588fd4d0993378995306563a04af5fa162dec",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "SURF": "0xea319e87cf06203dae107dd8e5672175e3ee976c"
+ },
+ "FARM_WETH": {
+  "id": "0x56feaccb7f750b997b36a68625c7c596f0b41a58",
+  "FARM": "0xa0246c9032bc3a600820415ae600c6388619a14d",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BAO_WETH": {
+  "id": "0x9973bb0fe5f8df5de730776df09e946c74254fb3",
+  "BAO": "0x374cb8c27130e2c9e04f44303f3c8351b9de61c1",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "AKRO_WETH": {
+  "id": "0x8cb77ea869def8f7fdeab9e4da6cf02897bbf076",
+  "AKRO": "0x8ab7404063ec4dbcfd4598215992dc3f8ec853d7",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_ORO": {
+  "id": "0xa89abe11bd3ef4cf68a5004ba99b9fda52d5e8fc",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "ORO": "0xc3eb2622190c57429aac3901808994443b64b466"
+ },
+ "KEN_WETH": {
+  "id": "0x6225f6d7ad5ea259a2227d3f39cf808f3098af6e",
+  "KEN": "0x6a7ef4998eb9d0f706238756949f311a59e05745",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "USDC_DHT": {
+  "id": "0x8cab3e311702acb64e250926d77134fde604bd4d",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "DHT": "0xca1207647ff814039530d7d35df0e1dd2e91fa84"
+ },
+ "DAI_ZAI": {
+  "id": "0x323e054a6dd8762011d60993f51e23e2096b221f",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "ZAI": "0x9d1233cc46795e94029fda81aaadc1455d510f15"
+ },
+ "LON_WETH": {
+  "id": "0x7924a818013f39cf800f5589ff1f1f0def54f31f",
+  "LON": "0x0000000000095413afc295d19edeb1ad7b71c952",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "USDC_LUA": {
+  "id": "0x25a17a5a907941aaf6d6d1c7aae9c9cc3a38680c",
+  "USDC": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+  "LUA": "0xb1f66997a5760428d3a87d68b90bfe0ae64121cc"
+ },
+ "SAND_WETH": {
+  "id": "0x3dd49f67e9d5bc4c5e6634b3f70bfd9dc1b6bd74",
+  "SAND": "0x3845badade8e6dff049820680d1f14bd3903a5d0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "ORN_WETH": {
+  "id": "0x6c8b0dee9e90ea9f790da5daf6f5b20d23b39689",
+  "ORN": "0x0258f474786ddfd37abce6df6bbb1dd5dfc4434a",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SYN_WETH": {
+  "id": "0xdf27a38946a1ace50601ef4e10f07a9cc90d7231",
+  "SYN": "0x1695936d6a953df699c38ca21c2140d497c08bd9",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_DUCK": {
+  "id": "0xc5ed7350e0fb3f780c756ba7d5d8539dc242a414",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "DUCK": "0xc0ba369c8db6eb3924965e5c4fd0b4c1b91e305f"
+ },
+ "DAI_BCC": {
+  "id": "0x0e236240c4e9a26e4e8d6d516fc2c028f6fdc3bb",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "BCC": "0xae17f4f5ca32f77ea8e3786db7c0b2fe877ac176"
+ },
+ "DF_WETH": {
+  "id": "0x232818620877fd9232e9ade0c91ef5518eb11788",
+  "DF": "0x431ad2ff6a9c365805ebad47ee021148d6f7dbe0",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "ALEPH_WETH": {
+  "id": "0x583cadd830374bb5c1ec8e1b648e0294cc1e01f1",
+  "ALEPH": "0xc0134b5b924c2fca106efb33c45446c466fbe03e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "TUSD_WETH": {
+  "id": "0xb4d0d9df2738abe81b87b66c80851292492d1404",
+  "TUSD": "0x0000000000085d4780b73119b644ae5ecd22b376",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "RBC_WETH": {
+  "id": "0x10db37f4d9b3bc32ae8303b46e6166f7e9652d28",
+  "RBC": "0xa4eed63db85311e22df4473f87ccfc3dadcfa3e3",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DAI_zLOT": {
+  "id": "0x48598b64d88ab649e49e82f9e328eeee5011a8ff",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "zLOT": "0xa8e7ad77c60ee6f30bac54e2e7c0617bd7b5a03e"
+ },
+ "CFi_WETH": {
+  "id": "0x36938d1419b717c97ebdb273702806ca73f89a4c",
+  "CFi": "0x63b4f3e3fa4e438698ce330e365e831f7ccd1ef4",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_CHAIN": {
+  "id": "0x33906431e44553411b8668543ffc20aaa24f75f9",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "CHAIN": "0xc4c2614e694cf534d407ee49f8e44d125e4681c4"
+ },
+ "SLINK_WETH": {
+  "id": "0xe2f021411a15f677100a79f1bf6afd89d00c778b",
+  "SLINK": "0x10bae51262490b4f4af41e12ed52a0e744c1137a",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "YOP_WETH": {
+  "id": "0xd65e975c7d0d5871eff8b079120e43c9f377ada1",
+  "YOP": "0xae1eaae3f627aaca434127644371b67b18444051",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "KIF_WETH": {
+  "id": "0x9f11faf42a16d986f7bfd6338f41db880da6df39",
+  "KIF": "0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BUILD_WETH": {
+  "id": "0xdf6b861b4fbcfaffb62dd1906fcd3a863955704b",
+  "BUILD": "0x6e36556b3ee5aa28def2a8ec3dae30ec2b208739",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "STA_WETH": {
+  "id": "0x59f96b8571e3b11f859a09eaf5a790a138fc64d0",
+  "STA": "0xa7de087329bfcda5639247f96140f9dabe3deed1",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DTA_WETH": {
+  "id": "0xccdcbdf3ebd11cce6a55b477b1427c0a4e0e2829",
+  "DTA": "0x31497f218c005fe3d5ee87e5a33e133a909a7a4b",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "SXP_WETH": {
+  "id": "0xac317d14738a454ff20b191ba3504aa97173045b",
+  "SXP": "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "UFT_WETH": {
+  "id": "0x99dfde431b40321a35deb6aeb55cf338ddd6eccd",
+  "UFT": "0x0202be363b8a4820f3f4de7faf5224ff05943ab1",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DAI_DEBASE": {
+  "id": "0xe98f89a2b3aecdbe2118202826478eb02434459a",
+  "DAI": "0x6b175474e89094c44da98b954eedeac495271d0f",
+  "DEBASE": "0x9248c485b0b80f76da451f167a8db30f33c70907"
+ },
+ "USDT_ZKS": {
+  "id": "0xd3d8c734f06229e36febd07505d8f57b7b78af7c",
+  "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+  "ZKS": "0xe4815ae53b124e7263f08dcdbbb757d41ed658c6"
+ },
+ "XIO_WETH": {
+  "id": "0xe0cc5afc0ff2c76183416fb8d1a29f6799fb2cdf",
+  "XIO": "0x0f7f961648ae6db43c75663ac7e5414eb79b5704",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "PNK_WETH": {
+  "id": "0x343fd171caf4f0287ae6b87d75a8964dc44516ab",
+  "PNK": "0x93ed3fbe21207ec2e8f2d3c3de6e058cb73bc04d",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "NOIA_WETH": {
+  "id": "0xb8a1a865e4405281311c5bc0f90c240498472d3e",
+  "NOIA": "0xa8c8cfb141a3bb59fea1e2ea6b79b5ecbcd7b6ca",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "RPL_WETH": {
+  "id": "0x70ea56e46266f0137bac6b75710e3546f47c855d",
+  "RPL": "0xb4efd85c19999d84251304bda99e90b92300bd93",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "AUDIO_WETH": {
+  "id": "0xc730ef0f4973da9cc0ab8ab291890d3e77f58f79",
+  "AUDIO": "0x18aaa7115705e8be94bffebde57af9bfc265b998",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DOS_WETH": {
+  "id": "0xdadf443c086f9d3c556ebc57c398a852f6a02898",
+  "DOS": "0x0a913bead80f321e7ac35285ee10d9d922659cb7",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BMJ_WETH": {
+  "id": "0xc6789a3a12d2b3f87a2bc2497565adad1d4d9e8e",
+  "BMJ": "0x5913d0f34615923552ee913dbe809f9f348e706e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "NEXO_WETH": {
+  "id": "0x2615b89ad032ccda6d67e1d511f0e4c9e3a5dc13",
+  "NEXO": "0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "BOT_WETH": {
+  "id": "0xe444f079e8f69ee32b2707974b5c994fa7dd944a",
+  "BOT": "0x5beabaebb3146685dd74176f68a0721f91297d37",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "DEGO_WETH": {
+  "id": "0x23f7d99c169dee26b215edf806da8fa0706c4ecc",
+  "DEGO": "0x88ef27e69108b2633f8e1c184cc37940a075cc02",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "KORE_WETH": {
+  "id": "0xef035f52e5a8974adbf4380e020cd4a0a349c517",
+  "KORE": "0xa866f0198208eb07c83081d5136be7f775c2399e",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "WETH_PRQ": {
+  "id": "0x3671a927539bd1f077336011567e7c57eb523407",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "PRQ": "0xfe2786d7d1ccab8b015f6ef7392f67d778f8d8d7"
+ },
+ "WETH_ETHV": {
+  "id": "0xd4d055fce4948dd9925000967a30933f6bd0fb03",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+  "ETHV": "0xeeeeeeeee2af8d0e1940679860398308e0ef24d6"
+ },
+ "YELD_WETH": {
+  "id": "0x164ed0df02b3747315b50b806b79962ad9517578",
+  "YELD": "0x468ab3b1f63a1c14b361bc367c3cc92277588da1",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ },
+ "TOMOE_WETH": {
+  "id": "0x5c89674c4ad1ccd10a29bcc9aabc303cd5f2da1d",
+  "TOMOE": "0x05d3606d5c81eb9b7b18530995ec9b29da05faba",
+  "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+ }
+}

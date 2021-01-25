@@ -1,7 +1,7 @@
 from os import sys, path
 import importlib
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-import gateway.base_url as base_url
+import Gateway.base_url as base_url
 
 class IntegratedExchange(object):
     def __init__(self):

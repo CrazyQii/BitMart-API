@@ -1,34 +1,34 @@
 from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-from gateway.binance.binance_public import BinancePublic
-from gateway.huobi.huobi_public import HuobiPublic
-from gateway.okex.okex_public import OkexPublic
-from gateway.bibox.bibox_public import BiboxPublic
-from gateway.cmc.cmc_public import CmcPublic
-from gateway.coinbene.coinbene_public import CoinbenePublic
-from gateway.coinis.coinis_public import CoinisPublic
-from gateway.bitmart.bitmart_public import BitmartPublic
-# from gateway.bitmart.ref_bitmart_public import RefBitMartPublic
-from gateway.lbank.lbank_public import LbankPublic
-from gateway.bitforex.bitforex_public import BitforexPublic
-from gateway.bittrex.bittrex_public import BittrexPublic
-from gateway.gateio.gateio_auth import GateioPublic
-from gateway.idax.idax_public import IdaxPublic
-from gateway.hotbit.hotbit_public import HotbitPublic
-from gateway.hitbtc.hitbtc_public import HitbtcPublic
-from gateway.bitz.bitz_public import BitzPublic
-from gateway.coinzeus.coinzeus_public import CoinzeusPublic
-from gateway.dragonex.ref_dragonex_public import RefDragonexPublic
-from gateway.kucoin.ref_kucoin_public import RefKucoinPublic
-from gateway.bw.bw_public import BwPublic
-from gateway.fcoin.fcoin_public import FcoinPublic
-from gateway.xt.xt_public import XtPublic
-from gateway.http_data import get_price, get_orderbook
+from Gateway.binance.binance_public import BinancePublic
+from Gateway.huobi.huobi_public import HuobiPublic
+from Gateway.okex.okex_public import OkexPublic
+from Gateway.bibox.bibox_public import BiboxPublic
+from Gateway.cmc.cmc_public import CmcPublic
+from Gateway.coinbene.coinbene_public import CoinbenePublic
+from Gateway.coinis.coinis_public import CoinisPublic
+from Gateway.bitmart.bitmart_public import BitmartPublic
+# from Gateway.bitmart.ref_bitmart_public import RefBitMartPublic
+from Gateway.lbank.lbank_public import LbankPublic
+from Gateway.bitforex.bitforex_public import BitforexPublic
+from Gateway.bittrex.bittrex_public import BittrexPublic
+from Gateway.gateio.gateio_auth import GateioPublic
+from Gateway.idax.idax_public import IdaxPublic
+from Gateway.hotbit.hotbit_public import HotbitPublic
+from Gateway.hitbtc.hitbtc_public import HitbtcPublic
+from Gateway.bitz.bitz_public import BitzPublic
+from Gateway.coinzeus.coinzeus_public import CoinzeusPublic
+from Gateway.dragonex.ref_dragonex_public import RefDragonexPublic
+from Gateway.kucoin.ref_kucoin_public import RefKucoinPublic
+from Gateway.bw.bw_public import BwPublic
+from Gateway.fcoin.fcoin_public import FcoinPublic
+from Gateway.xt.xt_public import XtPublic
+from Gateway.http_data import get_price, get_orderbook
 import json
 import random
 import requests
 from constant.ref_symbols import *
-from gateway.base_url import *
+from Gateway.base_url import *
 from config.limited_price import get_limited_price
 
 

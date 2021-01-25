@@ -1065,3 +1065,23 @@
 01/08/2021 15:53:11 PM - ERROR - Binance connect error: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
 01/08/2021 15:53:36 PM - ERROR - Binance connect error: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
 01/08/2021 15:54:04 PM - ERROR - Binance connect error: ListenKey is None
+01/21/2021 00:06:00 AM - ERROR - Binance connect error: [Errno 2] No such file or directory
+01/21/2021 00:06:00 AM - ERROR - Binance connect error: [Errno 2] No such file or directory
+01/21/2021 00:06:08 AM - ERROR - Binance connect error: [Errno 2] No such file or directory
+01/21/2021 00:06:16 AM - ERROR - Binance connect error: [Errno 2] No such file or directory
+01/21/2021 00:06:23 AM - ERROR - Binance connect error: [Errno 2] No such file or directory
+01/21/2021 00:06:31 AM - ERROR - Binance connect error: [Errno 2] No such file or directory
+01/21/2021 00:06:34 AM - ERROR - Binance has connected 5 times, and connection end!!!
+01/21/2021 00:06:35 AM - ERROR - Binance connect error: ListenKey is None
+01/21/2021 00:06:37 AM - ERROR - Binance sign message error: ('Connection aborted.', OSError(0, 'Error'))
+01/21/2021 00:06:39 AM - ERROR - Binance connect error: ListenKey is None
+01/21/2021 00:06:42 AM - ERROR - Binance sign message error: ('Connection aborted.', OSError(0, 'Error'))
+01/21/2021 00:06:43 AM - ERROR - Binance connect error: ListenKey is None
+01/21/2021 00:06:46 AM - ERROR - Binance sign message error: ('Connection aborted.', OSError(0, 'Error'))
+01/21/2021 00:06:47 AM - ERROR - Binance connect error: ListenKey is None
+01/21/2021 00:06:47 AM - ERROR - Binance sign message error: ('Connection aborted.', OSError(0, 'Error'))
+01/21/2021 00:06:51 AM - ERROR - Binance connect error: ListenKey is None
+01/21/2021 00:06:54 AM - ERROR - Binance sign message error: ('Connection aborted.', OSError(0, 'Error'))
+01/21/2021 00:06:54 AM - ERROR - Binance has connected 5 times, and connection end!!!
+01/21/2021 00:06:54 AM - ERROR - Binance public does not connected, and connection closed!
+01/21/2021 00:06:54 AM - ERROR - Binance start channel error: 'NoneType' object has no attribute 'send'

@@ -7,7 +7,7 @@ import requests
 import time
 import hmac
 import hashlib
-from gateway.base_url import ooobtc_base_url
+from Gateway.base_url import ooobtc_base_url
 
 from key.ooobtc_token import lpk
 import traceback

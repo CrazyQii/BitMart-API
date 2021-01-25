@@ -2,7 +2,7 @@ from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 
-from gateway.bitmart.archived.api_spot import APISpot
+from Gateway.bitmart.archived.api_spot import APISpot
 
 class BitmartAuth(object):
     def __init__(self, urlbase, api_key, api_secret, password):

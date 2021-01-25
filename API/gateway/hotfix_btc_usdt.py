@@ -3,9 +3,9 @@ from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 from bitmart.bitmart_auth import BitMartAuth
-from gateway.bitmart.bitmart_public import BitMartPublic
+from Gateway.bitmart.bitmart_public import BitMartPublic
 from key import bitmart_token_production
-from gateway.base_url import bitmart_base_url_production
+from Gateway.base_url import bitmart_base_url_production
 import random
 import time
 

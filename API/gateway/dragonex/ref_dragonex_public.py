@@ -3,7 +3,7 @@ import requests
 import time
 import os
 import json
-from gateway.dragonex.dragonex_public import DragonexPublic
+from Gateway.dragonex.dragonex_public import DragonexPublic
 
 class RefDragonexPublic(object):
     def __init__(self, urlbase):

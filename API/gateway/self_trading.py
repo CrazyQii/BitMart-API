@@ -1,9 +1,9 @@
 from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-from gateway.bitmart.bitmart_auth import BitMartAuth
-from gateway.bitmart.bitmart_public import BitMartPublic
-from gateway.bitmart.ref_bitmart_public import RefBitMartPublic
-from gateway.bitmart.access_token import AccessToken
+from Gateway.bitmart.bitmart_auth import BitMartAuth
+from Gateway.bitmart.bitmart_public import BitMartPublic
+from Gateway.bitmart.ref_bitmart_public import RefBitMartPublic
+from Gateway.bitmart.access_token import AccessToken
 import re
 import json
 import random

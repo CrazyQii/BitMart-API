@@ -3,7 +3,7 @@ sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 import requests
 import re
-from gateway.base_url import coinis_base_url
+from Gateway.base_url import coinis_base_url
 
 class CoinisPublic(object):
     def __init__(self, urlbase):

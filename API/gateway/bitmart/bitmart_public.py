@@ -5,7 +5,7 @@ sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__))))
 import json
 import math
 import time
-from gateway.bitmart.archived.api_spot import APISpot
+from Gateway.bitmart.archived.api_spot import APISpot
 
 class BitmartPublic(object):
     def __init__(self, urlbase):
