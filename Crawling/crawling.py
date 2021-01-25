@@ -28,7 +28,7 @@ class BitmartCrawling(object):
             ws.append(header)  # 添加索引
             for row, item in enumerate(self.data):  # 添加数据
                 ws.append(item)
-            wb.save('data.xlsx')
+            wb.save('Crawling\\data.xlsx')
             print('Save data to excel successfully!')
         except Exception as e:
             print(f'Write to xlsx error: {e}')
@@ -106,8 +106,8 @@ class BitmartCrawling(object):
             print('Send email after 5s!')
             time.sleep(5)
             # 发送信息
-            email = AutoEmail()
-            email.send()
+            # email = AutoEmail()
+            # email.send()
             print(f'{"-"*10}Function end{"-"*10}')
         except Exception as e:
             print(f'Main function error: {e}')

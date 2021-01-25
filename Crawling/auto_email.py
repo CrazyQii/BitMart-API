@@ -38,7 +38,7 @@ class AutoEmail(object):
         try:
             # SMTP协议
             server = smtplib.SMTP(self.smtp_server, 25)
-            server.set_debuglevel(1)  # 显示所有交互信息
+            # server.set_debuglevel(1)  # 显示所有交互信息
             # 登录
             server.login(self.sender_addr, self.sender_password)
             # 发送邮件
